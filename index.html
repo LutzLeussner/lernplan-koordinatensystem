@@ -18087,54 +18087,65 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   </div><!-- end k11-esin -->
 
   <div class="subpanel" id="k11-flaechen">
+
+    <!-- Worum geht es? -->
     <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--kiku);margin-bottom:14px;">
       <div class="card-body">
         <div style="font-size:16px;font-weight:700;color:var(--kiku);">Worum geht es?</div>
-        <div class="ip">Wie groß ist die Fläche <em>zwischen</em> zwei Funktionsgraphen? Diese Frage taucht überall auf: bei Gewinn- und Kostenfunktionen, bei Temperaturvergleichen, bei physikalischen Energieberechnungen. Die Idee: Ziehe die untere Funktion von der oberen ab und integriere die Differenz.</div>
+        <div class="ip">Wie groß ist die Fläche <em>zwischen</em> zwei Funktionsgraphen? Diese Frage taucht überall auf: bei Gewinn- und Kostenfunktionen, beim Vergleich von Produktion und Verkauf, bei physikalischen Bilanzen. Die Idee bleibt immer dieselbe: Bilde die Differenzfunktion und integriere — die Differenz fasst beide Graphen in einer einzigen Funktion zusammen.</div>
       </div>
     </div>
 
-    <div class="section-label">Fläche zwischen zwei Graphen</div>
-    <div class="card">
-      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Fläche zwischen zwei Funktionen</span></div>
-      <div class="card-body">
-        <div class="ip">Liegt der Graph von \(f\) auf einem Intervall \([a,b]\) vollständig über dem Graphen von \(g\), so gilt für die eingeschlossene Fläche:</div>
-        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
-          \[A = \int_a^b \bigl(f(x) - g(x)\bigr)\,dx\]
-        </div>
-        <div class="ip">Die Differenzfunktion \(h(x) = f(x) - g(x)\) ist auf \([a,b]\) nicht-negativ, daher liefert das Integral direkt den Flächeninhalt – kein Vorzeichenwechsel nötig.</div>
+    <!-- Das brauchst du -->
+    <div class="hint" style="margin-bottom:14px;">
+      <strong>Das brauchst du:</strong> Schnittstellen zweier Funktionen rechnerisch bestimmen · Stammfunktion bilden · Hauptsatz der Integralrechnung sicher anwenden.
+    </div>
 
-        <div class="two-col" style="margin-top:10px">
+    <div class="section-label">Fläche zwischen zwei Graphen</div>
+
+    <!-- Theorie + Rezept -->
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Idee: Differenzfunktion vor dem Integral</span></div>
+      <div class="card-body">
+        <div class="ip">Liegt der Graph von \(g\) auf einem Intervall \([a;b]\) <em>oberhalb</em> des Graphen von \(f\), so ist der Flächeninhalt der eingeschlossenen Fläche</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center">
+          \[A \;=\; \int_a^b \bigl(g(x) - f(x)\bigr)\,dx.\]
+        </div>
+        <div class="ip">Die Differenzfunktion \(d(x) = g(x) - f(x)\) ist auf \([a;b]\) nicht-negativ, daher liefert das Integral direkt den Flächeninhalt — ohne weiteres Vorzeichen-Handling.</div>
+
+        <div class="two-col" style="margin-top:14px">
           <div>
-            <div class="it">Vorgehen</div>
-            <div class="ip" style="background:#e8edda;border-radius:10px;padding:14px 16px;border-left:3px solid #5b6e2e;line-height:2.1">
-              <strong>①</strong> Schnittpunkte bestimmen: \(f(x) = g(x)\) lösen → Grenzen \(a\) und \(b\)<br>
-              <strong>②</strong> Lage prüfen: auf \([a,b]\) gilt \(f \geq g\)?<br>
-              <strong>③</strong> Differenz integrieren: \(\displaystyle\int_a^b (f-g)\,dx\)
+            <div class="it">Rezept · Fläche zwischen zwei Graphen</div>
+            <div class="ip" style="background:#e8edda;border-radius:10px;padding:14px 16px;border-left:3px solid #5b6e2e;line-height:2.0">
+              <strong>①</strong> <strong>Schnittstellen finden:</strong> \(f(x) = g(x)\) lösen → Grenzen \(a\) und \(b\).<br>
+              <strong>②</strong> <strong>Lage klären:</strong> Skizze oder Probewert. Welcher Graph liegt oben?<br>
+              <strong>③</strong> <strong>Differenzfunktion:</strong> \(d(x) = (\text{oben}) - (\text{unten})\).<br>
+              <strong>④</strong> <strong>Integrieren:</strong> \(A = \int_a^b d(x)\,dx\) mit Hauptsatz auswerten.<br>
+              <strong>⑤</strong> <strong>Mehrere Schnittstellen?</strong> In Teilflächen aufteilen und Beträge addieren.
             </div>
           </div>
           <div>
             <div class="it">Achtung: Vorzeichenwechsel</div>
-            <div class="ip" style="background:#fff8f0;border-radius:10px;padding:14px 16px;border-left:3px solid #d97706;line-height:1.9">
-              Wechseln die Graphen ihre Lage zueinander (Schnittpunkt <em>innerhalb</em> des Intervalls), muss das Intervall aufgeteilt werden:<br><br>
-              \[A = \int_a^c (f-g)\,dx + \int_c^b (g-f)\,dx\]
-              wobei \(c\) der innere Schnittpunkt ist.
+            <div class="ip" style="background:#fff8f0;border-radius:10px;padding:14px 16px;border-left:3px solid #d97706;line-height:1.85">
+              Wechseln die Graphen ihre Lage zueinander (Schnittpunkt <em>innerhalb</em> des Intervalls), wird die Fläche in Teilstücke aufgeteilt:
+              \[A = \left|\int_a^c d\,dx\right| + \left|\int_c^b d\,dx\right|.\]
             </div>
-            <div class="hint" style="margin-top:10px"><strong>Tipp:</strong> Immer zuerst den Graphen skizzieren – so sieht man sofort, welche Funktion oben liegt.</div>
+            <div class="hint" style="margin-top:10px"><strong>Tipp:</strong> Immer zuerst eine Skizze — so siehst du sofort, welche Funktion oben liegt und ob aufgeteilt werden muss.</div>
           </div>
         </div>
 
-        <div class="bsp" style="margin-top:14px">
-          <div class="bsp-label">Beispiel</div>
-          <div class="bsp-q">Berechne den Flächeninhalt des Bereichs, den \(f(x) = x^3 - 3x\) und \(g(x) = x\) auf \([-2,\, 2]\) einschließen.</div>
-          <canvas id="kurven-canvas" style="width:100%;border-radius:10px;margin:10px 0"></canvas>
+        <!-- Einstiegsbeispiel -->
+        <div class="bsp" style="margin-top:18px">
+          <div class="bsp-label">Einstiegsbeispiel · gemeinsam erarbeitet</div>
+          <div class="bsp-q">Gegeben sind \(f(x) = x^2\) und \(g(x) = 2x + 3\). Berechne den Flächeninhalt der Fläche, die von den beiden Graphen eingeschlossen wird.</div>
+          <canvas id="flaechen-bsp-canvas" style="width:100%;border-radius:10px;margin:10px 0"></canvas>
           <script>
           window.addEventListener('load', function(){
             (function(){
-              var canvas = document.getElementById('kurven-canvas');
+              var canvas = document.getElementById('flaechen-bsp-canvas');
               if(!canvas) return;
-              var W = canvas.offsetWidth || 560;
-              var H = Math.round(W * 0.55);
+              var W = canvas.offsetWidth || 600;
+              var H = Math.round(W * 0.78);
               var dpr = window.devicePixelRatio || 1;
               canvas.width = W * dpr; canvas.height = H * dpr;
               canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
@@ -18144,242 +18155,254 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
               var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
               var axisCol = isDark ? '#aaa' : '#555';
               var textCol = isDark ? '#ccc' : '#333';
-              var bgCol   = window.getComputedStyle(document.body).backgroundColor;
-              if(!bgCol || bgCol === 'rgba(0,0,0,0)') bgCol = isDark ? '#1a1a1a' : '#f9f8f6';
-              var font    = '12px system-ui,-apple-system,sans-serif';
+              var gridCol = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.07)';
+              var bgCol = window.getComputedStyle(document.body).backgroundColor;
+              if(!bgCol || bgCol === 'rgba(0,0,0,0)') bgCol = isDark ? '#1a1a1a' : '#fffcf6';
 
               canvas.style.background = bgCol;
-              ctx.fillStyle = bgCol; ctx.fillRect(0,0,W,H);
+              ctx.fillStyle = bgCol; ctx.fillRect(0, 0, W, H);
 
-              var pad = {l:44, r:20, t:20, b:28};
-              var xMin=-2.6, xMax=2.6, yMin=-4, yMax=4;
+              var pad = {l:50, r:24, t:24, b:34};
+              var xMin=-2.4, xMax=4.4, yMin=-1.8, yMax=10.5;
               function tx(x){ return pad.l + (x-xMin)/(xMax-xMin)*(W-pad.l-pad.r); }
               function ty(y){ return pad.t + (1-(y-yMin)/(yMax-yMin))*(H-pad.t-pad.b); }
-              function f(x){ return x*x*x - 3*x; }
-              function g(x){ return x; }
+              function f(x){ return x*x; }
+              function g(x){ return 2*x + 3; }
 
-              // Fläche [-2,0]: f >= g, grün
-              ctx.beginPath();
-              ctx.moveTo(tx(-2), ty(g(-2)));
-              for(var x=-2; x<=0; x+=0.01) ctx.lineTo(tx(x), ty(f(x)));
-              for(var x=0; x>=-2; x-=0.01) ctx.lineTo(tx(x), ty(g(x)));
-              ctx.closePath();
-              ctx.fillStyle='rgba(26,122,60,0.18)'; ctx.fill();
+              // Gitter (dezent)
+              ctx.strokeStyle = gridCol; ctx.lineWidth = 1;
+              for(var gx=Math.ceil(xMin); gx<=Math.floor(xMax); gx++){
+                ctx.beginPath(); ctx.moveTo(tx(gx), pad.t); ctx.lineTo(tx(gx), H-pad.b); ctx.stroke();
+              }
+              for(var gy=Math.ceil(yMin); gy<=Math.floor(yMax); gy++){
+                ctx.beginPath(); ctx.moveTo(pad.l, ty(gy)); ctx.lineTo(W-pad.r, ty(gy)); ctx.stroke();
+              }
 
-              // Fläche [0,2]: g >= f, rot
+              // Eingeschlossene Fläche [-1,3] zwischen g (oben) und f (unten)
               ctx.beginPath();
-              ctx.moveTo(tx(0), ty(f(0)));
-              for(var x=0; x<=2; x+=0.01) ctx.lineTo(tx(x), ty(g(x)));
-              for(var x=2; x>=0; x-=0.01) ctx.lineTo(tx(x), ty(f(x)));
+              ctx.moveTo(tx(-1), ty(g(-1)));
+              for(var x=-1; x<=3; x+=0.01) ctx.lineTo(tx(x), ty(g(x)));
+              for(var x=3; x>=-1; x-=0.01) ctx.lineTo(tx(x), ty(f(x)));
               ctx.closePath();
-              ctx.fillStyle='rgba(185,28,28,0.15)'; ctx.fill();
+              ctx.fillStyle = 'rgba(91,110,46,0.22)'; ctx.fill();
+              ctx.strokeStyle = 'rgba(91,110,46,0.45)'; ctx.lineWidth = 1; ctx.stroke();
 
               // Achsen
-              ctx.strokeStyle=axisCol; ctx.lineWidth=1.3;
-              ctx.beginPath(); ctx.moveTo(pad.l-4,ty(0)); ctx.lineTo(W-pad.r+8,ty(0)); ctx.stroke();
-              ctx.beginPath(); ctx.moveTo(tx(0),H-pad.b+4); ctx.lineTo(tx(0),pad.t-4); ctx.stroke();
+              ctx.strokeStyle=axisCol; ctx.lineWidth=1.4;
+              ctx.beginPath(); ctx.moveTo(pad.l-6, ty(0)); ctx.lineTo(W-pad.r+12, ty(0)); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(tx(0), H-pad.b+6); ctx.lineTo(tx(0), pad.t-12); ctx.stroke();
               // Pfeile
               ctx.fillStyle=axisCol;
-              ctx.beginPath(); ctx.moveTo(W-pad.r+8,ty(0)); ctx.lineTo(W-pad.r+1,ty(0)-4); ctx.lineTo(W-pad.r+1,ty(0)+4); ctx.fill();
-              ctx.beginPath(); ctx.moveTo(tx(0),pad.t-4); ctx.lineTo(tx(0)-4,pad.t+3); ctx.lineTo(tx(0)+4,pad.t+3); ctx.fill();
-              ctx.font=font; ctx.fillStyle=textCol;
-              ctx.fillText('x', W-pad.r+10, ty(0)+4);
-              ctx.fillText('y', tx(0)+5, pad.t+2);
+              ctx.beginPath(); ctx.moveTo(W-pad.r+12, ty(0)); ctx.lineTo(W-pad.r+3, ty(0)-5); ctx.lineTo(W-pad.r+3, ty(0)+5); ctx.closePath(); ctx.fill();
+              ctx.beginPath(); ctx.moveTo(tx(0), pad.t-12); ctx.lineTo(tx(0)-5, pad.t-3); ctx.lineTo(tx(0)+5, pad.t-3); ctx.closePath(); ctx.fill();
 
-              // Skalenstriche
-              [-2,-1,1,2].forEach(function(n){
-                ctx.strokeStyle=axisCol; ctx.lineWidth=0.8;
-                ctx.beginPath(); ctx.moveTo(tx(n),ty(0)-4); ctx.lineTo(tx(n),ty(0)+4); ctx.stroke();
-                ctx.beginPath(); ctx.moveTo(tx(0)-4,ty(n)); ctx.lineTo(tx(0)+4,ty(n)); ctx.stroke();
-                ctx.font=font; ctx.fillStyle=textCol; ctx.textAlign='center';
-                ctx.fillText(n, tx(n), ty(0)+15);
-                ctx.textAlign='right';
-                ctx.fillText(n, tx(0)-6, ty(n)+4);
-              });
-              ctx.textAlign='left';
+              // Tick-Marks und Zahlen
+              ctx.font='12px Inter,system-ui,-apple-system,sans-serif';
+              ctx.fillStyle=textCol; ctx.textAlign='center'; ctx.textBaseline='top';
+              for(var nx=Math.ceil(xMin); nx<=Math.floor(xMax); nx++){
+                if(nx===0) continue;
+                ctx.strokeStyle=axisCol; ctx.lineWidth=1;
+                ctx.beginPath(); ctx.moveTo(tx(nx), ty(0)-3); ctx.lineTo(tx(nx), ty(0)+3); ctx.stroke();
+                ctx.fillText(nx, tx(nx), ty(0)+6);
+              }
+              ctx.textAlign='right'; ctx.textBaseline='middle';
+              for(var ny=Math.ceil(yMin); ny<=Math.floor(yMax); ny++){
+                if(ny===0) continue;
+                ctx.beginPath(); ctx.moveTo(tx(0)-3, ty(ny)); ctx.lineTo(tx(0)+3, ty(ny)); ctx.stroke();
+                ctx.fillText(ny, tx(0)-7, ty(ny));
+              }
+              // Ursprung
+              ctx.textAlign='right'; ctx.textBaseline='top';
+              ctx.fillText('O', tx(0)-7, ty(0)+5);
 
-              // Graph f
-              ctx.strokeStyle='#5b6e2e'; ctx.lineWidth=2.2;
+              // Achsenbeschriftungen (≥13px bold)
+              ctx.font='bold 13px Inter,system-ui,sans-serif';
+              ctx.fillStyle=textCol;
+              ctx.textAlign='left'; ctx.textBaseline='middle';
+              ctx.fillText('x', W-pad.r+16, ty(0));
+              ctx.textAlign='center'; ctx.textBaseline='bottom';
+              ctx.fillText('y', tx(0), pad.t-15);
+
+              // Graph f(x) = x²
+              ctx.strokeStyle='#5b6e2e'; ctx.lineWidth=2.4;
               ctx.beginPath();
+              var first=true;
               for(var x=xMin; x<=xMax; x+=0.01){
-                if(x===xMin) ctx.moveTo(tx(x),ty(f(x))); else ctx.lineTo(tx(x),ty(f(x)));
+                var y = f(x);
+                if(y < yMin-0.5 || y > yMax+0.5) { first=true; continue; }
+                if(first){ ctx.moveTo(tx(x), ty(y)); first=false; } else ctx.lineTo(tx(x), ty(y));
               }
               ctx.stroke();
 
-              // Graph g
-              ctx.strokeStyle='#b91c1c'; ctx.lineWidth=2;
-              ctx.beginPath(); ctx.moveTo(tx(xMin),ty(g(xMin))); ctx.lineTo(tx(xMax),ty(g(xMax))); ctx.stroke();
+              // Graph g(x) = 2x+3
+              ctx.strokeStyle='#c75c3a'; ctx.lineWidth=2.2;
+              ctx.beginPath();
+              ctx.moveTo(tx(xMin), ty(g(xMin)));
+              ctx.lineTo(tx(xMax), ty(g(xMax)));
+              ctx.stroke();
 
-              // Schnittpunkte
-              [[-2,g(-2)],[0,0],[2,g(2)]].forEach(function(p){
-                ctx.beginPath(); ctx.arc(tx(p[0]),ty(p[1]),4,0,2*Math.PI);
-                ctx.fillStyle='#555'; ctx.fill();
+              // Schnittpunkte hervorheben
+              [[-1,1],[3,9]].forEach(function(p){
+                ctx.beginPath(); ctx.arc(tx(p[0]), ty(p[1]), 5, 0, 2*Math.PI);
+                ctx.fillStyle='#333'; ctx.fill();
+                ctx.strokeStyle='#fff'; ctx.lineWidth=1.6; ctx.stroke();
               });
 
-              // Labels
-              ctx.font='bold 12px system-ui,-apple-system,sans-serif';
-              ctx.fillStyle='#5b6e2e';
-              ctx.fillText('f(x) = x³ − 3x', tx(1.1), ty(3.2));
-              ctx.fillStyle='#b91c1c';
-              ctx.fillText('g(x) = x', tx(-2.5), ty(-2));
+              // Schnittpunkt-Beschriftung
+              ctx.font='bold 12px Inter,system-ui,sans-serif';
+              ctx.fillStyle='#1f2937';
+              ctx.textAlign='right'; ctx.textBaseline='middle';
+              ctx.fillText('S₁(−1 | 1)', tx(-1)-9, ty(1)-12);
+              ctx.textAlign='left'; ctx.textBaseline='middle';
+              ctx.fillText('S₂(3 | 9)', tx(3)+9, ty(9)+10);
 
-              // Flächenlabels
-              ctx.font=font;
-              ctx.fillStyle='#5b6e2e';
-              ctx.textAlign='center';
-              ctx.fillText('A₁ = 4 FE', tx(-1), ty(-0.8));
-              ctx.fillStyle='#b91c1c';
-              ctx.fillText('A₂ = 4 FE', tx(1), ty(1.2));
-              ctx.textAlign='left';
+              // Funktionslabels
+              ctx.font='bold 14px Inter,system-ui,sans-serif';
+              ctx.fillStyle='#5b6e2e'; ctx.textAlign='left'; ctx.textBaseline='middle';
+              ctx.fillText('f(x) = x²', tx(-2.0), ty(8.4));
+              ctx.fillStyle='#c75c3a';
+              ctx.fillText('g(x) = 2x + 3', tx(-2.0), ty(7.0));
+
+              // Flächenlabel
+              ctx.font='bold 13px Inter,system-ui,sans-serif';
+              ctx.fillStyle='#3d4a1f';
+              ctx.textAlign='center'; ctx.textBaseline='middle';
+              ctx.fillText('A = ³²⁄₃ FE', tx(1), ty(2.6));
+
+              // Hilfslinien zu den Schnittstellen (gestrichelt)
+              ctx.strokeStyle='rgba(120,120,120,0.55)'; ctx.lineWidth=1;
+              ctx.setLineDash([3,3]);
+              ctx.beginPath(); ctx.moveTo(tx(-1), ty(0)); ctx.lineTo(tx(-1), ty(1)); ctx.stroke();
+              ctx.beginPath(); ctx.moveTo(tx(3), ty(0)); ctx.lineTo(tx(3), ty(9)); ctx.stroke();
+              ctx.setLineDash([]);
             })();
           });
           </script>
-          <div class="ggb-label">f(x) = x³ − 3x und g(x) = x auf [−2, 2], Schnittpunkte bei x = −2, 0, 2</div>
+          <div class="ggb-label" style="text-align:center;margin-top:6px">\(f(x) = x^2\) und \(g(x) = 2x+3\); eingeschlossene Fläche zwischen den Schnittpunkten \(S_1(-1\,|\,1)\) und \(S_2(3\,|\,9)\).</div>
           <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
           <div class="bsp-a">
-            <strong>① Schnittpunkte:</strong> \(x^3 - 3x = x \Rightarrow x^3 - 4x = 0 \Rightarrow x(x^2-4) = 0\)<br>
-            \(\Rightarrow x = -2,\; x = 0,\; x = 2\)<br><br>
-            <strong>② Lage prüfen:</strong> Bei \(x = -1\): \(f(-1) = 2,\; g(-1) = -1\) → auf \([-2,0]\) gilt \(f \geq g\)<br>
-            Bei \(x = 1\): \(f(1) = -2,\; g(1) = 1\) → auf \([0,2]\) gilt \(g \geq f\)<br><br>
-            <strong>③ Intervall aufteilen und integrieren:</strong><br>
-            Stammfunktion von \(f-g = x^3-4x\): \(\quad H(x) = \dfrac{x^4}{4} - 2x^2\)<br><br>
-            \[A_1 = \int_{-2}^0 (f-g)\,dx = \Big[H(x)\Big]_{-2}^0 = 0 - (4-8) = 4 \text{ FE}\]
-            \[A_2 = \int_0^2 (g-f)\,dx = -\Big[H(x)\Big]_0^2 = -(4-8-0) = 4 \text{ FE}\]
-            \[A = A_1 + A_2 = \mathbf{8 \text{ FE}}\]
+            <strong>① Schnittstellen bestimmen.</strong> Setze \(f(x) = g(x)\):<br>
+            \(x^2 = 2x + 3 \;\Longleftrightarrow\; x^2 - 2x - 3 = 0 \;\Longleftrightarrow\; (x-3)(x+1) = 0.\)<br>
+            \(\Rightarrow\; x_1 = -1,\; x_2 = 3.\)<br><br>
+            <strong>② Lage klären.</strong> Probe bei \(x = 0\): \(f(0) = 0,\; g(0) = 3\). Der Graph von \(g\) liegt im Intervall \([-1;\,3]\) oberhalb des Graphen von \(f\).<br><br>
+            <strong>③ Differenzfunktion bilden.</strong>
+            \[d(x) = g(x) - f(x) = 2x + 3 - x^2 = -x^2 + 2x + 3.\]
+            <strong>④ Integrieren (Hauptsatz).</strong> Stammfunktion: \(D(x) = -\tfrac{1}{3}x^3 + x^2 + 3x.\)
+            \[A = \int_{-1}^{3} d(x)\,dx = D(3) - D(-1).\]
+            <strong>⑤ Auswerten.</strong>
+            \(D(3) = -9 + 9 + 9 = 9,\;\) \(D(-1) = \tfrac{1}{3} + 1 - 3 = -\tfrac{5}{3}.\)
+            \[A = 9 - \left(-\tfrac{5}{3}\right) = \tfrac{32}{3} \approx 10{,}67 \text{ FE}.\]
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section-label">Aufgaben · Flächen zwischen Kurven</div>
+    <!-- Aufgaben -->
+    <div class="section-label">Aufgaben · Flächen zwischen Graphen</div>
     <div class="two-col">
       <div class="tg">
 
-        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.1</span><span class="td de">★</span></div><div class="tq">\(f(x) = x + 2\) und \(g(x) = x^2\).<br><br>
-          a) <strong>Bestimme</strong> die Schnittpunkte der beiden Graphen.<br>
-          b) <strong>Berechne</strong> den Flächeninhalt des eingeschlossenen Bereichs.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(x+2 = x^2 \Rightarrow x^2-x-2=0 \Rightarrow x=-1\) und \(x=2\).<br>Auf \([-1,2]\): \(f \geq g\), da \(f(0)=2 > g(0)=0\).<br><br>b) \(\displaystyle\int_{-1}^2 (x+2-x^2)\,dx = \left[\frac{x^2}{2}+2x-\frac{x^3}{3}\right]_{-1}^2\)<br>\(= \left(2+4-\frac{8}{3}\right)-\left(\frac{1}{2}-2+\frac{1}{3}\right) = \frac{10}{3}+\frac{7}{6} = \frac{9}{2} = 4{,}5\) FE</div></div>
+        <!-- A1 -->
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.1</span><span class="td de">★</span><span style="font-size:11px;color:#888;font-style:italic;margin-left:6px">Standardrechnung</span></div><div class="tq">Gegeben sind \(f(x) = x^2\) und \(g(x) = 4\). <strong>Berechne</strong> den Inhalt der Fläche, die von den beiden Graphen eingeschlossen wird.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">
+          <strong>① Schnittstellen:</strong> \(x^2 = 4 \Rightarrow x = \pm 2.\)<br>
+          <strong>② Lage:</strong> \(g(0) = 4 > f(0) = 0\), also liegt \(g\) oben. \(d(x) = 4 - x^2.\)<br>
+          <strong>③ Integrieren:</strong>
+          \[A = \int_{-2}^{2}\!(4 - x^2)\,dx = \left[4x - \tfrac{1}{3}x^3\right]_{-2}^{2} = \left(8 - \tfrac{8}{3}\right) - \left(-8 + \tfrac{8}{3}\right) = 16 - \tfrac{16}{3} = \tfrac{32}{3} \approx 10{,}67\;\text{FE}.\]
+          <div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">K4: zwischen graphischer Lage und Rechnung wechseln · K5: Hauptsatz korrekt anwenden</div>
+        </div></div>
 
-        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.2</span><span class="td de">★</span></div><div class="tq">\(f(x) = -x^2 + 4\) und \(g(x) = x + 2\).<br><br>
-          a) <strong>Bestimme</strong> die Schnittpunkte der beiden Graphen.<br>
-          b) <strong>Berechne</strong> den Flächeninhalt des eingeschlossenen Bereichs.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-x^2+4 = x+2 \Rightarrow x^2+x-2=0 \Rightarrow (x+2)(x-1)=0\)<br>\(\Rightarrow x=-2\) und \(x=1\). Auf \([-2,1]\): \(f(0)=4 > g(0)=2\), also \(f \geq g\).<br><br>b) \(\displaystyle\int_{-2}^1\bigl((-x^2+4)-(x+2)\bigr)\,dx = \int_{-2}^1(-x^2-x+2)\,dx\)<br>\(= \left[-\frac{x^3}{3}-\frac{x^2}{2}+2x\right]_{-2}^1 = \left(-\frac{1}{3}-\frac{1}{2}+2\right)-\left(\frac{8}{3}-2-4\right) = \frac{7}{6}+\frac{10}{3} = \frac{9}{2} = 4{,}5\) FE</div></div>
+        <!-- A2 -->
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.2</span><span class="td de">★</span><span style="font-size:11px;color:#888;font-style:italic;margin-left:6px">Schnittstellen selbst bestimmen</span></div><div class="tq">Gegeben sind \(f(x) = -x^2 + 4\) und \(g(x) = x + 2\). <strong>Bestimme</strong> die Schnittstellen rechnerisch und <strong>berechne</strong> den eingeschlossenen Flächeninhalt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">
+          <strong>① Schnittstellen:</strong> \(-x^2 + 4 = x + 2 \Rightarrow x^2 + x - 2 = 0 \Rightarrow (x+2)(x-1) = 0\)<br>
+          \(\Rightarrow x_1 = -2,\; x_2 = 1.\)<br>
+          <strong>② Lage:</strong> \(f(0) = 4 > g(0) = 2\), also liegt \(f\) oben.<br>
+          <strong>③ Differenz und Stammfunktion:</strong> \(d(x) = -x^2 - x + 2;\;\) \(D(x) = -\tfrac{1}{3}x^3 - \tfrac{1}{2}x^2 + 2x.\)<br>
+          <strong>④ Integrieren:</strong> \(D(1) = -\tfrac{1}{3} - \tfrac{1}{2} + 2 = \tfrac{7}{6},\;\) \(D(-2) = \tfrac{8}{3} - 2 - 4 = -\tfrac{10}{3}.\)
+          \[A = D(1) - D(-2) = \tfrac{7}{6} + \tfrac{20}{6} = \tfrac{27}{6} = \tfrac{9}{2} = 4{,}5\;\text{FE}.\]
+          <div class="komp-wrap"><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">K2: Schnittstellen selbst bestimmen · K5: gesamten Algorithmus durchziehen</div>
+        </div></div>
 
-        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.3</span><span class="td dm">★★</span></div><div class="tq"><strong>Solaranlage.</strong> Der Ertrag einer Solaranlage wird durch \(f(t) = -t^2 + 6t\) modelliert (MWh/h), der Eigenverbrauch durch \(g(t) = t\) (MWh/h), jeweils für \(0 \leq t \leq 6\).<br><br>
-          a) <strong>Bestimme</strong> die Zeitpunkte, zu denen Ertrag und Verbrauch gleich groß sind.<br>
-          b) <strong>Berechne</strong> die insgesamt ins Netz eingespeiste Energiemenge (Ertrag minus Verbrauch).<br>
-          c) <strong>Interpretiere</strong> das Ergebnis im Sachkontext.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-t^2+6t = t \Rightarrow -t^2+5t=0 \Rightarrow t(5-t)=0 \Rightarrow t=0\) und \(t=5\).<br><br>b) Auf \([0,5]\): \(f \geq g\).<br>\(\displaystyle\int_0^5(-t^2+5t)\,dt = \left[-\frac{t^3}{3}+\frac{5t^2}{2}\right]_0^5 = -\frac{125}{3}+\frac{125}{2} = \frac{125}{6} \approx 20{,}8\) MWh<br><br>c) In den ersten 5 Stunden wird insgesamt ca. 20,8 MWh mehr Energie erzeugt als verbraucht – diese Menge wird ins Netz eingespeist.</div></div>
+        <!-- A3 -->
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.3</span><span class="td dm">★★</span><span style="font-size:11px;color:#888;font-style:italic;margin-left:6px">Mehrere Schnittstellen</span></div><div class="tq">Gegeben sind \(f(x) = x^3 - 2x\) und \(g(x) = -x\).<br><br>
+          a) <strong>Bestimme</strong> alle Schnittstellen der beiden Graphen.<br>
+          b) <strong>Begründe</strong>, warum die Berechnung des Gesamtflächeninhalts hier in zwei Teilflächen aufgeteilt werden muss.<br>
+          c) <strong>Berechne</strong> den Inhalt der gesamten von den beiden Graphen eingeschlossenen Fläche.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">
+          <strong>a)</strong> \(x^3 - 2x = -x \Rightarrow x^3 - x = 0 \Rightarrow x(x-1)(x+1) = 0.\)<br>
+          Schnittstellen: \(x = -1,\; x = 0,\; x = 1.\)<br><br>
+          <strong>b)</strong> Im Intervall \([-1;\,0]\) liegt \(f\) oberhalb von \(g\) (Probe \(x = -0{,}5\): \(d(-0{,}5) = +0{,}375\)).<br>
+          Im Intervall \([0;\,1]\) liegt \(g\) oberhalb von \(f\) (Probe \(x = 0{,}5\): \(d(0{,}5) = -0{,}375\)).<br>
+          Da der „obere" Graph wechselt, muss in zwei Teilflächen aufgeteilt werden.<br><br>
+          <strong>c)</strong> \(d(x) = f(x) - g(x) = x^3 - x;\;\) Stammfunktion: \(D(x) = \tfrac{1}{4}x^4 - \tfrac{1}{2}x^2.\)
+          \[A_1 = \left|\int_{-1}^{0}(x^3 - x)\,dx\right| = |D(0) - D(-1)| = \left|0 - \left(-\tfrac{1}{4}\right)\right| = \tfrac{1}{4}.\]
+          \[A_2 = \left|\int_{0}^{1}(x^3 - x)\,dx\right| = |D(1) - D(0)| = \left|-\tfrac{1}{4}\right| = \tfrac{1}{4}.\]
+          \[A = A_1 + A_2 = \tfrac{1}{2}\;\text{FE}.\]
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">K1: Aufteilung in Teilflächen begründen · K4: Lage zueinander erkennen · K5: korrektes Vorzeichen-Handling</div>
+        </div></div>
 
       </div>
       <div class="tg">
 
-        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.4</span><span class="td dm">★★</span></div><div class="tq">\(f(x) = x^3 - x\) und \(g(x) = -x\) auf \([-1,\, 1]\).<br><br>
-          a) <strong>Bestimme</strong> die Schnittpunkte der beiden Graphen auf \([-1, 1]\).<br>
-          b) <strong>Berechne</strong> den Flächeninhalt zwischen \(f\) und \(g\) auf \([-1, 1]\).<br>
-          c) <strong>Zeige</strong>, dass \(\displaystyle\int_{-1}^1 \bigl(f(x)-g(x)\bigr)\,dx = 0\) gilt, und <strong>erkläre</strong> geometrisch warum.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(x^3-x = -x \Rightarrow x^3 = 0 \Rightarrow x = 0\). Dazu kommen die Randpunkte \(x=-1\) und \(x=1\).<br>Auf \([-1,0]\): \(f(-0{,}5)-g(-0{,}5) = (-0{,}125+0{,}5)-0{,}5 = -0{,}125 < 0\) → \(g \geq f\).<br>Auf \([0,1]\): \(f(0{,}5)-g(0{,}5) = (0{,}125-0{,}5)+0{,}5 = 0{,}125 > 0\) → \(f \geq g\).<br><br>b) Differenz: \(f-g = x^3-x-(-x) = x^3\). Stammfunktion: \(H(x) = \dfrac{x^4}{4}\).<br>\(A = \left|\Big[H\Big]_{-1}^0\right| + \left|\Big[H\Big]_0^1\right| = \dfrac{1}{4} + \dfrac{1}{4} = \dfrac{1}{2}\) FE<br><br>c) \(f-g = x^3\) ist eine ungerade Funktion (\((−x)^3 = −x^3\)), daher gilt \(\displaystyle\int_{-1}^1 x^3\,dx = 0\). Die positive Fläche auf \([0,1]\) und die negative auf \([-1,0]\) heben sich in der Bilanz auf. Der Flächeninhalt beträgt dennoch \(\frac{1}{2}\).</div></div>
+        <!-- A4 Sachkontext -->
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.4</span><span class="td dm">★★</span><span style="font-size:11px;color:#888;font-style:italic;margin-left:6px">Sachkontext: Lager</span></div><div class="tq"><strong>Lagerbilanz.</strong> In einer Lagerhalle wird über einen Zeitraum von \(t = 0\) bis \(t = 6\) Stunden Ware produziert und gleichzeitig verkauft. Die Produktionsrate ist \(p(t) = -t^2 + 6t\) (in ME/h), die Verkaufsrate \(v(t) = 2t\) (in ME/h).<br><br>
+          a) <strong>Skizziere</strong> die Graphen von \(p\) und \(v\) im Intervall \([0;\,6]\).<br>
+          b) <strong>Bestimme</strong> die Schnittstellen rechnerisch und <strong>interpretiere</strong> ihre Bedeutung im Sachzusammenhang.<br>
+          c) <strong>Berechne</strong>, wie viele Mengeneinheiten in der Phase aufgebaut werden, in der die Produktion den Verkauf übersteigt.<br>
+          d) <strong>Berechne</strong> den Bestandsabbau in der zweiten Phase.<br>
+          e) <strong>Vergleiche</strong> beide Werte. Was bedeutet das für den Lagerbestand am Ende des Zeitraums?</div></div><div class="tk-toggle">⌄</div></div><div class="ta">
+          <strong>a)</strong> \(p\) ist eine nach unten geöffnete Parabel mit Nullstellen \(0\) und \(6\), Maximum bei \(t = 3\) (Wert \(9\)). \(v\) ist eine Ursprungsgerade mit Steigung \(2\).<br><br>
+          <strong>b)</strong> \(p(t) = v(t):\; -t^2 + 6t = 2t \Rightarrow t^2 - 4t = 0 \Rightarrow t_1 = 0,\; t_2 = 4.\)<br>
+          <em>Bedeutung:</em> Bei \(t = 4\,\text{h}\) sind Produktions- und Verkaufsrate gleich groß; ab diesem Zeitpunkt übersteigt der Verkauf die Produktion.<br><br>
+          <strong>c) Aufbauphase \([0;\,4]\), \(p > v\):</strong>
+          \[A_1 = \int_0^4 (p - v)\,dt = \int_0^4 (-t^2 + 4t)\,dt = \left[-\tfrac{1}{3}t^3 + 2t^2\right]_0^4 = -\tfrac{64}{3} + 32 = \tfrac{32}{3} \approx 10{,}67\;\text{ME}.\]
+          <strong>d) Abbauphase \([4;\,6]\), \(v > p\):</strong>
+          \[A_2 = \int_4^6 (v - p)\,dt = \int_4^6 (t^2 - 4t)\,dt = \left[\tfrac{1}{3}t^3 - 2t^2\right]_4^6 = (72 - 72) - \left(\tfrac{64}{3} - 32\right) = \tfrac{32}{3} \approx 10{,}67\;\text{ME}.\]
+          <strong>e)</strong> \(A_1 = A_2.\) Der gesamte Bestandsaufbau wird durch den späteren Verkauf vollständig wieder aufgezehrt — der Lagerbestand am Ende von \(t = 6\) entspricht dem Anfangsbestand. War das Lager zu Beginn leer, ist es am Ende wieder leer.
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span><span class="kb kb-k6">K6</span></div>
+          <div class="komp-desc">K3: Realsituation modellieren · K4: Graph und Sachkontext verbinden · K6: Ergebnis interpretieren</div>
+        </div></div>
 
-        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.5</span><span class="td dm">★★</span></div><div class="tq"><strong>Gewässerbelastung.</strong> In einem See wird die stündliche Schadstoffzufuhr durch Industrieabwässer durch \(f(t) = t^2 - 4t + 5\) modelliert und der natürliche Abbau durch Bakterien durch \(g(t) = t + 1\), wobei \(t\) die Zeit in Stunden und \(f(t)\) bzw. \(g(t)\) die Rate in mg/l pro Stunde angeben. Betrachtet wird das Intervall \(0 \leq t \leq 4\).<br><br>
-          a) <strong>Bestimme</strong> die Zeitpunkte, zu denen Zufuhr und Abbau gleich groß sind.<br>
-          b) <strong>Gib an</strong>, in welchen Zeiträumen die Schadstoffbelastung im See zunimmt und in welchen sie abnimmt, und <strong>begründe</strong> deine Antwort.<br>
-          c) <strong>Berechne</strong> den Flächeninhalt zwischen den Graphen von \(f\) und \(g\) auf \([0, 4]\) und <strong>interpretiere</strong> das Ergebnis im Sachkontext.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(t^2-4t+5 = t+1 \Rightarrow t^2-5t+4=0 \Rightarrow (t-1)(t-4)=0\)<br>\(\Rightarrow t = 1\) und \(t = 4\).<br><br>b) Auf \([0,1]\): \(f(0{,}5)=3{,}25 > g(0{,}5)=1{,}5\) → Zufuhr überwiegt → Belastung <strong>nimmt zu</strong>.<br>Auf \([1,4]\): \(f(2)=1 < g(2)=3\) → Abbau überwiegt → Belastung <strong>nimmt ab</strong>.<br><br>c) Stammfunktion von \(f-g = t^2-5t+4\): \(\quad H(t) = \dfrac{t^3}{3} - \dfrac{5t^2}{2} + 4t\)<br><br>\(A_1 = \displaystyle\int_0^1(f-g)\,dt = \Big[H(t)\Big]_0^1 = \dfrac{1}{3}-\dfrac{5}{2}+4 = \dfrac{11}{6}\) mg/l<br><br>\(A_2 = \displaystyle\int_1^4(g-f)\,dt = -\Big[H(t)\Big]_1^4 = -\!\left(0 - \dfrac{11}{6}\right) = \dfrac{9}{2}\) mg/l<br><br>\(A = \dfrac{11}{6} + \dfrac{9}{2} = \dfrac{19}{3} \approx 6{,}33\) mg·h/l<br><br><em>In der ersten Stunde steigt die Schadstoffkonzentration um \(\frac{11}{6}\) mg·h/l. Von Stunde 1 bis 4 sinkt sie um \(\frac{9}{2}\) mg·h/l – der Abbau überwiegt insgesamt. (Die Einheit mg·h/l ergibt sich daraus, dass f und g Raten in mg/(l·h) sind und über die Zeit integriert werden.)</em></div></div>
-
-        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.6</span><span class="td dh">★★★</span></div><div class="tq"><strong>Zwei Parabeln.</strong> \(f(x) = -x^2 + 2x + 3\) und \(g(x) = x^2 - 4x + 3\).<br><br>
-          a) <strong>Bestimme</strong> alle Schnittpunkte der beiden Graphen.<br>
-          b) <strong>Skizziere</strong> die Situation und <strong>gib an</strong>, welcher Graph auf welchem Teilintervall oben liegt.<br>
-          c) <strong>Berechne</strong> den gesamten eingeschlossenen Flächeninhalt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) \(-x^2+2x+3 = x^2-4x+3 \Rightarrow 0=2x^2-6x \Rightarrow x=0\) und \(x=3\).<br><br>b) Auf \([0,3]\): \(f(1)=4 > g(1)=0\), also \(f \geq g\).<br><br>
-          <canvas id="fk16-canvas" style="width:100%;border-radius:8px"></canvas>
-          <script>
-          window.addEventListener('load',function(){(function(){
-            var c=document.getElementById('fk16-canvas'); if(!c)return;
-            var W=c.offsetWidth||400, H=Math.round(W*0.45), dpr=window.devicePixelRatio||1;
-            c.width=W*dpr; c.height=H*dpr; c.style.width=W+'px'; c.style.height=H+'px';
-            var ctx=c.getContext('2d'); ctx.scale(dpr,dpr);
-            var isDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
-            var bg=window.getComputedStyle(document.body).backgroundColor;
-            if(!bg||bg==='rgba(0,0,0,0)')bg=isDark?'#1a1a1a':'#f9f8f6';
-            var ax=isDark?'#aaa':'#555', tx=isDark?'#ccc':'#333';
-            c.style.background=bg; ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-            var pad={l:36,r:16,t:16,b:24};
-            var xMin=-0.5,xMax=4,yMin=-4,yMax=6;
-            var toX=function(x){return pad.l+(x-xMin)/(xMax-xMin)*(W-pad.l-pad.r);};
-            var toY=function(y){return pad.t+(1-(y-yMin)/(yMax-yMin))*(H-pad.t-pad.b);};
-            var f=function(x){return -x*x+2*x+3;};
-            var g=function(x){return x*x-4*x+3;};
-            // Fläche zwischen f und g auf [0,3]
-            ctx.beginPath();
-            ctx.moveTo(toX(0),toY(f(0)));
-            for(var x=0;x<=3;x+=0.02) ctx.lineTo(toX(x),toY(f(x)));
-            for(var x=3;x>=0;x-=0.02) ctx.lineTo(toX(x),toY(g(x)));
-            ctx.closePath();
-            ctx.fillStyle='rgba(26,111,191,0.15)'; ctx.fill();
-            // Achsen
-            ctx.strokeStyle=ax; ctx.lineWidth=1.2;
-            ctx.beginPath(); ctx.moveTo(pad.l-4,toY(0)); ctx.lineTo(W-pad.r+8,toY(0)); ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(toX(0),H-pad.b+4); ctx.lineTo(toX(0),pad.t-4); ctx.stroke();
-            ctx.fillStyle=ax;
-            ctx.beginPath(); ctx.moveTo(W-pad.r+8,toY(0)); ctx.lineTo(W-pad.r+1,toY(0)-4); ctx.lineTo(W-pad.r+1,toY(0)+4); ctx.fill();
-            var font='12px Inter,system-ui,sans-serif';
-            ctx.font=font; ctx.fillStyle=tx; ctx.textAlign='center';
-            [1,2,3].forEach(function(n){
-              ctx.strokeStyle=ax; ctx.lineWidth=0.7;
-              ctx.beginPath(); ctx.moveTo(toX(n),toY(0)-3); ctx.lineTo(toX(n),toY(0)+3); ctx.stroke();
-              ctx.fillStyle=tx; ctx.fillText(n,toX(n),toY(0)+14);
-            });
-            ctx.textAlign='left'; ctx.fillText('x',W-pad.r+10,toY(0)+4);
-            // Schnittpunkte markieren
-            [[0,f(0)],[3,f(3)]].forEach(function(p){
-              ctx.beginPath(); ctx.arc(toX(p[0]),toY(p[1]),4,0,2*Math.PI);
-              ctx.fillStyle='#555'; ctx.fill();
-            });
-            // Graph f
-            ctx.strokeStyle='#5b6e2e'; ctx.lineWidth=2.2;
-            ctx.beginPath();
-            for(var x=xMin;x<=xMax;x+=0.02){
-              if(x===xMin) ctx.moveTo(toX(x),toY(f(x))); else ctx.lineTo(toX(x),toY(f(x)));
-            }
-            ctx.stroke();
-            // Graph g
-            ctx.strokeStyle='#b91c1c'; ctx.lineWidth=2;
-            ctx.beginPath();
-            for(var x=xMin;x<=xMax;x+=0.02){
-              if(x===xMin) ctx.moveTo(toX(x),toY(g(x))); else ctx.lineTo(toX(x),toY(g(x)));
-            }
-            ctx.stroke();
-            // Labels
-            ctx.font='bold 13px Inter,system-ui,sans-serif';
-            ctx.fillStyle='#5b6e2e'; ctx.textAlign='left';
-            ctx.fillText('f(x) = −x²+2x+3',toX(0.1),toY(4.5));
-            ctx.fillStyle='#b91c1c';
-            ctx.fillText('g(x) = x²−4x+3',toX(2.2),toY(-2.5));
-            ctx.font='12px Inter,system-ui,sans-serif'; ctx.fillStyle=tx; ctx.textAlign='center';
-            ctx.fillText('A = 9 FE',toX(1.5),toY(2));
-          })();});
-          </script><br> \(\displaystyle\int_0^3\bigl((-x^2+2x+3)-(x^2-4x+3)\bigr)\,dx = \int_0^3(-2x^2+6x)\,dx\)<br>\(= \left[-\frac{2x^3}{3}+3x^2\right]_0^3 = -18+27 = 9\) FE</div></div>
+        <!-- A5 Parameteraufgabe -->
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.5</span><span class="td dh">★★★</span><span style="font-size:11px;color:#888;font-style:italic;margin-left:6px">Parameteraufgabe</span></div><div class="tq">Gegeben sind \(f(x) = x^2\) und für \(a > 0\) die Geradenschar \(g_a(x) = a \cdot x\).<br><br>
+          a) <strong>Bestimme</strong> die Schnittstellen von \(f\) und \(g_a\) in Abhängigkeit von \(a\).<br>
+          b) <strong>Berechne</strong> den Flächeninhalt \(A(a)\) der von beiden Graphen eingeschlossenen Fläche in Abhängigkeit von \(a\).<br>
+          c) <strong>Bestimme</strong> den Wert von \(a\), für den die eingeschlossene Fläche genau \(36\,\text{FE}\) beträgt.<br>
+          d) <strong>Begründe</strong>, dass \(A(a)\) für \(a > 0\) streng monoton wachsend ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">
+          <strong>a)</strong> \(x^2 = a \cdot x \Rightarrow x(x - a) = 0 \Rightarrow x_1 = 0,\; x_2 = a.\)<br><br>
+          <strong>b)</strong> Im Intervall \([0;\,a]\) liegt \(g_a\) oberhalb von \(f\) (Probe \(x = a/2\): \(a \cdot \tfrac{a}{2} = \tfrac{a^2}{2} > \tfrac{a^2}{4} = \left(\tfrac{a}{2}\right)^2\)).
+          \[A(a) = \int_0^a (a x - x^2)\,dx = \left[\tfrac{1}{2}a x^2 - \tfrac{1}{3}x^3\right]_0^a = \tfrac{1}{2}a^3 - \tfrac{1}{3}a^3 = \tfrac{a^3}{6}.\]
+          <strong>c)</strong> \(\dfrac{a^3}{6} = 36 \Rightarrow a^3 = 216 \Rightarrow a = 6.\)<br><br>
+          <strong>d)</strong> \(A'(a) = \tfrac{1}{2}a^2.\) Für \(a > 0\) gilt \(A'(a) > 0\), also ist \(A\) auf \((0;\,\infty)\) streng monoton wachsend.
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k2">K2</span><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">K1: Monotonie über Ableitung begründen · K2: Parameter bestimmen · K5: parametrisches Integral berechnen</div>
+        </div></div>
 
       </div>
     </div>
 
-    <div class="tg">
-      <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">FK1.7</span><span class="td dm">★★</span></div><div class="tq">Begründe, warum man bei der Flächenberechnung zwischen zwei Graphen stets \(|f(x) - g(x)|\) verwenden muss und nicht einfach \(f(x) - g(x)\). Erkläre an einem Beispiel, was schief geht, wenn man das Betragszeichen weglässt.</div></div><div class="tk-toggle">⌄</div></div><div class="ta"><div class="ip">Das Integral \(\int_a^b (f(x) - g(x))\,dx\) kann positiv oder negativ sein, je nachdem welche Funktion oben liegt.</div><div class="ip">Liegt auf einem Teilintervall \(g\) über \(f\), so ist \(f(x) - g(x) < 0\). Die Fläche wird dann mit negativem Vorzeichen gezählt und verringert das Gesamtergebnis.</div><div class="ip"><strong>Beispiel:</strong> \(f(x) = x^2\) und \(g(x) = x\) auf \([0;\,2]\). Ab \(x = 1\) ist \(f > g\), davor \(g > f\). Ohne Betrag: \(\int_0^2 (x^2 - x)\,dx = \frac{2}{3}\), aber die tatsächliche Fläche ist \(\int_0^1 (x - x^2)\,dx + \int_1^2 (x^2 - x)\,dx = \frac{1}{6} + \frac{5}{6} = 1\).</div><div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k6">K6</span></div><div class="komp-desc">K1: Notwendigkeit des Betrags begründen · K6: Fehlervermeidung am Beispiel erklären</div></div></div>
+    <!-- Selbstlerncheck -->
+    <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
+      <div class="card-body">
+        <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
+        <div class="ip">
+          <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
+          <ol>
+            <li><strong>Erkläre das Rezept</strong> in eigenen Worten: Welche fünf Schritte führst du durch, um die Fläche zwischen \(f\) und \(g\) zu berechnen?</li>
+            <li><strong>Warum</strong> bestimmst du <em>zuerst</em> die Schnittstellen, bevor du integrierst?</li>
+            <li><strong>Was</strong> ändert sich am Vorgehen, wenn die Differenzfunktion \(d(x) = g(x) - f(x)\) im Integrationsintervall ihr Vorzeichen wechselt?</li>
+            <li><strong>Bei FK1.4 (Lager):</strong> Wieso bedeutet \(A_1 = A_2\) im Sachzusammenhang, dass der Lagerbestand am Ende dem Anfangsbestand entspricht?</li>
+          </ol>
+          <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
+            Wenn du bei einer Frage unsicher bist, lies das <em>Rezept</em> oben noch einmal und sieh dir das Einstiegsbeispiel an.
+          </p>
+        </div>
+      </div>
     </div>
 
-  
-<div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
-  <div class="card-body">
-    <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
-    <div class="ip">
-      <p>Bevor du weitergehst — kannst du diese Fragen beantworten?</p>
-      <ol>
-        <li>Erkläre das Vorgehen: Wie berechnest du die Fläche zwischen \(f(x)\) und \(g(x)\)?</li>
-        <li>Warum musst du zuerst die Schnittstellen bestimmen, bevor du integrieren kannst?</li>
-        <li>Was passiert, wenn du vergisst, den Betrag zu nehmen? Welchen Fehler machst du dann?</li>
-      </ol>
-      <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
-        Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Fläche zwischen Funktionsgraphen“.
-      </p>
-    </div>
-  </div>
-</div>
+  </div><!-- end k11-flaechen -->
 
-</div><!-- end int-kurven -->
 
   <div class="subpanel" id="k11-pflicht">
 
