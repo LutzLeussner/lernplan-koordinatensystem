@@ -11646,6 +11646,20 @@ window.addEventListener('resize',function(){updateSimulator();});
 
 <div class="subpanel" id="k10-sto">
   <div  id="_sto-kombi-inner">
+    <div class="card" style="background:var(--kiku-bg, #f4f7ee);border-left:4px solid #8a9da7;margin-bottom:14px">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Empfohlener Lernpfad durch die Stochastik</span></div>
+      <div class="card-body">
+        <div class="ip">Diese Seite ist in vier Bereiche gegliedert. Wenn du parallel zum Unterricht lernst, empfehlen wir dir folgende Reihenfolge:</div>
+        <ol style="margin-top:8px;padding-left:24px;line-height:1.95">
+          <li><strong>Zufallsexperimente &amp; Pfadregeln</strong> — Laplace, Baumdiagramme, Pfadregeln (Bereich&nbsp;2 unten)</li>
+          <li><strong>Kombinatorik &amp; Binomialkoeffizient</strong> — du befindest dich hier</li>
+          <li><strong>Binomialverteilung</strong> — Bernoulli-Formel und ihr Histogramm (Bereich&nbsp;4)</li>
+          <li><strong>Zufallsgrößen</strong> — Erwartungswert, Varianz, Standardabweichung (Bereich&nbsp;3)</li>
+          <li><strong>Abschluss: Faires Spiel</strong> — Synthese aller Werkzeuge ganz am Ende des Tabs</li>
+        </ol>
+        <div class="ip" style="margin-top:8px;font-size:14px;color:#777">Du kannst Bereiche natürlich auch in der Reihenfolge lesen, in der sie auf der Seite stehen — dann beginnst du mit dem Binomialkoeffizienten und arbeitest dich nach unten. Die obige Reihenfolge entspricht dem Unterrichtsaufbau.</div>
+      </div>
+    </div>
     <div class="section-label">Kombinatorik &amp; Binomialkoeffizient</div>
     <div class="card">
       <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
@@ -11764,128 +11778,6 @@ window.addEventListener('resize',function(){updateSimulator();});
       </div>
     </div>
 
-    <div class="section-label">🎮 Spiel · Ist das Spiel fair?</div>
-    <div class="card">
-      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Faire-Spiel-Checker – Erwartungswert berechnen und simulieren</span></div>
-      <div class="card-body">
-        <div class="ip">Ein Spiel ist <strong>fair</strong>, wenn der Erwartungswert des Gewinns gleich 0 ist – also wenn man auf lange Sicht weder gewinnt noch verliert. Schätze zuerst, ob das Spiel fair ist, und prüfe dann deine Vermutung durch Simulation.</div>
-        <div id="spiel-app" style="margin-top:12px">
-          <div id="spiel-select" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-            <button class="spiel-btn on" onclick="spielLoad(0,this)">Würfelspiel</button>
-            <button class="spiel-btn" onclick="spielLoad(1,this)">Münzspiel</button>
-            <button class="spiel-btn" onclick="spielLoad(2,this)">Urnenspiel</button>
-          </div>
-          <style>.spiel-btn{background:#f4f3f0;border:1px solid #ddd;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;color:#555}.spiel-btn.on{background:#c75c3a;color:#fff;border-color:#c75c3a}</style>
-          <div id="spiel-desc" style="background:#f4f3f0;border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.8;margin-bottom:12px"></div>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
-            <button onclick="spielGuess('fair')" id="btn-fair" style="background:#5b6e2e;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">✓ Ich denke: fair</button>
-            <button onclick="spielGuess('unfair')" id="btn-unfair" style="background:#c75c3a;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">✗ Ich denke: nicht fair</button>
-            <button onclick="spielSim(200)" style="background:#c75c3a;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">▶ 200× simulieren</button>
-            <button onclick="spielReset()" style="background:none;border:1px solid #ccc;border-radius:8px;padding:9px 12px;font-size:14px;color:#888;cursor:pointer;font-family:inherit">↺</button>
-          </div>
-          <div id="spiel-feedback" style="min-height:20px;font-size:14px;font-weight:600;margin-bottom:10px"></div>
-          <canvas id="spiel-canvas" style="width:100%;border-radius:10px;display:none"></canvas>
-          <div id="spiel-stats" style="margin-top:8px;font-size:13px;color:#666"></div>
-        </div>
-        <script>
-        var spielDefs=[
-          {name:'Würfelspiel',
-           desc:'Du zahlst <strong>1 €</strong> Einsatz und wirfst einen fairen Würfel.<br>• Augenzahl 6: Du gewinnst <strong>5 €</strong> (Nettogewinn: +4 €)<br>• Sonst: Du verlierst deinen Einsatz (Nettogewinn: −1 €)',
-           fair:false,
-           ev:function(){return (4)*(1/6)+(-1)*(5/6);},
-           roll:function(){var r=Math.floor(Math.random()*6)+1; return r===6?4:-1;}},
-          {name:'Münzspiel',
-           desc:'Eine faire Münze wird geworfen.<br>• Wappen: Du gewinnst <strong>2 €</strong><br>• Zahl: Du verlierst <strong>2 €</strong><br>Kein Einsatz nötig.',
-           fair:true,
-           ev:function(){return 2*0.5+(-2)*0.5;},
-           roll:function(){return Math.random()<0.5?2:-2;}},
-          {name:'Urnenspiel',
-           desc:'In einer Urne sind <strong>3 rote</strong> und <strong>2 blaue</strong> Kugeln. Du ziehst eine.<br>• Rot: Du gewinnst <strong>2 €</strong><br>• Blau: Du verlierst <strong>3 €</strong><br>Kein Einsatz nötig.',
-           fair:false,
-           ev:function(){return 2*(3/5)+(-3)*(2/5);},
-           roll:function(){return Math.random()<3/5?2:-3;}}
-        ];
-        var spielIdx=0, spielResults=[], spielGuessed=null;
-        function spielLoad(i,btn){
-          spielIdx=i; spielResults=[]; spielGuessed=null;
-          document.querySelectorAll('.spiel-btn').forEach(function(b){b.classList.remove('on');});
-          if(btn) btn.classList.add('on');
-          document.getElementById('spiel-desc').innerHTML=spielDefs[i].desc;
-          document.getElementById('spiel-feedback').textContent='';
-          document.getElementById('spiel-stats').textContent='';
-          document.getElementById('spiel-canvas').style.display='none';
-        }
-        function spielGuess(g){
-          spielGuessed=g;
-          var def=spielDefs[spielIdx];
-          var actual=Math.abs(def.ev())<0.001?'fair':'unfair';
-          var ev=def.ev();
-          var msg='', col='';
-          if(g===actual){
-            msg='✓ Richtig! '; col='#5b6e2e';
-          } else {
-            msg='✗ Knapp daneben! '; col='#c75c3a';
-          }
-          msg+='Der Erwartungswert ist μ = '+(ev>=0?'+':'')+ev.toFixed(2)+'€. ';
-          msg+=actual==='fair'?'Das Spiel ist fair.':'Das Spiel ist '+( ev>0?'zu deinen Gunsten.':'zu deinen Ungunsten.');
-          var fb=document.getElementById('spiel-feedback');
-          fb.textContent=msg; fb.style.color=col;
-        }
-        function spielSim(n){
-          for(var i=0;i<n;i++) spielResults.push(spielDefs[spielIdx].roll());
-          spielDraw();
-        }
-        function spielReset(){ spielResults=[]; spielGuessed=null; document.getElementById('spiel-feedback').textContent=''; document.getElementById('spiel-stats').textContent=''; document.getElementById('spiel-canvas').style.display='none'; }
-        function spielDraw(){
-          if(spielResults.length===0) return;
-          var c=document.getElementById('spiel-canvas'); if(!c) return;
-          c.style.display='block';
-          var W=c.offsetWidth||500, H=Math.round(W*0.28), dpr=window.devicePixelRatio||1;
-          c.width=W*dpr; c.height=H*dpr; c.style.width=W+'px'; c.style.height=H+'px';
-          var ctx=c.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
-          var isDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
-          var bg=window.getComputedStyle(document.body).backgroundColor;
-          if(!bg||bg==='rgba(0,0,0,0)') bg=isDark?'#1a1a1a':'#f9f8f6';
-          ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
-          // Kumulativer Durchschnitt
-          var cumAvg=[], sum=0;
-          for(var i=0;i<spielResults.length;i++){sum+=spielResults[i]; cumAvg.push(sum/(i+1));}
-          var ev=spielDefs[spielIdx].ev();
-          var allVals=cumAvg.concat([ev]);
-          var minV=Math.min.apply(null,allVals)-0.3, maxV=Math.max.apply(null,allVals)+0.3;
-          var pad={l:40,r:12,t:14,b:20};
-          var plotW=W-pad.l-pad.r, plotH=H-pad.t-pad.b;
-          function toX(i){return pad.l+(i/(cumAvg.length-1))*plotW;}
-          function toY(v){return pad.t+plotH*(1-(v-minV)/(maxV-minV));}
-          // Nulllinie
-          var zy=toY(0);
-          ctx.strokeStyle=isDark?'#444':'#ddd'; ctx.lineWidth=1; ctx.setLineDash([3,3]);
-          ctx.beginPath(); ctx.moveTo(pad.l,zy); ctx.lineTo(W-pad.r,zy); ctx.stroke();
-          ctx.setLineDash([]);
-          ctx.font='9px system-ui,sans-serif'; ctx.fillStyle=isDark?'#666':'#aaa'; ctx.textAlign='right';
-          ctx.fillText('0',pad.l-3,zy+3);
-          // μ-Linie
-          var evy=toY(ev);
-          ctx.strokeStyle='#c75c3a'; ctx.lineWidth=1.5; ctx.setLineDash([5,4]);
-          ctx.beginPath(); ctx.moveTo(pad.l,evy); ctx.lineTo(W-pad.r,evy); ctx.stroke();
-          ctx.setLineDash([]);
-          ctx.font='bold 9px system-ui,sans-serif'; ctx.fillStyle='#c75c3a'; ctx.textAlign='left';
-          ctx.fillText('μ='+(ev>=0?'+':'')+ev.toFixed(2),pad.l+3,evy-3);
-          // Kurve
-          ctx.strokeStyle='#6d4db2'; ctx.lineWidth=2;
-          ctx.beginPath();
-          cumAvg.forEach(function(v,i){
-            if(i===0) ctx.moveTo(toX(i),toY(v)); else ctx.lineTo(toX(i),toY(v));
-          });
-          ctx.stroke();
-          // Stats
-          var simMean=sum/spielResults.length;
-          document.getElementById('spiel-stats').textContent='Simulierter Durchschnitt nach '+spielResults.length+' Runden: '+(simMean>=0?'+':'')+simMean.toFixed(2)+' € | Theoretisch: '+(ev>=0?'+':'')+ev.toFixed(2)+' €';
-        }
-        window.addEventListener('load',function(){spielLoad(0,document.querySelector('.spiel-btn'));});
-        </script>
-      </div>
-    </div>
 
     <div class="section-label">Aufgaben · Kombinatorik</div>
     <div class="two-col">
@@ -13075,6 +12967,136 @@ window.addEventListener('resize',function(){updateSimulator();});
     </div>
   </div>
 </div>
+
+
+  <div class="section-label" id="sto-abschluss">Abschluss · Synthese</div>
+  <div class="card" style="background:#fffdf6;border-left:4px solid #c8b55e;margin-bottom:14px">
+    <div class="card-body">
+      <div class="ip">Jetzt hast du alle Werkzeuge zusammen: Du kennst Wahrscheinlichkeiten (Laplace, Pfadregeln), die Kombinatorik mit dem Binomialkoeffizienten, die Binomialverteilung und den Erwartungswert. Im folgenden interaktiven Baustein bringst du das Ganze zusammen — am Beispiel der klassischen Frage: <strong>Ist ein Spiel fair?</strong></div>
+    </div>
+  </div>
+    <div class="section-label">🎮 Spiel · Ist das Spiel fair?</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Faire-Spiel-Checker – Erwartungswert berechnen und simulieren</span></div>
+      <div class="card-body">
+        <div class="ip">Ein Spiel ist <strong>fair</strong>, wenn der Erwartungswert des Gewinns gleich 0 ist – also wenn man auf lange Sicht weder gewinnt noch verliert. Schätze zuerst, ob das Spiel fair ist, und prüfe dann deine Vermutung durch Simulation.</div>
+        <div id="spiel-app" style="margin-top:12px">
+          <div id="spiel-select" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+            <button class="spiel-btn on" onclick="spielLoad(0,this)">Würfelspiel</button>
+            <button class="spiel-btn" onclick="spielLoad(1,this)">Münzspiel</button>
+            <button class="spiel-btn" onclick="spielLoad(2,this)">Urnenspiel</button>
+          </div>
+          <style>.spiel-btn{background:#f4f3f0;border:1px solid #ddd;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;color:#555}.spiel-btn.on{background:#c75c3a;color:#fff;border-color:#c75c3a}</style>
+          <div id="spiel-desc" style="background:#f4f3f0;border-radius:10px;padding:14px 16px;font-size:14px;line-height:1.8;margin-bottom:12px"></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:12px">
+            <button onclick="spielGuess('fair')" id="btn-fair" style="background:#5b6e2e;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">✓ Ich denke: fair</button>
+            <button onclick="spielGuess('unfair')" id="btn-unfair" style="background:#c75c3a;color:#fff;border:none;border-radius:8px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">✗ Ich denke: nicht fair</button>
+            <button onclick="spielSim(200)" style="background:#c75c3a;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">▶ 200× simulieren</button>
+            <button onclick="spielReset()" style="background:none;border:1px solid #ccc;border-radius:8px;padding:9px 12px;font-size:14px;color:#888;cursor:pointer;font-family:inherit">↺</button>
+          </div>
+          <div id="spiel-feedback" style="min-height:20px;font-size:14px;font-weight:600;margin-bottom:10px"></div>
+          <canvas id="spiel-canvas" style="width:100%;border-radius:10px;display:none"></canvas>
+          <div id="spiel-stats" style="margin-top:8px;font-size:13px;color:#666"></div>
+        </div>
+        <script>
+        var spielDefs=[
+          {name:'Würfelspiel',
+           desc:'Du zahlst <strong>1 €</strong> Einsatz und wirfst einen fairen Würfel.<br>• Augenzahl 6: Du gewinnst <strong>5 €</strong> (Nettogewinn: +4 €)<br>• Sonst: Du verlierst deinen Einsatz (Nettogewinn: −1 €)',
+           fair:false,
+           ev:function(){return (4)*(1/6)+(-1)*(5/6);},
+           roll:function(){var r=Math.floor(Math.random()*6)+1; return r===6?4:-1;}},
+          {name:'Münzspiel',
+           desc:'Eine faire Münze wird geworfen.<br>• Wappen: Du gewinnst <strong>2 €</strong><br>• Zahl: Du verlierst <strong>2 €</strong><br>Kein Einsatz nötig.',
+           fair:true,
+           ev:function(){return 2*0.5+(-2)*0.5;},
+           roll:function(){return Math.random()<0.5?2:-2;}},
+          {name:'Urnenspiel',
+           desc:'In einer Urne sind <strong>3 rote</strong> und <strong>2 blaue</strong> Kugeln. Du ziehst eine.<br>• Rot: Du gewinnst <strong>2 €</strong><br>• Blau: Du verlierst <strong>3 €</strong><br>Kein Einsatz nötig.',
+           fair:false,
+           ev:function(){return 2*(3/5)+(-3)*(2/5);},
+           roll:function(){return Math.random()<3/5?2:-3;}}
+        ];
+        var spielIdx=0, spielResults=[], spielGuessed=null;
+        function spielLoad(i,btn){
+          spielIdx=i; spielResults=[]; spielGuessed=null;
+          document.querySelectorAll('.spiel-btn').forEach(function(b){b.classList.remove('on');});
+          if(btn) btn.classList.add('on');
+          document.getElementById('spiel-desc').innerHTML=spielDefs[i].desc;
+          document.getElementById('spiel-feedback').textContent='';
+          document.getElementById('spiel-stats').textContent='';
+          document.getElementById('spiel-canvas').style.display='none';
+        }
+        function spielGuess(g){
+          spielGuessed=g;
+          var def=spielDefs[spielIdx];
+          var actual=Math.abs(def.ev())<0.001?'fair':'unfair';
+          var ev=def.ev();
+          var msg='', col='';
+          if(g===actual){
+            msg='✓ Richtig! '; col='#5b6e2e';
+          } else {
+            msg='✗ Knapp daneben! '; col='#c75c3a';
+          }
+          msg+='Der Erwartungswert ist μ = '+(ev>=0?'+':'')+ev.toFixed(2)+'€. ';
+          msg+=actual==='fair'?'Das Spiel ist fair.':'Das Spiel ist '+( ev>0?'zu deinen Gunsten.':'zu deinen Ungunsten.');
+          var fb=document.getElementById('spiel-feedback');
+          fb.textContent=msg; fb.style.color=col;
+        }
+        function spielSim(n){
+          for(var i=0;i<n;i++) spielResults.push(spielDefs[spielIdx].roll());
+          spielDraw();
+        }
+        function spielReset(){ spielResults=[]; spielGuessed=null; document.getElementById('spiel-feedback').textContent=''; document.getElementById('spiel-stats').textContent=''; document.getElementById('spiel-canvas').style.display='none'; }
+        function spielDraw(){
+          if(spielResults.length===0) return;
+          var c=document.getElementById('spiel-canvas'); if(!c) return;
+          c.style.display='block';
+          var W=c.offsetWidth||500, H=Math.round(W*0.28), dpr=window.devicePixelRatio||1;
+          c.width=W*dpr; c.height=H*dpr; c.style.width=W+'px'; c.style.height=H+'px';
+          var ctx=c.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
+          var isDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
+          var bg=window.getComputedStyle(document.body).backgroundColor;
+          if(!bg||bg==='rgba(0,0,0,0)') bg=isDark?'#1a1a1a':'#f9f8f6';
+          ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+          // Kumulativer Durchschnitt
+          var cumAvg=[], sum=0;
+          for(var i=0;i<spielResults.length;i++){sum+=spielResults[i]; cumAvg.push(sum/(i+1));}
+          var ev=spielDefs[spielIdx].ev();
+          var allVals=cumAvg.concat([ev]);
+          var minV=Math.min.apply(null,allVals)-0.3, maxV=Math.max.apply(null,allVals)+0.3;
+          var pad={l:40,r:12,t:14,b:20};
+          var plotW=W-pad.l-pad.r, plotH=H-pad.t-pad.b;
+          function toX(i){return pad.l+(i/(cumAvg.length-1))*plotW;}
+          function toY(v){return pad.t+plotH*(1-(v-minV)/(maxV-minV));}
+          // Nulllinie
+          var zy=toY(0);
+          ctx.strokeStyle=isDark?'#444':'#ddd'; ctx.lineWidth=1; ctx.setLineDash([3,3]);
+          ctx.beginPath(); ctx.moveTo(pad.l,zy); ctx.lineTo(W-pad.r,zy); ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.font='9px system-ui,sans-serif'; ctx.fillStyle=isDark?'#666':'#aaa'; ctx.textAlign='right';
+          ctx.fillText('0',pad.l-3,zy+3);
+          // μ-Linie
+          var evy=toY(ev);
+          ctx.strokeStyle='#c75c3a'; ctx.lineWidth=1.5; ctx.setLineDash([5,4]);
+          ctx.beginPath(); ctx.moveTo(pad.l,evy); ctx.lineTo(W-pad.r,evy); ctx.stroke();
+          ctx.setLineDash([]);
+          ctx.font='bold 9px system-ui,sans-serif'; ctx.fillStyle='#c75c3a'; ctx.textAlign='left';
+          ctx.fillText('μ='+(ev>=0?'+':'')+ev.toFixed(2),pad.l+3,evy-3);
+          // Kurve
+          ctx.strokeStyle='#6d4db2'; ctx.lineWidth=2;
+          ctx.beginPath();
+          cumAvg.forEach(function(v,i){
+            if(i===0) ctx.moveTo(toX(i),toY(v)); else ctx.lineTo(toX(i),toY(v));
+          });
+          ctx.stroke();
+          // Stats
+          var simMean=sum/spielResults.length;
+          document.getElementById('spiel-stats').textContent='Simulierter Durchschnitt nach '+spielResults.length+' Runden: '+(simMean>=0?'+':'')+simMean.toFixed(2)+' € | Theoretisch: '+(ev>=0?'+':'')+ev.toFixed(2)+' €';
+        }
+        window.addEventListener('load',function(){spielLoad(0,document.querySelector('.spiel-btn'));});
+        </script>
+      </div>
+    </div>
 
 </div><!-- end k10-sto -->
 </div><!-- end k10 main -->
