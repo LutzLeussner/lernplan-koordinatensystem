@@ -11920,6 +11920,173 @@ window.addEventListener('resize',function(){updateSimulator();});
         <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">KO2.3</span><span class="td dh">★★★</span></div><div class="tq"><strong>Vergleich.</strong> In einer Klasse mit 30 Schülern soll ein 3er-Team für einen Wettbewerb gewählt werden.<br>a) Bestimme die Anzahl der Möglichkeiten, wenn die Reihenfolge im Team keine Rolle spielt.<br>b) Bestimme die Anzahl, wenn einer Kapitän, einer Vizekaptitän und einer Schriftführer wird.<br>c) Erläutere den Zusammenhang zwischen den Ergebnissen aus a) und b).</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Kombination: \(\binom{30}{3} = \frac{30 \cdot 29 \cdot 28}{3!} = \frac{24\,360}{6} = 4\,060\)<br><br>b) Variation: \(30 \cdot 29 \cdot 28 = 24\,360\)<br><br>c) Das Ergebnis in b) ist genau \(3! = 6\)-mal so groß wie in a). Das liegt daran, dass jede 3er-Gruppe auf \(3! = 6\) verschiedene Arten den drei Rollen zugeordnet werden kann. Es gilt: Variationen = Kombinationen × k!<div class="komp-wrap"><span class="kb kb-k3">K3</span></div><div class="komp-desc">Modellieren: Sachkontext mit Abzählverfahren lösen und Zusammenhänge erkunden</div></div></div>
       </div>
     </div>
+
+    <div class="section-label">Baumdiagramme und Binomialkoeffizient</div>
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+      <div class="card-body">
+        <div class="ip">Bisher hast du den Binomialkoeffizienten als <strong>Auswahlformel</strong> kennengelernt: \(\binom{n}{k}\) zählt, auf wie viele Arten man k aus n Objekten auswählt. Jetzt geht es um eine zweite, mindestens genauso wichtige Lesart — den Binomialkoeffizienten als <strong>Pfadzähler im Baumdiagramm</strong>.</div>
+        <div class="ip" style="margin-top:8px">Diese Sichtweise ist das Sprungbrett zur <em>Bernoulli-Kette</em> und zur <em>Binomialverteilung</em>, die du in Klasse 11/12 brauchst.</div>
+      </div>
+    </div>
+    <div class="hint" style="margin-bottom:14px;"><strong>Das brauchst du:</strong> Baumdiagramm zeichnen, Binomialkoeffizient \(\binom{n}{k}\) berechnen, kombinatorische Produktregel.</div>
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Entdecken · Münzwurf mit vier Würfen</span></div>
+      <div class="card-body">
+        <div class="ip">Eine faire Münze wird viermal geworfen. Mögliche Ergebnisse pro Wurf sind Wappen (W) und Zahl (Z). Im Baumdiagramm rechts siehst du alle \(2^4 = 16\) möglichen Pfade.</div>
+        <div class="ip" style="margin-top:8px"><strong>Aufgabe:</strong> Stelle den Schieberegler nacheinander auf k = 0, 1, 2, 3, 4. Beobachte, wie viele Pfade jeweils genau k Wappen enthalten — und vergleiche die Anzahl mit \(\binom{4}{k}\).</div>
+        <div style="margin-top:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <label style="font-weight:600;font-size:14px">Anzahl Wappen k:</label>
+          <input type="range" id="binom-tree-k" min="0" max="4" step="1" value="2" oninput="drawBinomialTree()" style="width:220px">
+          <span id="binom-tree-k-val" style="font-weight:700;color:#c75c3a;font-size:15px">k = 2</span>
+        </div>
+        <div style="margin-top:10px;border-radius:10px;overflow:hidden;background:#fffcf6">
+          <canvas id="binom-tree-canvas" style="width:100%;display:block"></canvas>
+        </div>
+        <div class="hint" style="margin-top:10px"><strong>Beobachte:</strong> Die Anzahl der hervorgehobenen Pfade ist immer genau \(\binom{4}{k}\). Bei k = 0 (kein Wappen) oder k = 4 (vier Wappen) ist es nur ein Pfad; bei k = 2 sind es sechs.</div>
+        <script>
+        function drawBinomialTree(){
+          var c=document.getElementById('binom-tree-canvas'); if(!c) return;
+          var n=4;
+          var k=parseInt(document.getElementById('binom-tree-k').value);
+          document.getElementById('binom-tree-k-val').textContent='k = '+k;
+          var W=c.offsetWidth||700, H=470, dpr=window.devicePixelRatio||1;
+          c.width=W*dpr; c.height=H*dpr; c.style.height=H+'px';
+          var ctx=c.getContext('2d'); ctx.setTransform(dpr,0,0,dpr,0,0);
+          ctx.fillStyle='#fffcf6'; ctx.fillRect(0,0,W,H);
+          var pad={l:30,r:110,t:36,b:24};
+          var plotW=W-pad.l-pad.r, plotH=H-pad.t-pad.b;
+          function xOf(i){return pad.l + i/n*plotW;}
+          function yOf(i,j){var slots=Math.pow(2,i); return pad.t + plotH*(j+0.5)/slots;}
+          // 1. Stage-Labels oben
+          ctx.fillStyle='#666'; ctx.font='600 11px Inter,system-ui'; ctx.textAlign='center'; ctx.textBaseline='top';
+          for(var s=1; s<=n; s++){
+            var midX=(xOf(s-1)+xOf(s))/2;
+            ctx.fillText(s+'. Wurf', midX, 10);
+          }
+          // 2. Alle Äste in gedämpfter Farbe
+          ctx.strokeStyle='#d4c9b8'; ctx.lineWidth=1;
+          (function drawAll(stage,idx){
+            if(stage===n) return;
+            var x0=xOf(stage), y0=yOf(stage,idx);
+            var x1=xOf(stage+1);
+            var yW=yOf(stage+1, 2*idx), yZ=yOf(stage+1, 2*idx+1);
+            ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(x1,yW);
+            ctx.moveTo(x0,y0); ctx.lineTo(x1,yZ); ctx.stroke();
+            drawAll(stage+1, 2*idx); drawAll(stage+1, 2*idx+1);
+          })(0,0);
+          // 3. Knoten als kleine Kreise
+          (function drawNodes(stage,idx){
+            ctx.fillStyle='#8a9da7';
+            ctx.beginPath(); ctx.arc(xOf(stage), yOf(stage,idx), 2.2, 0, Math.PI*2); ctx.fill();
+            if(stage===n) return;
+            drawNodes(stage+1, 2*idx); drawNodes(stage+1, 2*idx+1);
+          })(0,0);
+          // 4. Hervorgehobene Pfade sammeln
+          var highlighted=[];
+          (function collect(stage,idx,path){
+            if(stage===n){
+              var wc=path.filter(function(s){return s==='W';}).length;
+              if(wc===k) highlighted.push({path:path.slice(), idx:idx});
+              return;
+            }
+            collect(stage+1, 2*idx, path.concat(['W']));
+            collect(stage+1, 2*idx+1, path.concat(['Z']));
+          })(0,0,[]);
+          // 5. Hervorgehobene Pfade in Sango zeichnen
+          ctx.strokeStyle='#c75c3a'; ctx.lineWidth=2.4;
+          highlighted.forEach(function(leaf){
+            var cur=0;
+            ctx.beginPath(); ctx.moveTo(xOf(0), yOf(0,0));
+            for(var s=0; s<n; s++){
+              cur = leaf.path[s]==='W' ? 2*cur : 2*cur+1;
+              ctx.lineTo(xOf(s+1), yOf(s+1,cur));
+            }
+            ctx.stroke();
+          });
+          // 6. Labels für ersten Wurf (W oben, Z unten) — nur 1. Wurf, damit es übersichtlich bleibt
+          ctx.font='bold 12px Inter,system-ui';
+          ctx.fillStyle='#5b6e2e'; ctx.textAlign='center'; ctx.textBaseline='middle';
+          ctx.fillText('W', (xOf(0)+xOf(1))/2, (yOf(0,0)+yOf(1,0))/2 - 9);
+          ctx.fillText('Z', (xOf(0)+xOf(1))/2, (yOf(0,0)+yOf(1,1))/2 + 9);
+          // 7. Endknoten-Labels (Pfad-Wörter) rechts
+          (function drawLabels(stage,idx,path){
+            if(stage===n){
+              var wc=path.filter(function(s){return s==='W';}).length;
+              var hi=(wc===k);
+              var label=path.join('');
+              var x=xOf(n)+8, y=yOf(n,idx);
+              if(hi){
+                ctx.fillStyle='rgba(199,92,58,0.14)';
+                ctx.font='bold 11.5px ui-monospace,SFMono-Regular,Menlo,monospace';
+                var tw=ctx.measureText(label).width;
+                ctx.fillRect(x-3, y-9, tw+6, 18);
+              }
+              ctx.fillStyle = hi?'#c75c3a':'#888';
+              ctx.font = (hi?'bold ':'')+'11.5px ui-monospace,SFMono-Regular,Menlo,monospace';
+              ctx.textAlign='left'; ctx.textBaseline='middle';
+              ctx.fillText(label, x, y);
+              return;
+            }
+            drawLabels(stage+1, 2*idx, path.concat(['W']));
+            drawLabels(stage+1, 2*idx+1, path.concat(['Z']));
+          })(0,0,[]);
+          // 8. Zähler unten rechts
+          ctx.textAlign='right'; ctx.textBaseline='bottom';
+          ctx.fillStyle='#c75c3a'; ctx.font='bold 14px Inter,system-ui';
+          ctx.fillText(highlighted.length+' Pfade mit genau '+k+' Wappen', W-10, H-22);
+          ctx.fillStyle='#666'; ctx.font='12px Inter,system-ui';
+          ctx.fillText('Vergleich:  C(4,'+k+') = '+binCoef(4,k), W-10, H-6);
+        }
+        function binCoef(n,k){var r=1; for(var i=1;i<=k;i++) r=r*(n-i+1)/i; return Math.round(r);}
+        window.addEventListener('load', drawBinomialTree);
+        window.addEventListener('resize', drawBinomialTree);
+        </script>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Warum gilt das?</span></div>
+      <div class="card-body">
+        <div class="ip">Jeder Pfad im Baumdiagramm ist eine Folge aus n Symbolen, z.&nbsp;B. <code>WZWZ</code> für vier Würfe. Soll ein Pfad genau k Wappen enthalten, ist nur Eines festzulegen: <strong>an welchen k der n Positionen ein W steht</strong> — die übrigen Positionen sind dann automatisch Z.</div>
+        <div class="ip" style="margin-top:8px">Damit wird das Abzählen der Pfade zu einer ungeordneten Stichprobe ohne Zurücklegen: „Wähle k Positionen aus n". Und genau diese Anzahl ist der Binomialkoeffizient:</div>
+        <div class="ip" style="background:#f4f3f0;border-radius:10px;padding:14px 18px;text-align:center;margin-top:8px">
+          \[\binom{n}{k} \;=\; \text{Anzahl der Pfade in einem n-stufigen Baumdiagramm mit genau } k \text{ Erfolgen}\]
+        </div>
+        <div class="bsp" style="margin-top:14px">
+          <div class="bsp-label">Beispiel · Münzwurf mit n = 4</div>
+          <div class="bsp-q"><strong>Frage:</strong> Wie viele der 16 Pfade enthalten genau 2 Wappen?</div>
+          <div class="bsp-q"><strong>Lösung über Auszählen:</strong> WWZZ, WZWZ, WZZW, ZWWZ, ZWZW, ZZWW — das sind 6 Pfade.</div>
+          <div class="bsp-q"><strong>Lösung über den Binomialkoeffizienten:</strong> \(\binom{4}{2} = \dfrac{4!}{2!\cdot 2!} = \dfrac{24}{4} = 6\). \checkmark</div>
+        </div>
+        <div class="hint" style="margin-top:10px"><strong>Ausblick:</strong> Damit hast du die Grundlage für die Bernoulli-Kette: Bei n unabhängigen Versuchen mit Erfolgswahrscheinlichkeit p gilt \(P(\text{genau } k \text{ Erfolge}) = \binom{n}{k}\cdot p^k\cdot (1-p)^{n-k}\). Der Faktor \(\binom{n}{k}\) ist genau die Pfadzahl, die du gerade kennengelernt hast.</div>
+      </div>
+    </div>
+
+    <div class="section-label">Aufgaben · Baumdiagramme und Binomialkoeffizient</div>
+    <div class="two-col">
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">BB1.1</span><span class="td dm">★★</span></div><div class="tq"><strong>Münzwurf.</strong> Eine faire Münze wird viermal geworfen.<br>a) <strong>Gib</strong> die Anzahl aller Pfade im zugehörigen Baumdiagramm <strong>an</strong>.<br>b) <strong>Bestimme</strong> durch Auszählen die Anzahl der Pfade, bei denen genau zweimal Wappen geworfen wird.<br>c) <strong>Berechne</strong> \(\binom{4}{2}\) und <strong>vergleiche</strong> das Ergebnis mit b).<br>d) <strong>Erläutere</strong>, warum man die Anzahl aus b) auch als „Auswahl von 2 Wurfpositionen aus 4 Würfen" deuten kann.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Pro Stufe 2 Verzweigungen bei 4 Stufen: \(2^4 = 16\) Pfade.<br><br>b) Auszählen ergibt 6 Pfade: WWZZ, WZWZ, WZZW, ZWWZ, ZWZW, ZZWW.<br><br>c) \(\binom{4}{2} = \dfrac{4!}{2!\cdot 2!} = \dfrac{24}{4} = 6\) — dieselbe Anzahl wie in b).<br><br>d) Ein Pfad ist eine Folge aus vier Buchstaben, z.&nbsp;B. WZWZ. Festzulegen ist nur, an welchen 2 der 4 Positionen ein W steht — die anderen Positionen sind dann automatisch Z. Das ist genau die Aufgabe „2 Positionen aus 4 auswählen, ohne Reihenfolge, ohne Zurücklegen", also der Binomialkoeffizient \(\binom{4}{2}\).<div class="komp-wrap"><span class="kb kb-k4">K4</span><span class="kb kb-k5">K5</span></div><div class="komp-desc">Darstellungen vernetzen (Baumdiagramm ↔ Formel); symbolisch-formal rechnen</div></div></div>
+      </div>
+      <div class="tg">
+        <div class="tk"><div class="tk-top" onclick="togTask(this)"><div style="flex:1"><div class="tkt"><span class="tn">BB1.2</span><span class="td dh">★★★</span></div><div class="tq"><strong>Multiple-Choice-Test.</strong> Bei einem Multiple-Choice-Test gibt es zehn Fragen mit jeweils zwei Antwortmöglichkeiten (richtig/falsch). Luisa rät bei allen Fragen.<br>a) <strong>Begründe</strong>, warum sich die Anzahl der Antwortsequenzen, bei denen Luisa genau sieben Fragen richtig hat, am Baumdiagramm bestimmen lässt, ohne alle Pfade einzeln zeichnen zu müssen.<br>b) <strong>Bestimme</strong> diese Anzahl mit Hilfe des Binomialkoeffizienten.<br>c) <strong>Verallgemeinere</strong>: Erläutere, warum die Anzahl der Pfade in einem n-stufigen Baumdiagramm mit jeweils zwei Verzweigungen pro Stufe, die zu genau k Erfolgen führen, stets durch \(\binom{n}{k}\) gegeben ist.</div></div><div class="tk-toggle">⌄</div></div><div class="ta">a) Jeder Pfad ist eine Sequenz aus 10 R/F-Antworten. Festzulegen ist nur, an welchen 7 der 10 Stufen ein R steht — die übrigen 3 sind dann automatisch F. Das Abzählen reduziert sich also auf die Auswahl von 7 Stufen aus 10.<br><br>b) \(\binom{10}{7} = \dfrac{10!}{7!\cdot 3!} = \dfrac{10\cdot 9\cdot 8}{3\cdot 2\cdot 1} = 120\) Pfade.<br><br>c) Ein Pfad im n-stufigen Baum ist eine Folge aus n Symbolen (E für Erfolg, M für Misserfolg). Ein Pfad mit genau k Erfolgen ist eindeutig festgelegt, sobald man weiß, an welchen k der n Stufen ein E steht. Die Auswahlobjekte sind also die k Stufen-Positionen aus den n Stufen. Da die Reihenfolge dieser Positionen keine Rolle spielt und keine Stufe doppelt vorkommt, liegt der Modellfall „k aus n, ohne Reihenfolge, ohne Zurücklegen" vor — und dieser wird laut Definition durch \(\binom{n}{k}\) gezählt.<div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span></div><div class="komp-desc">Argumentieren und Verallgemeinern; Sachkontext modellieren</div></div></div>
+      </div>
+    </div>
+
+    <div class="card" style="background:#f4f7ee;border-left:4px solid #c8b55e;margin-top:14px">
+      <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Selbstlerncheck · Baumdiagramme und Binomialkoeffizient</span></div>
+      <div class="card-body">
+        <div class="ip">Bevor du weitergehst — kannst du diese Fragen beantworten?</div>
+        <ol style="margin-top:8px;padding-left:24px;line-height:1.85">
+          <li>Wie viele Pfade hat ein Baumdiagramm mit n Stufen und 2 Verzweigungen pro Stufe? <em>(Antwort: \(2^n\))</em></li>
+          <li>Du wirfst eine Münze fünfmal. Wie viele Pfade führen zu genau 3 Wappen? <em>(Antwort: \(\binom{5}{3} = 10\))</em></li>
+          <li>Warum ist die Anzahl der Pfade mit genau k Erfolgen aus n Versuchen genau \(\binom{n}{k}\)? <em>(Stichwort: Auswahl der k Erfolgs-Positionen aus n Stufen)</em></li>
+        </ol>
+        <div class="ip" style="margin-top:10px;font-size:14px;color:#777">Wenn du bei einer Frage unsicher bist, lies den Abschnitt „Warum gilt das?" noch einmal.</div>
+      </div>
+    </div>
+
   </div><!-- end sto-kombi -->
 
   <!-- ══ TAB 2: ZUFALLSEXPERIMENTE ══════════════════════════ -->
