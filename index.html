@@ -4428,8 +4428,9 @@ function updatePotenzExplorer(){
   document.getElementById('pfValB').textContent=b;
   // Formel-Anzeige
   var aStr=(a===1?'':a===-1?'−':(a<0?'−'+Math.abs(a):a));
-  var bDisp=(Number.isInteger(b)?String(b):String(b));
-  document.getElementById('pfFormula').textContent='f(x) = '+aStr+' · x^('+bDisp+')';
+  var bDisp=String(b);
+  var sep=(aStr===''||aStr==='−')?'':' · ';
+  document.getElementById('pfFormula').textContent='f(x) = '+aStr+sep+'x^('+bDisp+')';
   // Eigenschaften
   var isInt=Math.abs(b-Math.round(b))<0.001;
   var parity=isInt?(Math.round(b)%2===0?'gerade':'ungerade'):'';
@@ -4445,10 +4446,10 @@ function updatePotenzExplorer(){
 }
 function drawPotExplorer(a,b,isInt){
   var c=document.getElementById('cvPotenzExplorer'),ctx=c.getContext('2d');
-  var dpr=window.devicePixelRatio||1,cssW=540,cssH=400;
+  var dpr=window.devicePixelRatio||1,cssW=540,cssH=320;
   c.width=cssW*dpr;c.height=cssH*dpr;c.style.width=cssW+'px';c.style.height=cssH+'px';
   ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);
-  var xMin=-5,xMax=5,yMin=-10,yMax=10,pad=44;
+  var xMin=-5,xMax=5,yMin=-8,yMax=8,pad=40;
   function tx(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-12);}
   function ty(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-12);}
   ctx.fillStyle='#fff';ctx.fillRect(0,0,cssW,cssH);
