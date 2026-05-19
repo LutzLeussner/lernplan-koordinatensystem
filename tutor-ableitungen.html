@@ -656,7 +656,7 @@
 
         const TOPIC_DATA = {
             "Ableitungsregeln": {
-                description: "Potenzregel, Summenregel, Faktorregel, Kettenregel verstehen und anwenden",
+                description: "Potenzregel, Summenregel, Faktorregel, Produkt- und Kettenregel verstehen und anwenden",
                 difficulty: 1,
                 estimatedTime: "45 min"
             },
@@ -683,11 +683,17 @@
                     <div class="theory-card">
                         <div class="theory-title">Ableitungsregeln – Theorie</div>
                         <div class="theory-content">
-                            <p>Die <strong>Ableitung</strong> einer Funktion \\( f(x) \\) beschreibt die momentane Änderungsrate an einer bestimmten Stelle. Es gibt mehrere Regeln, um Ableitungen zu berechnen.</p>
+                            <p>Die <strong>Ableitung</strong> einer Funktion \\( f(x) \\) beschreibt die momentane Änderungsrate an einer bestimmten Stelle. Es gibt mehrere Regeln, um Ableitungen zu berechnen — diese helfen dir, ohne jedes Mal den Grenzwert bilden zu müssen.</p>
+
+                            <div class="key-insight" style="background: #fff8e6;">
+                                <div class="key-insight-title">Grundvorstellung — lokale Änderungsrate:</div>
+                                <p>Die Ableitung \\( f'(x_0) \\) misst, wie stark sich \\( f \\) an der Stelle \\( x_0 \\) ändert — die Steigung des Graphen an genau diesem Punkt. Anschaulich entsteht sie als Grenzwert der Sekantensteigungen: Du nimmst die Steigung der Sekante zwischen \\( x_0 \\) und \\( x_0+h \\) und lässt \\( h \\to 0 \\) gehen.</p>
+                                <p style="margin-top: 0.6rem;">Der Bruch \\( \\frac{f(x_0+h)-f(x_0)}{h} \\) heißt <strong>Differenzenquotient</strong>. Sein Grenzwert für \\( h \\to 0 \\) ist der <strong>Differentialquotient</strong> — also die Ableitung.</p>
+                            </div>
 
                             <div class="key-insight">
-                                <div class="key-insight-title">Definition:</div>
-                                <p>Die Ableitung \\( f'(x) \\) ist der Grenzwert \\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\)</p>
+                                <div class="key-insight-title">Definition (formal):</div>
+                                <p>\\( f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h} \\)</p>
                             </div>
 
                             <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Potenzregel:</h4>
@@ -701,8 +707,13 @@
                             <p>\\[ [c \\cdot f(x)]' = c \\cdot f'(x) \\]</p>
                             <p style="color: var(--ink-soft); font-size: 0.875rem; margin-top: 0.75rem;">wobei \\( c \\) eine konstante Zahl ist.</p>
 
+                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Produktregel:</h4>
+                            <p>\\[ [f(x) \\cdot g(x)]' = f'(x) \\cdot g(x) + f(x) \\cdot g'(x) \\]</p>
+
                             <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Kettenregel:</h4>
-                            <p>Für \\( f(x) = [u(x)]^n \\) mit \\( u(x) \\) als innere Funktion:</p>
+                            <p>Allgemein für eine Verkettung \\( f(g(x)) \\):</p>
+                            <p style="text-align: center; font-size: 1.05rem;">\\[ [f(g(x))]' = f'(g(x)) \\cdot g'(x) \\]</p>
+                            <p style="margin-top: 0.5rem;">Häufiger Spezialfall mit einer Potenz außen — \\( f(x) = [u(x)]^n \\):</p>
                             <p style="text-align: center; font-size: 1.05rem;">\\[ f'(x) = n \\cdot [u(x)]^{n-1} \\cdot u'(x) \\]</p>
 
                             <div class="key-insight">
