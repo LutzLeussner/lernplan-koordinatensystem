@@ -4679,6 +4679,30 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
   </div>
 </div>
 
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Punktprobe an \(f(x)=x^3\)</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Liegt \(P(-3\,|\,-27)\) auf dem Graphen von \(f(x)=x^3\)? Liegt \(Q(-3\,|\,27)\)?</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Idee:</strong> x-Koordinate einsetzen und prüfen, ob das Ergebnis die y-Koordinate ist.</div>
+      <div class="ip"><strong>Für \(P(-3\,|\,-27)\):</strong> \(f(-3) = (-3)^3 = -27\) ✓ — \(P\) liegt auf dem Graphen.</div>
+      <div class="ip"><strong>Für \(Q(-3\,|\,27)\):</strong> \(f(-3) = -27 \neq 27\) — \(Q\) liegt <em>nicht</em> auf dem Graphen; bei ungeradem Exponenten wechselt das Vorzeichen des Funktionswerts mit dem der Eingabe.</div>
+      <div class="ip"><em>Merke:</em> Bei negativen Basen immer Klammern setzen: \((-3)^3 = -27\), aber \(-3^3\) kann je nach Lesart \(-(3^3)\) bedeuten.</div>
+    </details>
+  </div>
+</div>
+
+<div class="card" style="border-left:4px solid #e08a3a;background:#fdf6ee">
+  <div class="card-head"><div class="ci ci-i" style="background:#e08a3a">!</div><span class="card-title">Stolperstelle — gerader Exponent, negative Eingabe</span></div>
+  <div class="card-body">
+    <div class="ip">Carmen rechnet für \(f(x)=x^4\): „Bei negativem \(x\) ist auch \(f(x)\) negativ." So funktioniert es bei \(x^3\) — aber bei \(x^4\) nicht: vier Minus-Faktoren multipliziert ergeben ein Plus.</div>
+    <div class="ip">\((-2)^4 = (-2)\cdot(-2)\cdot(-2)\cdot(-2) = 4\cdot 4 = 16\) (nicht \(-16\)).</div>
+    <div class="ip"><strong>Regel:</strong> Gerader Exponent ⇒ alle Funktionswerte \(\ge 0\), Symmetrie zur y-Achse. Ungerader Exponent ⇒ Vorzeichen folgt der Eingabe, Symmetrie zum Ursprung.</div>
+    <div class="hint"><strong>Anna sagt:</strong> „Bei \(x^4\) ist \(f(-2)=-16\)." <strong>Bert sagt:</strong> „\(f(-2)=16\)." Wer hat recht — und woran erkennst du es an einer schnellen Skizze von \(f(x)=x^4\)?</div>
+  </div>
+</div>
+
 <!-- ═════════════════════ SECTION 4 ═════════════════════ -->
 <div class="section-label">4 · Aufgaben — Potenzfunktionen</div>
 
@@ -4766,6 +4790,60 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
           <div class="ip">\(f(-1) = -2 \cdot (-1)^3 = -2 \cdot (-1) = 2\).</div>
           <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
           <div class="komp-desc">Symbolisch-formales Arbeiten: Aus einem gegebenen Punkt einen Parameter bestimmen.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">F1.10</span>
+        <span class="td de">★</span>
+      </div>
+      <div class="tq">Vervollständige die Wertetabelle <em>ohne Taschenrechner</em>: \(f(x)=x^2\), \(g(x)=x^3\), \(h(x)=x^4\) an \(x\in\{-2,\,-1,\,0,\,1,\,2\}\). Notiere am Ende, an welchen Stellen \(f\) und \(h\) übereinstimmen.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip">
+      <table style="border-collapse:collapse;font-family:system-ui;margin:6px 0">
+        <tr style="background:#eef2f7"><td style="padding:4px 10px;border:1px solid #ccc"><strong>x</strong></td><td style="padding:4px 10px;border:1px solid #ccc">−2</td><td style="padding:4px 10px;border:1px solid #ccc">−1</td><td style="padding:4px 10px;border:1px solid #ccc">0</td><td style="padding:4px 10px;border:1px solid #ccc">1</td><td style="padding:4px 10px;border:1px solid #ccc">2</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccc"><strong>\(x^2\)</strong></td><td style="padding:4px 10px;border:1px solid #ccc">4</td><td style="padding:4px 10px;border:1px solid #ccc">1</td><td style="padding:4px 10px;border:1px solid #ccc">0</td><td style="padding:4px 10px;border:1px solid #ccc">1</td><td style="padding:4px 10px;border:1px solid #ccc">4</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccc"><strong>\(x^3\)</strong></td><td style="padding:4px 10px;border:1px solid #ccc">−8</td><td style="padding:4px 10px;border:1px solid #ccc">−1</td><td style="padding:4px 10px;border:1px solid #ccc">0</td><td style="padding:4px 10px;border:1px solid #ccc">1</td><td style="padding:4px 10px;border:1px solid #ccc">8</td></tr>
+        <tr><td style="padding:4px 10px;border:1px solid #ccc"><strong>\(x^4\)</strong></td><td style="padding:4px 10px;border:1px solid #ccc">16</td><td style="padding:4px 10px;border:1px solid #ccc">1</td><td style="padding:4px 10px;border:1px solid #ccc">0</td><td style="padding:4px 10px;border:1px solid #ccc">1</td><td style="padding:4px 10px;border:1px solid #ccc">16</td></tr>
+      </table></div>
+          <div class="ip"><strong>Beobachtung:</strong> Bei \(x^2\) und \(x^4\) (gerade Exponenten) liefern \(-2\) und \(+2\) denselben Wert. Bei \(x^3\) drehen sich die Vorzeichen mit.</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Funktionswerte einer Potenzfunktion ohne Hilfsmittel berechnen.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">F1.11</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Überprüfe rechnerisch, welche der Punkte auf dem Graphen von \(f(x)=x^3\) liegen: \(P(-3\,|\,27)\), \(Q(-3\,|\,-27)\), \(R(5\,|\,125)\), \(S(-2\,|\,8)\), \(T(0{,}5\,|\,0{,}125)\), \(U(-0{,}2\,|\,-0{,}008)\).</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>P:</strong> \(f(-3)=(-3)^3=-27 \neq 27\) — \(P\) liegt <em>nicht</em> auf dem Graphen.</div>
+          <div class="ip"><strong>Q:</strong> \(f(-3)=-27\) — \(Q\) liegt auf dem Graphen.</div>
+          <div class="ip"><strong>R:</strong> \(f(5)=125\) — \(R\) liegt auf dem Graphen.</div>
+          <div class="ip"><strong>S:</strong> \(f(-2)=(-2)^3=-8 \neq 8\) — \(S\) liegt <em>nicht</em> auf dem Graphen.</div>
+          <div class="ip"><strong>T:</strong> \(f(0{,}5)=0{,}5^3=0{,}125\) — \(T\) liegt auf dem Graphen.</div>
+          <div class="ip"><strong>U:</strong> \(f(-0{,}2)=(-0{,}2)^3=-0{,}008\) — \(U\) liegt auf dem Graphen.</div>
+          <div class="ip"><strong>Fallenpunkte:</strong> \(P\) und \(S\) sehen plausibel aus (\(3^3=27\), \(2^3=8\)) — aber das Vorzeichen der y-Koordinate fehlt. Bei \(x^3\) gehört zu einer negativen Stelle ein negativer Funktionswert.</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Punktprobe mit Vorzeichen-Sorgfalt.</div></div>
+  </div>
+<div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt">
+        <span class="tn">F1.12</span>
+        <span class="td dm">★★</span>
+      </div>
+      <div class="tq">Carmen hat für \(f(x)=x^4\) die Wertetabelle aufgestellt: \(x:\;-3,\,-2,\,-1,\,0,\,1,\,2,\,3\); \(f(x):\;-81,\,-16,\,-1,\,0,\,1,\,16,\,81\). (a) Welche Funktionswerte sind falsch? (b) Erkläre Carmens Fehler. (c) Beschreibe, wie der Graph berichtigt werden muss.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+    <div class="ta"><div class="ip"><strong>(a)</strong> Falsch sind die Werte für \(x=-3,\,-2,\,-1\). Richtig: \(f(-3)=81\), \(f(-2)=16\), \(f(-1)=1\).</div>
+          <div class="ip"><strong>(b)</strong> Carmen hat das Vorzeichen der Eingabe übernommen — das gilt aber nur bei <em>ungeradem</em> Exponenten. Bei \(x^4\) sind vier Minus-Faktoren multipliziert wieder positiv: \((-2)^4 = 4\cdot 4 = 16\).</div>
+          <div class="ip"><strong>(c)</strong> Carmens Graph läge für \(x<0\) im 3. Quadranten. Der richtige Graph liegt im 2. Quadranten (positive y-Werte), ist also symmetrisch zur y-Achse, <em>nicht</em> zum Ursprung.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Schülerfehler identifizieren und die zugrundeliegende Fehlvorstellung sprachlich klären.</div></div>
   </div>
 </div>
 <div style="display:flex;align-items:center;gap:18px;margin:34px 0 14px;padding:18px 22px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
