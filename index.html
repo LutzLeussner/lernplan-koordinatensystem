@@ -4307,7 +4307,7 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
       <li><strong>Helligkeit:</strong> Doppelt so weit weg von einer Lampe — und das Licht ist <em>viermal</em> schwächer. Das ist \(I(r) = \tfrac{c}{r^2}\) — eine Potenzfunktion mit Exponent \(-2\).</li>
       <li><strong>Würfelvolumen:</strong> Eine doppelt so lange Würfelkante macht das Volumen <em>achtmal</em> so groß. Hinter \(V(a) = a^3\) steht eine Potenzfunktion mit Exponent \(3\).</li>
     </ul>
-    <div class="ip">In allen drei Fällen entscheidet der Exponent über das Verhalten. In diesem Bereich lernst du Potenzfunktionen \(f(x) = a \cdot x^b\) mit ganzzahligem \(b\) kennen — gerade und ungerade, positiv und negativ.</div>
+    <div class="ip">In diesem Bereich lernst du Potenzfunktionen \(f(x) = a \cdot x^b\) kennen — du erkundest am Schieberegler, wie sich \(a\) und \(b\) auf den Graphen auswirken, und liest am Exponenten alle wichtigen Eigenschaften ab.</div>
   </div>
 </div>
 
@@ -4317,13 +4317,13 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
   <div class="card-body">
     <div class="two-col">
       <ul class="gl">
-        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Aus einem Funktionsterm \(f(x) = a \cdot x^b\) den Graphentyp vorhersagen</span></li>
-        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Eigenschaften D, W, Symmetrie, Monotonie und Krümmung am Exponenten ablesen</span></li>
-        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Schnittpunkte mit den Achsen bestimmen</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich erkläre, wie sich der Faktor \(a\) und der Exponent \(b\) auf den Graphen von \(f(x) = a \cdot x^b\) auswirken.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich unterscheide vier Grundtypen einer Potenzfunktion an Vorzeichen und Parität des Exponenten.</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich nenne Definitionsbereich, Wertebereich, Symmetrie, Monotonie und Achsenschnitte zu jedem Grundtyp.</span></li>
       </ul>
       <ul class="gl">
-        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Funktionswerte, Stellen und unbekannte Parameter berechnen — durch Lösen von Potenzgleichungen \(x^n = c\)</span></li>
-        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Sachkontexte deuten und zwischen Stelle und Funktionswert hin- und herwechseln</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich berechne Funktionswerte und Stellen — und löse dabei Potenzgleichungen \(x^n = c\).</span></li>
+        <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Ich deute Sachkontexte wie Bremsweg oder Helligkeit und wechsle zwischen Stelle und Funktionswert.</span></li>
       </ul>
     </div>
   </div>
@@ -4331,229 +4331,247 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 
 <!-- ── Das brauchst du ──────────────────────────────────────── -->
 <div class="hint">
-  <strong>Das brauchst du:</strong> Schreibweise \(a^n\) und die vier Potenzgesetze, Begriff der Funktion (Zuordnung, Funktionswert, Stelle), Wurzel ziehen (auch dritte Wurzel).
+  <strong>Das brauchst du:</strong> sicheres Umgehen mit der Potenzschreibweise \(a^n\) (auch mit negativem Exponenten); Begriff der Funktion (Zuordnung, Funktionswert, Stelle); Wurzel ziehen.
 </div>
 
 <!-- ═════════════════════ SECTION 1 ═════════════════════ -->
-<div class="section-label">1 · Entdecken — vier Wertetabellen</div>
+<div class="section-label">1 · Schieberegler — beide Parameter reell</div>
 
 <div class="card">
-  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Aufgabe — Wertetabellen vergleichen</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Erkunde \(f(x) = a \cdot x^b\)</span></div>
   <div class="card-body">
-    <div class="ip">Fülle die Wertetabellen für \(f_1(x)=x^2\), \(f_2(x)=x^3\), \(f_3(x)=\tfrac{1}{x}=x^{-1}\) und \(f_4(x)=\tfrac{1}{x^2}=x^{-2}\) für \(x \in \{-2;\,-1;\,-\tfrac{1}{2};\,\tfrac{1}{2};\,1;\,2\}\) aus. Vergleiche das Verhalten der vier Funktionen.</div>
-    <details class="bsp">
-      <summary>Lösung einblenden ▾</summary>
-      <table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:8px">
-        <thead><tr style="background:var(--mushikuri-light);font-weight:600">
-          <th style="padding:6px;border:1px solid #ddd">\(x\)</th>
-          <th style="padding:6px;border:1px solid #ddd">\(x^2\)</th>
-          <th style="padding:6px;border:1px solid #ddd">\(x^3\)</th>
-          <th style="padding:6px;border:1px solid #ddd">\(x^{-1}\)</th>
-          <th style="padding:6px;border:1px solid #ddd">\(x^{-2}\)</th>
-        </tr></thead>
-        <tbody>
-          <tr><td style="padding:6px;border:1px solid #eee">\(-2\)</td><td style="padding:6px;border:1px solid #eee">4</td><td style="padding:6px;border:1px solid #eee">\(-8\)</td><td style="padding:6px;border:1px solid #eee">\(-0{,}5\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td></tr>
-          <tr><td style="padding:6px;border:1px solid #eee">\(-1\)</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">\(-1\)</td><td style="padding:6px;border:1px solid #eee">\(-1\)</td><td style="padding:6px;border:1px solid #eee">1</td></tr>
-          <tr><td style="padding:6px;border:1px solid #eee">\(-\tfrac{1}{2}\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td><td style="padding:6px;border:1px solid #eee">\(-0{,}125\)</td><td style="padding:6px;border:1px solid #eee">\(-2\)</td><td style="padding:6px;border:1px solid #eee">4</td></tr>
-          <tr><td style="padding:6px;border:1px solid #eee">\(\tfrac{1}{2}\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}125\)</td><td style="padding:6px;border:1px solid #eee">2</td><td style="padding:6px;border:1px solid #eee">4</td></tr>
-          <tr><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td></tr>
-          <tr><td style="padding:6px;border:1px solid #eee">2</td><td style="padding:6px;border:1px solid #eee">4</td><td style="padding:6px;border:1px solid #eee">8</td><td style="padding:6px;border:1px solid #eee">\(0{,}5\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td></tr>
-        </tbody>
-      </table>
-      <div class="ip" style="margin-top:8px"><strong>Beobachtungen:</strong></div>
-      <ul style="margin-left:22px;line-height:1.7">
-        <li>\(x^2\) und \(x^{-2}\) sind <em>achsensymmetrisch</em> (gerade Exponenten): \(f(-x) = f(x)\).</li>
-        <li>\(x^3\) und \(x^{-1}\) sind <em>punktsymmetrisch zum Ursprung</em> (ungerade Exponenten): \(f(-x) = -f(x)\).</li>
-        <li>Bei <em>negativem</em> Exponenten ist \(x = 0\) nicht erlaubt — der Definitionsbereich hat eine Lücke.</li>
-      </ul>
-    </details>
-  </div>
-</div>
-
-<!-- ═════════════════════ SECTION 2 ═════════════════════ -->
-<div class="section-label">2 · Die vier Grundtypen im Vergleich</div>
-
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vier typische Graphenformen</span></div>
-  <div class="card-body">
-    <div class="ip">Aus den Wertetabellen wird klar: \(f(x) = x^n\) verhält sich nach vier Mustern. Welches Muster greift, entscheiden zwei Fragen — ist \(n\) positiv oder negativ, gerade oder ungerade?</div>
-    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:14px">
-      <thead><tr style="background:var(--mushikuri-light);font-weight:600">
-        <th style="padding:8px;border:1px solid #ddd;text-align:left">Typ</th>
-        <th style="padding:8px;border:1px solid #ddd;text-align:left">Form</th>
-        <th style="padding:8px;border:1px solid #ddd;text-align:left">Verlauf</th>
-      </tr></thead>
-      <tbody>
-        <tr><td style="padding:8px;border:1px solid #eee"><strong>1.</strong> \(n>0\), gerade<br>\(x^2, x^4, \ldots\)</td><td style="padding:8px;border:1px solid #eee">U-Form, geöffnet nach oben</td><td style="padding:8px;border:1px solid #eee">Achsensymmetrisch zur \(y\)-Achse. Beide Äste steigen für \(|x|\to\infty\) gegen \(+\infty\).</td></tr>
-        <tr><td style="padding:8px;border:1px solid #eee"><strong>2.</strong> \(n>0\), ungerade<br>\(x^3, x^5, \ldots\)</td><td style="padding:8px;border:1px solid #eee">S-Form durch Ursprung</td><td style="padding:8px;border:1px solid #eee">Punktsymmetrisch zum Ursprung. Linker Ast \(\to -\infty\), rechter \(\to +\infty\).</td></tr>
-        <tr><td style="padding:8px;border:1px solid #eee"><strong>3.</strong> \(n<0\), gerade<br>\(x^{-2}, x^{-4}, \ldots\)</td><td style="padding:8px;border:1px solid #eee">Doppelhyperbel, beide Äste über \(x\)-Achse</td><td style="padding:8px;border:1px solid #eee">Achsensymmetrisch. Polstelle bei \(x=0\). Für \(|x|\to\infty\) Annäherung an die \(x\)-Achse von oben.</td></tr>
-        <tr><td style="padding:8px;border:1px solid #eee"><strong>4.</strong> \(n<0\), ungerade<br>\(x^{-1}, x^{-3}, \ldots\)</td><td style="padding:8px;border:1px solid #eee">Hyperbel in zwei Quadranten</td><td style="padding:8px;border:1px solid #eee">Punktsymmetrisch zum Ursprung. Polstelle bei \(x=0\). Annäherung an \(x\)-Achse.</td></tr>
-      </tbody>
-    </table>
-    <div class="hint">
-      <strong>Merksatz:</strong> Das <em>Vorzeichen</em> des Exponenten entscheidet, ob die Funktion über die \(x\)-Achse oder über eine Polstelle bei \(x=0\) verläuft. Die <em>Parität</em> (gerade/ungerade) entscheidet über die Symmetrie.
-    </div>
-  </div>
-</div>
-
-<!-- ═════════════════════ SECTION 3 ═════════════════════ -->
-<div class="section-label">3 · Interaktiv erkunden — Schieberegler für a und b</div>
-
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Was tun a und b mit dem Graphen?</span></div>
-  <div class="card-body">
-    <div class="ip">Verändere die beiden Schieberegler und beobachte den Graphen von \(f(x) = a \cdot x^b\). Versuche, <em>bevor</em> du den Regler bewegst, vorherzusagen, was passiert:</div>
-    <ul style="margin-left:22px;line-height:1.7;margin-top:6px">
-      <li>Was passiert, wenn \(a\) negativ wird?</li>
-      <li>Was passiert, wenn \(b\) von \(2\) auf \(3\) springt?</li>
+    <div class="ip">Verändere \(a\) und \(b\) und beobachte den Graphen. Versuche, <em>vor</em> jeder Bewegung vorherzusagen, was passiert. Stelle dir Fragen wie:</div>
+    <ul style="margin-left:22px;line-height:1.7;margin-top:4px">
+      <li>Was ändert sich, wenn \(b\) das Vorzeichen wechselt?</li>
+      <li>Was ändert sich, wenn \(b\) von gerade auf ungerade springt?</li>
       <li>Wann hat der Graph eine Lücke bei \(x = 0\)?</li>
+      <li>Was passiert mit dem Graphen, wenn \(a\) negativ wird?</li>
     </ul>
     <div style="margin:15px 0">
-      <label style="display:block;margin:6px 0"><strong>Faktor a:</strong> <input type="range" min="-3" max="3" step="0.5" value="1" id="pfSliderA" oninput="updatePotenzExplorer()"/> <span id="pfValA" style="font-weight:600;color:#c75c3a">1</span></label>
-      <label style="display:block;margin:6px 0"><strong>Exponent b (ganzzahlig):</strong> <input type="range" min="-4" max="4" step="1" value="2" id="pfSliderB" oninput="updatePotenzExplorer()"/> <span id="pfValB" style="font-weight:600;color:#c75c3a">2</span></label>
+      <label style="display:block;margin:8px 0"><strong>Faktor a:</strong> <input type="range" min="-5" max="5" step="0.5" value="1" id="pfSliderA" oninput="updatePotenzExplorer()"/> <span id="pfValA" style="font-weight:600;color:#c75c3a">1</span></label>
+      <label style="display:block;margin:8px 0"><strong>Exponent b:</strong> <input type="range" min="-5" max="5" step="0.5" value="2" id="pfSliderB" oninput="updatePotenzExplorer()"/> <span id="pfValB" style="font-weight:600;color:#c75c3a">2</span></label>
     </div>
-    <canvas id="cvPotenzExplorer" style="width:100%;max-width:520px;display:block;border-radius:8px;background:#fff;border:1px solid #e8e4dd"></canvas>
-    <div id="pfFormula" style="text-align:center;margin-top:8px;font-size:15px;font-weight:600;color:#c75c3a">f(x) = 1·x²</div>
-    <div id="pfProps" style="text-align:center;margin-top:4px;font-size:13px;color:#5b6e2e">Definitionsbereich: ℝ · achsensymmetrisch · Schnitt mit Achsen: (0|0)</div>
+    <canvas id="cvPotenzExplorer" style="width:100%;max-width:540px;display:block;border-radius:8px;background:#fff;border:1px solid #e8e4dd"></canvas>
+    <div id="pfFormula" style="text-align:center;margin-top:8px;font-size:15px;font-weight:600;color:#c75c3a">f(x) = 1 · x²</div>
+    <div id="pfProps" style="text-align:center;margin-top:4px;font-size:13px;color:#5b6e2e">ganzzahlig · achsensymmetrisch zur y-Achse · Definitionsbereich: ℝ</div>
+    <div class="hint" style="margin-top:10px;font-size:13px">
+      <strong>Hinweis:</strong> Für nicht-ganzzahlige Exponenten (z. B. \(b = 0{,}5\)) ist \(x^b\) nur für \(x \geq 0\) sinnvoll definiert. Du siehst dann nur den rechten Teil des Graphen. Solche Funktionen heißen <em>Wurzelfunktionen</em> — sie erkundest du im nächsten Bereich genauer.
+    </div>
   </div>
 </div>
 <script>
 function updatePotenzExplorer(){
   var a=parseFloat(document.getElementById('pfSliderA').value);
-  var b=parseInt(document.getElementById('pfSliderB').value,10);
-  // b = 0 überspringen: dann ist f(x) = a (konstant), nicht spannend → nimm nächst-höheren Wert
-  if(b===0){b=1; document.getElementById('pfSliderB').value=1;}
+  var b=parseFloat(document.getElementById('pfSliderB').value);
   document.getElementById('pfValA').textContent=a;
   document.getElementById('pfValB').textContent=b;
   // Formel-Anzeige
   var aStr=(a===1?'':a===-1?'−':(a<0?'−'+Math.abs(a):a));
-  var bStr=(b===1?'x':'x'+String(b).replace('-','⁻').replace(/[0-9]/g,function(d){return '⁰¹²³⁴⁵⁶⁷⁸⁹'[parseInt(d)];}));
-  document.getElementById('pfFormula').textContent='f(x) = '+aStr+'·'+bStr;
+  var bDisp=(Number.isInteger(b)?String(b):String(b));
+  document.getElementById('pfFormula').textContent='f(x) = '+aStr+' · x^('+bDisp+')';
   // Eigenschaften
-  var Dtxt = (b<0 ? 'Definitionsbereich: ℝ ∖ {0} (Polstelle)' : 'Definitionsbereich: ℝ');
-  var symm = (b%2===0 ? 'achsensymmetrisch (y-Achse)' : 'punktsymmetrisch (Ursprung)');
-  var schnitt = (b<0 ? 'kein Schnitt mit den Achsen' : 'Schnitt mit Achsen: (0|0)');
-  document.getElementById('pfProps').textContent = Dtxt+' · '+symm+' · '+schnitt;
-  // Canvas
+  var isInt=Math.abs(b-Math.round(b))<0.001;
+  var parity=isInt?(Math.round(b)%2===0?'gerade':'ungerade'):'';
+  var typ;
+  if(!isInt){typ='nicht-ganzzahlig (Wurzelfunktion, nur x ≥ 0)';}
+  else if(b===0){typ='konstant: f(x) = '+a;}
+  else if(b>0&&parity==='gerade'){typ='ganzzahlig · achsensymmetrisch zur y-Achse · Definitionsbereich: ℝ';}
+  else if(b>0&&parity==='ungerade'){typ='ganzzahlig · punktsymmetrisch zum Ursprung · Definitionsbereich: ℝ';}
+  else if(b<0&&parity==='gerade'){typ='ganzzahlig · achsensymmetrisch · Polstelle bei x = 0 · D = ℝ ∖ {0}';}
+  else if(b<0&&parity==='ungerade'){typ='ganzzahlig · punktsymmetrisch · Polstelle bei x = 0 · D = ℝ ∖ {0}';}
+  document.getElementById('pfProps').textContent=typ;
+  drawPotExplorer(a,b,isInt);
+}
+function drawPotExplorer(a,b,isInt){
   var c=document.getElementById('cvPotenzExplorer'),ctx=c.getContext('2d');
-  var dpr=window.devicePixelRatio||1,cssW=520,cssH=380;
+  var dpr=window.devicePixelRatio||1,cssW=540,cssH=400;
   c.width=cssW*dpr;c.height=cssH*dpr;c.style.width=cssW+'px';c.style.height=cssH+'px';
   ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);
-  var xMin=-4,xMax=4,yMin=-8,yMax=8,pad=42;
+  var xMin=-5,xMax=5,yMin=-10,yMax=10,pad=44;
   function tx(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-12);}
   function ty(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-12);}
-  // bg
   ctx.fillStyle='#fff';ctx.fillRect(0,0,cssW,cssH);
   // Gitter
   ctx.strokeStyle='#eee8de';ctx.lineWidth=0.5;
   for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){if(g===0)continue;ctx.beginPath();ctx.moveTo(tx(g),12);ctx.lineTo(tx(g),cssH-pad);ctx.stroke();}
-  for(var g=Math.ceil(yMin);g<=Math.floor(yMax);g++){if(g===0)continue;ctx.beginPath();ctx.moveTo(pad,ty(g));ctx.lineTo(cssW-12,ty(g));ctx.stroke();}
-  // Achsen mit Pfeilen
+  for(var g=Math.ceil(yMin);g<=Math.floor(yMax);g+=2){if(g===0)continue;ctx.beginPath();ctx.moveTo(pad,ty(g));ctx.lineTo(cssW-12,ty(g));ctx.stroke();}
+  // Achsen
   ctx.strokeStyle='#555';ctx.lineWidth=1.5;
   ctx.beginPath();ctx.moveTo(pad-8,ty(0));ctx.lineTo(cssW-10,ty(0));ctx.stroke();
   ctx.beginPath();ctx.moveTo(tx(0),cssH-pad+8);ctx.lineTo(tx(0),14);ctx.stroke();
-  // Pfeilspitzen
   ctx.fillStyle='#555';
   ctx.beginPath();ctx.moveTo(cssW-10,ty(0));ctx.lineTo(cssW-18,ty(0)-4);ctx.lineTo(cssW-18,ty(0)+4);ctx.closePath();ctx.fill();
   ctx.beginPath();ctx.moveTo(tx(0),14);ctx.lineTo(tx(0)-4,22);ctx.lineTo(tx(0)+4,22);ctx.closePath();ctx.fill();
-  // Tick-Marks + Zahlen
+  // Ticks
   ctx.fillStyle='#666';ctx.font='12px system-ui,sans-serif';
   ctx.textAlign='center';ctx.textBaseline='top';
   for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){if(g===0)continue;ctx.fillText(g,tx(g),ty(0)+5);ctx.beginPath();ctx.moveTo(tx(g),ty(0)-3);ctx.lineTo(tx(g),ty(0)+3);ctx.stroke();}
   ctx.textAlign='right';ctx.textBaseline='middle';
-  for(var g=yMin+2;g<=yMax-2;g+=2){if(g===0)continue;ctx.fillText(g,tx(0)-6,ty(g));ctx.beginPath();ctx.moveTo(tx(0)-3,ty(g));ctx.lineTo(tx(0)+3,ty(g));ctx.stroke();}
-  // Achsen-Beschriftung
+  for(var g=Math.ceil(yMin)+2;g<=Math.floor(yMax)-2;g+=2){if(g===0)continue;ctx.fillText(g,tx(0)-6,ty(g));ctx.beginPath();ctx.moveTo(tx(0)-3,ty(g));ctx.lineTo(tx(0)+3,ty(g));ctx.stroke();}
+  // Beschriftung
   ctx.fillStyle='#333';ctx.font='bold 13px system-ui,sans-serif';
   ctx.textAlign='right';ctx.fillText('x',cssW-12,ty(0)-8);
   ctx.textAlign='left';ctx.fillText('y',tx(0)+8,18);
   ctx.font='12px system-ui,sans-serif';ctx.fillStyle='#666';
   ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
-  // Funktionsgraph zeichnen
+  // Graph
   ctx.strokeStyle='#c75c3a';ctx.lineWidth=2.5;
   var step=0.01;
-  function inView(y){return y>=yMin && y<=yMax;}
-  if(b<0){
-    // Polstelle bei 0 — zwei Äste
+  function inView(y){return y>=yMin&&y<=yMax;}
+  function safePow(x,b){
+    if(x>0)return Math.pow(x,b);
+    if(x===0){if(b>0)return 0;if(b===0)return 1;return Infinity;}
+    // x<0:
+    if(isInt){
+      var ib=Math.round(b);
+      var v=Math.pow(Math.abs(x),ib);
+      return ib%2===0?v:-v;
+    }
+    return NaN;
+  }
+  if(isInt&&Math.round(b)<0){
     for(var side=0;side<2;side++){
       var fromX=(side===0?xMin:0.001),toX=(side===0?-0.001:xMax);
       ctx.beginPath();var first=true;
       for(var x=fromX;x<=toX;x+=step){
-        var y=a*Math.pow(x,b);
+        var y=a*safePow(x,b);
         if(!isFinite(y)){first=true;continue;}
         if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
       }
       ctx.stroke();
     }
-  } else {
-    // Kein Pol — zusammenhängend
+  }else if(isInt){
     ctx.beginPath();var first=true;
     for(var x=xMin;x<=xMax;x+=step){
-      var y=a*Math.pow(x,b);
+      var y=a*safePow(x,b);
+      if(!isFinite(y)){first=true;continue;}
+      if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
+    }
+    ctx.stroke();
+  }else{
+    // nicht-ganzzahlig: nur x ≥ 0 (bei b<0: x > 0)
+    var fromX=(b<0?0.005:0);
+    ctx.beginPath();var first=true;
+    for(var x=fromX;x<=xMax;x+=step){
+      var y=a*safePow(x,b);
       if(!isFinite(y)){first=true;continue;}
       if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
     }
     ctx.stroke();
   }
 }
-// initial render — sicherheitshalber später ausführen, falls Canvas noch nicht im DOM ist
 if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(updatePotenzExplorer,30);});}
 </script>
 
-<!-- ═════════════════════ SECTION 4 ═════════════════════ -->
-<div class="section-label">4 · Eigenschaften systematisch</div>
+<!-- ═════════════════════ SECTION 2 ═════════════════════ -->
+<div class="section-label">2 · Eigenschaften der vier Grundtypen</div>
 
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Eigenschaftstabelle nach Exponenten-Typ</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die Eigenschaften auf einen Blick</span></div>
   <div class="card-body">
-    <div class="ip">Für \(f(x) = x^n\) mit \(n \in \mathbb{Z}\) lassen sich die wichtigsten Eigenschaften direkt am Exponenten ablesen:</div>
+    <div class="ip">Aus dem Erkunden am Schieberegler erkennst du vier typische Verläufe für ganzzahlige Exponenten — je nach Vorzeichen und Parität von \(n\):</div>
     <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:13px">
       <thead><tr style="background:var(--mushikuri-light);font-weight:600">
-        <th style="padding:6px;border:1px solid #ddd">Eigenschaft</th>
-        <th style="padding:6px;border:1px solid #ddd">n&gt;0 gerade</th>
-        <th style="padding:6px;border:1px solid #ddd">n&gt;0 ungerade</th>
-        <th style="padding:6px;border:1px solid #ddd">n&lt;0 gerade</th>
-        <th style="padding:6px;border:1px solid #ddd">n&lt;0 ungerade</th>
+        <th style="padding:8px;border:1px solid #ddd;text-align:left;width:18%">Eigenschaft</th>
+        <th style="padding:8px;border:1px solid #ddd;text-align:center;width:20.5%">\(n &gt; 0\) gerade<br><span style="font-weight:400;color:#666">z. B. \(x^2,\,x^4\)</span></th>
+        <th style="padding:8px;border:1px solid #ddd;text-align:center;width:20.5%">\(n &gt; 0\) ungerade<br><span style="font-weight:400;color:#666">z. B. \(x^3,\,x^5\)</span></th>
+        <th style="padding:8px;border:1px solid #ddd;text-align:center;width:20.5%">\(n &lt; 0\) gerade<br><span style="font-weight:400;color:#666">z. B. \(x^{-2},\,x^{-4}\)</span></th>
+        <th style="padding:8px;border:1px solid #ddd;text-align:center;width:20.5%">\(n &lt; 0\) ungerade<br><span style="font-weight:400;color:#666">z. B. \(x^{-1},\,x^{-3}\)</span></th>
       </tr></thead>
       <tbody>
-        <tr><td style="padding:6px;border:1px solid #eee">Definitionsbereich \(D\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\setminus\{0\}\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\setminus\{0\}\)</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">Wertebereich \(W\)</td><td style="padding:6px;border:1px solid #eee">\([0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\)</td><td style="padding:6px;border:1px solid #eee">\((0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\setminus\{0\}\)</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">Symmetrie</td><td style="padding:6px;border:1px solid #eee">Achsen-S.</td><td style="padding:6px;border:1px solid #eee">Punkt-S.</td><td style="padding:6px;border:1px solid #eee">Achsen-S.</td><td style="padding:6px;border:1px solid #eee">Punkt-S.</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">Monotonie</td><td style="padding:6px;border:1px solid #eee">fall./steig. an 0</td><td style="padding:6px;border:1px solid #eee">streng steigend</td><td style="padding:6px;border:1px solid #eee">steig./fall. an 0</td><td style="padding:6px;border:1px solid #eee">streng fallend (je Ast)</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">Krümmung</td><td style="padding:6px;border:1px solid #eee">linksgekrümmt</td><td style="padding:6px;border:1px solid #eee">Wendep. bei 0</td><td style="padding:6px;border:1px solid #eee">linksgekrümmt</td><td style="padding:6px;border:1px solid #eee">links bzw. rechts</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">Achsenschnitte</td><td style="padding:6px;border:1px solid #eee">\((0\,|\,0)\)</td><td style="padding:6px;border:1px solid #eee">\((0\,|\,0)\)</td><td style="padding:6px;border:1px solid #eee">keine</td><td style="padding:6px;border:1px solid #eee">keine</td></tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #eee;font-weight:600;background:#faf7ec">Graph</td>
+          <td style="padding:6px;border:1px solid #eee;text-align:center;background:#fff">
+            <svg viewBox="0 0 120 80" width="110" height="74" xmlns="http://www.w3.org/2000/svg" aria-label="U-Form, achsensymmetrisch">
+              <line x1="6" y1="60" x2="114" y2="60" stroke="#999" stroke-width="0.8"/>
+              <polygon points="114,60 109,57.5 109,62.5" fill="#999"/>
+              <line x1="60" y1="76" x2="60" y2="4" stroke="#999" stroke-width="0.8"/>
+              <polygon points="60,4 57.5,9 62.5,9" fill="#999"/>
+              <polyline points="14,10 26,30 38,46 50,57 60,60 70,57 82,46 94,30 106,10" stroke="#c75c3a" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </td>
+          <td style="padding:6px;border:1px solid #eee;text-align:center;background:#fff">
+            <svg viewBox="0 0 120 80" width="110" height="74" xmlns="http://www.w3.org/2000/svg" aria-label="S-Form, punktsymmetrisch">
+              <line x1="6" y1="40" x2="114" y2="40" stroke="#999" stroke-width="0.8"/>
+              <polygon points="114,40 109,37.5 109,42.5" fill="#999"/>
+              <line x1="60" y1="76" x2="60" y2="4" stroke="#999" stroke-width="0.8"/>
+              <polygon points="60,4 57.5,9 62.5,9" fill="#999"/>
+              <polyline points="14,76 26,68 38,55 50,46 60,40 70,34 82,25 94,12 106,4" stroke="#c75c3a" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </td>
+          <td style="padding:6px;border:1px solid #eee;text-align:center;background:#fff">
+            <svg viewBox="0 0 120 80" width="110" height="74" xmlns="http://www.w3.org/2000/svg" aria-label="Doppelhyperbel über x-Achse">
+              <line x1="6" y1="60" x2="114" y2="60" stroke="#999" stroke-width="0.8"/>
+              <polygon points="114,60 109,57.5 109,62.5" fill="#999"/>
+              <line x1="60" y1="76" x2="60" y2="4" stroke="#999" stroke-width="0.8"/>
+              <polygon points="60,4 57.5,9 62.5,9" fill="#999"/>
+              <polyline points="14,57 24,55 34,51 42,46 48,38 53,24 56,10" stroke="#c75c3a" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <polyline points="64,10 67,24 72,38 78,46 86,51 96,55 106,57" stroke="#c75c3a" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </td>
+          <td style="padding:6px;border:1px solid #eee;text-align:center;background:#fff">
+            <svg viewBox="0 0 120 80" width="110" height="74" xmlns="http://www.w3.org/2000/svg" aria-label="Hyperbel in 1. und 3. Quadrant">
+              <line x1="6" y1="40" x2="114" y2="40" stroke="#999" stroke-width="0.8"/>
+              <polygon points="114,40 109,37.5 109,42.5" fill="#999"/>
+              <line x1="60" y1="76" x2="60" y2="4" stroke="#999" stroke-width="0.8"/>
+              <polygon points="60,4 57.5,9 62.5,9" fill="#999"/>
+              <polyline points="14,46 28,50 40,55 50,62 55,70 57,76" stroke="#c75c3a" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <polyline points="63,4 65,10 70,18 80,25 92,30 106,34" stroke="#c75c3a" stroke-width="2" fill="none" stroke-linejoin="round"/>
+            </svg>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #eee;font-weight:600;background:#faf7ec">Definitionsbereich \(D\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\(\mathbb{R}\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\(\mathbb{R}\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\(\mathbb{R}\setminus\{0\}\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\(\mathbb{R}\setminus\{0\}\)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #eee;font-weight:600;background:#faf7ec">Wertebereich \(W\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\([0;\infty)\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\(\mathbb{R}\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\((0;\infty)\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\(\mathbb{R}\setminus\{0\}\)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #eee;font-weight:600;background:#faf7ec">Symmetrie</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">Achsen-S. (\(y\)-Achse)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">Punkt-S. (Ursprung)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">Achsen-S. (\(y\)-Achse)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">Punkt-S. (Ursprung)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #eee;font-weight:600;background:#faf7ec">Monotonie (für \(a&gt;0\))</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">fällt, dann steigt (an \(x=0\))</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">streng steigend</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">steigt, dann fällt (je Ast)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">streng fallend (je Ast)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;border:1px solid #eee;font-weight:600;background:#faf7ec">Achsenschnitte</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\((0\,|\,0)\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">\((0\,|\,0)\)</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">keine</td>
+          <td style="padding:8px;border:1px solid #eee;text-align:center">keine</td>
+        </tr>
       </tbody>
     </table>
     <div class="hint">
-      <strong>Hinweis zum Faktor a:</strong> Ein Vorzeichenwechsel bei \(a\) <em>spiegelt</em> den Graphen an der \(x\)-Achse. Ein Wert \(|a|>1\) <em>streckt</em> ihn, ein Wert \(|a|<1\) <em>staucht</em> ihn — die Eigenschaften zur Symmetrie und zu Polstellen ändern sich dadurch nicht.
+      <strong>Faktor a:</strong> Vorzeichenwechsel bei \(a\) <em>spiegelt</em> den Graphen an der \(x\)-Achse. \(|a|&gt;1\) <em>streckt</em> ihn, \(|a|&lt;1\) <em>staucht</em> ihn. Symmetrie und Polstelle ändern sich dadurch nicht.
     </div>
   </div>
 </div>
 
-<!-- ═════════════════════ SECTION 5 ═════════════════════ -->
-<div class="section-label">5 · Verschieben, Strecken, Spiegeln</div>
-
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die allgemeine Form mit drei Parametern</span></div>
-  <div class="card-body">
-    <div class="ip">Wenn du \(f(x) = a \cdot (x - d)^n + e\) schreibst, wirken die drei Parameter genauso wie bei der Normalparabel aus Klasse 8:</div>
-    <ul style="margin-left:22px;line-height:1.7">
-      <li>\(a\) <strong>streckt/staucht</strong> den Graphen vertikal (Vorzeichenwechsel: Spiegelung an der \(x\)-Achse).</li>
-      <li>\(d\) <strong>verschiebt</strong> den Graphen horizontal um \(d\) nach rechts (bei \(d<0\) nach links).</li>
-      <li>\(e\) <strong>verschiebt</strong> den Graphen vertikal um \(e\) nach oben (bei \(e<0\) nach unten).</li>
-    </ul>
-    <div class="ip"><strong>Beispiel:</strong> \(g(x) = 2 \cdot (x-3)^2 + 1\) ist eine nach oben geöffnete, doppelt so steile Parabel, deren Scheitel von \((0|0)\) zu \((3|1)\) wandert.</div>
-  </div>
-</div>
-
-<!-- ═════════════════════ SECTION 6 ═════════════════════ -->
-<div class="section-label">6 · Funktionswerte, Stellen und Parameter</div>
+<!-- ═════════════════════ SECTION 3 ═════════════════════ -->
+<div class="section-label">3 · Funktionswerte, Stellen und Parameter</div>
 
 <div class="card">
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Drei Aufgabentypen — und wie du sie löst</span></div>
   <div class="card-body">
     <div class="ip">Wenn du mit einer Funktion \(f(x) = a \cdot x^n\) arbeitest, brauchst du immer wieder drei Rechenrichtungen:</div>
     <ol style="margin-left:22px;line-height:1.7">
-      <li><strong>Stelle \(\to\) Funktionswert:</strong> \(x\) einsetzen, \(f(x)\) ausrechnen. <em>Beispiel:</em> \(f(x)=2x^3\) an der Stelle \(x=3\) liefert \(f(3)=2 \cdot 27 = 54\).</li>
+      <li><strong>Stelle \(\to\) Funktionswert:</strong> \(x\) einsetzen, \(f(x)\) ausrechnen.</li>
       <li><strong>Funktionswert \(\to\) Stelle:</strong> Eine Gleichung \(a \cdot x^n = c\) nach \(x\) lösen — eine <em>Potenzgleichung</em>.</li>
       <li><strong>Stelle und Wert gegeben \(\to\) Parameter:</strong> Einsetzen und nach \(a\) oder \(n\) auflösen.</li>
     </ol>
@@ -4572,12 +4590,12 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
       </tr></thead>
       <tbody>
         <tr><td style="padding:6px;border:1px solid #eee">\(n\) ungerade, \(c\) beliebig</td><td style="padding:6px;border:1px solid #eee">\(x^3 = -8\)</td><td style="padding:6px;border:1px solid #eee">genau eine Lösung: \(x = \sqrt[3]{-8} = -2\)</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c > 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = 16\)</td><td style="padding:6px;border:1px solid #eee">zwei Lösungen: \(x = \pm 4\)</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c < 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = -4\)</td><td style="padding:6px;border:1px solid #eee">keine reelle Lösung</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c &gt; 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = 16\)</td><td style="padding:6px;border:1px solid #eee">zwei Lösungen: \(x = \pm 4\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c &lt; 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = -4\)</td><td style="padding:6px;border:1px solid #eee">keine reelle Lösung</td></tr>
       </tbody>
     </table>
     <div class="hint">
-      <strong>Reihenfolge:</strong> Wenn ein Faktor \(a\) davorsteht — \(a \cdot x^n = c\) — erst durch \(a\) teilen, dann die Wurzel ziehen.
+      <strong>Reihenfolge:</strong> Steht ein Faktor \(a\) davor — \(a \cdot x^n = c\) — erst durch \(a\) teilen, dann die Wurzel ziehen.
     </div>
   </div>
 </div>
@@ -4592,19 +4610,15 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
     </ul>
     <details class="bsp">
       <summary>Lösung einblenden ▾</summary>
-      <div class="ip"><strong>(a) Stelle \(\to\) Funktionswert:</strong>
-        \[ s(80) = \tfrac{1}{100} \cdot 80^2 = \tfrac{6400}{100} = 64\,\text{m}. \]
-      </div>
-      <div class="ip"><strong>(b) Funktionswert \(\to\) Stelle:</strong>
-        \[ \tfrac{1}{100} v^2 = 36 \;\Leftrightarrow\; v^2 = 3600 \;\Leftrightarrow\; v = 60\,\text{km/h}. \]
-      </div>
+      <div class="ip"><strong>(a) Stelle \(\to\) Funktionswert:</strong> \(s(80) = \tfrac{1}{100} \cdot 80^2 = \tfrac{6400}{100} = 64\,\text{m}\).</div>
+      <div class="ip"><strong>(b) Funktionswert \(\to\) Stelle:</strong> \(\tfrac{1}{100} v^2 = 36 \;\Leftrightarrow\; v^2 = 3600 \;\Leftrightarrow\; v = 60\,\text{km/h}\).</div>
       <div class="ip"><em>Negative Lösung \(-60\) entfällt, weil es keine negativen Geschwindigkeiten gibt.</em></div>
     </details>
   </div>
 </div>
 
-<!-- ═════════════════════ SECTION 7 ═════════════════════ -->
-<div class="section-label">7 · Aufgaben — Potenzfunktionen</div>
+<!-- ═════════════════════ SECTION 4 ═════════════════════ -->
+<div class="section-label">4 · Aufgaben — Potenzfunktionen</div>
 
 <div class="card">
   <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgabenpool</span></div>
@@ -4665,7 +4679,7 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
       <div class="tq">Skizziere im Kopf — gib jeweils Definitionsbereich, Symmetrie und Schnittpunkte mit den Achsen an: \(f(x) = -\tfrac{1}{2} x^4\), \(g(x) = 3 x^{-1}\), \(h(x) = 2(x-1)^3\).</div>
       <div class="tk-toggle">⌄</div>
     </div>
-    <div class="ta"><div class="ip">\(f(x) = -\tfrac{1}{2} x^4\): \(D = \mathbb{R}\), achsensymmetrisch, Schnitt mit Achsen: \((0|0)\). Wegen \(a<0\): nach unten geöffnete „Wanne".</div>
+    <div class="ta"><div class="ip">\(f(x) = -\tfrac{1}{2} x^4\): \(D = \mathbb{R}\), achsensymmetrisch, Schnitt mit Achsen: \((0|0)\). Wegen \(a&lt;0\): nach unten geöffnete „Wanne".</div>
           <div class="ip">\(g(x) = 3 x^{-1} = \tfrac{3}{x}\): \(D = \mathbb{R}\setminus\{0\}\), punktsymmetrisch, kein Schnitt mit Achsen.</div>
           <div class="ip">\(h(x) = 2(x-1)^3\): \(D = \mathbb{R}\), punktsymmetrisch <em>zum Punkt</em> \((1|0)\), Schnitt mit \(x\)-Achse: \((1|0)\), mit \(y\)-Achse: \(h(0) = -2\).</div>
           <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
@@ -4738,8 +4752,8 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
       <div class="tk-toggle">⌄</div>
     </div>
     <div class="ta"><div class="ip"><strong>Schnittpunkte:</strong> \(x^4 = x^2 \;\Leftrightarrow\; x^2(x^2 - 1) = 0\). Lösungen: \(x = 0\), \(x = \pm 1\).</div>
-          <div class="ip"><strong>Im Bereich \(|x| < 1\):</strong> \(|x| < 1 \Rightarrow x^4 < x^2\), also \(g(x) < f(x)\) — der Graph von \(g\) liegt <em>unter</em> dem von \(f\).</div>
-          <div class="ip"><strong>Im Bereich \(|x| > 1\):</strong> \(|x| > 1 \Rightarrow x^4 > x^2\), also \(g(x) > f(x)\) — der Graph von \(g\) liegt <em>über</em> dem von \(f\).</div>
+          <div class="ip"><strong>Im Bereich \(|x| &lt; 1\):</strong> \(|x| &lt; 1 \Rightarrow x^4 &lt; x^2\), also \(g(x) &lt; f(x)\) — der Graph von \(g\) liegt <em>unter</em> dem von \(f\).</div>
+          <div class="ip"><strong>Im Bereich \(|x| &gt; 1\):</strong> \(|x| &gt; 1 \Rightarrow x^4 &gt; x^2\), also \(g(x) &gt; f(x)\) — der Graph von \(g\) liegt <em>über</em> dem von \(f\).</div>
           <div class="ip"><strong>Anschaulich:</strong> Höhere Potenzen wachsen außerhalb von \([-1;1]\) schneller, innerhalb fallen sie schneller gegen \(0\).</div>
           <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
           <div class="komp-desc">Argumentieren: Verhalten von Potenzfunktionen ohne Zeichnung vergleichen.</div></div>
@@ -4754,8 +4768,8 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
   <div class="card-body">
     <div class="ip">Bevor du zum Bereich <em>Wurzelfunktionen</em> gehst — kannst du diese fünf Fragen beantworten?</div>
     <ol style="padding-left:22px;line-height:1.7">
-      <li>Ordne jedem der vier Grundtypen einen Funktionsterm zu und nenne in jedem Fall die Symmetrie. <span style="color:#888;font-size:12px">(Rückverweis: „Vier typische Graphenformen")</span></li>
-      <li>Wann hat \(f(x) = a \cdot x^n\) eine Definitionslücke? Begründe. <span style="color:#888;font-size:12px">(Rückverweis: „Eigenschaftstabelle")</span></li>
+      <li>Ordne jedem der vier Grundtypen einen Funktionsterm zu und nenne in jedem Fall die Symmetrie. <span style="color:#888;font-size:12px">(Rückverweis: Eigenschaftstabelle)</span></li>
+      <li>Wann hat \(f(x) = a \cdot x^n\) eine Definitionslücke? Begründe. <span style="color:#888;font-size:12px">(Rückverweis: Eigenschaftstabelle)</span></li>
       <li>Löse \(2 x^3 = 54\). <span style="color:#888;font-size:12px">(Rückverweis: „Potenzgleichungen \(x^n = c\) lösen")</span></li>
       <li>Erkläre, warum \(x^2 = -4\) keine reelle Lösung hat, \(x^3 = -8\) aber genau eine. <span style="color:#888;font-size:12px">(Rückverweis: Tabelle „Fälle bei Potenzgleichungen")</span></li>
       <li>Bei welchem Bremsweg-Modell verdreifacht sich der Bremsweg, wenn sich die Geschwindigkeit verdreifacht? Bei welchem ver-neunfacht er sich? Begründe mit dem Exponenten. <span style="color:#888;font-size:12px">(Rückverweis: „Bremsweg rückwärts")</span></li>
@@ -4767,6 +4781,7 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
 </div>
 
 </div><!-- end k9-potf -->
+
 
 
 <div class="subpanel" id="k9-wurf">
