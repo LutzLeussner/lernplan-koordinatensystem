@@ -3370,7 +3370,10 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 
 <!-- Klasse 9 Tab-Band -->
 <div class="tab-band" id="k9-tabs" style="display:none">
-  <button class="ptb on" onclick="showK9Tab('k9-pot',this)">Potenzen &amp; Wurzeln</button>
+  <button class="ptb on" onclick="showK9Tab('k9-pot',this)">Potenzen</button>
+  <button class="ptb" onclick="showK9Tab('k9-potg',this)">Potenzgesetze</button>
+  <button class="ptb" onclick="showK9Tab('k9-potf',this)">Potenzfunktionen</button>
+  <button class="ptb" onclick="showK9Tab('k9-wurf',this)">Wurzelfunktionen</button>
   <button class="ptb" onclick="showK9Tab('k9-lgs',this)">Gleichungssysteme</button>
   <button class="ptb" onclick="showK9Tab('k9-quad',this)">Quadr. Funkt. &amp; Gl.</button>
   <button class="ptb" onclick="showK9Tab('k9-stat',this)">Statistik</button>
@@ -3385,822 +3388,1579 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 <!-- ── Potenzen & Wurzeln ──────────────────────────────────────── -->
 <div class="subpanel on" id="k9-pot">
 
+<!-- ── Worum geht es ─────────────────────────────────────────── -->
 <div class="card">
   <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
   <div class="card-body">
-    <div class="ip">In diesem Kapitel lernst du, wie Potenzen und Wurzeln zusammenhängen und welche Rechenregeln für sie gelten. Du arbeitest mit der Zehnerpotenzschreibweise für sehr große und sehr kleine Zahlen, lernst die reellen Zahlen kennen und verstehst, warum es Zahlen gibt, die sich nicht als Bruch schreiben lassen.</div>
-    <div class="hint"><strong>Voraussetzung:</strong> Grundrechenarten, Bruchrechnung, natürliche Potenzen aus Klasse 7/8.</div>
+    <div class="ip">Eine Potenz ist eine kurze Schreibweise für eine wiederholte Multiplikation derselben Zahl. Statt \(2\cdot 2\cdot 2\cdot 2\cdot 2\) schreibst du \(2^5\) — und sparst sofort Platz und Schreibaufwand.</div>
+    <div class="ip">In diesem Bereich klärst du, was \(a^n\) bedeutet, welche Potenzen du im Kopf wissen solltest, was negative und gebrochene Exponenten bedeuten — und warum nach den rationalen Zahlen \(\mathbb{Q}\) noch ein weiterer Zahlenbereich \(\mathbb{R}\) kommt.</div>
   </div>
 </div>
 
-<!-- Lernziele Potenzen & Wurzeln -->
+<!-- ── Lernziele ────────────────────────────────────────────── -->
 <div class="card">
-  <div class="card-head"><div class="ci ci-g">✓</div><span class="card-title">Lernziele</span></div>
-  <div class="card-body" style="padding:0">
-    <ul class="gl">
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du beherrschst die Potenzgesetze (Produkt-, Quotienten- und Potenzregel)</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du vereinfachst Terme mit Potenzen und Wurzeln unter Beachtung der Definitionsbereiche</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du rechnest sicher mit der Zehnerpotenzschreibweise</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du unterscheidest rationale und irrationale Zahlen und kennst die Zahlenbereiche</span></li>
-      <li class="gi"><div class="gcheck-wrap"><div class="gcheck" data-group="k9" onclick="toggleGoal(this)"></div></div><span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Du skizzierst Potenz- und Wurzelfunktionen und beschreibst ihre Eigenschaften</span></li>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lernziele · Potenzen</span></div>
+  <div class="card-body">
+    <ul class="gi-list">
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Bedeutung der Potenzschreibweise \(a^n\) erklären — mit Basis, Exponent und Sonderfällen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Quadratzahlen bis \(15^2\) und Zweierpotenzen bis \(2^{10}\) im Kopf wissen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Potenzen mit negativen und gebrochenen Exponenten in eine andere Schreibweise übersetzen (Kehrwert, Wurzel)</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Begründen, warum nicht jede Zahl als Bruch geschrieben werden kann, und reelle Zahlen als Erweiterung von \(\mathbb{Q}\) deuten</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Eine Zahl im Venn-Diagramm der Zahlenbereiche \(\mathbb{N}\subset\mathbb{Z}\subset\mathbb{Q}\subset\mathbb{R}\) richtig einordnen</span></li>
     </ul>
   </div>
 </div>
 
-<!-- Erklärung: Potenzgesetze -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Potenzgesetze</span></div>
-  <div class="card-body">
-    <div class="ip">Eine Potenz ist eine abkürzende Schreibweise für die wiederholte Multiplikation einer Zahl mit sich selbst:</div>
-    <div class="ip">\[ a^n = \underbrace{a \cdot a \cdot \ldots \cdot a}_{n\text{ Faktoren}} \]</div>
-    <div class="ip">Dabei heißt \(a\) die <strong>Basis</strong> und \(n\) der <strong>Exponent</strong>. Für das Rechnen mit Potenzen gelten drei zentrale Gesetze:</div>
-
-    <div class="it">1. Produktregel (gleiche Basis)</div>
-    <div class="ip">\[ a^m \cdot a^n = a^{m+n} \]</div>
-    <div class="ip">Beim Multiplizieren von Potenzen mit gleicher Basis werden die Exponenten <strong>addiert</strong>.</div>
-
-    <div class="it">2. Quotientenregel (gleiche Basis)</div>
-    <div class="ip">\[ \frac{a^m}{a^n} = a^{m-n} \quad (a \neq 0) \]</div>
-    <div class="ip">Beim Dividieren von Potenzen mit gleicher Basis werden die Exponenten <strong>subtrahiert</strong>.</div>
-
-    <div class="it">3. Potenzregel (Potenz einer Potenz)</div>
-    <div class="ip">\[ (a^m)^n = a^{m \cdot n} \]</div>
-    <div class="ip">Wird eine Potenz nochmals potenziert, werden die Exponenten <strong>multipliziert</strong>.</div>
-
-    <div class="hint"><strong>Merke:</strong> Außerdem gilt für Produkte und Quotienten: \((a \cdot b)^n = a^n \cdot b^n\) und \(\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}\).</div>
-  </div>
+<!-- ── Das brauchst du ──────────────────────────────────────── -->
+<div class="hint">
+  <strong>Das brauchst du:</strong> Multiplikation und Division, sicherer Umgang mit Brüchen, Quadratwurzel ziehen (aus Klasse 7/8), die Zahlenbereiche \(\mathbb{N}\), \(\mathbb{Z}\), \(\mathbb{Q}\).
 </div>
 
-<!-- Beispiel: Potenzgesetze -->
+<!-- ═════════════════════ SECTION 1 ═════════════════════ -->
+<div class="section-label">1 · Bedeutung der Potenzschreibweise</div>
+
 <div class="card">
-  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel — Potenzgesetze anwenden</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">\(a^n\) — das steht dahinter</span></div>
   <div class="card-body">
-    <div class="ip"><strong>Aufgabe:</strong> Vereinfache den Term \(\displaystyle \frac{x^5 \cdot x^3}{x^4}\).</div>
-    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
-    <div class="bsp-body">
-      <div class="ip"><strong>Schritt 1:</strong> Zähler zusammenfassen (Produktregel):</div>
-      <div class="ip">\[ x^5 \cdot x^3 = x^{5+3} = x^8 \]</div>
-      <div class="ip"><strong>Schritt 2:</strong> Durch den Nenner dividieren (Quotientenregel):</div>
-      <div class="ip">\[ \frac{x^8}{x^4} = x^{8-4} = x^4 \]</div>
-      <div class="ip"><strong>Ergebnis:</strong> \(\displaystyle \frac{x^5 \cdot x^3}{x^4} = x^4\)</div>
+    <div class="ip">Wenn du dieselbe Zahl mehrfach mit sich selbst multiplizierst, kannst du das abkürzen:</div>
+    <div class="ip" style="text-align:center">\[ a^n \;=\; \underbrace{a \cdot a \cdot \ldots \cdot a}_{n \text{ Faktoren}} \]</div>
+    <div class="ip">Dabei heißt</div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li>\(a\) die <strong>Basis</strong> — die Zahl, die mit sich selbst multipliziert wird,</li>
+      <li>\(n\) der <strong>Exponent</strong> — die Anzahl der Faktoren.</li>
+    </ul>
+    <div class="ip">Gesprochen wird „\(a\) hoch \(n\)". Zwei Sonderfälle, die du dir merken solltest:</div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li>\(a^1 = a\) — ein einzelner Faktor.</li>
+      <li>\(a^0 = 1\) für \(a \neq 0\) — der „leere" Fall, der später aus den Potenzgesetzen folgt.</li>
+    </ul>
+    <div class="hint" style="margin-top:10px;">
+      <strong>Vorsicht:</strong> \((-2)^4\) ist nicht dasselbe wie \(-2^4\). Bei \((-2)^4 = (-2)(-2)(-2)(-2) = 16\), aber \(-2^4\) wird gelesen als „minus von \(2^4\)" und ergibt \(-16\). Die Klammern entscheiden.
     </div>
   </div>
 </div>
 
-<!-- Erklärung: Negative und rationale Exponenten -->
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Negative und rationale Exponenten</span></div>
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Potenzen ausschreiben und ausrechnen</span></div>
   <div class="card-body">
-    <div class="it">Negative Exponenten</div>
-    <div class="ip">Ein negativer Exponent bedeutet „eins geteilt durch die Potenz":</div>
-    <div class="ip">\[ a^{-n} = \frac{1}{a^n} \quad (a \neq 0) \]</div>
-    <div class="ip">Beispiel: \(2^{-3} = \frac{1}{2^3} = \frac{1}{8}\).</div>
-
-    <div class="it">Rationale Exponenten — Wurzeln als Potenzen</div>
-    <div class="ip">Wurzeln lassen sich als Potenzen mit Bruchexponenten schreiben:</div>
-    <div class="ip">\[ \sqrt[n]{a} = a^{\frac{1}{n}} \quad \text{und allgemein:} \quad \sqrt[n]{a^m} = a^{\frac{m}{n}} \]</div>
-    <div class="ip">Damit gelten alle Potenzgesetze auch für Wurzeln. So ist z. B. \(\sqrt{50} = \sqrt{25 \cdot 2} = 5\sqrt{2}\), denn:</div>
-    <div class="ip">\[ (5\sqrt{2})^2 = 25 \cdot 2 = 50 \;\checkmark \]</div>
-
-    <div class="hint"><strong>Achtung:</strong> \(\sqrt{a^2+b^2} \neq a+b\)! Gegenbeispiel: \(\sqrt{3^2+4^2} = \sqrt{25} = 5 \neq 3+4 = 7\).</div>
+    <div class="ip"><strong>Aufgabe:</strong> Schreibe \(3^4\) als Produkt und berechne den Wert. Vergleiche \((-3)^4\) und \(-3^4\).</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Ausschreiben:
+        \[ 3^4 = 3\cdot 3\cdot 3\cdot 3 = 81 \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Klammer entscheidet:
+        \[ (-3)^4 = (-3)\cdot(-3)\cdot(-3)\cdot(-3) = 81 \]
+        \[ -3^4 = -(3\cdot 3\cdot 3\cdot 3) = -81 \]
+      </div>
+      <div class="ip"><strong>Merksatz:</strong> Bei geradem Exponenten und negativer Basis ist das Vorzeichen positiv — aber nur, wenn die Basis tatsächlich in Klammern steht.</div>
+    </details>
   </div>
 </div>
 
-<!-- Beispiel: Wurzeln als Potenzen -->
+<!-- ═════════════════════ SECTION 2 ═════════════════════ -->
+<div class="section-label">2 · Potenzen, die du im Kopf wissen solltest</div>
+
 <div class="card">
-  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel — Wurzelterme vereinfachen</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Quadratzahlen 1² bis 15²</span></div>
   <div class="card-body">
-    <div class="ip"><strong>Aufgabe:</strong> Zeige, dass \(\sqrt{50} = 5\sqrt{2}\) gilt, indem du den Term umformst.</div>
-    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
-    <div class="bsp-body">
-      <div class="ip"><strong>Schritt 1:</strong> Faktorisiere die Zahl unter der Wurzel:</div>
-      <div class="ip">\[ \sqrt{50} = \sqrt{25 \cdot 2} \]</div>
-      <div class="ip"><strong>Schritt 2:</strong> Wende die Produktregel für Wurzeln an:</div>
-      <div class="ip">\[ \sqrt{25 \cdot 2} = \sqrt{25} \cdot \sqrt{2} = 5\sqrt{2} \]</div>
-      <div class="ip"><strong>Ergebnis:</strong> \(\sqrt{50} = 5\sqrt{2}\;\checkmark\)</div>
+    <div class="ip">Quadratzahlen tauchen in der Mathematik ständig auf — in Flächeninhalten, beim Satz des Pythagoras, in Funktionswerten der Quadratfunktion. Lerne sie auswendig.</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px">
+      <thead>
+        <tr style="background:var(--mushikuri-light);font-weight:600">
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n^2\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n^2\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n^2\)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">1</td><td style="padding:6px 8px;border:1px solid #eee"><strong>1</strong></td><td style="padding:6px 8px;border:1px solid #eee">6</td><td style="padding:6px 8px;border:1px solid #eee"><strong>36</strong></td><td style="padding:6px 8px;border:1px solid #eee">11</td><td style="padding:6px 8px;border:1px solid #eee"><strong>121</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">2</td><td style="padding:6px 8px;border:1px solid #eee"><strong>4</strong></td><td style="padding:6px 8px;border:1px solid #eee">7</td><td style="padding:6px 8px;border:1px solid #eee"><strong>49</strong></td><td style="padding:6px 8px;border:1px solid #eee">12</td><td style="padding:6px 8px;border:1px solid #eee"><strong>144</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">3</td><td style="padding:6px 8px;border:1px solid #eee"><strong>9</strong></td><td style="padding:6px 8px;border:1px solid #eee">8</td><td style="padding:6px 8px;border:1px solid #eee"><strong>64</strong></td><td style="padding:6px 8px;border:1px solid #eee">13</td><td style="padding:6px 8px;border:1px solid #eee"><strong>169</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">4</td><td style="padding:6px 8px;border:1px solid #eee"><strong>16</strong></td><td style="padding:6px 8px;border:1px solid #eee">9</td><td style="padding:6px 8px;border:1px solid #eee"><strong>81</strong></td><td style="padding:6px 8px;border:1px solid #eee">14</td><td style="padding:6px 8px;border:1px solid #eee"><strong>196</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">5</td><td style="padding:6px 8px;border:1px solid #eee"><strong>25</strong></td><td style="padding:6px 8px;border:1px solid #eee">10</td><td style="padding:6px 8px;border:1px solid #eee"><strong>100</strong></td><td style="padding:6px 8px;border:1px solid #eee">15</td><td style="padding:6px 8px;border:1px solid #eee"><strong>225</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="hint">
+      <strong>Lerntipp:</strong> Wenn du \(n^2\) kennst, kennst du auch sofort die Wurzel: \(\sqrt{144}=12\). Quadratzahlen rückwärts zu erkennen, ist genauso wichtig wie sie vorwärts zu berechnen.
     </div>
   </div>
 </div>
 
-<!-- Erklärung: Zehnerpotenzschreibweise -->
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Zehnerpotenzschreibweise</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Zweierpotenzen 2¹ bis 2¹⁰</span></div>
   <div class="card-body">
-    <div class="ip">Sehr große oder sehr kleine Zahlen schreibt man übersichtlich als Produkt einer Zahl zwischen 1 und 10 und einer Zehnerpotenz:</div>
-    <div class="ip">\[ a \cdot 10^n \quad \text{mit } 1 \le a < 10 \]</div>
-    <div class="ip"><strong>Große Zahlen:</strong> Die Entfernung Erde–Sonne beträgt etwa \(1{,}496 \cdot 10^{8}\,\text{km}\).</div>
-    <div class="ip"><strong>Kleine Zahlen:</strong> Der Durchmesser eines Atoms liegt bei etwa \(1 \cdot 10^{-10}\,\text{m}\).</div>
-
-    <div class="it">Rechnen in Zehnerpotenzschreibweise</div>
-    <div class="ip">\[ (a \cdot 10^m) \cdot (b \cdot 10^n) = (a \cdot b) \cdot 10^{m+n} \]</div>
-    <div class="ip">Beispiel: \((3 \cdot 10^4) \cdot (2 \cdot 10^5) = 6 \cdot 10^9\).</div>
-  </div>
-</div>
-
-<!-- Erklärung: Reelle Zahlen -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Reelle Zahlen und Zahlenbereiche</span></div>
-  <div class="card-body">
-    <div class="ip">Die bisher bekannten Zahlenbereiche bilden eine Kette:</div>
-    <div class="ip">\[ \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \]</div>
-    <div class="ip">\(\mathbb{N}\) = natürliche Zahlen, \(\mathbb{Z}\) = ganze Zahlen, \(\mathbb{Q}\) = rationale Zahlen (Brüche), \(\mathbb{R}\) = reelle Zahlen.</div>
-
-    <div class="it">Irrationale Zahlen</div>
-    <div class="ip">Es gibt Zahlen, die sich <strong>nicht</strong> als Bruch schreiben lassen — die <strong>irrationalen Zahlen</strong>. Ihr Dezimalbruch ist unendlich lang und nicht periodisch.</div>
-    <div class="ip">Klassisches Beispiel: \(\sqrt{2}\) ist irrational. Beweis durch Widerspruch: Angenommen, \(\sqrt{2} = \frac{p}{q}\) (vollständig gekürzt). Dann wäre \(2 = \frac{p^2}{q^2}\), also \(p^2 = 2q^2\). Dann ist \(p^2\) gerade, also auch \(p\). Setze \(p = 2k\): \(4k^2 = 2q^2\), also \(q^2 = 2k^2\) — auch \(q\) ist gerade. Widerspruch zur Annahme „vollständig gekürzt".</div>
-
-    <div class="hint"><strong>Merke:</strong> Jede rationale Zahl hat einen endlichen oder periodischen Dezimalbruch. Jede Zahl mit unendlichem, nicht-periodischem Dezimalbruch ist irrational.</div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!-- ══ Potenz- und Wurzelfunktionen (überarbeitet 2026-04) ═════════════ -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-
-<!-- Worum geht es? (Subkontext, D19) -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es? — Potenz- und Wurzelfunktionen</span></div>
-  <div class="card-body">
-    <div class="ip">Schau dir diese drei Alltagsfragen an:</div>
-    <div class="ip">• <strong>Bremsweg:</strong> Ein Auto, das <em>doppelt</em> so schnell fährt, hat einen <em>viermal</em> so langen Bremsweg. Das liegt an \(s \sim v^2\) — einer Potenzfunktion mit Exponent 2.</div>
-    <div class="ip">• <strong>Helligkeit:</strong> Entfernst du dich <em>doppelt</em> so weit von einer Lampe, wird das Licht <em>viermal</em> schwächer. Das ist \(I \sim \tfrac{1}{r^2}\) — eine Potenzfunktion mit Exponent \(-2\).</div>
-    <div class="ip">• <strong>Würfelvolumen:</strong> Aus \(V = a^3\) findest du die Kantenlänge als \(a = \sqrt[3]{V}\) — eine Wurzelfunktion.</div>
-    <div class="ip">In allen drei Fällen steht der <strong>Exponent</strong> im Mittelpunkt. Er entscheidet, <em>wie</em> die eine Größe von der anderen abhängt. In diesem Abschnitt lernst du, welche Graphentypen zu welchem Exponenten gehören und wie du sie erkennst.</div>
-  </div>
-</div>
-
-<!-- Das brauchst du (D15) -->
-<div class="hint" style="margin:14px 0">
-  <strong>Das brauchst du:</strong> Potenzgesetze (siehe Abschnitt weiter oben), Koordinatensystem und Funktionswerte berechnen (Klasse 7/8), Normalparabel \(f(x)=x^2\) (Klasse 8/9), antiproportionale Zuordnung \(y=\tfrac{k}{x}\) (Klasse 7).
-</div>
-
-<!-- Enaktiver Einstieg: Entdeckungsaufgabe (D14, D16) -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Entdecken — Wertetabellen vergleichen</span></div>
-  <div class="card-body">
-    <div class="ip"><strong>Aufgabe:</strong> Fülle die Wertetabellen für die vier Funktionen \(f_1(x)=x^2\), \(f_2(x)=x^3\), \(f_3(x)=\tfrac{1}{x}\) und \(f_4(x)=\sqrt{x}\) für \(x \in \{-2;-1;-\tfrac{1}{2};\tfrac{1}{2};1;2;4\}\) aus. Vergleiche dann die Graphen weiter unten mit deinen Werten.</div>
-    <div class="bsp-toggle" onclick="togBsp(this)">Lösungstabelle einblenden ▾</div>
-    <div class="bsp-body">
-      <div style="overflow-x:auto;margin:8px 0">
-        <table style="border-collapse:collapse;font-size:14px;min-width:420px">
-          <tr style="background:#f2efe7"><th style="padding:6px 10px;border:1px solid #d6cfc0">\(x\)</th><th style="padding:6px 10px;border:1px solid #d6cfc0">\(-2\)</th><th style="padding:6px 10px;border:1px solid #d6cfc0">\(-1\)</th><th style="padding:6px 10px;border:1px solid #d6cfc0">\(-\tfrac{1}{2}\)</th><th style="padding:6px 10px;border:1px solid #d6cfc0">\(\tfrac{1}{2}\)</th><th style="padding:6px 10px;border:1px solid #d6cfc0">\(1\)</th><th style="padding:6px 10px;border:1px solid #d6cfc0">\(2\)</th><th style="padding:6px 10px;border:1px solid #d6cfc0">\(4\)</th></tr>
-          <tr><td style="padding:6px 10px;border:1px solid #d6cfc0"><strong>\(x^2\)</strong></td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(4\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(1\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(\tfrac{1}{4}\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(\tfrac{1}{4}\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(1\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(4\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(16\)</td></tr>
-          <tr><td style="padding:6px 10px;border:1px solid #d6cfc0"><strong>\(x^3\)</strong></td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(-8\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(-1\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(-\tfrac{1}{8}\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(\tfrac{1}{8}\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(1\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(8\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(64\)</td></tr>
-          <tr><td style="padding:6px 10px;border:1px solid #d6cfc0"><strong>\(\tfrac{1}{x}\)</strong></td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(-\tfrac{1}{2}\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(-1\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(-2\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(2\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(1\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(\tfrac{1}{2}\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(\tfrac{1}{4}\)</td></tr>
-          <tr><td style="padding:6px 10px;border:1px solid #d6cfc0"><strong>\(\sqrt{x}\)</strong></td><td style="padding:6px 10px;border:1px solid #d6cfc0">—</td><td style="padding:6px 10px;border:1px solid #d6cfc0">—</td><td style="padding:6px 10px;border:1px solid #d6cfc0">—</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(\approx 0{,}71\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(1\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(\approx 1{,}41\)</td><td style="padding:6px 10px;border:1px solid #d6cfc0">\(2\)</td></tr>
-        </table>
-      </div>
-      <div class="ip"><strong>Beobachtungen:</strong></div>
-      <div class="ip">• Bei \(x^2\) sind die Werte für \(x\) und \(-x\) <strong>gleich</strong> (Symmetrie zur \(y\)-Achse).</div>
-      <div class="ip">• Bei \(x^3\) wechselt nur das Vorzeichen (Punktsymmetrie zum Ursprung).</div>
-      <div class="ip">• Bei \(\tfrac{1}{x}\) gibt es keinen Wert für \(x=0\) — die Funktion ist dort nicht definiert.</div>
-      <div class="ip">• Bei \(\sqrt{x}\) gibt es keinen Wert für \(x<0\) — die Wurzel einer negativen Zahl ist nicht reell.</div>
+    <div class="ip">Zweierpotenzen wirst du in der Informatik (Speichergröße, Adressen, Verdopplungen), in der Wahrscheinlichkeitsrechnung (\(n\)-faches Münzwerfen) und beim exponentiellen Wachstum brauchen.</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:15px">
+      <thead>
+        <tr style="background:var(--mushikuri-light);font-weight:600">
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(2^n\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(n\)</th>
+          <th style="padding:6px 8px;text-align:left;border:1px solid #ddd">\(2^n\)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">1</td><td style="padding:6px 8px;border:1px solid #eee"><strong>2</strong></td><td style="padding:6px 8px;border:1px solid #eee">6</td><td style="padding:6px 8px;border:1px solid #eee"><strong>64</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">2</td><td style="padding:6px 8px;border:1px solid #eee"><strong>4</strong></td><td style="padding:6px 8px;border:1px solid #eee">7</td><td style="padding:6px 8px;border:1px solid #eee"><strong>128</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">3</td><td style="padding:6px 8px;border:1px solid #eee"><strong>8</strong></td><td style="padding:6px 8px;border:1px solid #eee">8</td><td style="padding:6px 8px;border:1px solid #eee"><strong>256</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">4</td><td style="padding:6px 8px;border:1px solid #eee"><strong>16</strong></td><td style="padding:6px 8px;border:1px solid #eee">9</td><td style="padding:6px 8px;border:1px solid #eee"><strong>512</strong></td></tr>
+        <tr><td style="padding:6px 8px;border:1px solid #eee">5</td><td style="padding:6px 8px;border:1px solid #eee"><strong>32</strong></td><td style="padding:6px 8px;border:1px solid #eee">10</td><td style="padding:6px 8px;border:1px solid #eee"><strong>1024</strong></td></tr>
+      </tbody>
+    </table>
+    <div class="hint">
+      <strong>Beobachtung:</strong> Mit jedem Schritt verdoppelt sich der Wert. Das ist die Grundidee des exponentiellen Wachstums, die dich in Klasse 10 in der Exponentialfunktion wieder beschäftigen wird.
     </div>
   </div>
 </div>
 
-<!-- Ikonischer Einstieg: Canvas-Galerie der 4 Grundtypen (D16, D21) -->
+<!-- ═════════════════════ SECTION 3 ═════════════════════ -->
+<div class="section-label">3 · Den Exponentenbegriff erweitern</div>
+
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die vier Grundtypen im Vergleich</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Potenzen mit negativen Exponenten</span></div>
   <div class="card-body">
-    <div class="ip">Die vier Wertetabellen gehören zu vier typischen Graphenformen. Achte in den folgenden Darstellungen auf die <strong>Symmetrie</strong>, den <strong>Definitionsbereich</strong> und das <strong>Verhalten für große bzw. kleine \(x\)</strong>.</div>
-    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:16px 0">
-      <div style="text-align:center">
-        <canvas id="cvPotGerade" width="300" height="240" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:300px;height:240px"></canvas>
-        <div style="font-size:13px;color:#5b6e2e;font-weight:600;margin-top:4px">Typ 1: Gerader Exponent (\(n=2,4\))</div>
-      </div>
-      <div style="text-align:center">
-        <canvas id="cvPotUngerade" width="300" height="240" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:300px;height:240px"></canvas>
-        <div style="font-size:13px;color:#5b6e2e;font-weight:600;margin-top:4px">Typ 2: Ungerader Exponent (\(n=3,5\))</div>
-      </div>
-      <div style="text-align:center">
-        <canvas id="cvPotNegativ" width="300" height="240" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:300px;height:240px"></canvas>
-        <div style="font-size:13px;color:#5b6e2e;font-weight:600;margin-top:4px">Typ 3: Negativer Exponent (\(n=-1,-2\))</div>
-      </div>
-      <div style="text-align:center">
-        <canvas id="cvPotWurzel" width="300" height="240" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:300px;height:240px"></canvas>
-        <div style="font-size:13px;color:#5b6e2e;font-weight:600;margin-top:4px">Typ 4: Wurzelfunktion (\(n=\tfrac{1}{2}\))</div>
-      </div>
+    <div class="ip">Bisher war \(n\) eine natürliche Zahl. Was passiert, wenn der Exponent negativ ist?</div>
+    <div class="ip">Wir fordern, dass die Verdopplungs-Logik der Zweierpotenzen rückwärts auch funktioniert: bei jedem Schritt nach unten <em>halbiert</em> sich der Wert.</div>
+    <div class="ip" style="text-align:center;font-size:15px">
+      \(\ldots \;\; 2^3 = 8 \;\; 2^2 = 4 \;\; 2^1 = 2 \;\; 2^0 = 1 \;\; 2^{-1} = \tfrac{1}{2} \;\; 2^{-2} = \tfrac{1}{4} \;\; \ldots\)
     </div>
+    <div class="ip">Daraus liest du die allgemeine Regel ab:</div>
+    <div class="ip" style="text-align:center">\[ a^{-n} \;=\; \frac{1}{a^n} \quad (a \neq 0) \]</div>
+    <div class="ip"><strong>Sprechweise:</strong> Eine negative Hochzahl macht aus der Potenz ihren Kehrwert.</div>
   </div>
 </div>
 
-<script>
-(function(){
-  // Gemeinsame Zeichenhilfe für alle vier Canvas
-  function setupCanvas(id, cssW, cssH){
-    var c=document.getElementById(id); if(!c) return null;
-    var ctx=c.getContext('2d');
-    var dpr=window.devicePixelRatio||1;
-    c.width=cssW*dpr; c.height=cssH*dpr;
-    c.style.width=cssW+'px'; c.style.height=cssH+'px';
-    ctx.scale(dpr,dpr);
-    return {ctx:ctx, w:cssW, h:cssH};
-  }
-  function drawAxes(ctx, w, h, xMin, xMax, yMin, yMax, opts){
-    opts = opts || {};
-    var pad = 32;
-    function tx(x){return pad+(x-xMin)/(xMax-xMin)*(w-pad-12);}
-    function ty(y){return (h-pad)-(y-yMin)/(yMax-yMin)*(h-pad-12);}
-    // Gitter
-    ctx.strokeStyle='#ece7dc'; ctx.lineWidth=0.5;
-    for(var g=Math.ceil(xMin); g<=Math.floor(xMax); g++){
-      ctx.beginPath(); ctx.moveTo(tx(g),8); ctx.lineTo(tx(g),h-pad); ctx.stroke();
-    }
-    for(var g=Math.ceil(yMin); g<=Math.floor(yMax); g++){
-      ctx.beginPath(); ctx.moveTo(pad,ty(g)); ctx.lineTo(w-8,ty(g)); ctx.stroke();
-    }
-    // Achsen
-    ctx.strokeStyle='#555'; ctx.lineWidth=1.5;
-    ctx.beginPath(); ctx.moveTo(tx(xMin),ty(0)); ctx.lineTo(tx(xMax)+2,ty(0)); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(tx(0),ty(yMin)); ctx.lineTo(tx(0),ty(yMax)-2); ctx.stroke();
-    // Pfeilspitzen
-    ctx.fillStyle='#555';
-    ctx.beginPath(); ctx.moveTo(tx(xMax)+6,ty(0)); ctx.lineTo(tx(xMax)-2,ty(0)-4); ctx.lineTo(tx(xMax)-2,ty(0)+4); ctx.fill();
-    ctx.beginPath(); ctx.moveTo(tx(0),ty(yMax)-6); ctx.lineTo(tx(0)-4,ty(yMax)+2); ctx.lineTo(tx(0)+4,ty(yMax)+2); ctx.fill();
-    // Achsenbeschriftung
-    ctx.fillStyle='#333'; ctx.font='bold 13px Inter,sans-serif';
-    ctx.textAlign='left'; ctx.textBaseline='middle'; ctx.fillText('x', tx(xMax)+10, ty(0));
-    ctx.textAlign='center'; ctx.textBaseline='bottom'; ctx.fillText('y', tx(0), ty(yMax)-10);
-    // Ticks und Zahlen
-    ctx.fillStyle='#555'; ctx.font='12px Inter,sans-serif';
-    ctx.textAlign='center'; ctx.textBaseline='top';
-    var xStep = opts.xStep || 1;
-    for(var l=Math.ceil(xMin); l<=Math.floor(xMax); l+=xStep){
-      if(l===0) continue;
-      ctx.fillText(l, tx(l), ty(0)+5);
-      ctx.beginPath(); ctx.moveTo(tx(l),ty(0)-3); ctx.lineTo(tx(l),ty(0)+3); ctx.stroke();
-    }
-    ctx.textAlign='right'; ctx.textBaseline='middle';
-    var yStep = opts.yStep || 1;
-    for(var l=Math.ceil(yMin); l<=Math.floor(yMax); l+=yStep){
-      if(l===0) continue;
-      ctx.fillText(l, tx(0)-6, ty(l));
-      ctx.beginPath(); ctx.moveTo(tx(0)-3,ty(l)); ctx.lineTo(tx(0)+3,ty(l)); ctx.stroke();
-    }
-    // Ursprung
-    ctx.fillStyle='#888'; ctx.font='11px Inter,sans-serif';
-    ctx.textAlign='right'; ctx.textBaseline='top'; ctx.fillText('O', tx(0)-5, ty(0)+4);
-    return {tx:tx, ty:ty};
-  }
-  function plot(ctx, fn, color, xMin, xMax, coord, yMin, yMax, skipX){
-    ctx.strokeStyle=color; ctx.lineWidth=2.5; ctx.beginPath();
-    var started=false;
-    var steps=400;
-    for(var i=0;i<=steps;i++){
-      var x=xMin+(xMax-xMin)*i/steps;
-      if(skipX && Math.abs(x-skipX)<0.03){ ctx.stroke(); ctx.beginPath(); started=false; continue; }
-      var y=fn(x);
-      if(!isFinite(y) || y<yMin-1 || y>yMax+1){
-        if(started){ ctx.stroke(); ctx.beginPath(); started=false; }
-        continue;
-      }
-      if(!started){ ctx.moveTo(coord.tx(x),coord.ty(y)); started=true; }
-      else { ctx.lineTo(coord.tx(x),coord.ty(y)); }
-    }
-    ctx.stroke();
-  }
-  function label(ctx, text, x, y, color){
-    ctx.fillStyle=color; ctx.font='bold 13px Inter,sans-serif';
-    ctx.textAlign='left'; ctx.textBaseline='middle';
-    ctx.fillText(text, x, y);
-  }
-
-  // Typ 1: x² und x⁴
-  var s1=setupCanvas('cvPotGerade',300,240);
-  if(s1){
-    var co=drawAxes(s1.ctx,s1.w,s1.h,-3,3,-1,6);
-    plot(s1.ctx, function(x){return x*x;}, '#c75c3a', -3, 3, co, -1, 6);
-    plot(s1.ctx, function(x){return x*x*x*x;}, '#5b6e2e', -3, 3, co, -1, 6);
-    label(s1.ctx,'f(x)=x²',co.tx(1.7),co.ty(2.9),'#c75c3a');
-    label(s1.ctx,'f(x)=x⁴',co.tx(-2.4),co.ty(5.5),'#5b6e2e');
-  }
-
-  // Typ 2: x³ und x⁵
-  var s2=setupCanvas('cvPotUngerade',300,240);
-  if(s2){
-    var co=drawAxes(s2.ctx,s2.w,s2.h,-2.5,2.5,-6,6);
-    plot(s2.ctx, function(x){return x*x*x;}, '#c75c3a', -2.5, 2.5, co, -6, 6);
-    plot(s2.ctx, function(x){return Math.pow(x,5);}, '#5b6e2e', -2.5, 2.5, co, -6, 6);
-    label(s2.ctx,'f(x)=x³',co.tx(1.5),co.ty(4.2),'#c75c3a');
-    label(s2.ctx,'f(x)=x⁵',co.tx(-1.5),co.ty(-4.5),'#5b6e2e');
-  }
-
-  // Typ 3: x⁻¹ und x⁻²
-  var s3=setupCanvas('cvPotNegativ',300,240);
-  if(s3){
-    var co=drawAxes(s3.ctx,s3.w,s3.h,-4,4,-4,4);
-    plot(s3.ctx, function(x){return 1/x;}, '#c75c3a', -4, 4, co, -4, 4, 0);
-    plot(s3.ctx, function(x){return 1/(x*x);}, '#5b6e2e', -4, 4, co, -4, 4, 0);
-    label(s3.ctx,'1/x',co.tx(2.2),co.ty(0.7),'#c75c3a');
-    label(s3.ctx,'1/x²',co.tx(1.4),co.ty(2.3),'#5b6e2e');
-  }
-
-  // Typ 4: Wurzel
-  var s4=setupCanvas('cvPotWurzel',300,240);
-  if(s4){
-    var co=drawAxes(s4.ctx,s4.w,s4.h,-1,9,-1,4);
-    plot(s4.ctx, function(x){return x<0?NaN:Math.sqrt(x);}, '#c75c3a', -0.01, 9, co, -1, 4);
-    label(s4.ctx,'f(x)=√x',co.tx(5.5),co.ty(2.7),'#c75c3a');
-    // Markiere, dass Wurzel nur für x ≥ 0 definiert ist
-    s4.ctx.strokeStyle='#c8b55e'; s4.ctx.lineWidth=1.2; s4.ctx.setLineDash([3,3]);
-    s4.ctx.beginPath(); s4.ctx.moveTo(co.tx(0),co.ty(-1)); s4.ctx.lineTo(co.tx(0),co.ty(4)); s4.ctx.stroke();
-    s4.ctx.setLineDash([]);
-    s4.ctx.fillStyle='#8a7a30'; s4.ctx.font='11px Inter,sans-serif';
-    s4.ctx.textAlign='left'; s4.ctx.fillText('x ≥ 0', co.tx(0.2), co.ty(-0.4));
-  }
-})();
-</script>
-
-<!-- Symbolische Ebene: Systematik-Tabelle (D16, nach ikonischem Einstieg) -->
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Systematik der Potenzfunktion \(f(x)=a\cdot x^n\)</span></div>
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Negative Exponenten umschreiben</span></div>
   <div class="card-body">
-    <div class="ip">Jetzt, wo du die vier Typen gesehen hast, kannst du die Eigenschaften systematisch zusammenfassen. Die Potenzfunktion \(f(x)=a\cdot x^n\) hat folgende Merkmale:</div>
-    <div style="overflow-x:auto;margin:10px 0">
-      <table style="border-collapse:collapse;font-size:14px;min-width:620px">
-        <tr style="background:#f2efe7">
-          <th style="padding:8px 10px;border:1px solid #d6cfc0;text-align:left">Typ</th>
-          <th style="padding:8px 10px;border:1px solid #d6cfc0;text-align:left">Definitionsbereich</th>
-          <th style="padding:8px 10px;border:1px solid #d6cfc0;text-align:left">Wertebereich</th>
-          <th style="padding:8px 10px;border:1px solid #d6cfc0;text-align:left">Symmetrie</th>
-          <th style="padding:8px 10px;border:1px solid #d6cfc0;text-align:left">Asymptoten</th>
-        </tr>
-        <tr>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0"><strong>\(n\) gerade, \(n>0\)</strong></td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(\mathbb{R}\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\([0;\,\infty)\) für \(a>0\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(y\)-Achse</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">keine</td>
-        </tr>
-        <tr>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0"><strong>\(n\) ungerade, \(n>0\)</strong></td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(\mathbb{R}\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(\mathbb{R}\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">Ursprung (Punktsymmetrie)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">keine</td>
-        </tr>
-        <tr>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0"><strong>\(n=-1,-3,\ldots\)</strong> (ungerade neg.)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(\mathbb{R}\setminus\{0\}\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(\mathbb{R}\setminus\{0\}\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">Ursprung</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(x\)-Achse & \(y\)-Achse</td>
-        </tr>
-        <tr>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0"><strong>\(n=-2,-4,\ldots\)</strong> (gerade neg.)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(\mathbb{R}\setminus\{0\}\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\((0;\,\infty)\) für \(a>0\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(y\)-Achse</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\(x\)-Achse & \(y\)-Achse</td>
-        </tr>
-        <tr>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0"><strong>\(n=\tfrac{1}{2}\)</strong> (Wurzelfkt.)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\([0;\,\infty)\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">\([0;\,\infty)\) für \(a>0\)</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">keine</td>
-          <td style="padding:8px 10px;border:1px solid #d6cfc0">keine</td>
-        </tr>
-      </table>
-    </div>
-    <div class="it">Warum gerade / ungerade Exponenten unterschiedliche Symmetrien erzeugen</div>
-    <div class="ip">Bei einem <strong>geraden</strong> Exponenten heben sich die Minuszeichen auf: \((-x)^{2k} = x^{2k}\), z. B. \((-2)^4 = 2^4 = 16\). Deshalb stimmen die \(y\)-Werte an symmetrischen \(x\)-Stellen &uuml;berein &mdash; der Graph ist achsensymmetrisch zur \(y\)-Achse.</div>
-    <div class="ip">Bei einem <strong>ungeraden</strong> Exponenten bleibt ein Minuszeichen &uuml;brig: \((-x)^{2k+1} = -x^{2k+1}\), z. B. \((-2)^3 = -8\). Daher wechselt das Vorzeichen der \(y\)-Werte &mdash; der Graph ist punktsymmetrisch zum Ursprung.</div>
-
-    <div class="it">Was ist eine Asymptote?</div>
-    <div class="ip">Eine <strong>Asymptote</strong> ist eine Gerade, der sich der Graph einer Funktion beliebig n&auml;hert, ohne sie je zu erreichen. Bei \(f(x)=\tfrac{1}{x}\) sind das zum Beispiel die \(x\)- und die \(y\)-Achse: F&uuml;r immer gr&ouml;&szlig;er werdendes \(x\) l&auml;uft \(y\) gegen null (ohne null zu werden), und f&uuml;r \(x\) nahe null l&auml;uft \(y\) gegen \(\pm\infty\).</div>
-
-    <div class="hint"><strong>Merkhilfe:</strong> Du kannst den Typ in drei Schritten erkennen — (1) <em>Vorzeichen des Exponenten</em> entscheidet, ob der Graph durch Null geht oder Asymptoten hat. (2) <em>Gerade/ungerade</em> entscheidet über die Symmetrie. (3) Der <em>Faktor \(a\)</em> streckt oder spiegelt, ändert aber den Typ nicht.</div>
+    <div class="ip"><strong>Aufgabe:</strong> Schreibe \(5^{-3}\) und \(\left(\tfrac{2}{3}\right)^{-2}\) ohne negativen Exponenten und berechne den Wert.</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Kehrwertregel anwenden:
+        \[ 5^{-3} = \frac{1}{5^3} = \frac{1}{125} \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Bei Brüchen wird der ganze Bruch gekehrt:
+        \[ \left(\tfrac{2}{3}\right)^{-2} = \left(\tfrac{3}{2}\right)^{2} = \frac{9}{4} \]
+      </div>
+      <div class="ip"><strong>Merksatz:</strong> \(\left(\tfrac{a}{b}\right)^{-n} = \left(\tfrac{b}{a}\right)^{n}\) — der Bruch wird gestürzt, dann positiv potenziert.</div>
+    </details>
   </div>
 </div>
 
-<!-- Wurzelfunktion als Umkehrfunktion (D12 Grundvorstellung) -->
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die Wurzelfunktion als Umkehrfunktion</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Potenzen mit gebrochenen Exponenten</span></div>
   <div class="card-body">
-    <div class="ip">Die Wurzelfunktion \(f(x)=\sqrt{x}\) ist nicht irgendein neuer Funktionstyp — sie ist genau die <strong>Umkehrung</strong> der Quadratfunktion \(g(x)=x^2\) (für \(x\ge 0\)).</div>
-    <div class="ip">Geometrisch heißt das: Der Graph von \(\sqrt{x}\) entsteht, indem du den Graphen von \(x^2\) an der Winkelhalbierenden \(y=x\) <strong>spiegelst</strong>.</div>
+    <div class="ip">Was bedeutet eine Potenz mit dem Exponenten \(\tfrac{1}{2}\)? Probier es mit der Forderung, dass Potenzregeln weiter gelten:</div>
+    <div class="ip" style="text-align:center">\[ \left(a^{1/2}\right)^2 = a^{(1/2)\cdot 2} = a^1 = a \]</div>
+    <div class="ip">Eine Zahl, die quadriert \(a\) ergibt, ist genau die <strong>Quadratwurzel</strong>. Also:</div>
+    <div class="ip" style="text-align:center">\[ a^{1/2} \;=\; \sqrt{a} \quad (a \geq 0) \]</div>
+    <div class="ip">Genauso ist \(a^{1/3} = \sqrt[3]{a}\), \(a^{1/n} = \sqrt[n]{a}\). Brüche im Exponenten sind also nichts anderes als Wurzeln in anderer Schreibweise.</div>
+    <div class="ip">Allgemein gilt für \(a \geq 0\) und \(m, n \in \mathbb{Z}\) mit \(n>0\):</div>
+    <div class="ip" style="text-align:center">\[ a^{m/n} \;=\; \sqrt[n]{a^m} \;=\; \left(\sqrt[n]{a}\right)^m \]</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Wurzeln als Potenz schreiben</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Schreibe \(\sqrt{x}\), \(\sqrt[3]{x^2}\) und \(\tfrac{1}{\sqrt{x}}\) jeweils als Potenz mit einem Bruch im Exponenten.</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Quadratwurzel ist Potenz \(\tfrac{1}{2}\):
+        \[ \sqrt{x} = x^{1/2} \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> \(\sqrt[3]{x^2}\) hat Wurzelexponent 3 und Innenpotenz 2:
+        \[ \sqrt[3]{x^2} = x^{2/3} \]
+      </div>
+      <div class="ip"><strong>Schritt 3:</strong> Der Kehrwert hat einen negativen Exponenten:
+        \[ \frac{1}{\sqrt{x}} = \frac{1}{x^{1/2}} = x^{-1/2} \]
+      </div>
+      <div class="ip"><strong>Merksatz:</strong> Wurzel im Nenner \(=\) Potenz mit negativem Bruchexponenten.</div>
+    </details>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 4 ═════════════════════ -->
+<div class="section-label">4 · Zahlenbereiche von ℚ nach ℝ</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Erinnerung — die Zahlenbereiche bisher</span></div>
+  <div class="card-body">
+    <div class="ip">Du kennst aus den vergangenen Klassen drei Zahlenbereiche, die ineinander stecken:</div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li>\(\mathbb{N} = \{1, 2, 3, 4, \ldots\}\) — die natürlichen Zahlen.</li>
+      <li>\(\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \ldots\}\) — die ganzen Zahlen (mit Negativen und Null).</li>
+      <li>\(\mathbb{Q}\) — die rationalen Zahlen, also alle Zahlen, die sich als Bruch \(\tfrac{p}{q}\) mit \(p, q \in \mathbb{Z}\), \(q \neq 0\) schreiben lassen.</li>
+    </ul>
+    <div class="ip">Jede natürliche Zahl ist auch eine ganze Zahl, jede ganze Zahl ist auch ein Bruch — daher:</div>
+    <div class="ip" style="text-align:center">\[ \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \]</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Es gibt Zahlen, die <em>kein</em> Bruch sind</span></div>
+  <div class="card-body">
+    <div class="ip">Die rationalen Zahlen reichen nicht aus. Bekanntestes Beispiel: \(\sqrt{2}\).</div>
+    <div class="ip">Geometrisch ist \(\sqrt{2}\) sofort da: Nimm ein Quadrat mit Seitenlänge 1. Nach dem Satz des Pythagoras hat seine Diagonale die Länge</div>
+    <div class="ip" style="text-align:center">\[ d = \sqrt{1^2 + 1^2} = \sqrt{2}. \]</div>
+    <div class="ip">Diese Länge existiert — du kannst sie zeichnen. Aber sie lässt sich <strong>nicht</strong> als Bruch \(\tfrac{p}{q}\) schreiben.</div>
+    <div class="hint" style="margin-top:8px;">
+      <strong>Beweisidee (Widerspruch):</strong> Angenommen, \(\sqrt{2} = \tfrac{p}{q}\) mit vollständig gekürztem Bruch. Quadrieren liefert \(2 q^2 = p^2\). Dann ist \(p^2\) gerade, also auch \(p\) gerade. Schreibe \(p = 2k\), dann \(2q^2 = 4k^2\), also \(q^2 = 2k^2\). Damit ist auch \(q\) gerade. Aber dann waren \(p\) und \(q\) beide gerade — Widerspruch zur Annahme, dass der Bruch vollständig gekürzt war. Also kann \(\sqrt{2}\) keinen solchen Bruch haben.
+    </div>
+    <div class="ip" style="margin-top:8px;">Zahlen, die sich nicht als Bruch schreiben lassen, heißen <strong>irrationale Zahlen</strong>. Weitere Beispiele: \(\sqrt{3}\), \(\sqrt[3]{5}\), \(\pi\), \(\mathrm{e}\).</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Reelle Zahlen — ℝ schließt die Lücken</span></div>
+  <div class="card-body">
+    <div class="ip">Vereinigt man die rationalen Zahlen mit den irrationalen, bekommt man die <strong>reellen Zahlen</strong>:</div>
+    <div class="ip" style="text-align:center">\[ \mathbb{R} \;=\; \mathbb{Q} \;\cup\; \text{Irrationale Zahlen}. \]</div>
+    <div class="ip">Auf dem Zahlenstrahl bedeutet das: jeder Punkt steht für genau eine reelle Zahl, und umgekehrt. \(\mathbb{R}\) füllt den Zahlenstrahl lückenlos. Im Venn-Diagramm liegen die Zahlenbereiche wie russische Puppen ineinander:</div>
     <div style="text-align:center;margin:14px 0">
-      <canvas id="cvPotSpiegel" width="360" height="300" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:360px;height:300px"></canvas>
+      <svg viewBox="0 0 360 240" width="100%" style="max-width:480px;height:auto" xmlns="http://www.w3.org/2000/svg" aria-label="Venn-Diagramm der Zahlenbereiche N, Z, Q, R">
+        <ellipse cx="180" cy="120" rx="170" ry="110" fill="#f3ede0" stroke="#c8b55e" stroke-width="2"/>
+        <ellipse cx="180" cy="120" rx="135" ry="85" fill="#ede2c4" stroke="#c8b55e" stroke-width="2"/>
+        <ellipse cx="180" cy="120" rx="95"  ry="58" fill="#e2d5a8" stroke="#a89438" stroke-width="2"/>
+        <ellipse cx="180" cy="120" rx="55"  ry="34" fill="#d4c285" stroke="#7d6a1f" stroke-width="2"/>
+        <text x="180" y="125" font-size="22" font-weight="700" text-anchor="middle" fill="#3a2f00">ℕ</text>
+        <text x="180" y="170" font-size="18" font-weight="700" text-anchor="middle" fill="#3a2f00">ℤ</text>
+        <text x="180" y="195" font-size="18" font-weight="700" text-anchor="middle" fill="#3a2f00">ℚ</text>
+        <text x="180" y="224" font-size="18" font-weight="700" text-anchor="middle" fill="#3a2f00">ℝ</text>
+        <text x="40"  y="35"  font-size="12" fill="#5b4a08">irrationale Zahlen</text>
+        <text x="40"  y="50"  font-size="11" fill="#5b4a08">z. B. √2, √3, π</text>
+      </svg>
     </div>
-    <div class="ip">Setzt du in \(g\) z. B. \(x=3\) ein, bekommst du \(g(3)=9\). Setzt du dieses Ergebnis in die Umkehrfunktion ein, kommst du zurück: \(f(9)=\sqrt{9}=3\). Das ist die definierende Eigenschaft einer Umkehrfunktion.</div>
-    <div class="hint"><strong>Achtung:</strong> \(g(x)=x^2\) ist <em>nicht</em> auf ganz \(\mathbb{R}\) umkehrbar, weil \(g(-3)=g(3)=9\). Du musst dich auf \(x\ge 0\) beschränken. Das erklärt, warum der Definitionsbereich von \(\sqrt{x}\) die Menge \([0;\infty)\) ist.</div>
+    <div class="ip">Anders gesagt: \(\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R}\). Jede natürliche Zahl ist auch ganz, rational und reell — aber nicht jede reelle Zahl ist rational.</div>
   </div>
 </div>
-<script>
-(function(){
-  var c=document.getElementById('cvPotSpiegel'); if(!c) return;
-  var ctx=c.getContext('2d');
-  var dpr=window.devicePixelRatio||1, cssW=360, cssH=300;
-  c.width=cssW*dpr; c.height=cssH*dpr; c.style.width=cssW+'px'; c.style.height=cssH+'px';
-  ctx.scale(dpr,dpr);
-  var xMin=-1, xMax=6, yMin=-1, yMax=6, pad=34;
-  function tx(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-12);}
-  function ty(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-12);}
-  // Gitter
-  ctx.strokeStyle='#ece7dc'; ctx.lineWidth=0.5;
-  for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){ctx.beginPath();ctx.moveTo(tx(g),8);ctx.lineTo(tx(g),cssH-pad);ctx.stroke();}
-  for(var g=Math.ceil(yMin);g<=Math.floor(yMax);g++){ctx.beginPath();ctx.moveTo(pad,ty(g));ctx.lineTo(cssW-8,ty(g));ctx.stroke();}
-  // Achsen
-  ctx.strokeStyle='#555'; ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax)+2,ty(0));ctx.stroke();
-  ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax)-2);ctx.stroke();
-  ctx.fillStyle='#555';
-  ctx.beginPath();ctx.moveTo(tx(xMax)+6,ty(0));ctx.lineTo(tx(xMax)-2,ty(0)-4);ctx.lineTo(tx(xMax)-2,ty(0)+4);ctx.fill();
-  ctx.beginPath();ctx.moveTo(tx(0),ty(yMax)-6);ctx.lineTo(tx(0)-4,ty(yMax)+2);ctx.lineTo(tx(0)+4,ty(yMax)+2);ctx.fill();
-  ctx.fillStyle='#333'; ctx.font='bold 13px Inter,sans-serif';
-  ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('x',tx(xMax)+10,ty(0));
-  ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText('y',tx(0),ty(yMax)-10);
-  // Ticks
-  ctx.fillStyle='#555'; ctx.font='12px Inter,sans-serif';
-  ctx.textAlign='center';ctx.textBaseline='top';
-  for(var l=1;l<=5;l++){ctx.fillText(l,tx(l),ty(0)+5);}
-  ctx.textAlign='right';ctx.textBaseline='middle';
-  for(var l=1;l<=5;l++){ctx.fillText(l,tx(0)-6,ty(l));}
-  ctx.fillStyle='#888';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-5,ty(0)+4);
-  // Spiegelachse y=x
-  ctx.strokeStyle='#c8b55e'; ctx.lineWidth=1.3; ctx.setLineDash([5,4]);
-  ctx.beginPath();ctx.moveTo(tx(-1),ty(-1));ctx.lineTo(tx(6),ty(6));ctx.stroke();
-  ctx.setLineDash([]);
-  ctx.fillStyle='#8a7a30';ctx.font='italic 12px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='bottom';
-  ctx.fillText('y = x',tx(4.4),ty(4.2));
-  // x² (für x ≥ 0)
-  ctx.strokeStyle='#5b6e2e';ctx.lineWidth=2.5;ctx.beginPath();
-  for(var i=0;i<=120;i++){var x=i*6/120;var y=x*x;if(y>yMax)break;if(i===0)ctx.moveTo(tx(x),ty(y));else ctx.lineTo(tx(x),ty(y));}
-  ctx.stroke();
-  // √x
-  ctx.strokeStyle='#c75c3a';ctx.lineWidth=2.5;ctx.beginPath();
-  for(var i=0;i<=200;i++){var x=i*6/200;var y=Math.sqrt(x);if(i===0)ctx.moveTo(tx(x),ty(y));else ctx.lineTo(tx(x),ty(y));}
-  ctx.stroke();
-  // Punktpaar P(3|9) ↔ P'(9|3) — nur Beispielpunkt auf √x
-  ctx.fillStyle='#5b6e2e';ctx.beginPath();ctx.arc(tx(2),ty(4),5,0,2*Math.PI);ctx.fill();
-  ctx.fillStyle='#c75c3a';ctx.beginPath();ctx.arc(tx(4),ty(2),5,0,2*Math.PI);ctx.fill();
-  // Verbindungslinie (Spiegelung)
-  ctx.strokeStyle='#bbb';ctx.lineWidth=1;ctx.setLineDash([2,3]);
-  ctx.beginPath();ctx.moveTo(tx(2),ty(4));ctx.lineTo(tx(4),ty(2));ctx.stroke();
-  ctx.setLineDash([]);
-  // Labels
-  ctx.fillStyle='#5b6e2e';ctx.font='bold 13px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='bottom';
-  ctx.fillText('g(x)=x²',tx(1.3),ty(4.5));
-  ctx.fillStyle='#c75c3a';ctx.fillText('f(x)=√x',tx(4.5),ty(1.5));
-  ctx.fillStyle='#333';ctx.font='12px Inter,sans-serif';
-  ctx.textAlign='right';ctx.fillText('(2|4)',tx(2)-6,ty(4)-4);
-  ctx.textAlign='left';ctx.fillText('(4|2)',tx(4)+6,ty(2)+12);
-})();
-</script>
 
-<!-- Interaktiver Parameter-Explorer: Exponent verändern (D14, D20) -->
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Den Exponenten live verändern</span></div>
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Zahlen klassifizieren</span></div>
   <div class="card-body">
-    <div class="ip">Schiebe den Regler für den Exponenten \(n\) und beobachte, wie der Graph von \(f(x)=x^n\) sich verändert. Versuche, <em>vor</em> dem Bewegen vorherzusagen: Was passiert, wenn \(n\) von 2 auf 3 springt? Was bei Wechsel ins Negative?</div>
-    <div style="margin:12px 0">
-      <label><strong>Exponent n:</strong>
-        <select id="potNselect" onchange="updatePotExplorer()" style="font-size:14px;padding:4px 8px;margin-left:8px">
-          <option value="0.5">0,5 (Wurzelfunktion)</option>
-          <option value="1">1 (Ursprungsgerade)</option>
-          <option value="2" selected>2 (Normalparabel)</option>
-          <option value="3">3 (Kubik)</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="-1">−1 (Hyperbel)</option>
-          <option value="-2">−2</option>
-        </select>
-      </label>
-    </div>
-    <canvas id="cvPotExplorer" style="width:100%;max-width:460px;display:block;border-radius:8px;border:1px solid #ddd;background:#fff"></canvas>
-    <div id="potFormula" style="text-align:center;margin-top:6px;font-size:14px;font-weight:600;color:#c75c3a">f(x) = x²</div>
-    <div id="potInfo" style="text-align:center;margin-top:2px;font-size:13px;color:#5b6e2e">Definitionsbereich: ℝ · Wertebereich: [0; ∞) · Symmetrie: y-Achse</div>
-  </div>
-</div>
-<script>
-function updatePotExplorer(){
-  var n=parseFloat(document.getElementById('potNselect').value);
-  var c=document.getElementById('cvPotExplorer'); if(!c) return;
-  var ctx=c.getContext('2d');
-  var dpr=window.devicePixelRatio||1, cssW=460, cssH=360;
-  c.width=cssW*dpr; c.height=cssH*dpr; c.style.width=cssW+'px'; c.style.height=cssH+'px';
-  ctx.scale(dpr,dpr);
-  var xMin=-4, xMax=4, yMin=-5, yMax=6, pad=36;
-  function tx(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-12);}
-  function ty(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-12);}
-  ctx.fillStyle='#fff';ctx.fillRect(0,0,cssW,cssH);
-  ctx.strokeStyle='#ece7dc'; ctx.lineWidth=0.5;
-  for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){ctx.beginPath();ctx.moveTo(tx(g),8);ctx.lineTo(tx(g),cssH-pad);ctx.stroke();}
-  for(var g=Math.ceil(yMin);g<=Math.floor(yMax);g++){ctx.beginPath();ctx.moveTo(pad,ty(g));ctx.lineTo(cssW-8,ty(g));ctx.stroke();}
-  ctx.strokeStyle='#555'; ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax)+2,ty(0));ctx.stroke();
-  ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax)-2);ctx.stroke();
-  ctx.fillStyle='#555';
-  ctx.beginPath();ctx.moveTo(tx(xMax)+6,ty(0));ctx.lineTo(tx(xMax)-2,ty(0)-4);ctx.lineTo(tx(xMax)-2,ty(0)+4);ctx.fill();
-  ctx.beginPath();ctx.moveTo(tx(0),ty(yMax)-6);ctx.lineTo(tx(0)-4,ty(yMax)+2);ctx.lineTo(tx(0)+4,ty(yMax)+2);ctx.fill();
-  ctx.fillStyle='#333'; ctx.font='bold 13px Inter,sans-serif';
-  ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('x',tx(xMax)+10,ty(0));
-  ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText('y',tx(0),ty(yMax)-10);
-  ctx.fillStyle='#555'; ctx.font='12px Inter,sans-serif';
-  ctx.textAlign='center';ctx.textBaseline='top';
-  for(var l=-3;l<=3;l++){if(l!==0)ctx.fillText(l,tx(l),ty(0)+5);}
-  ctx.textAlign='right';ctx.textBaseline='middle';
-  for(var l=-4;l<=5;l++){if(l!==0)ctx.fillText(l,tx(0)-6,ty(l));}
-  ctx.fillStyle='#888';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-5,ty(0)+4);
-  // Kurve zeichnen
-  function fn(x){
-    if(n===0.5){ return x<0 ? NaN : Math.sqrt(x); }
-    if(n<0 && Math.abs(x)<0.02) return NaN;
-    if(!Number.isInteger(n) && x<0) return NaN;
-    return Math.pow(x, n);
-  }
-  ctx.strokeStyle='#c75c3a'; ctx.lineWidth=3;
-  ctx.beginPath();
-  var started=false;
-  var steps=500;
-  for(var i=0;i<=steps;i++){
-    var x=xMin+(xMax-xMin)*i/steps;
-    var y=fn(x);
-    if(!isFinite(y) || y<yMin-1 || y>yMax+1){
-      if(started){ctx.stroke();ctx.beginPath();started=false;}
-      continue;
-    }
-    if(!started){ctx.moveTo(tx(x),ty(y));started=true;}
-    else ctx.lineTo(tx(x),ty(y));
-  }
-  ctx.stroke();
-  // Formel- und Info-Text
-  var nStr = (n===0.5?'1/2':n.toString().replace('.',','));
-  var fStr = (n===0.5)?'f(x) = √x':('f(x) = x^'+nStr);
-  if(n===1) fStr='f(x) = x';
-  if(n===2) fStr='f(x) = x²';
-  if(n===3) fStr='f(x) = x³';
-  if(n===4) fStr='f(x) = x⁴';
-  if(n===5) fStr='f(x) = x⁵';
-  if(n===-1) fStr='f(x) = 1/x';
-  if(n===-2) fStr='f(x) = 1/x²';
-  document.getElementById('potFormula').textContent=fStr;
-  var info='';
-  if(n===0.5) info='Definitionsbereich: [0; ∞) · Wertebereich: [0; ∞) · keine Symmetrie';
-  else if(n===1) info='Definitionsbereich: ℝ · Wertebereich: ℝ · Punktsymmetrie zum Ursprung';
-  else if(n===2) info='Definitionsbereich: ℝ · Wertebereich: [0; ∞) · Symmetrie: y-Achse';
-  else if(n===3) info='Definitionsbereich: ℝ · Wertebereich: ℝ · Punktsymmetrie zum Ursprung';
-  else if(n===4) info='Definitionsbereich: ℝ · Wertebereich: [0; ∞) · Symmetrie: y-Achse';
-  else if(n===5) info='Definitionsbereich: ℝ · Wertebereich: ℝ · Punktsymmetrie zum Ursprung';
-  else if(n===-1) info='Definitionsbereich: ℝ∖{0} · Wertebereich: ℝ∖{0} · Punktsymmetrie zum Ursprung';
-  else if(n===-2) info='Definitionsbereich: ℝ∖{0} · Wertebereich: (0; ∞) · Symmetrie: y-Achse';
-  document.getElementById('potInfo').textContent=info;
-}
-setTimeout(updatePotExplorer, 80);
-</script>
-
-<!-- Transformationshinweis (kurz, verweist auf bestehenden Explorer) -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Verschieben, Strecken, Spiegeln</span></div>
-  <div class="card-body">
-    <div class="ip">Wenn du die Potenzfunktion mit drei Parametern schreibst:</div>
-    <div class="ip">\[ f(x) = a\cdot (x-b)^n + c \]</div>
-    <div class="ip">wirken die Parameter wie bei der Normalparabel, die du aus Klasse 8 kennst:</div>
-    <div class="ip">• \(a\) <strong>streckt</strong> den Graphen (für \(|a|>1\)) oder <strong>staucht</strong> ihn (\(0<|a|<1\)); für \(a<0\) wird er an der \(x\)-Achse <strong>gespiegelt</strong>.</div>
-    <div class="ip">• \(b\) <strong>verschiebt</strong> den Graphen um \(b\) nach <em>rechts</em> (bei positivem \(b\)).</div>
-    <div class="ip">• \(c\) <strong>verschiebt</strong> den Graphen um \(c\) nach <em>oben</em>.</div>
-    <div class="hint"><strong>Merke:</strong> Der Exponent \(n\) entscheidet über den Typ. Die Parameter \(a\), \(b\), \(c\) verändern nur Lage und Form — nicht den Typ. Eine um zwei nach rechts verschobene Hyperbel bleibt eine Hyperbel.</div>
+    <div class="ip"><strong>Aufgabe:</strong> Ordne jede der folgenden Zahlen dem kleinsten Zahlenbereich zu, dem sie angehört: \(7\), \(-3\), \(\tfrac{5}{8}\), \(\sqrt{16}\), \(\sqrt{5}\), \(\pi\), \(0{,}333\ldots\)</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>\(7\):</strong> natürliche Zahl, also \(7 \in \mathbb{N}\).</div>
+      <div class="ip"><strong>\(-3\):</strong> negative ganze Zahl, also \(-3 \in \mathbb{Z}\) (aber \(\notin \mathbb{N}\)).</div>
+      <div class="ip"><strong>\(\tfrac{5}{8}\):</strong> Bruch, kein Teiler — \(\tfrac{5}{8} \in \mathbb{Q}\) (nicht ganzzahlig).</div>
+      <div class="ip"><strong>\(\sqrt{16}\):</strong> \(\sqrt{16} = 4 \in \mathbb{N}\). Aufpassen — die Schreibweise täuscht, der Wert ist ganz natürlich.</div>
+      <div class="ip"><strong>\(\sqrt{5}\):</strong> irrational, also \(\sqrt{5} \in \mathbb{R}\) (nicht in \(\mathbb{Q}\)).</div>
+      <div class="ip"><strong>\(\pi\):</strong> irrational, \(\pi \in \mathbb{R}\).</div>
+      <div class="ip"><strong>\(0{,}333\ldots = \tfrac{1}{3}\):</strong> rational, weil als Bruch schreibbar — \(\tfrac{1}{3} \in \mathbb{Q}\). Periodische Dezimalzahlen sind immer rational.</div>
+    </details>
   </div>
 </div>
 
-<!-- Beispiel ★ — Typ aus Graph ablesen (K4 Darstellungen) -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-t">★</div><span class="card-title">Beispiel — Typ aus dem Graphen ablesen</span></div>
-  <div class="card-body">
-    <div class="ip"><strong>Aufgabe:</strong> Der unten gezeigte Graph gehört zu einer Funktion \(f(x)=x^n\). Ermittle den Exponenten \(n\) und begründe deine Wahl mit zwei erkennbaren Eigenschaften.</div>
-    <div style="text-align:center;margin:10px 0">
-      <canvas id="cvPotBsp1" width="320" height="260" style="border:1px solid #ddd;border-radius:10px;background:#fff;width:320px;height:260px"></canvas>
-    </div>
-    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
-    <div class="bsp-body">
-      <div class="ip"><strong>Schritt 1: Eigenschaften des Graphen ablesen.</strong></div>
-      <div class="ip">• Der Graph verläuft durch den Ursprung \(O(0\mid 0)\).</div>
-      <div class="ip">• Er ist punktsymmetrisch zum Ursprung (für \(x<0\) sind die \(y\)-Werte negativ, für \(x>0\) positiv).</div>
-      <div class="ip">• Bei \(x=1\) gilt \(y=1\), bei \(x=-1\) gilt \(y=-1\). Bei \(x=2\) ist \(y=8\).</div>
-      <div class="ip"><strong>Schritt 2: Typ bestimmen.</strong> Punktsymmetrie zum Ursprung + Verlauf durch \((2\mid 8)\) passen zu einer Potenzfunktion mit <em>ungeradem</em> positivem Exponenten. Da \(2^3=8\) ist, liegt der Exponent bei \(n=3\).</div>
-      <div class="ip"><strong>Ergebnis:</strong> \(f(x)=x^3\).</div>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  var c=document.getElementById('cvPotBsp1'); if(!c) return;
-  var ctx=c.getContext('2d');
-  var dpr=window.devicePixelRatio||1, cssW=320, cssH=260;
-  c.width=cssW*dpr; c.height=cssH*dpr; c.style.width=cssW+'px'; c.style.height=cssH+'px';
-  ctx.scale(dpr,dpr);
-  var xMin=-2.5, xMax=2.5, yMin=-9, yMax=9, pad=32;
-  function tx(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-12);}
-  function ty(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-12);}
-  ctx.strokeStyle='#ece7dc'; ctx.lineWidth=0.5;
-  for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){ctx.beginPath();ctx.moveTo(tx(g),8);ctx.lineTo(tx(g),cssH-pad);ctx.stroke();}
-  for(var g=-8;g<=8;g+=2){ctx.beginPath();ctx.moveTo(pad,ty(g));ctx.lineTo(cssW-8,ty(g));ctx.stroke();}
-  ctx.strokeStyle='#555'; ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.moveTo(tx(xMin),ty(0));ctx.lineTo(tx(xMax)+2,ty(0));ctx.stroke();
-  ctx.beginPath();ctx.moveTo(tx(0),ty(yMin));ctx.lineTo(tx(0),ty(yMax)-2);ctx.stroke();
-  ctx.fillStyle='#555';
-  ctx.beginPath();ctx.moveTo(tx(xMax)+6,ty(0));ctx.lineTo(tx(xMax)-2,ty(0)-4);ctx.lineTo(tx(xMax)-2,ty(0)+4);ctx.fill();
-  ctx.beginPath();ctx.moveTo(tx(0),ty(yMax)-6);ctx.lineTo(tx(0)-4,ty(yMax)+2);ctx.lineTo(tx(0)+4,ty(yMax)+2);ctx.fill();
-  ctx.fillStyle='#333'; ctx.font='bold 13px Inter,sans-serif';
-  ctx.textAlign='left';ctx.textBaseline='middle';ctx.fillText('x',tx(xMax)+10,ty(0));
-  ctx.textAlign='center';ctx.textBaseline='bottom';ctx.fillText('y',tx(0),ty(yMax)-10);
-  ctx.fillStyle='#555'; ctx.font='12px Inter,sans-serif';
-  ctx.textAlign='center';ctx.textBaseline='top';
-  for(var l=-2;l<=2;l++){if(l!==0)ctx.fillText(l,tx(l),ty(0)+5);}
-  ctx.textAlign='right';ctx.textBaseline='middle';
-  for(var l=-8;l<=8;l+=2){if(l!==0)ctx.fillText(l,tx(0)-6,ty(l));}
-  ctx.fillStyle='#888';ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-5,ty(0)+4);
-  // x^3
-  ctx.strokeStyle='#c75c3a';ctx.lineWidth=2.5;ctx.beginPath();
-  for(var i=0;i<=200;i++){var x=xMin+(xMax-xMin)*i/200;var y=x*x*x;if(y<yMin-1||y>yMax+1)continue;if(i===0)ctx.moveTo(tx(x),ty(y));else ctx.lineTo(tx(x),ty(y));}
-  ctx.stroke();
-  // Markierpunkte
-  var pts=[[-1,-1],[1,1],[2,8]];
-  ctx.fillStyle='#5b6e2e';
-  for(var i=0;i<pts.length;i++){
-    var p=pts[i];
-    ctx.beginPath();ctx.arc(tx(p[0]),ty(p[1]),4,0,2*Math.PI);ctx.fill();
-  }
-  ctx.fillStyle='#333';ctx.font='11px Inter,sans-serif';ctx.textAlign='left';ctx.textBaseline='middle';
-  ctx.fillText('(1|1)',tx(1)+6,ty(1));
-  ctx.fillText('(2|8)',tx(2)+6,ty(8));
-  ctx.textAlign='right';ctx.fillText('(−1|−1)',tx(-1)-6,ty(-1));
-})();
-</script>
+<!-- ═════════════════════ SECTION 5 ═════════════════════ -->
+<div class="section-label">5 · Aufgaben — Potenzen</div>
 
-<!-- Beispiel ★★ — Definitionsbereich einer Wurzelfunktion -->
 <div class="card">
-  <div class="card-head"><div class="ci ci-t">★★</div><span class="card-title">Beispiel — Definitionsbereich von \(f(x)=\sqrt{2x-6}\) bestimmen</span></div>
-  <div class="card-body">
-    <div class="ip"><strong>Aufgabe:</strong> Ermittle den größtmöglichen Definitionsbereich der Funktion \(f(x)=\sqrt{2x-6}\) und gib den zugehörigen Wertebereich an.</div>
-    <div class="bsp-toggle" onclick="togBsp(this)">Lösung einblenden ▾</div>
-    <div class="bsp-body">
-      <div class="ip"><strong>Schritt 1: Bedingung für die Wurzel.</strong> Damit der Radikand (der Ausdruck unter der Wurzel) reelle Wurzeln hat, muss gelten:</div>
-      <div class="ip">\[ 2x - 6 \ge 0 \]</div>
-      <div class="ip"><strong>Schritt 2: Nach \(x\) auflösen.</strong></div>
-      <div class="ip">\[ 2x \ge 6 \quad \Rightarrow \quad x \ge 3 \]</div>
-      <div class="ip"><strong>Schritt 3: Definitionsbereich angeben.</strong></div>
-      <div class="ip">\[ \mathbb{D} = [3;\,\infty) \]</div>
-      <div class="ip"><strong>Schritt 4: Wertebereich.</strong> Für \(x=3\) ist \(f(3)=\sqrt{0}=0\), und für größer werdendes \(x\) wächst \(f(x)\) unbegrenzt. Also:</div>
-      <div class="ip">\[ \mathbb{W} = [0;\,\infty) \]</div>
-      <div class="ip"><strong>Ergebnis:</strong> \(\mathbb{D}=[3;\infty)\), \(\mathbb{W}=[0;\infty)\).</div>
-    </div>
-  </div>
-</div>
-
-<!-- Aufgaben Potenzen & Wurzeln -->
-<div class="card">
-  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgaben — Potenzen &amp; Wurzeln</span></div>
+  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgabenpool</span></div>
   <div class="card-body" style="padding:0">
     <ul class="task-list">
 
       <li class="task-item de" onclick="togTask(this)">
-        <div class="task-head"><span>Vereinfache \(\;a^3 \cdot a^{-5} \cdot a^2\).</span></div>
+        <div class="task-head"><span>★ Berechne \(2^6\), \(3^4\) und \((-2)^5\). Schreibe jeweils die Multiplikationskette als Zwischenschritt auf.</span></div>
         <div class="task-body">
-          <div class="ip">\[ a^3 \cdot a^{-5} \cdot a^2 = a^{3+(-5)+2} = a^{0} = 1 \]</div>
+          <div class="ip">\(2^6 = 2\cdot 2\cdot 2\cdot 2\cdot 2\cdot 2 = 64\)</div>
+          <div class="ip">\(3^4 = 3\cdot 3\cdot 3\cdot 3 = 81\)</div>
+          <div class="ip">\((-2)^5 = (-2)(-2)(-2)(-2)(-2) = -32\) — ungerader Exponent erhält das Minuszeichen.</div>
           <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-          <div class="komp-desc">Symbolisch-formales Arbeiten: Anwenden der Potenzgesetze.</div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Potenz als wiederholte Multiplikation ausführen.</div>
         </div>
       </li>
 
       <li class="task-item de" onclick="togTask(this)">
-        <div class="task-head"><span>Schreibe in Zehnerpotenzschreibweise: Die Masse der Erde beträgt etwa 5 974 000 000 000 000 000 000 000 kg.</span></div>
+        <div class="task-head"><span>★ Nenne aus dem Kopf: \(12^2\), \(15^2\), \(2^7\), \(2^{10}\).</span></div>
         <div class="task-body">
-          <div class="ip">\[ 5\,974\,000\,000\,000\,000\,000\,000\,000\,\text{kg} = 5{,}974 \cdot 10^{24}\,\text{kg} \]</div>
-          <div class="ip">Das Komma wird um 24 Stellen nach links verschoben.</div>
+          <div class="ip">\(12^2 = 144\), \(15^2 = 225\), \(2^7 = 128\), \(2^{10} = 1024\).</div>
           <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-          <div class="komp-desc">Symbolisch-formales Arbeiten: Umgang mit Zehnerpotenzschreibweise.</div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Kopfwissen sicher abrufen.</div>
+        </div>
+      </li>
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Schreibe ohne negativen Exponenten: \(7^{-2}\), \(\left(\tfrac{1}{3}\right)^{-2}\), \(10^{-4}\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(7^{-2} = \tfrac{1}{49}\)</div>
+          <div class="ip">\(\left(\tfrac{1}{3}\right)^{-2} = 3^2 = 9\)</div>
+          <div class="ip">\(10^{-4} = \tfrac{1}{10000} = 0{,}0001\)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Negativer Exponent als Kehrwert.</div>
+        </div>
+      </li>
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Schreibe als Potenz mit Bruchexponent: \(\sqrt{x}\), \(\sqrt[3]{y}\), \(\sqrt[5]{a^2}\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(\sqrt{x} = x^{1/2}\), \(\sqrt[3]{y} = y^{1/3}\), \(\sqrt[5]{a^2} = a^{2/5}\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Wechsel zwischen Wurzel- und Potenzschreibweise.</div>
         </div>
       </li>
 
       <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>Berechne \(\;(4 \cdot 10^3) \cdot (2{,}5 \cdot 10^{-7})\) und gib das Ergebnis in Zehnerpotenzschreibweise an.</span></div>
+        <div class="task-head"><span>★★ In einer Computerfestplatte werden Speichergrößen in Zweierpotenzen angegeben. Wie viele Bytes hat eine Speicherzelle mit \(2^{10}\) Bytes (1 KiB) bzw. \(2^{20}\) Bytes (1 MiB)? Begründe, warum man oft auch sagt „1024 Byte = 1 Kilobyte".</span></div>
         <div class="task-body">
-          <div class="ip">\[ (4 \cdot 10^3) \cdot (2{,}5 \cdot 10^{-7}) = (4 \cdot 2{,}5) \cdot 10^{3+(-7)} = 10 \cdot 10^{-4} = 1 \cdot 10^{-3} \]</div>
-          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-          <div class="komp-desc">Symbolisch-formales Arbeiten: Verknüpfung von Dezimalrechnung und Potenzgesetzen.</div>
+          <div class="ip">\(2^{10} = 1024\) Byte, \(2^{20} = (2^{10})^2 = 1024^2 = 1\,048\,576\) Byte \(\approx 10^6\) Byte.</div>
+          <div class="ip"><strong>Begründung:</strong> Speicher wird in Computern binär organisiert, daher werden Größen als Zweierpotenz angegeben. Die Größenordnung \(2^{10} = 1024\) ist nahe bei \(10^3 = 1000\) — daher die umgangssprachliche Gleichsetzung mit „Kilo".</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachkontext Informatik mit Zweierpotenzen verbinden.</div>
         </div>
       </li>
 
       <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>Ein Würfel hat das Volumen \(V = 125\,\text{cm}^3\). Ermittle die Kantenlänge \(a\) und den Oberflächeninhalt \(O\).</span></div>
+        <div class="task-head"><span>★★ Ein Würfel hat das Volumen \(V = 729\,\text{cm}^3\). Bestimme die Kantenlänge \(a\), ohne einen Taschenrechner zu benutzen.</span></div>
         <div class="task-body">
-          <div class="ip"><strong>Kantenlänge:</strong> \(V = a^3 \;\Rightarrow\; a = \sqrt[3]{V} = \sqrt[3]{125} = 5\,\text{cm}\).</div>
-          <div class="ip"><strong>Oberfläche:</strong> \(O = 6a^2 = 6 \cdot 25 = 150\,\text{cm}^2\).</div>
+          <div class="ip">\(V = a^3\), also \(a = \sqrt[3]{729}\).</div>
+          <div class="ip">Aus dem Kopfwissen: \(9^3 = 729\), also \(a = 9\,\text{cm}\).</div>
           <div class="komp-wrap"><span class="kb kb-k2">K2</span></div>
-          <div class="komp-desc">Probleme lösen: Zusammenhang zwischen Volumen und Oberfläche eines Würfels herstellen.</div>
+          <div class="komp-desc">Probleme lösen: Bekanntes Würfelvolumen rückwärts in Kantenlänge übersetzen.</div>
         </div>
       </li>
 
       <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>Ordne die folgenden Massen Himmelskörpern zu, indem du die Zehnerpotenzschreibweise nutzt: \(2{,}0 \cdot 10^{30}\,\text{kg}\) (Sonne), \(5{,}97 \cdot 10^{24}\,\text{kg}\) (Erde), \(7{,}35 \cdot 10^{22}\,\text{kg}\) (Mond). Berechne, wie viel mal schwerer die Sonne als die Erde ist.</span></div>
+        <div class="task-head"><span>★★ Ordne jeder Zahl den kleinsten Zahlenbereich (\(\mathbb{N}\), \(\mathbb{Z}\), \(\mathbb{Q}\) oder \(\mathbb{R}\)) zu, dem sie angehört: \(0\), \(-\tfrac{7}{4}\), \(\sqrt{49}\), \(\sqrt{7}\), \(0{,}4\overline{5}\), \(\pi\).</span></div>
         <div class="task-body">
-          <div class="ip">Die Reihenfolge nach Masse ist: Mond \(<\) Erde \(<\) Sonne.</div>
-          <div class="ip"><strong>Verhältnis Sonne zu Erde:</strong></div>
-          <div class="ip">\[ \frac{2{,}0 \cdot 10^{30}}{5{,}97 \cdot 10^{24}} = \frac{2{,}0}{5{,}97} \cdot 10^{30-24} \approx 0{,}335 \cdot 10^{6} = 3{,}35 \cdot 10^{5} \]</div>
-          <div class="ip">Die Sonne ist etwa \(335\,000\)-mal schwerer als die Erde.</div>
-          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
-          <div class="komp-desc">Modellieren: Zuordnen von Massen in Zehnerpotenzschreibweise zu realen Objekten.</div>
-        </div>
-      </li>
-
-      <li class="task-item dh" onclick="togTask(this)">
-        <div class="task-head"><span>Erläutere, warum \(\sqrt{a^2 + b^2} \neq a + b\) gilt. Widerlege die Gleichung mit einem selbst gewählten Zahlenbeispiel und formuliere eine korrekte Vereinfachung von \(\sqrt{a^2 + 2ab + b^2}\).</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Widerlegung:</strong> Wähle \(a = 3,\; b = 4\):</div>
-          <div class="ip">\[ \sqrt{3^2+4^2} = \sqrt{9+16} = \sqrt{25} = 5 \neq 3+4 = 7 \]</div>
-          <div class="ip"><strong>Korrekte Vereinfachung:</strong> \(\sqrt{a^2+2ab+b^2} = \sqrt{(a+b)^2} = |a+b|\).</div>
-          <div class="ip">Hier darf die Wurzel gezogen werden, weil der Term unter der Wurzel ein vollständiges Quadrat ist — das ist bei \(a^2 + b^2\) im Allgemeinen <strong>nicht</strong> der Fall.</div>
-          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
-          <div class="komp-desc">Argumentieren: Widerlegen einer falschen Behauptung durch Gegenbeispiel und Begründen der korrekten Regel.</div>
-        </div>
-      </li>
-
-    
-      <li class="task-item de" onclick="togTask(this)">
-        <div class="task-head"><span>Ordne die vier Funktionsgraphen den Exponenten \(n\in\{-2,\;-1,\;\tfrac{1}{2},\;3\}\) zu. Begr&uuml;nde jede Zuordnung mit einer gut erkennbaren Eigenschaft (Symmetrie, Asymptote, Definitionsbereich).</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>\(n=-2\):</strong> Hyperbel \(1/x^2\), symmetrisch zur \(y\)-Achse, verl&auml;uft nur oberhalb der \(x\)-Achse, zwei Asymptoten.</div>
-          <div class="ip"><strong>\(n=-1\):</strong> Hyperbel \(1/x\), punktsymmetrisch zum Ursprung, ein Ast im 1., einer im 3. Quadranten.</div>
-          <div class="ip"><strong>\(n=\tfrac{1}{2}\):</strong> Wurzelfunktion \(\sqrt{x}\), nur f&uuml;r \(x\ge 0\) definiert, steigt flacher werdend.</div>
-          <div class="ip"><strong>\(n=3\):</strong> Kubik \(x^3\), punktsymmetrisch zum Ursprung, durch \((1\mid 1)\) und \((2\mid 8)\).</div>
-          <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
-          <div class="komp-desc">Darstellungen nutzen: Graphen mit ihrem algebraischen Typ verkn&uuml;pfen.</div>
-        </div>
-      </li>
-
-      <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>F&uuml;r den Bremsweg eines Autos gilt n&auml;herungsweise \(s(v)=\tfrac{1}{100}\,v^{2}\) (mit \(v\) in km/h und \(s\) in m). Ermittle den Bremsweg bei 50 km/h und bei 100 km/h. Erl&auml;utere, warum eine Verdopplung der Geschwindigkeit nicht zu doppelt, sondern zu viermal so langem Bremsweg f&uuml;hrt.</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Bei 50 km/h:</strong> \(s(50)=\tfrac{1}{100}\cdot 2500 = 25\,\text{m}\).</div>
-          <div class="ip"><strong>Bei 100 km/h:</strong> \(s(100)=\tfrac{1}{100}\cdot 10000 = 100\,\text{m}\).</div>
-          <div class="ip"><strong>Begr&uuml;ndung:</strong> Bei einer Potenzfunktion mit Exponent 2 wirkt sich eine Verdopplung der Eingabe quadratisch aus: \(s(2v)=\tfrac{1}{100}(2v)^2 = 4\cdot\tfrac{1}{100}v^2 = 4\cdot s(v)\).</div>
-          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
-          <div class="komp-desc">Modellieren: Potenzfunktion als Bremsweg-Modell interpretieren.</div>
-        </div>
-      </li>
-
-      <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>Bestimme den gr&ouml;&szlig;tm&ouml;glichen Definitionsbereich der Funktion \(g(x)=\sqrt{12-3x}\) und den zugeh&ouml;rigen Wertebereich.</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Bedingung:</strong> Der Radikand muss nichtnegativ sein: \(12-3x\ge 0\).</div>
-          <div class="ip">\[ 12-3x\ge 0 \;\Rightarrow\; -3x\ge -12 \;\Rightarrow\; x\le 4 \]</div>
-          <div class="ip"><strong>Definitionsbereich:</strong> \(\mathbb{D}=(-\infty;\,4]\).</div>
-          <div class="ip"><strong>Wertebereich:</strong> F&uuml;r \(x=4\) ist \(g(4)=\sqrt{0}=0\); f&uuml;r \(x\to-\infty\) w&auml;chst \(g(x)\) unbeschr&auml;nkt. Also \(\mathbb{W}=[0;\,\infty)\).</div>
+          <div class="ip">\(0 \in \mathbb{Z}\) (manche Bücher zählen \(0\) zu \(\mathbb{N}\) — kläre im Unterricht, welche Konvention gilt).</div>
+          <div class="ip">\(-\tfrac{7}{4} \in \mathbb{Q}\).</div>
+          <div class="ip">\(\sqrt{49} = 7 \in \mathbb{N}\).</div>
+          <div class="ip">\(\sqrt{7} \in \mathbb{R}\) (irrational).</div>
+          <div class="ip">\(0{,}4\overline{5} = \tfrac{41}{90} \in \mathbb{Q}\) (periodische Dezimalzahlen sind rational).</div>
+          <div class="ip">\(\pi \in \mathbb{R}\) (irrational).</div>
           <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-          <div class="komp-desc">Symbolisch-formal: Definitionsbereich einer Wurzelfunktion durch Ungleichung bestimmen.</div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Zahlen sicher in Zahlenbereiche einordnen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Schreibe als eine einzige Potenz: \(\tfrac{1}{x^2}\), \(\sqrt{x^3}\), \(\tfrac{1}{\sqrt[3]{x}}\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(\tfrac{1}{x^2} = x^{-2}\)</div>
+          <div class="ip">\(\sqrt{x^3} = x^{3/2}\)</div>
+          <div class="ip">\(\tfrac{1}{\sqrt[3]{x}} = x^{-1/3}\)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Wurzeln und Brüche in Potenzschreibweise überführen.</div>
         </div>
       </li>
 
       <li class="task-item dh" onclick="togTask(this)">
-        <div class="task-head"><span>F&uuml;r die Planeten unseres Sonnensystems gilt das 3. Kepler'sche Gesetz: Das Quadrat der Umlaufzeit \(T\) ist proportional zur dritten Potenz der gro&szlig;en Halbachse \(a\), also \(T^{2}=k\cdot a^{3}\) mit einer Konstante \(k\). Stelle die Umlaufzeit als Funktion \(T(a)\) dar. Welcher Exponent geh&ouml;rt dann zur Potenzfunktion? Diskutiere, ob es sich um eine Potenzfunktion oder eine Wurzelfunktion handelt.</span></div>
+        <div class="task-head"><span>★★★ Eine Schülerin behauptet: „Jede Zahl mit unendlich vielen Nachkommastellen ist irrational." Erläutere, ob diese Aussage stimmt, und gib ein Gegenbeispiel an, falls nicht.</span></div>
         <div class="task-body">
-          <div class="ip"><strong>Umformen nach \(T\):</strong> Aus \(T^{2}=k\cdot a^{3}\) folgt</div>
-          <div class="ip">\[ T(a)=\sqrt{k\cdot a^{3}}=\sqrt{k}\cdot a^{3/2} \]</div>
-          <div class="ip"><strong>Exponent:</strong> \(n=\tfrac{3}{2}\).</div>
-          <div class="ip"><strong>Einordnung:</strong> Ein rationaler Exponent mit ungeradem Z&auml;hler und geradem Nenner gibt eine Funktion, die sich aus Potenz und Wurzel zusammensetzt: \(T(a)=\sqrt{k}\cdot a\cdot\sqrt{a}\). Sie ist f&uuml;r \(a\ge 0\) definiert (negative Halbachsen sind physikalisch sinnlos) und w&auml;chst st&auml;rker als eine einfache Wurzelfunktion, aber schw&auml;cher als die Kubik. Im weiteren Sinne ist es eine Potenzfunktion mit rationalem Exponenten \(\tfrac{3}{2}\) &mdash; also ein Mischtyp, der die beiden Grundformen dieser Lerneinheit verbindet.</div>
-          <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k3">K3</span></div>
-          <div class="komp-desc">Argumentieren + Modellieren: Gesetzm&auml;&szlig;igkeit als Potenzfunktion deuten und klassifizieren.</div>
-        </div>
-      </li>
-
-
-      <li class="task-item dm" onclick="togTask(this)">
-        <div class="task-head"><span>Melina rechnet: &bdquo;\(\sqrt{9+16} = \sqrt{9}+\sqrt{16} = 3+4 = 7\)&ldquo;. Finde ihren Fehler, berechne das richtige Ergebnis und formuliere eine Regel, warum die Wurzel aus einer Summe <em>nicht</em> als Summe der Wurzeln geschrieben werden darf.</span></div>
-        <div class="task-body">
-          <div class="ip"><strong>Fehler:</strong> Die Wurzel l&auml;sst sich nicht termweise auf Summen anwenden: \(\sqrt{a+b} \neq \sqrt{a}+\sqrt{b}\) im Allgemeinen.</div>
-          <div class="ip"><strong>Korrekte Rechnung:</strong> Erst in der Klammer zusammenfassen, dann die Wurzel ziehen: \(\sqrt{9+16} = \sqrt{25} = 5\).</div>
-          <div class="ip"><strong>Regel:</strong> Die Produktregel \(\sqrt{a\cdot b} = \sqrt{a}\cdot\sqrt{b}\) gilt nur f&uuml;r Produkte. F&uuml;r Summen gibt es keine entsprechende Zerlegung &mdash; du musst zuerst zusammenrechnen und dann erst die Wurzel ziehen.</div>
+          <div class="ip"><strong>Die Aussage stimmt nicht.</strong> Auch rationale Zahlen können unendlich viele Nachkommastellen haben — wenn die Dezimaldarstellung periodisch ist.</div>
+          <div class="ip"><strong>Gegenbeispiel:</strong> \(\tfrac{1}{3} = 0{,}333\ldots\). Diese Zahl hat unendlich viele Nachkommastellen, ist aber als Bruch darstellbar und damit rational.</div>
+          <div class="ip"><strong>Korrekte Formulierung:</strong> Irrational sind nur die Zahlen, deren Dezimaldarstellung unendlich und <em>nicht-periodisch</em> ist.</div>
           <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
-          <div class="komp-desc">Argumentieren: Typischen Fehler identifizieren und durch Begr&uuml;ndung der korrekten Regel widerlegen.</div>
+          <div class="komp-desc">Argumentieren: Eine plausible, aber falsche Aussage widerlegen und die korrekte Formulierung herausarbeiten.</div>
         </div>
       </li>
 
-</ul>
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Vergleiche \((-3)^4\), \(-3^4\) und \((-3)^{-2}\). Erläutere, wie sich die Vorzeichen und Klammern auf das Ergebnis auswirken.</span></div>
+        <div class="task-body">
+          <div class="ip">\((-3)^4 = 81\) (gerade Hochzahl, Vorzeichen verschwindet).</div>
+          <div class="ip">\(-3^4 = -81\) (das Minus wirkt nur auf \(3^4\), nicht auf die Basis).</div>
+          <div class="ip">\((-3)^{-2} = \tfrac{1}{(-3)^2} = \tfrac{1}{9}\) (Kehrwert von \((-3)^2 = 9\)).</div>
+          <div class="ip"><strong>Regel:</strong> Die Klammer entscheidet, ob das Vorzeichen Teil der Basis ist. Bei gerader Hochzahl wird ein eingeschlossenes Vorzeichen positiv; bei ungerader bleibt es negativ.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Den Einfluss von Klammern und Vorzeichen systematisch erklären.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Begründe mit Hilfe der Beweisidee aus diesem Abschnitt, dass auch \(\sqrt{3}\) keine rationale Zahl ist.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Annahme:</strong> \(\sqrt{3} = \tfrac{p}{q}\) mit vollständig gekürztem Bruch.</div>
+          <div class="ip"><strong>Quadrieren:</strong> \(3 q^2 = p^2\).</div>
+          <div class="ip"><strong>Folgerung:</strong> \(p^2\) ist durch 3 teilbar, also auch \(p\) (denn 3 ist Primzahl). Schreibe \(p = 3k\).</div>
+          <div class="ip"><strong>Einsetzen:</strong> \(3q^2 = 9k^2 \;\Rightarrow\; q^2 = 3k^2\). Also ist auch \(q^2\), und damit \(q\), durch 3 teilbar.</div>
+          <div class="ip"><strong>Widerspruch:</strong> \(p\) und \(q\) sind beide durch 3 teilbar — der Bruch war also nicht vollständig gekürzt. Annahme widerlegt. \(\sqrt{3}\) ist irrational.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Die Widerspruchs-Beweisidee von \(\sqrt{2}\) auf \(\sqrt{3}\) übertragen.</div>
+        </div>
+      </li>
+
+    </ul>
   </div>
 </div>
 
-
-<!-- Selbstlerncheck (D22) -->
+<!-- ── Selbstlerncheck ──────────────────────────────────────── -->
 <div class="card" style="border-left:4px solid #c8b55e;background:#fcfaf3">
-  <div class="card-head"><div class="ci ci-g">&#10003;</div><span class="card-title">Selbstlerncheck &mdash; Potenzen, Wurzeln, Funktionen</span></div>
+  <div class="card-head"><div class="ci ci-g">&#10003;</div><span class="card-title">Selbstlerncheck — Potenzen</span></div>
   <div class="card-body">
-    <div class="ip">Bevor du weitergehst &mdash; kannst du diese f&uuml;nf Fragen beantworten?</div>
+    <div class="ip">Bevor du zum nächsten Bereich gehst — kannst du diese fünf Fragen beantworten?</div>
     <ol style="padding-left:22px;line-height:1.7">
-      <li>Erkl&auml;re mit einem Satz, warum \(a^3\cdot a^{-5}=a^{-2}\) gilt. <span style="color:#888;font-size:12px">(R&uuml;ckverweis: &bdquo;Potenzgesetze&ldquo;)</span></li>
-      <li>Schreibe die Zahl \(0{,}00042\) in Zehnerpotenzschreibweise. <span style="color:#888;font-size:12px">(R&uuml;ckverweis: &bdquo;Zehnerpotenzschreibweise&ldquo;)</span></li>
-      <li>Begr&uuml;nde, warum \(\sqrt{a^2+b^2}\neq a+b\) im Allgemeinen gilt &mdash; ohne ein Zahlenbeispiel zu rechnen. <span style="color:#888;font-size:12px">(R&uuml;ckverweis: &bdquo;Negative und rationale Exponenten&ldquo;)</span></li>
-      <li>Der Graph einer Funktion ist punktsymmetrisch zum Ursprung und verl&auml;uft durch die Punkte \((1\mid 1)\) und \((2\mid 32)\). Ermittle den Exponenten \(n\) und gib die Funktionsgleichung an. <span style="color:#888;font-size:12px">(R&uuml;ckverweis: &bdquo;Die vier Grundtypen im Vergleich&ldquo;)</span></li>
-      <li>Bestimme den Definitionsbereich von \(f(x)=\sqrt{x-5}\) und gib den zugeh&ouml;rigen Wertebereich an. <span style="color:#888;font-size:12px">(R&uuml;ckverweis: &bdquo;Beispiel &mdash; Definitionsbereich&ldquo;)</span></li>
+      <li>Erkläre mit einem Satz, was die Schreibweise \(a^n\) bedeutet, und wofür Basis und Exponent stehen. <span style="color:#888;font-size:12px">(Rückverweis: „\(a^n\) — das steht dahinter")</span></li>
+      <li>Nenne aus dem Kopf \(13^2\), \(2^8\) und \(2^{-3}\). <span style="color:#888;font-size:12px">(Rückverweis: Kopfwissen-Tabellen)</span></li>
+      <li>Schreibe \(\sqrt[3]{a^2}\) als Potenz mit einem Bruchexponenten und umgekehrt \(x^{-1/2}\) als Wurzelterm. <span style="color:#888;font-size:12px">(Rückverweis: „Potenzen mit gebrochenen Exponenten")</span></li>
+      <li>Erkläre, warum \(\sqrt{2}\) keine rationale Zahl ist — nenne die Beweisidee in zwei Sätzen. <span style="color:#888;font-size:12px">(Rückverweis: „Es gibt Zahlen, die kein Bruch sind")</span></li>
+      <li>Ordne \(\tfrac{4}{7}\), \(\sqrt{81}\) und \(\sqrt{2}\) jeweils dem kleinsten Zahlenbereich (\(\mathbb{N}\), \(\mathbb{Z}\), \(\mathbb{Q}\), \(\mathbb{R}\)) zu. <span style="color:#888;font-size:12px">(Rückverweis: „Reelle Zahlen — ℝ schließt die Lücken")</span></li>
     </ol>
-    <div style="margin-top:10px;font-size:14px;color:#6b6456">
-      Wenn du bei einer Frage unsicher bist, springe an die verlinkte Stelle zur&uuml;ck und lies sie noch einmal. Erst dann weiter.
+    <div class="ip" style="margin-top:10px;font-size:14px;color:var(--ink-muted)">
+      Bist du bei einer Frage unsicher? Geh über den Rückverweis zur passenden Stelle und lies sie noch einmal. Erst dann weiter zum Bereich <em>Potenzgesetze</em>.
     </div>
   </div>
 </div>
 
 </div><!-- end k9-pot -->
+
+
+<div class="subpanel" id="k9-potg">
+
+<!-- ── Worum geht es ─────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Vier Rechenregeln machen das Hantieren mit Potenzen einfach: zwei für gleiche Basis, eine für verschachtelte Potenzen, eine für gleichen Exponenten. Wer sie sicher anwendet, vereinfacht lange Terme mit Buchstaben und Brüchen oft in einer einzigen Zeile.</div>
+    <div class="ip">In diesem Bereich lernst du die vier Potenzgesetze kennen, übst sie mit klaren Beispielen und trainierst Termumformungen, die du in den nächsten Jahren immer wieder brauchen wirst.</div>
+  </div>
+</div>
+
+<!-- ── Lernziele ────────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lernziele · Potenzgesetze</span></div>
+  <div class="card-body">
+    <ul class="gi-list">
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Die vier Potenzgesetze nennen und erkennen, welches gerade anwendbar ist</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Potenzen mit gleicher Basis multiplizieren und dividieren</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Verschachtelte Potenzen (Potenz einer Potenz) vereinfachen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Potenzen mit gleichem Exponenten zusammenziehen — Faktor- und Quotientenregel</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Mehrere Gesetze in einem Termumformungs-Schritt kombinieren</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── Das brauchst du ──────────────────────────────────────── -->
+<div class="hint">
+  <strong>Das brauchst du:</strong> Bedeutung der Potenzschreibweise \(a^n\), Bruchrechnung, Vorzeichenregeln, Wurzel- und Bruchexponenten aus dem Bereich <em>Potenzen</em>.
+</div>
+
+<!-- ═════════════════════ SECTION 1 ═════════════════════ -->
+<div class="section-label">1 · Die vier Potenzgesetze</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Gleiche Basis — multiplizieren und dividieren</span></div>
+  <div class="card-body">
+    <div class="ip">Stell dir vor, du multiplizierst zwei Potenzen mit derselben Basis: \(2^3 \cdot 2^4\). Schreib es als Multiplikationskette aus:</div>
+    <div class="ip" style="text-align:center">\(\underbrace{2\cdot 2\cdot 2}_{2^3} \cdot \underbrace{2\cdot 2\cdot 2\cdot 2}_{2^4} \;=\; \underbrace{2\cdot 2\cdot 2\cdot 2\cdot 2\cdot 2\cdot 2}_{2^7}\)</div>
+    <div class="ip">Die Faktoren werden einfach zusammengezählt. Daraus folgt die <strong>Produktregel</strong>:</div>
+    <div class="ip" style="text-align:center;background:#f6f3e7;padding:10px;border-radius:4px">\[ a^m \cdot a^n \;=\; a^{m+n} \]</div>
+    <div class="ip">Bei der Division derselben Basis kürzen sich Faktoren weg, und die Anzahl der übrigen ergibt die <strong>Quotientenregel</strong>:</div>
+    <div class="ip" style="text-align:center;background:#f6f3e7;padding:10px;border-radius:4px">\[ \frac{a^m}{a^n} \;=\; a^{m-n} \quad (a \neq 0) \]</div>
+    <div class="hint" style="margin-top:8px">
+      <strong>Lesehilfe:</strong> Bei gleicher Basis werden die Exponenten beim Mal-Nehmen <em>addiert</em>, beim Teilen <em>subtrahiert</em>.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Potenz einer Potenz</span></div>
+  <div class="card-body">
+    <div class="ip">Wird eine Potenz nochmals potenziert, wie etwa \((2^3)^4\), so ist das Ergebnis \(2^3 \cdot 2^3 \cdot 2^3 \cdot 2^3 = 2^{12}\). Die Exponenten werden also multipliziert. Das ist die <strong>Potenzregel</strong>:</div>
+    <div class="ip" style="text-align:center;background:#f6f3e7;padding:10px;border-radius:4px">\[ \left(a^m\right)^n \;=\; a^{m \cdot n} \]</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Gleicher Exponent — verschiedene Basen</span></div>
+  <div class="card-body">
+    <div class="ip">Manchmal hast du nicht dieselbe Basis, sondern denselben Exponenten — wie bei \(2^3 \cdot 5^3\). Ausgeschrieben:</div>
+    <div class="ip" style="text-align:center">\(2\cdot 2\cdot 2 \cdot 5\cdot 5\cdot 5 = (2\cdot 5)(2\cdot 5)(2\cdot 5) = 10^3\)</div>
+    <div class="ip">Du kannst die Basen zusammenfassen — und genauso bei der Division. Das ist die <strong>Faktor- und Quotientenregel für gleichen Exponenten</strong>:</div>
+    <div class="ip" style="text-align:center;background:#f6f3e7;padding:10px;border-radius:4px">\[ a^n \cdot b^n \;=\; (a \cdot b)^n \qquad \frac{a^n}{b^n} \;=\; \left(\frac{a}{b}\right)^n \quad (b \neq 0) \]</div>
+    <div class="hint" style="margin-top:8px">
+      <strong>Achtung — typischer Fehler:</strong> Bei <em>verschiedener</em> Basis <em>und</em> verschiedenem Exponenten gibt es keine kurze Regel. Also: \(2^3 \cdot 5^4\) lässt sich nicht zusammenziehen.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Übersicht — alle vier Gesetze auf einen Blick</span></div>
+  <div class="card-body">
+    <table style="width:100%;border-collapse:collapse;margin:6px 0;font-size:15px">
+      <thead>
+        <tr style="background:var(--mushikuri-light);font-weight:600">
+          <th style="padding:8px;text-align:left;border:1px solid #ddd">Situation</th>
+          <th style="padding:8px;text-align:left;border:1px solid #ddd">Regel</th>
+          <th style="padding:8px;text-align:left;border:1px solid #ddd">Beispiel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:8px;border:1px solid #eee">Gleiche Basis, mal</td><td style="padding:8px;border:1px solid #eee">\(a^m \cdot a^n = a^{m+n}\)</td><td style="padding:8px;border:1px solid #eee">\(x^5 \cdot x^3 = x^8\)</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee">Gleiche Basis, geteilt</td><td style="padding:8px;border:1px solid #eee">\(\dfrac{a^m}{a^n} = a^{m-n}\)</td><td style="padding:8px;border:1px solid #eee">\(\dfrac{x^7}{x^2} = x^5\)</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee">Potenz einer Potenz</td><td style="padding:8px;border:1px solid #eee">\((a^m)^n = a^{m\cdot n}\)</td><td style="padding:8px;border:1px solid #eee">\((x^3)^4 = x^{12}\)</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee">Gleicher Exponent</td><td style="padding:8px;border:1px solid #eee">\(a^n \cdot b^n = (a\cdot b)^n\)</td><td style="padding:8px;border:1px solid #eee">\(2^4 \cdot 5^4 = 10^4 = 10000\)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 2 ═════════════════════ -->
+<div class="section-label">2 · Vorgerechnete Beispiele</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Mehrere Gesetze in einer Aufgabe</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Vereinfache so weit wie möglich: \(\displaystyle \frac{x^5 \cdot x^{-2}}{x^4 \cdot \left(x^{-1}\right)^3}\).</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Zähler mit Produktregel:
+        \[ x^5 \cdot x^{-2} = x^{5+(-2)} = x^3 \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Im Nenner zuerst die innere Klammer (Potenzregel):
+        \[ \left(x^{-1}\right)^3 = x^{(-1)\cdot 3} = x^{-3} \]
+        Dann Produktregel im Nenner: \( x^4 \cdot x^{-3} = x^{4+(-3)} = x^1 = x \).
+      </div>
+      <div class="ip"><strong>Schritt 3:</strong> Quotientenregel:
+        \[ \frac{x^3}{x} = x^{3-1} = x^2. \]
+      </div>
+      <div class="ip"><strong>Merksatz:</strong> Erst <em>innere</em> Klammern und Verschachtelungen auflösen, dann <em>äußere</em> Multiplikation/Division. Reihenfolge der Gesetze nicht vertauschen.</div>
+    </details>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Wurzelterm mit Potenzgesetzen vereinfachen</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Zeige, dass \(\sqrt{50} = 5\sqrt{2}\) gilt — durch Anwendung der Faktorregel für gleichen Exponenten.</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Wurzel als Potenz mit Bruchexponent schreiben:
+        \[ \sqrt{50} = 50^{1/2}. \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Basis als Produkt zerlegen, sodass eine Quadratzahl entsteht:
+        \[ 50 = 25 \cdot 2 \]
+      </div>
+      <div class="ip"><strong>Schritt 3:</strong> Faktor- und Quotientenregel für gleichen Exponenten anwenden:
+        \[ (25 \cdot 2)^{1/2} = 25^{1/2} \cdot 2^{1/2} = \sqrt{25} \cdot \sqrt{2} = 5\sqrt{2}. \]
+      </div>
+      <div class="ip"><strong>Merksatz:</strong> Quadratzahl im Radikanden? Aus der Wurzel ziehen. Das funktioniert über das Potenzgesetz für gleichen Exponenten.</div>
+    </details>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 3 ═════════════════════ -->
+<div class="section-label">3 · Anwendung — Zehnerpotenzschreibweise</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Sehr große und sehr kleine Zahlen kompakt schreiben</span></div>
+  <div class="card-body">
+    <div class="ip">Eine direkte Anwendung der Potenzgesetze ist die <strong>Zehnerpotenzschreibweise</strong> (auch wissenschaftliche Schreibweise genannt). Eine Zahl wird als Produkt einer Zahl zwischen 1 und 10 und einer Zehnerpotenz dargestellt:</div>
+    <div class="ip" style="text-align:center">\[ a \cdot 10^n \quad \text{mit } 1 \leq a < 10 \text{ und } n \in \mathbb{Z}. \]</div>
+    <div class="ip"><strong>Beispiele:</strong></div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li>Entfernung Erde–Sonne: \(149\,600\,000\,\text{km} = 1{,}496 \cdot 10^8\,\text{km}\).</li>
+      <li>Durchmesser eines Wasserstoffatoms: \(0{,}000\,000\,000\,1\,\text{m} = 1 \cdot 10^{-10}\,\text{m}\).</li>
+    </ul>
+    <div class="ip">Beim Multiplizieren und Dividieren solcher Zahlen nutzt du die Produkt- und Quotientenregel für die Zehnerpotenz:</div>
+    <div class="ip" style="text-align:center">\((a \cdot 10^m) \cdot (b \cdot 10^n) = (a \cdot b) \cdot 10^{m+n}\)</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Mit Zehnerpotenzen rechnen</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Berechne \((3 \cdot 10^5) \cdot (4 \cdot 10^{-2})\) und gib das Ergebnis in Zehnerpotenzschreibweise an.</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Faktoren und Zehnerpotenzen getrennt multiplizieren:
+        \[ (3 \cdot 4) \cdot 10^{5+(-2)} = 12 \cdot 10^{3}. \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Auf die Form \(a \cdot 10^n\) mit \(1 \leq a < 10\) bringen:
+        \[ 12 \cdot 10^3 = 1{,}2 \cdot 10 \cdot 10^3 = 1{,}2 \cdot 10^4. \]
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 4 ═════════════════════ -->
+<div class="section-label">4 · Aufgaben — Potenzgesetze</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgabenpool</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="task-list">
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Vereinfache: \(a^3 \cdot a^5\), \(\dfrac{x^9}{x^4}\), \((b^4)^2\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(a^3 \cdot a^5 = a^{3+5} = a^8\) (Produktregel)</div>
+          <div class="ip">\(\dfrac{x^9}{x^4} = x^{9-4} = x^5\) (Quotientenregel)</div>
+          <div class="ip">\((b^4)^2 = b^{4\cdot 2} = b^8\) (Potenzregel)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: drei Gesetze direkt anwenden.</div>
+        </div>
+      </li>
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Schreibe ohne negative Exponenten und vereinfache: \(a^3 \cdot a^{-5} \cdot a^2\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(a^{3+(-5)+2} = a^0 = 1\). Die Produktregel funktioniert auch mit negativen Exponenten — die Summe der Exponenten ist hier 0.</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Produktregel mit gemischten Vorzeichen anwenden.</div>
+        </div>
+      </li>
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Vereinfache: \(2^4 \cdot 5^4\), \(\dfrac{12^3}{4^3}\), \((xy)^5\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(2^4 \cdot 5^4 = (2 \cdot 5)^4 = 10^4 = 10\,000\) (Faktorregel)</div>
+          <div class="ip">\(\dfrac{12^3}{4^3} = \left(\dfrac{12}{4}\right)^3 = 3^3 = 27\) (Quotientenregel für gleichen Exponenten)</div>
+          <div class="ip">\((xy)^5 = x^5 y^5\) (Faktorregel rückwärts)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Gleicher Exponent — Basen zusammenziehen oder auseinanderziehen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Vereinfache so weit wie möglich: \(\dfrac{\left(x^2\right)^3 \cdot x^{-4}}{x^{-1}}\).</span></div>
+        <div class="task-body">
+          <div class="ip">Innere Potenz: \(\left(x^2\right)^3 = x^6\).</div>
+          <div class="ip">Zähler: \(x^6 \cdot x^{-4} = x^{6-4} = x^2\).</div>
+          <div class="ip">Quotient: \(\dfrac{x^2}{x^{-1}} = x^{2-(-1)} = x^3\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Reihenfolge — erst innere Klammer, dann Produkt-/Quotientenregel.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Schreibe als Potenz mit Bruchexponent: \(\sqrt{x}\), \(\sqrt[3]{x^2}\), \(\dfrac{1}{x^2 \sqrt{x}}\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(\sqrt{x} = x^{1/2}\).</div>
+          <div class="ip">\(\sqrt[3]{x^2} = x^{2/3}\).</div>
+          <div class="ip">\(\dfrac{1}{x^2 \sqrt{x}} = \dfrac{1}{x^2 \cdot x^{1/2}} = \dfrac{1}{x^{2+1/2}} = \dfrac{1}{x^{5/2}} = x^{-5/2}\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Wurzeln und Brüche als einzelne Potenz schreiben.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Schreibe als Term ohne Bruch und mit einer Potenz pro Variable: \(\dfrac{x^2 + 3x}{x}\).</span></div>
+        <div class="task-body">
+          <div class="ip">Erst auseinanderziehen, dann jede Potenz vereinfachen:</div>
+          <div class="ip">\[ \frac{x^2 + 3x}{x} \;=\; \frac{x^2}{x} + \frac{3x}{x} \;=\; x^{2-1} + 3 \;=\; x + 3. \]</div>
+          <div class="ip"><strong>Trick:</strong> Im Bruch <em>jeden</em> Summanden einzeln durch den Nenner teilen — vorher nicht „kürzen", solange im Zähler eine Summe steht.</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Term umformen, sodass jede Variable nur eine Potenz hat.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Schreibe mit gleicher Basis und vereinfache: \(2^x \cdot 4\), \(9^x\) (als Potenz von 3), \(\dfrac{8^x}{2^x}\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(2^x \cdot 4 = 2^x \cdot 2^2 = 2^{x+2}\).</div>
+          <div class="ip">\(9^x = (3^2)^x = 3^{2x}\).</div>
+          <div class="ip">\(\dfrac{8^x}{2^x} = \left(\dfrac{8}{2}\right)^x = 4^x\). Alternativ: \(\dfrac{8^x}{2^x} = \dfrac{(2^3)^x}{2^x} = \dfrac{2^{3x}}{2^x} = 2^{2x} = 4^x\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Gleiche Basis erkennen und nutzen — Vorbereitung auf Exponentialfunktionen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Bei einem Münzwurf-Experiment ist die Wahrscheinlichkeit „Kopf" gleich \(p = 0{,}5\). Berechne mit den Potenzgesetzen \(p^2 \cdot p^6\) und \(0{,}5^4 \cdot 0{,}5^6\). Gib das Ergebnis als Potenz und als Dezimalzahl an.</span></div>
+        <div class="task-body">
+          <div class="ip">\(p^2 \cdot p^6 = p^{2+6} = p^8\) — bei \(p=0{,}5\) ist das \(0{,}5^8 = \dfrac{1}{256} \approx 0{,}004\).</div>
+          <div class="ip">\(0{,}5^4 \cdot 0{,}5^6 = 0{,}5^{4+6} = 0{,}5^{10} = \dfrac{1}{1024} \approx 0{,}001\).</div>
+          <div class="ip"><strong>Bedeutung:</strong> So berechnet man später die Wahrscheinlichkeit für eine konkrete Folge aus 10 Münzwürfen.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Potenzgesetze in einem Wahrscheinlichkeitskontext anwenden.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Berechne \((4 \cdot 10^3) \cdot (2{,}5 \cdot 10^{-7})\) und gib das Ergebnis in Zehnerpotenzschreibweise an.</span></div>
+        <div class="task-body">
+          <div class="ip">\((4 \cdot 2{,}5) \cdot 10^{3+(-7)} = 10 \cdot 10^{-4} = 1 \cdot 10^{-3}\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Dezimalrechnung mit Zehnerpotenz kombinieren.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Für die Planeten unseres Sonnensystems gilt: Sonne \(2{,}0 \cdot 10^{30}\,\text{kg}\), Erde \(5{,}97 \cdot 10^{24}\,\text{kg}\). Berechne mit den Potenzgesetzen, wie viel mal schwerer die Sonne als die Erde ist.</span></div>
+        <div class="task-body">
+          <div class="ip">\[ \frac{2{,}0 \cdot 10^{30}}{5{,}97 \cdot 10^{24}} = \frac{2{,}0}{5{,}97} \cdot 10^{30-24} \approx 0{,}335 \cdot 10^6 = 3{,}35 \cdot 10^5. \]</div>
+          <div class="ip">Die Sonne ist also etwa \(335\,000\)-mal schwerer als die Erde.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Größenordnungsvergleich in Zehnerpotenzschreibweise.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Melina rechnet: „\(x^2 \cdot x^3 = x^6\), weil \(2 \cdot 3 = 6\)." Erläutere ihren Fehler, gib die richtige Rechnung an und formuliere eine Regel in eigenen Worten, mit der sich der Fehler vermeiden lässt.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Fehler:</strong> Melina hat die Potenzregel (Potenz einer Potenz) mit der Produktregel (gleiche Basis) verwechselt.</div>
+          <div class="ip"><strong>Korrekt:</strong> Bei <em>Multiplikation</em> von Potenzen mit gleicher Basis werden die Exponenten <em>addiert</em>: \(x^2 \cdot x^3 = x^{2+3} = x^5\).</div>
+          <div class="ip"><strong>Eigene Regel:</strong> „Multiplikation der Potenzen = Addition der Hochzahlen. Multipliziert werden die Hochzahlen nur, wenn eine Potenz wiederum potenziert wird, z. B. \((x^2)^3 = x^6\)."</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Verwechslung der Gesetze erkennen und eine Merkregel formulieren.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Erläutere, warum \(\sqrt{a^2 + b^2} \neq a + b\) gilt. Widerlege die Gleichung mit einem Zahlenbeispiel und gib eine korrekte Vereinfachung von \(\sqrt{a^2 + 2ab + b^2}\) an.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Widerlegung:</strong> Wähle \(a = 3,\; b = 4\): \(\sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5 \neq 3 + 4 = 7\).</div>
+          <div class="ip"><strong>Korrekte Vereinfachung:</strong> \(\sqrt{a^2 + 2ab + b^2} = \sqrt{(a+b)^2} = |a+b|\). Hier ist der Radikand ein vollständiges Quadrat — bei \(a^2 + b^2\) ist das im Allgemeinen <em>nicht</em> der Fall.</div>
+          <div class="ip"><strong>Merksatz:</strong> Die Wurzel ist <em>nicht</em> additiv. Sie zieht sich nur dann „einfach durch", wenn unter der Wurzel ein Produkt oder ein vollständiges Quadrat steht.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Eine plausibel wirkende, aber falsche Regel durch Gegenbeispiel widerlegen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Begründe, dass \(\left(a^m\right)^n = a^{m \cdot n}\) genau dann gilt, wenn alle Exponenten ganzzahlig sind. Untersuche an einem Beispiel, ob die Regel auch bei \(a < 0\) und einem Bruchexponenten noch sinnvoll ist (etwa \(\left((-1)^2\right)^{1/2}\)).</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Beispielrechnung:</strong> Direkt: \((-1)^2 = 1\), dann \(1^{1/2} = 1\). Über die Regel: \((-1)^{2 \cdot 1/2} = (-1)^1 = -1\). Beide Wege geben unterschiedliche Ergebnisse.</div>
+          <div class="ip"><strong>Schlussfolgerung:</strong> Bei negativen Basen und Bruchexponenten kann die Regel verschiedene Werte liefern. Deshalb wird die Potenzregel im Schulbuch nur für \(a > 0\) bei Bruchexponenten verwendet.</div>
+          <div class="ip"><strong>Merksatz:</strong> Negative Basen mit Bruchexponenten sind heikel. In der Schule wird die Schreibweise \(a^{m/n}\) nur für \(a \geq 0\) verwendet.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Grenzen einer mathematischen Regel an einem konkreten Gegenbeispiel zeigen.</div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- ── Selbstlerncheck ──────────────────────────────────────── -->
+<div class="card" style="border-left:4px solid #c8b55e;background:#fcfaf3">
+  <div class="card-head"><div class="ci ci-g">&#10003;</div><span class="card-title">Selbstlerncheck — Potenzgesetze</span></div>
+  <div class="card-body">
+    <div class="ip">Bevor du weitergehst — kannst du diese fünf Fragen beantworten?</div>
+    <ol style="padding-left:22px;line-height:1.7">
+      <li>Nenne die vier Potenzgesetze, indem du jeweils ein Beispiel mit Buchstaben gibst. <span style="color:#888;font-size:12px">(Rückverweis: „Übersicht — alle vier Gesetze auf einen Blick")</span></li>
+      <li>Wie unterscheidet sich die Produktregel von der Faktorregel? Wann darf ich was anwenden? <span style="color:#888;font-size:12px">(Rückverweis: „Gleiche Basis" vs. „Gleicher Exponent")</span></li>
+      <li>Vereinfache: \(\dfrac{(x^3)^2 \cdot x^{-1}}{x^4}\). <span style="color:#888;font-size:12px">(Rückverweis: „Beispiel — Mehrere Gesetze in einer Aufgabe")</span></li>
+      <li>Erläutere mit eigenen Worten, warum bei \((x \cdot y)^n = x^n \cdot y^n\) die Klammern wichtig sind. <span style="color:#888;font-size:12px">(Rückverweis: „Gleicher Exponent")</span></li>
+      <li>Schreibe \((3 \cdot 10^4) \cdot (2 \cdot 10^{-7})\) in Zehnerpotenzschreibweise. <span style="color:#888;font-size:12px">(Rückverweis: „Mit Zehnerpotenzen rechnen")</span></li>
+    </ol>
+    <div class="ip" style="margin-top:10px;font-size:14px;color:var(--ink-muted)">
+      Wenn du dir bei einer Frage unsicher bist, geh zur verlinkten Stelle zurück. Erst dann zum Bereich <em>Potenzfunktionen</em>.
+    </div>
+  </div>
+</div>
+
+</div><!-- end k9-potg -->
+
+
+<div class="subpanel" id="k9-potf">
+
+<!-- ── Worum geht es ─────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Drei Alltagsfragen, drei Funktionen:</div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li><strong>Bremsweg:</strong> Ein Auto, das doppelt so schnell fährt, hat einen <em>viermal</em> so langen Bremsweg. Dahinter steht \(s(v) = \tfrac{1}{100}\,v^2\) — eine Potenzfunktion mit Exponent \(2\).</li>
+      <li><strong>Helligkeit:</strong> Doppelt so weit weg von einer Lampe — und das Licht ist <em>viermal</em> schwächer. Das ist \(I(r) = \tfrac{c}{r^2}\) — eine Potenzfunktion mit Exponent \(-2\).</li>
+      <li><strong>Würfelvolumen:</strong> Eine doppelt so lange Würfelkante macht das Volumen <em>achtmal</em> so groß. Hinter \(V(a) = a^3\) steht eine Potenzfunktion mit Exponent \(3\).</li>
+    </ul>
+    <div class="ip">In allen drei Fällen entscheidet der Exponent über das Verhalten. In diesem Bereich lernst du Potenzfunktionen \(f(x) = a \cdot x^b\) mit ganzzahligem \(b\) kennen — gerade und ungerade, positiv und negativ.</div>
+  </div>
+</div>
+
+<!-- ── Lernziele ────────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lernziele · Potenzfunktionen</span></div>
+  <div class="card-body">
+    <ul class="gi-list">
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Aus einem Funktionsterm \(f(x) = a \cdot x^b\) den Graphentyp vorhersagen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Eigenschaften D, W, Symmetrie, Monotonie und Krümmung am Exponenten ablesen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Schnittpunkte mit den Achsen bestimmen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Funktionswerte, Stellen und unbekannte Parameter berechnen — durch Lösen von Potenzgleichungen \(x^n = c\)</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Sachkontexte deuten und zwischen Stelle und Funktionswert hin- und herwechseln</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── Das brauchst du ──────────────────────────────────────── -->
+<div class="hint">
+  <strong>Das brauchst du:</strong> Schreibweise \(a^n\) und die vier Potenzgesetze, Begriff der Funktion (Zuordnung, Funktionswert, Stelle), Wurzel ziehen (auch dritte Wurzel).
+</div>
+
+<!-- ═════════════════════ SECTION 1 ═════════════════════ -->
+<div class="section-label">1 · Entdecken — vier Wertetabellen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Aufgabe — Wertetabellen vergleichen</span></div>
+  <div class="card-body">
+    <div class="ip">Fülle die Wertetabellen für \(f_1(x)=x^2\), \(f_2(x)=x^3\), \(f_3(x)=\tfrac{1}{x}=x^{-1}\) und \(f_4(x)=\tfrac{1}{x^2}=x^{-2}\) für \(x \in \{-2;\,-1;\,-\tfrac{1}{2};\,\tfrac{1}{2};\,1;\,2\}\) aus. Vergleiche das Verhalten der vier Funktionen.</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:8px">
+        <thead><tr style="background:var(--mushikuri-light);font-weight:600">
+          <th style="padding:6px;border:1px solid #ddd">\(x\)</th>
+          <th style="padding:6px;border:1px solid #ddd">\(x^2\)</th>
+          <th style="padding:6px;border:1px solid #ddd">\(x^3\)</th>
+          <th style="padding:6px;border:1px solid #ddd">\(x^{-1}\)</th>
+          <th style="padding:6px;border:1px solid #ddd">\(x^{-2}\)</th>
+        </tr></thead>
+        <tbody>
+          <tr><td style="padding:6px;border:1px solid #eee">\(-2\)</td><td style="padding:6px;border:1px solid #eee">4</td><td style="padding:6px;border:1px solid #eee">\(-8\)</td><td style="padding:6px;border:1px solid #eee">\(-0{,}5\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td></tr>
+          <tr><td style="padding:6px;border:1px solid #eee">\(-1\)</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">\(-1\)</td><td style="padding:6px;border:1px solid #eee">\(-1\)</td><td style="padding:6px;border:1px solid #eee">1</td></tr>
+          <tr><td style="padding:6px;border:1px solid #eee">\(-\tfrac{1}{2}\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td><td style="padding:6px;border:1px solid #eee">\(-0{,}125\)</td><td style="padding:6px;border:1px solid #eee">\(-2\)</td><td style="padding:6px;border:1px solid #eee">4</td></tr>
+          <tr><td style="padding:6px;border:1px solid #eee">\(\tfrac{1}{2}\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}125\)</td><td style="padding:6px;border:1px solid #eee">2</td><td style="padding:6px;border:1px solid #eee">4</td></tr>
+          <tr><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td><td style="padding:6px;border:1px solid #eee">1</td></tr>
+          <tr><td style="padding:6px;border:1px solid #eee">2</td><td style="padding:6px;border:1px solid #eee">4</td><td style="padding:6px;border:1px solid #eee">8</td><td style="padding:6px;border:1px solid #eee">\(0{,}5\)</td><td style="padding:6px;border:1px solid #eee">\(0{,}25\)</td></tr>
+        </tbody>
+      </table>
+      <div class="ip" style="margin-top:8px"><strong>Beobachtungen:</strong></div>
+      <ul style="margin-left:22px;line-height:1.7">
+        <li>\(x^2\) und \(x^{-2}\) sind <em>achsensymmetrisch</em> (gerade Exponenten): \(f(-x) = f(x)\).</li>
+        <li>\(x^3\) und \(x^{-1}\) sind <em>punktsymmetrisch zum Ursprung</em> (ungerade Exponenten): \(f(-x) = -f(x)\).</li>
+        <li>Bei <em>negativem</em> Exponenten ist \(x = 0\) nicht erlaubt — der Definitionsbereich hat eine Lücke.</li>
+      </ul>
+    </details>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 2 ═════════════════════ -->
+<div class="section-label">2 · Die vier Grundtypen im Vergleich</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vier typische Graphenformen</span></div>
+  <div class="card-body">
+    <div class="ip">Aus den Wertetabellen wird klar: \(f(x) = x^n\) verhält sich nach vier Mustern. Welches Muster greift, entscheiden zwei Fragen — ist \(n\) positiv oder negativ, gerade oder ungerade?</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:14px">
+      <thead><tr style="background:var(--mushikuri-light);font-weight:600">
+        <th style="padding:8px;border:1px solid #ddd;text-align:left">Typ</th>
+        <th style="padding:8px;border:1px solid #ddd;text-align:left">Form</th>
+        <th style="padding:8px;border:1px solid #ddd;text-align:left">Verlauf</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:8px;border:1px solid #eee"><strong>1.</strong> \(n>0\), gerade<br>\(x^2, x^4, \ldots\)</td><td style="padding:8px;border:1px solid #eee">U-Form, geöffnet nach oben</td><td style="padding:8px;border:1px solid #eee">Achsensymmetrisch zur \(y\)-Achse. Beide Äste steigen für \(|x|\to\infty\) gegen \(+\infty\).</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee"><strong>2.</strong> \(n>0\), ungerade<br>\(x^3, x^5, \ldots\)</td><td style="padding:8px;border:1px solid #eee">S-Form durch Ursprung</td><td style="padding:8px;border:1px solid #eee">Punktsymmetrisch zum Ursprung. Linker Ast \(\to -\infty\), rechter \(\to +\infty\).</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee"><strong>3.</strong> \(n<0\), gerade<br>\(x^{-2}, x^{-4}, \ldots\)</td><td style="padding:8px;border:1px solid #eee">Doppelhyperbel, beide Äste über \(x\)-Achse</td><td style="padding:8px;border:1px solid #eee">Achsensymmetrisch. Polstelle bei \(x=0\). Für \(|x|\to\infty\) Annäherung an die \(x\)-Achse von oben.</td></tr>
+        <tr><td style="padding:8px;border:1px solid #eee"><strong>4.</strong> \(n<0\), ungerade<br>\(x^{-1}, x^{-3}, \ldots\)</td><td style="padding:8px;border:1px solid #eee">Hyperbel in zwei Quadranten</td><td style="padding:8px;border:1px solid #eee">Punktsymmetrisch zum Ursprung. Polstelle bei \(x=0\). Annäherung an \(x\)-Achse.</td></tr>
+      </tbody>
+    </table>
+    <div class="hint">
+      <strong>Merksatz:</strong> Das <em>Vorzeichen</em> des Exponenten entscheidet, ob die Funktion über die \(x\)-Achse oder über eine Polstelle bei \(x=0\) verläuft. Die <em>Parität</em> (gerade/ungerade) entscheidet über die Symmetrie.
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 3 ═════════════════════ -->
+<div class="section-label">3 · Interaktiv erkunden — Schieberegler für a und b</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Was tun a und b mit dem Graphen?</span></div>
+  <div class="card-body">
+    <div class="ip">Verändere die beiden Schieberegler und beobachte den Graphen von \(f(x) = a \cdot x^b\). Versuche, <em>bevor</em> du den Regler bewegst, vorherzusagen, was passiert:</div>
+    <ul style="margin-left:22px;line-height:1.7;margin-top:6px">
+      <li>Was passiert, wenn \(a\) negativ wird?</li>
+      <li>Was passiert, wenn \(b\) von \(2\) auf \(3\) springt?</li>
+      <li>Wann hat der Graph eine Lücke bei \(x = 0\)?</li>
+    </ul>
+    <div style="margin:15px 0">
+      <label style="display:block;margin:6px 0"><strong>Faktor a:</strong> <input type="range" min="-3" max="3" step="0.5" value="1" id="pfSliderA" oninput="updatePotenzExplorer()"/> <span id="pfValA" style="font-weight:600;color:#c75c3a">1</span></label>
+      <label style="display:block;margin:6px 0"><strong>Exponent b (ganzzahlig):</strong> <input type="range" min="-4" max="4" step="1" value="2" id="pfSliderB" oninput="updatePotenzExplorer()"/> <span id="pfValB" style="font-weight:600;color:#c75c3a">2</span></label>
+    </div>
+    <canvas id="cvPotenzExplorer" style="width:100%;max-width:520px;display:block;border-radius:8px;background:#fff;border:1px solid #e8e4dd"></canvas>
+    <div id="pfFormula" style="text-align:center;margin-top:8px;font-size:15px;font-weight:600;color:#c75c3a">f(x) = 1·x²</div>
+    <div id="pfProps" style="text-align:center;margin-top:4px;font-size:13px;color:#5b6e2e">Definitionsbereich: ℝ · achsensymmetrisch · Schnitt mit Achsen: (0|0)</div>
+  </div>
+</div>
+<script>
+function updatePotenzExplorer(){
+  var a=parseFloat(document.getElementById('pfSliderA').value);
+  var b=parseInt(document.getElementById('pfSliderB').value,10);
+  // b = 0 überspringen: dann ist f(x) = a (konstant), nicht spannend → nimm nächst-höheren Wert
+  if(b===0){b=1; document.getElementById('pfSliderB').value=1;}
+  document.getElementById('pfValA').textContent=a;
+  document.getElementById('pfValB').textContent=b;
+  // Formel-Anzeige
+  var aStr=(a===1?'':a===-1?'−':(a<0?'−'+Math.abs(a):a));
+  var bStr=(b===1?'x':'x'+String(b).replace('-','⁻').replace(/[0-9]/g,function(d){return '⁰¹²³⁴⁵⁶⁷⁸⁹'[parseInt(d)];}));
+  document.getElementById('pfFormula').textContent='f(x) = '+aStr+'·'+bStr;
+  // Eigenschaften
+  var Dtxt = (b<0 ? 'Definitionsbereich: ℝ ∖ {0} (Polstelle)' : 'Definitionsbereich: ℝ');
+  var symm = (b%2===0 ? 'achsensymmetrisch (y-Achse)' : 'punktsymmetrisch (Ursprung)');
+  var schnitt = (b<0 ? 'kein Schnitt mit den Achsen' : 'Schnitt mit Achsen: (0|0)');
+  document.getElementById('pfProps').textContent = Dtxt+' · '+symm+' · '+schnitt;
+  // Canvas
+  var c=document.getElementById('cvPotenzExplorer'),ctx=c.getContext('2d');
+  var dpr=window.devicePixelRatio||1,cssW=520,cssH=380;
+  c.width=cssW*dpr;c.height=cssH*dpr;c.style.width=cssW+'px';c.style.height=cssH+'px';
+  ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);
+  var xMin=-4,xMax=4,yMin=-8,yMax=8,pad=42;
+  function tx(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-12);}
+  function ty(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-12);}
+  // bg
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,cssW,cssH);
+  // Gitter
+  ctx.strokeStyle='#eee8de';ctx.lineWidth=0.5;
+  for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){if(g===0)continue;ctx.beginPath();ctx.moveTo(tx(g),12);ctx.lineTo(tx(g),cssH-pad);ctx.stroke();}
+  for(var g=Math.ceil(yMin);g<=Math.floor(yMax);g++){if(g===0)continue;ctx.beginPath();ctx.moveTo(pad,ty(g));ctx.lineTo(cssW-12,ty(g));ctx.stroke();}
+  // Achsen mit Pfeilen
+  ctx.strokeStyle='#555';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(pad-8,ty(0));ctx.lineTo(cssW-10,ty(0));ctx.stroke();
+  ctx.beginPath();ctx.moveTo(tx(0),cssH-pad+8);ctx.lineTo(tx(0),14);ctx.stroke();
+  // Pfeilspitzen
+  ctx.fillStyle='#555';
+  ctx.beginPath();ctx.moveTo(cssW-10,ty(0));ctx.lineTo(cssW-18,ty(0)-4);ctx.lineTo(cssW-18,ty(0)+4);ctx.closePath();ctx.fill();
+  ctx.beginPath();ctx.moveTo(tx(0),14);ctx.lineTo(tx(0)-4,22);ctx.lineTo(tx(0)+4,22);ctx.closePath();ctx.fill();
+  // Tick-Marks + Zahlen
+  ctx.fillStyle='#666';ctx.font='12px system-ui,sans-serif';
+  ctx.textAlign='center';ctx.textBaseline='top';
+  for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){if(g===0)continue;ctx.fillText(g,tx(g),ty(0)+5);ctx.beginPath();ctx.moveTo(tx(g),ty(0)-3);ctx.lineTo(tx(g),ty(0)+3);ctx.stroke();}
+  ctx.textAlign='right';ctx.textBaseline='middle';
+  for(var g=yMin+2;g<=yMax-2;g+=2){if(g===0)continue;ctx.fillText(g,tx(0)-6,ty(g));ctx.beginPath();ctx.moveTo(tx(0)-3,ty(g));ctx.lineTo(tx(0)+3,ty(g));ctx.stroke();}
+  // Achsen-Beschriftung
+  ctx.fillStyle='#333';ctx.font='bold 13px system-ui,sans-serif';
+  ctx.textAlign='right';ctx.fillText('x',cssW-12,ty(0)-8);
+  ctx.textAlign='left';ctx.fillText('y',tx(0)+8,18);
+  ctx.font='12px system-ui,sans-serif';ctx.fillStyle='#666';
+  ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
+  // Funktionsgraph zeichnen
+  ctx.strokeStyle='#c75c3a';ctx.lineWidth=2.5;
+  var step=0.01;
+  function inView(y){return y>=yMin && y<=yMax;}
+  if(b<0){
+    // Polstelle bei 0 — zwei Äste
+    for(var side=0;side<2;side++){
+      var fromX=(side===0?xMin:0.001),toX=(side===0?-0.001:xMax);
+      ctx.beginPath();var first=true;
+      for(var x=fromX;x<=toX;x+=step){
+        var y=a*Math.pow(x,b);
+        if(!isFinite(y)){first=true;continue;}
+        if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
+      }
+      ctx.stroke();
+    }
+  } else {
+    // Kein Pol — zusammenhängend
+    ctx.beginPath();var first=true;
+    for(var x=xMin;x<=xMax;x+=step){
+      var y=a*Math.pow(x,b);
+      if(!isFinite(y)){first=true;continue;}
+      if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
+    }
+    ctx.stroke();
+  }
+}
+// initial render — sicherheitshalber später ausführen, falls Canvas noch nicht im DOM ist
+if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(updatePotenzExplorer,30);});}
+</script>
+
+<!-- ═════════════════════ SECTION 4 ═════════════════════ -->
+<div class="section-label">4 · Eigenschaften systematisch</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Eigenschaftstabelle nach Exponenten-Typ</span></div>
+  <div class="card-body">
+    <div class="ip">Für \(f(x) = x^n\) mit \(n \in \mathbb{Z}\) lassen sich die wichtigsten Eigenschaften direkt am Exponenten ablesen:</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:13px">
+      <thead><tr style="background:var(--mushikuri-light);font-weight:600">
+        <th style="padding:6px;border:1px solid #ddd">Eigenschaft</th>
+        <th style="padding:6px;border:1px solid #ddd">n&gt;0 gerade</th>
+        <th style="padding:6px;border:1px solid #ddd">n&gt;0 ungerade</th>
+        <th style="padding:6px;border:1px solid #ddd">n&lt;0 gerade</th>
+        <th style="padding:6px;border:1px solid #ddd">n&lt;0 ungerade</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:6px;border:1px solid #eee">Definitionsbereich \(D\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\setminus\{0\}\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\setminus\{0\}\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Wertebereich \(W\)</td><td style="padding:6px;border:1px solid #eee">\([0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\)</td><td style="padding:6px;border:1px solid #eee">\((0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\(\mathbb{R}\setminus\{0\}\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Symmetrie</td><td style="padding:6px;border:1px solid #eee">Achsen-S.</td><td style="padding:6px;border:1px solid #eee">Punkt-S.</td><td style="padding:6px;border:1px solid #eee">Achsen-S.</td><td style="padding:6px;border:1px solid #eee">Punkt-S.</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Monotonie</td><td style="padding:6px;border:1px solid #eee">fall./steig. an 0</td><td style="padding:6px;border:1px solid #eee">streng steigend</td><td style="padding:6px;border:1px solid #eee">steig./fall. an 0</td><td style="padding:6px;border:1px solid #eee">streng fallend (je Ast)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Krümmung</td><td style="padding:6px;border:1px solid #eee">linksgekrümmt</td><td style="padding:6px;border:1px solid #eee">Wendep. bei 0</td><td style="padding:6px;border:1px solid #eee">linksgekrümmt</td><td style="padding:6px;border:1px solid #eee">links bzw. rechts</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Achsenschnitte</td><td style="padding:6px;border:1px solid #eee">\((0\,|\,0)\)</td><td style="padding:6px;border:1px solid #eee">\((0\,|\,0)\)</td><td style="padding:6px;border:1px solid #eee">keine</td><td style="padding:6px;border:1px solid #eee">keine</td></tr>
+      </tbody>
+    </table>
+    <div class="hint">
+      <strong>Hinweis zum Faktor a:</strong> Ein Vorzeichenwechsel bei \(a\) <em>spiegelt</em> den Graphen an der \(x\)-Achse. Ein Wert \(|a|>1\) <em>streckt</em> ihn, ein Wert \(|a|<1\) <em>staucht</em> ihn — die Eigenschaften zur Symmetrie und zu Polstellen ändern sich dadurch nicht.
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 5 ═════════════════════ -->
+<div class="section-label">5 · Verschieben, Strecken, Spiegeln</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Die allgemeine Form mit drei Parametern</span></div>
+  <div class="card-body">
+    <div class="ip">Wenn du \(f(x) = a \cdot (x - d)^n + e\) schreibst, wirken die drei Parameter genauso wie bei der Normalparabel aus Klasse 8:</div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li>\(a\) <strong>streckt/staucht</strong> den Graphen vertikal (Vorzeichenwechsel: Spiegelung an der \(x\)-Achse).</li>
+      <li>\(d\) <strong>verschiebt</strong> den Graphen horizontal um \(d\) nach rechts (bei \(d<0\) nach links).</li>
+      <li>\(e\) <strong>verschiebt</strong> den Graphen vertikal um \(e\) nach oben (bei \(e<0\) nach unten).</li>
+    </ul>
+    <div class="ip"><strong>Beispiel:</strong> \(g(x) = 2 \cdot (x-3)^2 + 1\) ist eine nach oben geöffnete, doppelt so steile Parabel, deren Scheitel von \((0|0)\) zu \((3|1)\) wandert.</div>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 6 ═════════════════════ -->
+<div class="section-label">6 · Funktionswerte, Stellen und Parameter</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Drei Aufgabentypen — und wie du sie löst</span></div>
+  <div class="card-body">
+    <div class="ip">Wenn du mit einer Funktion \(f(x) = a \cdot x^n\) arbeitest, brauchst du immer wieder drei Rechenrichtungen:</div>
+    <ol style="margin-left:22px;line-height:1.7">
+      <li><strong>Stelle \(\to\) Funktionswert:</strong> \(x\) einsetzen, \(f(x)\) ausrechnen. <em>Beispiel:</em> \(f(x)=2x^3\) an der Stelle \(x=3\) liefert \(f(3)=2 \cdot 27 = 54\).</li>
+      <li><strong>Funktionswert \(\to\) Stelle:</strong> Eine Gleichung \(a \cdot x^n = c\) nach \(x\) lösen — eine <em>Potenzgleichung</em>.</li>
+      <li><strong>Stelle und Wert gegeben \(\to\) Parameter:</strong> Einsetzen und nach \(a\) oder \(n\) auflösen.</li>
+    </ol>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Potenzgleichungen \(x^n = c\) lösen</span></div>
+  <div class="card-body">
+    <div class="ip">Um \(x^n = c\) nach \(x\) aufzulösen, ziehst du die \(n\)-te Wurzel. Drei Fälle musst du unterscheiden:</div>
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:14px">
+      <thead><tr style="background:var(--mushikuri-light);font-weight:600">
+        <th style="padding:6px;border:1px solid #ddd">Fall</th>
+        <th style="padding:6px;border:1px solid #ddd">Beispiel</th>
+        <th style="padding:6px;border:1px solid #ddd">Lösungen</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:6px;border:1px solid #eee">\(n\) ungerade, \(c\) beliebig</td><td style="padding:6px;border:1px solid #eee">\(x^3 = -8\)</td><td style="padding:6px;border:1px solid #eee">genau eine Lösung: \(x = \sqrt[3]{-8} = -2\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c > 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = 16\)</td><td style="padding:6px;border:1px solid #eee">zwei Lösungen: \(x = \pm 4\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c < 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = -4\)</td><td style="padding:6px;border:1px solid #eee">keine reelle Lösung</td></tr>
+      </tbody>
+    </table>
+    <div class="hint">
+      <strong>Reihenfolge:</strong> Wenn ein Faktor \(a\) davorsteht — \(a \cdot x^n = c\) — erst durch \(a\) teilen, dann die Wurzel ziehen.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Bremsweg rückwärts</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Für den Bremsweg eines Autos gilt \(s(v) = \tfrac{1}{100}\, v^2\) (mit \(v\) in km/h und \(s\) in Metern).</div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li>(a) Berechne den Bremsweg bei \(v = 80\) km/h.</li>
+      <li>(b) Bei welcher Geschwindigkeit beträgt der Bremsweg \(36\) m?</li>
+    </ul>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>(a) Stelle \(\to\) Funktionswert:</strong>
+        \[ s(80) = \tfrac{1}{100} \cdot 80^2 = \tfrac{6400}{100} = 64\,\text{m}. \]
+      </div>
+      <div class="ip"><strong>(b) Funktionswert \(\to\) Stelle:</strong>
+        \[ \tfrac{1}{100} v^2 = 36 \;\Leftrightarrow\; v^2 = 3600 \;\Leftrightarrow\; v = 60\,\text{km/h}. \]
+      </div>
+      <div class="ip"><em>Negative Lösung \(-60\) entfällt, weil es keine negativen Geschwindigkeiten gibt.</em></div>
+    </details>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 7 ═════════════════════ -->
+<div class="section-label">7 · Aufgaben — Potenzfunktionen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgabenpool</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="task-list">
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Ordne die vier Funktionen \(f_1(x)=x^2\), \(f_2(x)=x^3\), \(f_3(x)=x^{-1}\), \(f_4(x)=x^{-2}\) jeweils einem Graphen-Typ aus der Übersicht zu. Nenne in jedem Fall die Symmetrie.</span></div>
+        <div class="task-body">
+          <div class="ip">\(f_1(x)=x^2\): Typ 1 (n&gt;0 gerade), achsensymmetrisch.</div>
+          <div class="ip">\(f_2(x)=x^3\): Typ 2 (n&gt;0 ungerade), punktsymmetrisch zum Ursprung.</div>
+          <div class="ip">\(f_3(x)=x^{-1}\): Typ 4 (n&lt;0 ungerade), punktsymmetrisch zum Ursprung.</div>
+          <div class="ip">\(f_4(x)=x^{-2}\): Typ 3 (n&lt;0 gerade), achsensymmetrisch.</div>
+          <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+          <div class="komp-desc">Mit mathematischen Darstellungen umgehen: Funktionsterm und Graphentyp verknüpfen.</div>
+        </div>
+      </li>
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Berechne die Funktionswerte: \(f(x)=3 x^2\) an \(x=4\); \(g(x)=-2 x^3\) an \(x=-2\); \(h(x)=\tfrac{6}{x^2}\) an \(x=3\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(f(4) = 3 \cdot 16 = 48\)</div>
+          <div class="ip">\(g(-2) = -2 \cdot (-8) = 16\)</div>
+          <div class="ip">\(h(3) = \tfrac{6}{9} = \tfrac{2}{3}\)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Funktionswerte sicher berechnen.</div>
+        </div>
+      </li>
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Löse jeweils nach \(x\): \(x^2 = 49\); \(x^3 = -27\); \(x^4 = 81\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(x^2 = 49 \;\Rightarrow\; x = \pm 7\) (gerade Hochzahl, positiv).</div>
+          <div class="ip">\(x^3 = -27 \;\Rightarrow\; x = -3\) (ungerade Hochzahl, eindeutig).</div>
+          <div class="ip">\(x^4 = 81 \;\Rightarrow\; x = \pm 3\) (gerade Hochzahl, positiv).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Potenzgleichungen lösen mit Fallunterscheidung.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Skizziere im Kopf — gib jeweils Definitionsbereich, Symmetrie und Schnittpunkte mit den Achsen an: \(f(x) = -\tfrac{1}{2} x^4\), \(g(x) = 3 x^{-1}\), \(h(x) = 2(x-1)^3\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(f(x) = -\tfrac{1}{2} x^4\): \(D = \mathbb{R}\), achsensymmetrisch, Schnitt mit Achsen: \((0|0)\). Wegen \(a<0\): nach unten geöffnete „Wanne".</div>
+          <div class="ip">\(g(x) = 3 x^{-1} = \tfrac{3}{x}\): \(D = \mathbb{R}\setminus\{0\}\), punktsymmetrisch, kein Schnitt mit Achsen.</div>
+          <div class="ip">\(h(x) = 2(x-1)^3\): \(D = \mathbb{R}\), punktsymmetrisch <em>zum Punkt</em> \((1|0)\), Schnitt mit \(x\)-Achse: \((1|0)\), mit \(y\)-Achse: \(h(0) = -2\).</div>
+          <div class="komp-wrap"><span class="kb kb-k4">K4</span></div>
+          <div class="komp-desc">Mit mathematischen Darstellungen umgehen: Eigenschaften ohne Zeichnung erkennen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Für den Bremsweg gilt \(s(v) = \tfrac{1}{100}\,v^2\) (\(v\) in km/h, \(s\) in m). (a) Bestimme den Bremsweg bei 120 km/h. (b) Bei welcher Geschwindigkeit liegt der Bremsweg bei 100 m? (c) Wie ändert sich der Bremsweg, wenn die Geschwindigkeit verdreifacht wird?</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>(a)</strong> \(s(120) = \tfrac{1}{100} \cdot 14400 = 144\,\text{m}\).</div>
+          <div class="ip"><strong>(b)</strong> \(\tfrac{1}{100}\, v^2 = 100 \;\Leftrightarrow\; v^2 = 10000 \;\Leftrightarrow\; v = 100\,\text{km/h}\) (negative Lösung entfällt).</div>
+          <div class="ip"><strong>(c)</strong> Verdreifachen von \(v\) verneunfacht den Bremsweg (\(3^2 = 9\)).</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachkontext mit Potenzfunktion und Stelle-Wert-Wechsel.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Die Helligkeit \(I\) einer Lampe in der Entfernung \(r\) folgt \(I(r) = \tfrac{c}{r^2}\). Bei \(r = 2\,\text{m}\) wird \(I = 80\,\text{lx}\) gemessen. (a) Bestimme die Konstante \(c\). (b) Berechne die Helligkeit bei \(r = 5\,\text{m}\).</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>(a)</strong> Einsetzen: \(\tfrac{c}{2^2} = 80 \;\Rightarrow\; c = 80 \cdot 4 = 320\,\text{lx}\cdot\text{m}^2\).</div>
+          <div class="ip"><strong>(b)</strong> \(I(5) = \tfrac{320}{25} = 12{,}8\,\text{lx}\).</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Parameter aus einem Messpunkt bestimmen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Eine Potenzfunktion \(f(x) = a \cdot x^3\) geht durch den Punkt \(P(2 | -16)\). Bestimme den Faktor \(a\) und berechne anschließend \(f(-1)\).</span></div>
+        <div class="task-body">
+          <div class="ip">Einsetzen: \(f(2) = a \cdot 8 = -16 \;\Rightarrow\; a = -2\). Damit ist \(f(x) = -2x^3\).</div>
+          <div class="ip">\(f(-1) = -2 \cdot (-1)^3 = -2 \cdot (-1) = 2\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Aus einem gegebenen Punkt einen Parameter bestimmen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Für die Planetenbewegung gilt das 3. Kepler'sche Gesetz: \(T^2 = c \cdot a^3\), wobei \(T\) die Umlaufzeit (in Jahren) und \(a\) der mittlere Abstand zur Sonne (in astronomischen Einheiten AE) ist. Für die Erde gilt \(T = 1\) und \(a = 1\). (a) Bestimme \(c\). (b) Mars hat \(a \approx 1{,}52\) AE. Berechne die Umlaufzeit \(T\).</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>(a)</strong> Aus \(1^2 = c \cdot 1^3\) folgt \(c = 1\).</div>
+          <div class="ip"><strong>(b)</strong> \(T^2 = 1{,}52^3 \approx 3{,}51 \;\Rightarrow\; T \approx \sqrt{3{,}51} \approx 1{,}87\) Jahre. Mars braucht also etwa 1,9 Erdjahre für einen Sonnenumlauf.</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Sachkontext mit kubischer Potenz und Wurzel kombinieren.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Vergleiche \(f(x) = x^2\) und \(g(x) = x^4\). Erläutere, an welchen Stellen \(x\) der Graph von \(g\) <em>unter</em> und an welchen er <em>über</em> dem Graphen von \(f\) liegt. Begründe ohne Zeichnung.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Schnittpunkte:</strong> \(x^4 = x^2 \;\Leftrightarrow\; x^2(x^2 - 1) = 0\). Lösungen: \(x = 0\), \(x = \pm 1\).</div>
+          <div class="ip"><strong>Im Bereich \(|x| < 1\):</strong> \(|x| < 1 \Rightarrow x^4 < x^2\), also \(g(x) < f(x)\) — der Graph von \(g\) liegt <em>unter</em> dem von \(f\).</div>
+          <div class="ip"><strong>Im Bereich \(|x| > 1\):</strong> \(|x| > 1 \Rightarrow x^4 > x^2\), also \(g(x) > f(x)\) — der Graph von \(g\) liegt <em>über</em> dem von \(f\).</div>
+          <div class="ip"><strong>Anschaulich:</strong> Höhere Potenzen wachsen außerhalb von \([-1;1]\) schneller, innerhalb fallen sie schneller gegen \(0\).</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Verhalten von Potenzfunktionen ohne Zeichnung vergleichen.</div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- ── Selbstlerncheck ──────────────────────────────────────── -->
+<div class="card" style="border-left:4px solid #c8b55e;background:#fcfaf3">
+  <div class="card-head"><div class="ci ci-g">&#10003;</div><span class="card-title">Selbstlerncheck — Potenzfunktionen</span></div>
+  <div class="card-body">
+    <div class="ip">Bevor du zum Bereich <em>Wurzelfunktionen</em> gehst — kannst du diese fünf Fragen beantworten?</div>
+    <ol style="padding-left:22px;line-height:1.7">
+      <li>Ordne jedem der vier Grundtypen einen Funktionsterm zu und nenne in jedem Fall die Symmetrie. <span style="color:#888;font-size:12px">(Rückverweis: „Vier typische Graphenformen")</span></li>
+      <li>Wann hat \(f(x) = a \cdot x^n\) eine Definitionslücke? Begründe. <span style="color:#888;font-size:12px">(Rückverweis: „Eigenschaftstabelle")</span></li>
+      <li>Löse \(2 x^3 = 54\). <span style="color:#888;font-size:12px">(Rückverweis: „Potenzgleichungen \(x^n = c\) lösen")</span></li>
+      <li>Erkläre, warum \(x^2 = -4\) keine reelle Lösung hat, \(x^3 = -8\) aber genau eine. <span style="color:#888;font-size:12px">(Rückverweis: Tabelle „Fälle bei Potenzgleichungen")</span></li>
+      <li>Bei welchem Bremsweg-Modell verdreifacht sich der Bremsweg, wenn sich die Geschwindigkeit verdreifacht? Bei welchem ver-neunfacht er sich? Begründe mit dem Exponenten. <span style="color:#888;font-size:12px">(Rückverweis: „Bremsweg rückwärts")</span></li>
+    </ol>
+    <div class="ip" style="margin-top:10px;font-size:14px;color:var(--ink-muted)">
+      Unsicher? Geh über den Rückverweis zurück und lies die Stelle noch einmal. Dann weiter zum Bereich <em>Wurzelfunktionen</em>.
+    </div>
+  </div>
+</div>
+
+</div><!-- end k9-potf -->
+
+
+<div class="subpanel" id="k9-wurf">
+
+<!-- ── Worum geht es ─────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Worum geht es?</span></div>
+  <div class="card-body">
+    <div class="ip">Zwei klassische Aufgaben, in denen eine Wurzelfunktion auftaucht:</div>
+    <ul style="margin-left:22px;line-height:1.7">
+      <li><strong>Kantenlänge eines Würfels.</strong> Wenn du das Volumen \(V\) kennst, ergibt sich die Kantenlänge als \(a(V) = \sqrt[3]{V} = V^{1/3}\).</li>
+      <li><strong>Schwingungsdauer eines Fadenpendels.</strong> Sie hängt von der Länge \(\ell\) ab: \(T(\ell) \approx 2 \sqrt{\ell}\) (mit \(\ell\) in m, \(T\) in s). Verdoppelst du die Länge, wird die Schwingungsdauer um den Faktor \(\sqrt{2}\) größer — nicht doppelt so groß.</li>
+    </ul>
+    <div class="ip">In beiden Fällen taucht eine Wurzel auf — also eine Potenz mit einem Bruch im Exponenten. In diesem Bereich lernst du Wurzelfunktionen \(f(x) = a \cdot x^b\) mit \(b\) als Bruch kennen — und du verstehst, warum sie die Umkehrung der Potenzfunktion sind.</div>
+  </div>
+</div>
+
+<!-- ── Lernziele ────────────────────────────────────────────── -->
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Lernziele · Wurzelfunktionen</span></div>
+  <div class="card-body">
+    <ul class="gi-list">
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Die Wurzelfunktion als Umkehrung der Potenzfunktion deuten</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Definitionsbereich einer Wurzelfunktion sicher bestimmen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Eigenschaften (Monotonie, Krümmung, Achsenschnitte) am Bruchexponenten ablesen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">Wurzelgleichungen \(\sqrt{x} = c\), \(\sqrt[n]{x-d} = c\) lösen — und die Probe nicht vergessen</span></li>
+      <li class="gi-row"><span class="gi-eye" onclick="toggleGoal(this)">👁</span><span class="gi-text" onclick="toggleGoal(this.previousElementSibling)">In Sachkontexten zwischen Stelle und Funktionswert hin- und herwechseln</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ── Das brauchst du ──────────────────────────────────────── -->
+<div class="hint">
+  <strong>Das brauchst du:</strong> Potenzschreibweise mit Bruchexponent (\(\sqrt[n]{a} = a^{1/n}\)), Potenzfunktionen aus dem letzten Bereich, Lösen von Gleichungen durch Quadrieren oder \(n\)-te Wurzel ziehen.
+</div>
+
+<!-- ═════════════════════ SECTION 1 ═════════════════════ -->
+<div class="section-label">1 · Wurzelfunktion als Umkehrung</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vom Quadrieren zurück zur Quadratwurzel</span></div>
+  <div class="card-body">
+    <div class="ip">Die Funktion \(g(x) = x^2\) bildet \(x\) auf sein Quadrat ab. Wenn du den Pfeil umdrehst — also vom \(y\)-Wert auf den zugehörigen \(x\)-Wert zurückgehst — bekommst du die <strong>Wurzelfunktion</strong>:</div>
+    <div class="ip" style="text-align:center">\[ f(x) \;=\; \sqrt{x} \;=\; x^{1/2}. \]</div>
+    <div class="ip">Geometrisch heißt das: Der Graph von \(\sqrt{x}\) entsteht aus dem Graphen von \(x^2\) (für \(x \geq 0\)) durch Spiegelung an der Winkelhalbierenden \(y = x\).</div>
+    <div class="ip">Warum nur für \(x \geq 0\)? Weil \(x^2\) für \(x = 2\) und \(x = -2\) denselben Wert 4 liefert — die Zuordnung ist nicht umkehrbar. Erst wenn man sich auf \(x \geq 0\) beschränkt, wird die Umkehrung eindeutig.</div>
+    <div class="ip">Analog gilt: \(\sqrt[3]{x} = x^{1/3}\) ist die Umkehrfunktion von \(x \mapsto x^3\). Hier funktioniert die Umkehrung sogar für negative \(x\) (weil \(x^3\) auch negativ wird), aber im Grundkurs beschränken wir uns auf \(x \geq 0\).</div>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 2 ═════════════════════ -->
+<div class="section-label">2 · Interaktiv erkunden — Brüche im Exponenten</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Wie wirkt sich ein Bruch im Exponenten aus?</span></div>
+  <div class="card-body">
+    <div class="ip">Hier kannst du den Exponenten als Bruch durchprobieren — von \(\tfrac{1}{3}\) bis \(\tfrac{3}{2}\) und auch ins Negative. Beobachte:</div>
+    <ul style="margin-left:22px;line-height:1.7;margin-top:4px">
+      <li>Bei welchen Exponenten geht der Graph steiler nach oben, bei welchen flacher?</li>
+      <li>Ab welchem Vorzeichen entsteht eine Polstelle bei \(x = 0\)?</li>
+      <li>Was passiert, wenn der Exponent über \(1\) hinaussteigt?</li>
+    </ul>
+    <div style="margin:15px 0">
+      <label style="display:block;margin:6px 0"><strong>Faktor a:</strong> <input type="range" min="-3" max="3" step="0.5" value="1" id="wfSliderA" oninput="updateWurzelExplorer()"/> <span id="wfValA" style="font-weight:600;color:#c75c3a">1</span></label>
+      <label style="display:block;margin:6px 0"><strong>Exponent b (Bruch):</strong> <input type="range" min="0" max="9" step="1" value="3" id="wfSliderB" oninput="updateWurzelExplorer()"/> <span id="wfValB" style="font-weight:600;color:#c75c3a">1/2</span></label>
+    </div>
+    <canvas id="cvWurzelExplorer" style="width:100%;max-width:520px;display:block;border-radius:8px;background:#fff;border:1px solid #e8e4dd"></canvas>
+    <div id="wfFormula" style="text-align:center;margin-top:8px;font-size:15px;font-weight:600;color:#c75c3a">f(x) = 1·x^(1/2) = √x</div>
+    <div id="wfProps" style="text-align:center;margin-top:4px;font-size:13px;color:#5b6e2e">Definitionsbereich: x ≥ 0 · monoton steigend · Schnitt mit Achsen: (0|0)</div>
+    <div class="hint" style="margin-top:8px;font-size:13px">
+      <strong>Hinweis:</strong> Im Grundkurs wählen wir bei Wurzelfunktionen den Definitionsbereich \(x \geq 0\) (bzw. \(x > 0\) bei negativem Exponenten). Auch wenn \(\sqrt[3]{x}\) für negative \(x\) reell definiert ist — wir bleiben hier bei der Standard-Einschränkung.
+    </div>
+  </div>
+</div>
+<script>
+function updateWurzelExplorer(){
+  var bValuesArr=[-1.5, -1, -2/3, -0.5, -1/3, 1/3, 0.5, 2/3, 1, 1.5];
+  var bLabels=['-3/2','-1','-2/3','-1/2','-1/3','1/3','1/2','2/3','1','3/2'];
+  var a=parseFloat(document.getElementById('wfSliderA').value);
+  var bIdx=parseInt(document.getElementById('wfSliderB').value,10);
+  if(bIdx<0)bIdx=0;if(bIdx>9)bIdx=9;
+  var b=bValuesArr[bIdx];
+  var bLab=bLabels[bIdx];
+  document.getElementById('wfValA').textContent=a;
+  document.getElementById('wfValB').textContent=bLab;
+  // Formel-Anzeige
+  var aStr=(a===1?'':a===-1?'−':(a<0?'−'+Math.abs(a):a));
+  var humanBracket={'1/2':'√x','-1/2':'1/√x','1/3':'∛x','-1/3':'1/∛x','2/3':'∛x²','-2/3':'1/∛x²','3/2':'√(x³)','-3/2':'1/√(x³)','1':'x','-1':'1/x'}[bLab]||('x^('+bLab+')');
+  document.getElementById('wfFormula').textContent='f(x) = '+aStr+'·x^('+bLab+') = '+aStr+'·'+humanBracket;
+  // Eigenschaften
+  var negExp = b<0;
+  var Dtxt = (negExp ? 'Definitionsbereich: x > 0 (Polstelle)' : 'Definitionsbereich: x ≥ 0');
+  var monot = (a>0 ? (negExp?'streng fallend':'streng steigend') : (negExp?'streng steigend':'streng fallend'));
+  var schnitt = (negExp ? 'kein Schnitt mit den Achsen' : 'Schnitt mit Achsen: (0|0)');
+  document.getElementById('wfProps').textContent = Dtxt+' · '+monot+' · '+schnitt;
+  // Canvas
+  var c=document.getElementById('cvWurzelExplorer'),ctx=c.getContext('2d');
+  var dpr=window.devicePixelRatio||1,cssW=520,cssH=380;
+  c.width=cssW*dpr;c.height=cssH*dpr;c.style.width=cssW+'px';c.style.height=cssH+'px';
+  ctx.setTransform(1,0,0,1,0,0);ctx.scale(dpr,dpr);
+  var xMin=-1,xMax=8,yMin=-6,yMax=8,pad=42;
+  function tx(x){return pad+(x-xMin)/(xMax-xMin)*(cssW-pad-12);}
+  function ty(y){return (cssH-pad)-(y-yMin)/(yMax-yMin)*(cssH-pad-12);}
+  ctx.fillStyle='#fff';ctx.fillRect(0,0,cssW,cssH);
+  // Gitter
+  ctx.strokeStyle='#eee8de';ctx.lineWidth=0.5;
+  for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){if(g===0)continue;ctx.beginPath();ctx.moveTo(tx(g),12);ctx.lineTo(tx(g),cssH-pad);ctx.stroke();}
+  for(var g=Math.ceil(yMin);g<=Math.floor(yMax);g++){if(g===0)continue;ctx.beginPath();ctx.moveTo(pad,ty(g));ctx.lineTo(cssW-12,ty(g));ctx.stroke();}
+  // Achsen mit Pfeilen
+  ctx.strokeStyle='#555';ctx.lineWidth=1.5;
+  ctx.beginPath();ctx.moveTo(pad-8,ty(0));ctx.lineTo(cssW-10,ty(0));ctx.stroke();
+  ctx.beginPath();ctx.moveTo(tx(0),cssH-pad+8);ctx.lineTo(tx(0),14);ctx.stroke();
+  // Pfeilspitzen
+  ctx.fillStyle='#555';
+  ctx.beginPath();ctx.moveTo(cssW-10,ty(0));ctx.lineTo(cssW-18,ty(0)-4);ctx.lineTo(cssW-18,ty(0)+4);ctx.closePath();ctx.fill();
+  ctx.beginPath();ctx.moveTo(tx(0),14);ctx.lineTo(tx(0)-4,22);ctx.lineTo(tx(0)+4,22);ctx.closePath();ctx.fill();
+  // Tick-Marks
+  ctx.fillStyle='#666';ctx.font='12px system-ui,sans-serif';
+  ctx.textAlign='center';ctx.textBaseline='top';
+  for(var g=Math.ceil(xMin);g<=Math.floor(xMax);g++){if(g===0)continue;ctx.fillText(g,tx(g),ty(0)+5);ctx.beginPath();ctx.moveTo(tx(g),ty(0)-3);ctx.lineTo(tx(g),ty(0)+3);ctx.stroke();}
+  ctx.textAlign='right';ctx.textBaseline='middle';
+  for(var g=yMin+2;g<=yMax-2;g+=2){if(g===0)continue;ctx.fillText(g,tx(0)-6,ty(g));ctx.beginPath();ctx.moveTo(tx(0)-3,ty(g));ctx.lineTo(tx(0)+3,ty(g));ctx.stroke();}
+  // Achsen-Beschriftung
+  ctx.fillStyle='#333';ctx.font='bold 13px system-ui,sans-serif';
+  ctx.textAlign='right';ctx.fillText('x',cssW-12,ty(0)-8);
+  ctx.textAlign='left';ctx.fillText('y',tx(0)+8,18);
+  ctx.font='12px system-ui,sans-serif';ctx.fillStyle='#666';
+  ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
+  // Funktionsgraph
+  ctx.strokeStyle='#c75c3a';ctx.lineWidth=2.5;
+  var step=0.005;
+  function inView(y){return y>=yMin && y<=yMax;}
+  // Im GK: D = [0, ∞) bzw. (0, ∞) bei negativem Exp
+  var fromX = (b<0 ? 0.005 : 0);
+  ctx.beginPath();var first=true;
+  for(var x=fromX;x<=xMax;x+=step){
+    var y=a*Math.pow(x,b);
+    if(!isFinite(y)){first=true;continue;}
+    if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
+  }
+  ctx.stroke();
+}
+if(document.readyState!=='loading'){setTimeout(updateWurzelExplorer,30);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(updateWurzelExplorer,30);});}
+</script>
+
+<!-- ═════════════════════ SECTION 3 ═════════════════════ -->
+<div class="section-label">3 · Eigenschaften der Wurzelfunktion</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Eigenschaften für \(f(x) = x^{m/n}\) mit \(x \geq 0\)</span></div>
+  <div class="card-body">
+    <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:13px">
+      <thead><tr style="background:var(--mushikuri-light);font-weight:600">
+        <th style="padding:6px;border:1px solid #ddd">Eigenschaft</th>
+        <th style="padding:6px;border:1px solid #ddd">positiver Bruch, &lt;1<br>z. B. \(x^{1/2}\), \(x^{1/3}\)</th>
+        <th style="padding:6px;border:1px solid #ddd">positiver Bruch, &gt;1<br>z. B. \(x^{3/2}\)</th>
+        <th style="padding:6px;border:1px solid #ddd">negativer Bruch<br>z. B. \(x^{-1/2}\)</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:6px;border:1px solid #eee">Definitionsbereich \(D\)</td><td style="padding:6px;border:1px solid #eee">\([0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\([0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\((0;\infty)\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Wertebereich \(W\)</td><td style="padding:6px;border:1px solid #eee">\([0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\([0;\infty)\)</td><td style="padding:6px;border:1px solid #eee">\((0;\infty)\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Monotonie (für \(a>0\))</td><td style="padding:6px;border:1px solid #eee">streng steigend, immer flacher</td><td style="padding:6px;border:1px solid #eee">streng steigend, immer steiler</td><td style="padding:6px;border:1px solid #eee">streng fallend</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Krümmung</td><td style="padding:6px;border:1px solid #eee">rechtsgekrümmt (konkav)</td><td style="padding:6px;border:1px solid #eee">linksgekrümmt (konvex)</td><td style="padding:6px;border:1px solid #eee">linksgekrümmt</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">Achsenschnitt</td><td style="padding:6px;border:1px solid #eee">\((0\,|\,0)\)</td><td style="padding:6px;border:1px solid #eee">\((0\,|\,0)\)</td><td style="padding:6px;border:1px solid #eee">keine — die \(y\)-Achse ist Asymptote</td></tr>
+      </tbody>
+    </table>
+    <div class="hint">
+      <strong>Merksatz:</strong> Bei \(0 < b < 1\) ist die Wurzelfunktion „flach in die Höhe" — sie wächst, wird aber immer flacher. Bei \(b > 1\) wächst sie zunehmend steil. Bei \(b < 0\) ist sie ein Hyperbel-artiger fallender Graph.
+    </div>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 4 ═════════════════════ -->
+<div class="section-label">4 · Definitionsbereich bestimmen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Bei Wurzeltermen aufpassen</span></div>
+  <div class="card-body">
+    <div class="ip">Wenn unter einer Quadratwurzel ein Term mit \(x\) steht, musst du fordern, dass dieser Term <strong>nicht negativ</strong> ist:</div>
+    <div class="ip" style="text-align:center">\[ \sqrt{T(x)} \text{ ist definiert} \;\Longleftrightarrow\; T(x) \geq 0. \]</div>
+    <div class="ip">Bei ungeradem Wurzelexponenten (\(\sqrt[3]{\,\cdot\,}\), \(\sqrt[5]{\,\cdot\,}\)) wäre der Radikand frei wählbar — im Grundkurs bleiben wir aber auch dort bei \(T(x) \geq 0\).</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Definitionsbereich von \(f(x) = \sqrt{2x - 6}\)</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Ermittle den größtmöglichen Definitionsbereich von \(f(x) = \sqrt{2x - 6}\) und gib den zugehörigen Wertebereich an.</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Radikand muss \(\geq 0\) sein:
+        \[ 2x - 6 \geq 0 \;\Leftrightarrow\; x \geq 3. \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Damit ist \(D_f = [3;\infty)\).</div>
+      <div class="ip"><strong>Schritt 3:</strong> Der kleinste Funktionswert wird an der Stelle \(x=3\) angenommen: \(f(3) = \sqrt{0} = 0\). Für \(x \to \infty\) wächst \(f\) unbegrenzt. Also \(W_f = [0;\infty)\).</div>
+    </details>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 5 ═════════════════════ -->
+<div class="section-label">5 · Wurzelgleichungen lösen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Vorgehen — und warum die Probe Pflicht ist</span></div>
+  <div class="card-body">
+    <div class="ip">Eine Wurzelgleichung wie \(\sqrt{x+3} = 4\) löst du in drei Schritten:</div>
+    <ol style="margin-left:22px;line-height:1.7">
+      <li>Wurzel isolieren — so dass auf einer Seite nur die Wurzel steht.</li>
+      <li>Beide Seiten in die passende Potenz heben (bei Quadratwurzel: quadrieren).</li>
+      <li><strong>Probe machen.</strong> Quadrieren ist keine Äquivalenz — es können „Scheinlösungen" auftreten, die nur die quadrierte Gleichung erfüllen.</li>
+    </ol>
+    <div class="hint">
+      <strong>Warum die Probe?</strong> Beim Quadrieren wird das Vorzeichen unsichtbar: aus \(\sqrt{x} = -2\) (keine Lösung) wird durch Quadrieren \(x = 4\) — ein scheinbarer Wert, der die ursprüngliche Gleichung nicht erfüllt.
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — \(\sqrt{x + 3} = 4\)</span></div>
+  <div class="card-body">
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Wurzel steht schon allein. Quadrieren:
+        \[ x + 3 = 16 \;\Leftrightarrow\; x = 13. \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Probe — \(x = 13\) in die Ausgangsgleichung einsetzen:
+        \[ \sqrt{13 + 3} = \sqrt{16} = 4. \;\;\checkmark \]
+        Die Lösung ist \(x = 13\).
+      </div>
+    </details>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">▶</div><span class="card-title">Beispiel — Scheinlösung erkennen</span></div>
+  <div class="card-body">
+    <div class="ip"><strong>Aufgabe:</strong> Löse \(\sqrt{x} = x - 2\) und überprüfe jede Lösung.</div>
+    <details class="bsp">
+      <summary>Lösung einblenden ▾</summary>
+      <div class="ip"><strong>Schritt 1:</strong> Quadrieren:
+        \[ x = (x-2)^2 = x^2 - 4x + 4 \;\Leftrightarrow\; x^2 - 5x + 4 = 0. \]
+      </div>
+      <div class="ip"><strong>Schritt 2:</strong> Mitternachts-/p,q-Formel: \(x_1 = 1\), \(x_2 = 4\).</div>
+      <div class="ip"><strong>Schritt 3 — Probe für \(x_1 = 1\):</strong> Linke Seite \(\sqrt{1} = 1\); rechte Seite \(1 - 2 = -1\). \(1 \neq -1\) — also <em>keine</em> Lösung.</div>
+      <div class="ip"><strong>Probe für \(x_2 = 4\):</strong> Linke Seite \(\sqrt{4} = 2\); rechte Seite \(4 - 2 = 2\). Stimmt überein \(\Rightarrow\) Lösung.</div>
+      <div class="ip"><strong>Lösungsmenge:</strong> \(\mathbb{L} = \{4\}\). \(x = 1\) war eine <em>Scheinlösung</em>.</div>
+    </details>
+  </div>
+</div>
+
+<!-- ═════════════════════ SECTION 6 ═════════════════════ -->
+<div class="section-label">6 · Aufgaben — Wurzelfunktionen</div>
+
+<div class="card">
+  <div class="card-head"><div class="ci ci-g">✎</div><span class="card-title">Aufgabenpool</span></div>
+  <div class="card-body" style="padding:0">
+    <ul class="task-list">
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Berechne ohne Taschenrechner: \(\sqrt{144}\), \(\sqrt{0{,}25}\), \(\sqrt[3]{125}\), \(\sqrt[3]{-64}\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(\sqrt{144} = 12\)</div>
+          <div class="ip">\(\sqrt{0{,}25} = 0{,}5\) (denn \(0{,}5^2 = 0{,}25\))</div>
+          <div class="ip">\(\sqrt[3]{125} = 5\)</div>
+          <div class="ip">\(\sqrt[3]{-64} = -4\) (dritte Wurzel aus negativen Zahlen ist im Reellen definiert)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Wurzeln aus dem Kopf bestimmen.</div>
+        </div>
+      </li>
+
+      <li class="task-item de" onclick="togTask(this)">
+        <div class="task-head"><span>★ Gib den Definitionsbereich an: \(f(x) = \sqrt{x}\), \(g(x) = \sqrt{x - 4}\), \(h(x) = \tfrac{1}{\sqrt{x}}\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(D_f = [0;\infty)\)</div>
+          <div class="ip">\(D_g = [4;\infty)\) (Bedingung: \(x - 4 \geq 0\))</div>
+          <div class="ip">\(D_h = (0;\infty)\) (Wurzel definiert für \(x \geq 0\), Nenner ungleich 0 schließt 0 aus)</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Definitionsbereich aus Wurzel-Bedingungen ableiten.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Bestimme den Definitionsbereich von \(g(x) = \sqrt{12 - 3x}\) und gib den Wertebereich an.</span></div>
+        <div class="task-body">
+          <div class="ip">Bedingung: \(12 - 3x \geq 0 \;\Leftrightarrow\; x \leq 4\). Also \(D_g = (-\infty;\,4]\).</div>
+          <div class="ip">Größter Funktionswert an \(x \to -\infty\): unbegrenzt. Kleinster Wert an \(x = 4\): \(g(4) = 0\). Damit \(W_g = [0;\infty)\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Linearer Radikand mit negativem Vorzeichen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Löse die Wurzelgleichung — und vergiss die Probe nicht: \(\sqrt{2x + 1} = 5\).</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Quadrieren:</strong> \(2x + 1 = 25 \;\Leftrightarrow\; x = 12\).</div>
+          <div class="ip"><strong>Probe:</strong> \(\sqrt{2 \cdot 12 + 1} = \sqrt{25} = 5\). \(\checkmark\)</div>
+          <div class="ip">Lösung: \(x = 12\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Wurzelgleichung mit Quadrieren und Probe lösen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Ein Würfel hat das Volumen \(V = 27\,\text{cm}^3\). Berechne die Kantenlänge \(a\) und die Oberfläche \(O\).</span></div>
+        <div class="task-body">
+          <div class="ip">\(a = \sqrt[3]{27} = 3\,\text{cm}\). Oberfläche \(O = 6a^2 = 6 \cdot 9 = 54\,\text{cm}^2\).</div>
+          <div class="komp-wrap"><span class="kb kb-k2">K2</span></div>
+          <div class="komp-desc">Probleme lösen: Vom Volumen zur Kantenlänge und Oberfläche.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Für die Schwingungsdauer eines Fadenpendels gilt näherungsweise \(T(\ell) = 2\sqrt{\ell}\) (Sekunden bei \(\ell\) in Metern). (a) Berechne die Schwingungsdauer für \(\ell = 0{,}25\) m und \(\ell = 1\) m. (b) Welche Länge hat ein Pendel mit \(T = 3\) s?</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>(a)</strong> \(T(0{,}25) = 2\sqrt{0{,}25} = 2 \cdot 0{,}5 = 1\,\text{s}\); \(T(1) = 2\sqrt{1} = 2\,\text{s}\).</div>
+          <div class="ip"><strong>(b)</strong> \(2\sqrt{\ell} = 3 \;\Leftrightarrow\; \sqrt{\ell} = 1{,}5 \;\Leftrightarrow\; \ell = 2{,}25\,\text{m}\). Probe: \(2\sqrt{2{,}25} = 2 \cdot 1{,}5 = 3\). \(\checkmark\)</div>
+          <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
+          <div class="komp-desc">Modellieren: Wurzelfunktion als Modell für die Schwingungsdauer.</div>
+        </div>
+      </li>
+
+      <li class="task-item dm" onclick="togTask(this)">
+        <div class="task-head"><span>★★ Eine Wurzelfunktion \(f(x) = a \cdot \sqrt{x}\) geht durch den Punkt \(P(9 | 6)\). Bestimme \(a\) und berechne \(f(16)\).</span></div>
+        <div class="task-body">
+          <div class="ip">Einsetzen: \(a \cdot \sqrt{9} = 6 \;\Leftrightarrow\; 3a = 6 \;\Leftrightarrow\; a = 2\). Also \(f(x) = 2\sqrt{x}\).</div>
+          <div class="ip">\(f(16) = 2\sqrt{16} = 2 \cdot 4 = 8\).</div>
+          <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Aus einem Punkt den Streckfaktor bestimmen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Löse \(\sqrt{x + 6} = x\) und prüfe jede Lösung. Erläutere, warum eine der Lösungen eine Scheinlösung ist.</span></div>
+        <div class="task-body">
+          <div class="ip"><strong>Quadrieren:</strong> \(x + 6 = x^2 \;\Leftrightarrow\; x^2 - x - 6 = 0\). Lösungen: \(x_1 = 3\), \(x_2 = -2\).</div>
+          <div class="ip"><strong>Probe \(x_1 = 3\):</strong> \(\sqrt{9} = 3\). \(\checkmark\)</div>
+          <div class="ip"><strong>Probe \(x_2 = -2\):</strong> \(\sqrt{4} = 2 \neq -2\). \(\times\)</div>
+          <div class="ip"><strong>Erläuterung:</strong> Beim Quadrieren wird die linke Seite \(\sqrt{x+6}\) (immer \(\geq 0\)) mit der rechten Seite \(x\) (kann negativ sein) verglichen. Quadrieren löscht das Vorzeichen, daher kommt eine zusätzliche „Lösung" hinzu, die die Ausgangsgleichung nicht erfüllt.</div>
+          <div class="ip">Lösungsmenge: \(\mathbb{L} = \{3\}\).</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Phänomen der Scheinlösung erkennen und begründen.</div>
+        </div>
+      </li>
+
+      <li class="task-item dh" onclick="togTask(this)">
+        <div class="task-head"><span>★★★ Begründe geometrisch, warum der Graph von \(f(x) = \sqrt{x}\) der gespiegelte Ast der Parabel \(g(x) = x^2\) ist. Bei welcher Geraden wird gespiegelt — und warum gilt das nur für \(x \geq 0\)?</span></div>
+        <div class="task-body">
+          <div class="ip">Eine Umkehrfunktion entsteht durch <em>Vertauschen</em> von \(x\) und \(y\). Geometrisch bedeutet das Spiegelung an der Winkelhalbierenden \(y = x\).</div>
+          <div class="ip">Aus \(y = x^2\) wird durch Vertauschen \(x = y^2\), also \(y = \sqrt{x}\).</div>
+          <div class="ip">Die Einschränkung auf \(x \geq 0\) ist nötig, weil \(x^2\) nicht umkehrbar ist, solange auch negative Werte von \(x\) zugelassen sind: dann hätte z. B. der Wert 4 die beiden „Urbilder" \(-2\) und \(+2\), und die Zuordnung wäre nicht eindeutig.</div>
+          <div class="komp-wrap"><span class="kb kb-k1">K1</span></div>
+          <div class="komp-desc">Argumentieren: Umkehrfunktion geometrisch deuten und die Einschränkung begründen.</div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+<!-- ── Selbstlerncheck ──────────────────────────────────────── -->
+<div class="card" style="border-left:4px solid #c8b55e;background:#fcfaf3">
+  <div class="card-head"><div class="ci ci-g">&#10003;</div><span class="card-title">Selbstlerncheck — Wurzelfunktionen</span></div>
+  <div class="card-body">
+    <div class="ip">Bevor du den Bereich abschließt — kannst du diese fünf Fragen beantworten?</div>
+    <ol style="padding-left:22px;line-height:1.7">
+      <li>Erläutere mit eigenen Worten, warum \(\sqrt{x}\) die Umkehrfunktion von \(x^2\) (für \(x \geq 0\)) ist. <span style="color:#888;font-size:12px">(Rückverweis: „Wurzelfunktion als Umkehrung")</span></li>
+      <li>Gib den Definitionsbereich von \(f(x) = \sqrt{8 - 2x}\) an. <span style="color:#888;font-size:12px">(Rückverweis: „Definitionsbereich bestimmen")</span></li>
+      <li>Löse \(\sqrt{3x - 2} = 4\) und mache die Probe. <span style="color:#888;font-size:12px">(Rückverweis: „Wurzelgleichungen lösen")</span></li>
+      <li>Warum ist die Probe bei Wurzelgleichungen Pflicht? Beschreibe das Phänomen der Scheinlösung in zwei Sätzen. <span style="color:#888;font-size:12px">(Rückverweis: „Vorgehen — und warum die Probe Pflicht ist")</span></li>
+      <li>Ein Pendel mit \(\ell = 1\) m hat \(T = 2\) s. Wie ändert sich \(T\), wenn die Länge auf das Vierfache erhöht wird? <span style="color:#888;font-size:12px">(Rückverweis: Pendel-Aufgabe)</span></li>
+    </ol>
+    <div class="ip" style="margin-top:10px;font-size:14px;color:var(--ink-muted)">
+      Unsicher? Geh zur verlinkten Stelle zurück und lies sie noch einmal. Damit hast du die vier Bereiche zu Potenzen, Potenzgesetzen, Potenz- und Wurzelfunktionen abgeschlossen.
+    </div>
+  </div>
+</div>
+
+</div><!-- end k9-wurf -->
+
 
 <!-- ── Lineare Gleichungssysteme ───────────────────────────────── -->
 <div class="subpanel" id="k9-lgs">
