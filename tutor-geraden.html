@@ -898,21 +898,25 @@
                         <div class="theory-content">
                             <p>Der Abstand eines Punktes von einer Geraden ist eine wichtige Größe in der räumlichen Geometrie. Der Punkt auf der Geraden mit minimalem Abstand heißt <strong>Lotfußpunkt</strong>.</p>
 
-                            <h4 style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.75rem;">Punkt-Gerade-Abstand:</h4>
-                            <p>Der Abstand eines Punktes \\( P \\) von einer Geraden \\( g: \\vec{x} = \\vec{a} + t \\cdot \\vec{v} \\) wird berechnet als:</p>
-                            <p style="text-align: center;">\\[ d = \\frac{|\\vec{AP} \\times \\vec{v}|}{|\\vec{v}|} \\]</p>
-                            <p style="margin-top: 0.75rem;">Dabei ist \\( A \\) ein Punkt auf der Geraden (etwa der Stützpunkt mit Ortsvektor \\( \\vec{a} \\)), und \\( \\vec{AP} = \\vec{p} - \\vec{a} \\).</p>
+                            <h4 style="font-weight: 600; margin-top: 1rem; margin-bottom: 0.75rem;">Punkt-Gerade-Abstand über den Lotfußpunkt:</h4>
+                            <p>Im Grundkurs läuft der Abstand eines Punktes \\( P \\) von einer Geraden \\( g: \\vec{x} = \\vec{a} + t \\cdot \\vec{v} \\) immer über den <strong>Lotfußpunkt</strong> \\( F \\) — also den Punkt auf \\( g \\), der \\( P \\) am nächsten liegt.</p>
+                            <p style="margin-top: 0.6rem;">Bedingung: Der Verbindungsvektor \\( \\vec{FP} \\) steht senkrecht auf dem Richtungsvektor \\( \\vec{v} \\), also \\( \\vec{FP} \\cdot \\vec{v} = 0 \\). Daraus ergibt sich der Parameter:</p>
+                            <p style="text-align: center;">\\[ t = \\frac{(\\vec{p} - \\vec{a}) \\cdot \\vec{v}}{\\vec{v} \\cdot \\vec{v}} \\]</p>
+                            <p style="margin-top: 0.6rem;">Der Lotfußpunkt ist \\( F = \\vec{a} + t \\cdot \\vec{v} \\), und der Abstand ist \\( d = |\\vec{FP}| = |\\vec{p} - \\vec{f}| \\).</p>
 
                             <div class="key-insight">
-                                <div class="key-insight-title">Alternative Methode:</div>
-                                <p>Man kann auch den Vektor \\( \\vec{AP} \\) in eine Komponente parallel zu \\( \\vec{v} \\) und eine senkrechte Komponente zerlegen. Der Betrag der senkrechten Komponente ist der Abstand.</p>
+                                <div class="key-insight-title">Drei-Schritte-Rezept:</div>
+                                <ol style="margin-left: 1.5rem; line-height: 1.7;">
+                                    <li>Parameter \\( t \\) aus \\( (\\vec{p} - \\vec{a}) \\cdot \\vec{v} = t \\cdot (\\vec{v} \\cdot \\vec{v}) \\) bestimmen.</li>
+                                    <li>Lotfußpunkt \\( F = \\vec{a} + t \\cdot \\vec{v} \\) ausrechnen.</li>
+                                    <li>Abstand \\( d = |\\vec{FP}| \\) als Betrag des Vektors \\( P - F \\).</li>
+                                </ol>
                             </div>
 
-                            <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Lotfußpunkt bestimmen:</h4>
-                            <p>Der Lotfußpunkt \\( F \\) ist der Punkt auf der Geraden, der dem Punkt \\( P \\) am nächsten liegt. Man findet ihn, indem man den Parameter \\( t \\) so wählt, dass \\( (\\vec{AF} - \\vec{AP}) \\perp \\vec{v} \\), also:</p>
-                            <p style="text-align: center;">\\[ (\\vec{a} + t \\cdot \\vec{v} - \\vec{p}) \\cdot \\vec{v} = 0 \\]</p>
-                            <p>Das ergibt:</p>
-                            <p style="text-align: center;">\\[ t = \\frac{(\\vec{p} - \\vec{a}) \\cdot \\vec{v}}{\\vec{v} \\cdot \\vec{v}} \\]</p>
+                            <div class="key-insight" style="background: #fff8e6;">
+                                <div class="key-insight-title">Hinweis — Grundkurs vs. Leistungskurs:</div>
+                                <p>Im Leistungskurs gibt es die kürzere Formel \\( d = \\frac{|\\vec{AP} \\times \\vec{v}|}{|\\vec{v}|} \\) mit dem Kreuzprodukt. Im Grundkurs Mecklenburg-Vorpommern arbeiten wir ausschließlich mit der Lotfußpunkt-Methode oben.</p>
+                            </div>
 
                             <h4 style="font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem;">Senkrechte Gerade konstruieren:</h4>
                             <p>Eine Gerade durch Punkt \\( P \\) senkrecht (orthogonal) zu einer Geraden \\( g \\) mit Richtungsvektor \\( \\vec{v} \\) hat einen Richtungsvektor \\( \\vec{u} \\) mit \\( \\vec{u} \\cdot \\vec{v} = 0 \\). Es gibt unendlich viele solche Geraden (sie bilden eine Ebene).</p>
@@ -937,6 +941,13 @@
                         difficulty: "Mittel",
                         title: "Abstand Punkt-Gerade berechnen",
                         text: "Berechne den Abstand des Punktes \\( P(3, 4, 0) \\) von der Gerade \\( g: \\vec{x} = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix} \\).",
+                        hints: [
+                            "Setze \\( \\vec{AP} = \\vec{p} - \\vec{a} = \\begin{pmatrix} 2 \\\\ 4 \\\\ 0 \\end{pmatrix} \\), \\( \\vec{v} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix} \\).",
+                            "Parameter t für den Lotfußpunkt: \\( t = \\frac{\\vec{AP} \\cdot \\vec{v}}{\\vec{v} \\cdot \\vec{v}} = \\frac{2 \\cdot 1 + 4 \\cdot 1 + 0}{1+1+0} = \\frac{6}{2} = 3 \\).",
+                            "Lotfußpunkt: \\( F = \\vec{a} + 3 \\cdot \\vec{v} = (1+3 \\mid 0+3 \\mid 0) = (4 \\mid 3 \\mid 0) \\). Abstandsvektor: \\( \\vec{FP} = (-1 \\mid 1 \\mid 0) \\), Betrag \\( d = \\sqrt{1+1+0} = \\sqrt{2} \\)."
+                        ],
+                        solution: "Der Abstand beträgt \\( d = \\sqrt{2} \\) LE (Längeneinheiten)."
+                    } = \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} + t \\cdot \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix} \\).",
                         hints: [
                             "Nutze \\( \\vec{AP} = \\vec{p} - \\vec{a} = \\begin{pmatrix} 3 \\\\ 4 \\\\ 0 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} = \\begin{pmatrix} 2 \\\\ 4 \\\\ 0 \\end{pmatrix} \\) und \\( \\vec{v} = \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix} \\).",
                             "Berechne das Kreuzprodukt \\( \\vec{AP} \\times \\vec{v} = \\begin{pmatrix} 2 \\\\ 4 \\\\ 0 \\end{pmatrix} \\times \\begin{pmatrix} 1 \\\\ 1 \\\\ 0 \\end{pmatrix} = \\begin{pmatrix} 4 \\cdot 0 - 0 \\cdot 1 \\\\ 0 \\cdot 1 - 2 \\cdot 0 \\\\ 2 \\cdot 1 - 4 \\cdot 1 \\end{pmatrix} = \\begin{pmatrix} 0 \\\\ 0 \\\\ -2 \\end{pmatrix} \\)",
