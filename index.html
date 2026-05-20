@@ -4393,58 +4393,56 @@ Die Draufsicht zeigt, dass die Pyramide eine vollkommen symmetrische, quadratisc
 </div>
 
 <!-- ═════════════════════ SECTION 1 ═════════════════════ -->
-<div class="section-label">1 · Schieberegler — beide Parameter reell</div>
+<div class="section-label">1 · Erkunden mit Schieberegler — \(f(x)=x^n\), \(n \in \mathbb{Z}\)</div>
 
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Erkunde \(f(x) = a \cdot x^b\)</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Erkunde \(f(x) = x^n\)</span></div>
   <div class="card-body">
-    <div class="ip">Verändere \(a\) und \(b\) und beobachte den Graphen. Versuche, <em>vor</em> jeder Bewegung vorherzusagen, was passiert. Stelle dir Fragen wie:</div>
+    <div class="ip">Verändere den Exponenten \(n\) und beobachte den Graphen. Versuche, <em>vor</em> jeder Bewegung vorherzusagen, was passiert. Stelle dir Fragen wie:</div>
     <ul style="margin-left:22px;line-height:1.7;margin-top:4px">
-      <li>Was ändert sich, wenn \(b\) das Vorzeichen wechselt?</li>
-      <li>Was ändert sich, wenn \(b\) von gerade auf ungerade springt?</li>
+      <li>Was ändert sich, wenn \(n\) das Vorzeichen wechselt?</li>
+      <li>Was ändert sich, wenn \(n\) von gerade auf ungerade springt?</li>
       <li>Wann hat der Graph eine Lücke bei \(x = 0\)?</li>
-      <li>Was passiert mit dem Graphen, wenn \(a\) negativ wird?</li>
+      <li>Welche Werte nimmt \(f\) für \(x &lt; 0\) an — wann positiv, wann negativ?</li>
     </ul>
     <div style="margin:15px 0">
-      <label style="display:block;margin:8px 0"><strong>Faktor a:</strong> <input type="range" min="-5" max="5" step="0.5" value="1" id="pfSliderA" oninput="updatePotenzExplorer()"/> <span id="pfValA" style="font-weight:600;color:#c75c3a">1</span></label>
-      <label style="display:block;margin:8px 0"><strong>Exponent b:</strong> <input type="range" min="-5" max="5" step="0.5" value="2" id="pfSliderB" oninput="updatePotenzExplorer()"/> <span id="pfValB" style="font-weight:600;color:#c75c3a">2</span></label>
+      <label style="display:block;margin:8px 0"><strong>Exponent n:</strong> <input type="range" min="-3" max="5" step="1" value="2" id="pfSliderN" oninput="updatePotenzExplorer()"/> <span id="pfValN" style="font-weight:600;color:#c75c3a">2</span></label>
     </div>
     <canvas id="cvPotenzExplorer" style="width:100%;max-width:540px;display:block;border-radius:8px;background:#fff;border:1px solid #e8e4dd"></canvas>
-    <div id="pfFormula" style="text-align:center;margin-top:8px;font-size:15px;font-weight:600;color:#c75c3a">f(x) = 1 · x²</div>
-    <div id="pfProps" style="text-align:center;margin-top:4px;font-size:13px;color:#5b6e2e">ganzzahlig · achsensymmetrisch zur y-Achse · Definitionsbereich: ℝ</div>
+    <div id="pfFormula" style="text-align:center;margin-top:8px;font-size:15px;font-weight:600;color:#c75c3a">f(x) = x²</div>
+    <div id="pfProps" style="text-align:center;margin-top:4px;font-size:13px;color:#5b6e2e">achsensymmetrisch zur y-Achse · Definitionsbereich: ℝ</div>
     <div class="hint" style="margin-top:10px;font-size:13px">
-      <strong>Hinweis:</strong> Für nicht-ganzzahlige Exponenten (z. B. \(b = 0{,}5\)) ist \(x^b\) nur für \(x \geq 0\) sinnvoll definiert. Du siehst dann nur den rechten Teil des Graphen. Solche Funktionen heißen <em>Wurzelfunktionen</em> — sie erkundest du im nächsten Bereich genauer.
+      <strong>Hinweis:</strong> Hier untersuchst du nur ganzzahlige Exponenten. Der Faktor \(a\) kommt später in den Aufgaben dazu — er streckt oder spiegelt den Graphen, ändert die Symmetrie aber nicht.
     </div>
   </div>
 </div>
 <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin:14px 0">
-  <strong style="color:#8a7a30">Kernidee:</strong> Bei \(f(x) = a \cdot x^n\) entscheiden zwei Eigenschaften des Exponenten den Verlauf: das <strong>Vorzeichen</strong> bestimmt, ob es eine Polstelle bei \(x = 0\) gibt (negativer Exponent: ja, Definitionslücke), die <strong>Parität</strong> entscheidet über die Symmetrie (gerade: Achsen-S. zur \(y\)-Achse; ungerade: Punkt-S. zum Ursprung). Der Faktor \(a\) streckt, staucht oder spiegelt — er ändert die Symmetrie nicht.
+  <strong style="color:#8a7a30">Kernidee:</strong> Bei \(f(x) = x^n\) entscheiden zwei Eigenschaften des Exponenten den Verlauf: das <strong>Vorzeichen</strong> bestimmt, ob es eine Polstelle bei \(x = 0\) gibt (negativer Exponent: ja, Definitionslücke), die <strong>Parität</strong> entscheidet über die Symmetrie (gerade: Achsen-S. zur \(y\)-Achse; ungerade: Punkt-S. zum Ursprung). Den Faktor \(a\) — und damit Streckung und Spiegelung — lernst du gleich in den Aufgaben kennen.
 </div>
 <script>
 function updatePotenzExplorer(){
-  var a=parseFloat(document.getElementById('pfSliderA').value);
-  var b=parseFloat(document.getElementById('pfSliderB').value);
-  document.getElementById('pfValA').textContent=a;
-  document.getElementById('pfValB').textContent=b;
-  // Formel-Anzeige
-  var aStr=(a===1?'':a===-1?'−':(a<0?'−'+Math.abs(a):a));
-  var bDisp=String(b);
-  var sep=(aStr===''||aStr==='−')?'':' · ';
-  document.getElementById('pfFormula').textContent='f(x) = '+aStr+sep+'x^('+bDisp+')';
+  var n=parseInt(document.getElementById('pfSliderN').value);
+  document.getElementById('pfValN').textContent=n;
+  // Formel-Anzeige (mit Hochstellung)
+  var supMap={'-3':'⁻³','-2':'⁻²','-1':'⁻¹','0':'⁰','1':'','2':'²','3':'³','4':'⁴','5':'⁵'};
+  var sup=supMap[String(n)]||('^'+n);
+  var formula='f(x) = x'+sup;
+  if(n===0) formula='f(x) = 1';
+  if(n===1) formula='f(x) = x';
+  document.getElementById('pfFormula').textContent=formula;
   // Eigenschaften
-  var isInt=Math.abs(b-Math.round(b))<0.001;
-  var parity=isInt?(Math.round(b)%2===0?'gerade':'ungerade'):'';
+  var parity=n%2===0?'gerade':'ungerade';
   var typ;
-  if(!isInt){typ='nicht-ganzzahlig (Wurzelfunktion, nur x ≥ 0)';}
-  else if(b===0){typ='konstant: f(x) = '+a;}
-  else if(b>0&&parity==='gerade'){typ='ganzzahlig · achsensymmetrisch zur y-Achse · Definitionsbereich: ℝ';}
-  else if(b>0&&parity==='ungerade'){typ='ganzzahlig · punktsymmetrisch zum Ursprung · Definitionsbereich: ℝ';}
-  else if(b<0&&parity==='gerade'){typ='ganzzahlig · achsensymmetrisch · Polstelle bei x = 0 · D = ℝ ∖ {0}';}
-  else if(b<0&&parity==='ungerade'){typ='ganzzahlig · punktsymmetrisch · Polstelle bei x = 0 · D = ℝ ∖ {0}';}
+  if(n===0){typ='konstant: f(x) = 1 · Definitionsbereich: ℝ';}
+  else if(n===1){typ='linear · punktsymmetrisch zum Ursprung · Definitionsbereich: ℝ';}
+  else if(n>0&&parity==='gerade'){typ='achsensymmetrisch zur y-Achse · Definitionsbereich: ℝ';}
+  else if(n>0&&parity==='ungerade'){typ='punktsymmetrisch zum Ursprung · Definitionsbereich: ℝ';}
+  else if(n<0&&parity==='gerade'){typ='achsensymmetrisch · Polstelle bei x = 0 · D = ℝ ∖ {0}';}
+  else if(n<0&&parity==='ungerade'){typ='punktsymmetrisch · Polstelle bei x = 0 · D = ℝ ∖ {0}';}
   document.getElementById('pfProps').textContent=typ;
-  drawPotExplorer(a,b,isInt);
+  drawPotExplorer(n);
 }
-function drawPotExplorer(a,b,isInt){
+function drawPotExplorer(n){
   var c=document.getElementById('cvPotenzExplorer'),ctx=c.getContext('2d');
   var dpr=window.devicePixelRatio||1,cssW=540,cssH=320;
   c.width=cssW*dpr;c.height=cssH*dpr;c.style.width=cssW+'px';c.style.height=cssH+'px';
@@ -4476,46 +4474,32 @@ function drawPotExplorer(a,b,isInt){
   ctx.textAlign='left';ctx.fillText('y',tx(0)+8,18);
   ctx.font='12px system-ui,sans-serif';ctx.fillStyle='#666';
   ctx.textAlign='right';ctx.textBaseline='top';ctx.fillText('O',tx(0)-4,ty(0)+4);
-  // Graph
+  // Graph (n ist ganzzahlig)
   ctx.strokeStyle='#c75c3a';ctx.lineWidth=2.5;
   var step=0.01;
   function inView(y){return y>=yMin&&y<=yMax;}
-  function safePow(x,b){
-    if(x>0)return Math.pow(x,b);
-    if(x===0){if(b>0)return 0;if(b===0)return 1;return Infinity;}
-    // x<0:
-    if(isInt){
-      var ib=Math.round(b);
-      var v=Math.pow(Math.abs(x),ib);
-      return ib%2===0?v:-v;
-    }
-    return NaN;
+  function intPow(x,n){
+    if(n===0)return 1;
+    if(x===0){return n>0?0:Infinity;}
+    var v=Math.pow(Math.abs(x),n);
+    return (x<0&&n%2!==0)?-v:v;
   }
-  if(isInt&&Math.round(b)<0){
+  if(n<0){
+    // zwei Äste, Polstelle bei x=0
     for(var side=0;side<2;side++){
       var fromX=(side===0?xMin:0.001),toX=(side===0?-0.001:xMax);
       ctx.beginPath();var first=true;
       for(var x=fromX;x<=toX;x+=step){
-        var y=a*safePow(x,b);
+        var y=intPow(x,n);
         if(!isFinite(y)){first=true;continue;}
         if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
       }
       ctx.stroke();
     }
-  }else if(isInt){
+  }else{
     ctx.beginPath();var first=true;
     for(var x=xMin;x<=xMax;x+=step){
-      var y=a*safePow(x,b);
-      if(!isFinite(y)){first=true;continue;}
-      if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
-    }
-    ctx.stroke();
-  }else{
-    // nicht-ganzzahlig: nur x ≥ 0 (bei b<0: x > 0)
-    var fromX=(b<0?0.005:0);
-    ctx.beginPath();var first=true;
-    for(var x=fromX;x<=xMax;x+=step){
-      var y=a*safePow(x,b);
+      var y=intPow(x,n);
       if(!isFinite(y)){first=true;continue;}
       if(inView(y)){if(first){ctx.moveTo(tx(x),ty(y));first=false;}else{ctx.lineTo(tx(x),ty(y));}}else{first=true;}
     }
@@ -4620,7 +4604,7 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
       </tbody>
     </table>
     <div class="hint">
-      <strong>Faktor a:</strong> Vorzeichenwechsel bei \(a\) <em>spiegelt</em> den Graphen an der \(x\)-Achse. \(|a|&gt;1\) <em>streckt</em> ihn, \(|a|&lt;1\) <em>staucht</em> ihn. Symmetrie und Polstelle ändern sich dadurch nicht.
+      <strong>Faktor a (kommt in den Aufgaben dazu):</strong> Vorzeichenwechsel bei \(a\) <em>spiegelt</em> den Graphen an der \(x\)-Achse. \(|a|&gt;1\) <em>streckt</em> ihn, \(|a|&lt;1\) <em>staucht</em> ihn. Symmetrie und Polstelle ändern sich dadurch nicht.
     </div>
   </div>
 </div>
@@ -4629,21 +4613,28 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
 <div class="section-label">3 · Funktionswerte, Stellen und Parameter</div>
 
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Drei Aufgabentypen — und wie du sie löst</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Typische Fragen an eine Funktion</span></div>
   <div class="card-body">
-    <div class="ip">Wenn du mit einer Funktion \(f(x) = a \cdot x^n\) arbeitest, brauchst du immer wieder drei Rechenrichtungen:</div>
-    <ol style="margin-left:22px;line-height:1.7">
-      <li><strong>Stelle \(\to\) Funktionswert:</strong> \(x\) einsetzen, \(f(x)\) ausrechnen.</li>
-      <li><strong>Funktionswert \(\to\) Stelle:</strong> Eine Gleichung \(a \cdot x^n = c\) nach \(x\) lösen — eine <em>Potenzgleichung</em>.</li>
-      <li><strong>Stelle und Wert gegeben \(\to\) Parameter:</strong> Einsetzen und nach \(a\) oder \(n\) auflösen.</li>
+    <div class="ip">Egal welche konkrete Potenzfunktion du vor dir hast — die folgenden vier Fragen kommen immer wieder. Du sollst sie als <em>Standard-Verfahren</em> beherrschen:</div>
+    <ol style="margin-left:22px;line-height:1.8">
+      <li><strong>Funktionswert berechnen:</strong> Gegeben ist eine Stelle \(x\); berechne \(f(x)\).</li>
+      <li><strong>Punktprobe:</strong> Gegeben ist ein Punkt \(P(x_0\,|\,y_0)\); prüfe, ob er auf dem Graphen liegt — also ob \(f(x_0) = y_0\) gilt.</li>
+      <li><strong>Stelle aus Funktionswert:</strong> Gegeben ist ein Funktionswert \(c\); finde alle Stellen \(x\) mit \(f(x) = c\). <span style="color:#a85a2b">Hierfür brauchen wir einen neuen Trick — siehe unten.</span></li>
+      <li><strong>Arbeit mit dem Graphen:</strong> Aus einer Zeichnung Funktionswerte oder Stellen ablesen, Schnittpunkte und Symmetrien erkennen.</li>
     </ol>
+    <div class="hint" style="margin-top:10px"><strong>Hinweis:</strong> Beispiele zu Punktprobe (siehe Karte gleich darunter) und zur Stelle-aus-Funktionswert-Frage (Gegenoperator-Karte) folgen direkt.</div>
   </div>
 </div>
 
 <div class="card">
-  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Potenzgleichungen \(x^n = c\) lösen</span></div>
+  <div class="card-head"><div class="ci ci-i">i</div><span class="card-title">Stelle aus Funktionswert — Gegenoperator zur Potenz</span></div>
   <div class="card-body">
-    <div class="ip">Um \(x^n = c\) nach \(x\) aufzulösen, ziehst du die \(n\)-te Wurzel. Drei Fälle musst du unterscheiden:</div>
+    <div class="ip">Bei der Frage <em>„Wert \(\to\) Stelle"</em> steht eine Gleichung wie \(x^3 = 8\). Einsetzen hilft nicht — wir brauchen eine Operation, die das <em>Hochnehmen mit 3</em> wieder rückgängig macht.</div>
+    <div class="ip"><strong>Idee.</strong> Wir nutzen das Potenzgesetz \((a^m)^k = a^{m \cdot k}\). Wenn wir einen Term mit Exponent \(3\) wieder „entpacken" wollen, wählen wir \(k\) so, dass das Produkt \(3 \cdot k = 1\) ergibt. Das passt für \(k = \tfrac{1}{3}\). Anwenden auf beide Seiten:</div>
+    <div class="ip">\[ (x^3)^{1/3} = 8^{1/3} \;\Longleftrightarrow\; x^{\,3 \cdot \tfrac{1}{3}} = 8^{1/3} \;\Longleftrightarrow\; x = 8^{1/3}. \]</div>
+    <div class="ip">Die Zahl \(8^{1/3}\) ist die gesuchte Stelle — sie ist definiert als „die Zahl, deren dritte Potenz \(8\) ergibt". Schnell nachgerechnet: \(2^3 = 8\), also \(8^{1/3} = 2\).</div>
+    <div class="ip"><strong>Allgemein.</strong> Um \(x^n = c\) nach \(x\) aufzulösen, wende auf beide Seiten den Exponenten \(\tfrac{1}{n}\) an. Dann steht \(x = c^{\,1/n}\). Der Bruchexponent \(\tfrac{1}{n}\) ist der <strong>Gegenoperator</strong> zum ganzzahligen Exponenten \(n\).</div>
+    <div class="ip"><strong>Drei Fälle — wie viele Lösungen?</strong></div>
     <table style="width:100%;border-collapse:collapse;margin:10px 0;font-size:14px">
       <thead><tr style="background:var(--mushikuri-light);font-weight:600">
         <th style="padding:6px;border:1px solid #ddd">Fall</th>
@@ -4651,13 +4642,13 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
         <th style="padding:6px;border:1px solid #ddd">Lösungen</th>
       </tr></thead>
       <tbody>
-        <tr><td style="padding:6px;border:1px solid #eee">\(n\) ungerade, \(c\) beliebig</td><td style="padding:6px;border:1px solid #eee">\(x^3 = -8\)</td><td style="padding:6px;border:1px solid #eee">genau eine Lösung: \(x = \sqrt[3]{-8} = -2\)</td></tr>
-        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c &gt; 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = 16\)</td><td style="padding:6px;border:1px solid #eee">zwei Lösungen: \(x = \pm 4\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">\(n\) ungerade, \(c\) beliebig</td><td style="padding:6px;border:1px solid #eee">\(x^3 = -8\)</td><td style="padding:6px;border:1px solid #eee">genau eine: \(x = (-8)^{1/3} = -2\)</td></tr>
+        <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c &gt; 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = 16\)</td><td style="padding:6px;border:1px solid #eee">zwei: \(x = 4\) oder \(x = -4\), denn \(4^2 = (-4)^2 = 16\)</td></tr>
         <tr><td style="padding:6px;border:1px solid #eee">\(n\) gerade, \(c &lt; 0\)</td><td style="padding:6px;border:1px solid #eee">\(x^2 = -4\)</td><td style="padding:6px;border:1px solid #eee">keine reelle Lösung</td></tr>
       </tbody>
     </table>
     <div class="hint">
-      <strong>Reihenfolge:</strong> Steht ein Faktor \(a\) davor — \(a \cdot x^n = c\) — erst durch \(a\) teilen, dann die Wurzel ziehen.
+      <strong>Reihenfolge:</strong> Steht ein Faktor \(a\) vor der Potenz — \(a \cdot x^n = c\) — erst durch \(a\) teilen, dann den Gegenoperator anwenden.
     </div>
   </div>
 </div>
@@ -4756,11 +4747,11 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
       <div class="tq">Löse jeweils nach \(x\): \(x^2 = 49\); \(x^3 = -27\); \(x^4 = 81\).</div>
       <div class="tk-toggle">⌄</div>
     </div>
-    <div class="ta"><div class="ip">\(x^2 = 49 \;\Rightarrow\; x = \pm 7\) (gerade Hochzahl, positiv).</div>
-          <div class="ip">\(x^3 = -27 \;\Rightarrow\; x = -3\) (ungerade Hochzahl, eindeutig).</div>
-          <div class="ip">\(x^4 = 81 \;\Rightarrow\; x = \pm 3\) (gerade Hochzahl, positiv).</div>
+    <div class="ta"><div class="ip">\(x^2 = 49\): Beide Seiten mit \(\tfrac{1}{2}\) potenzieren \(\Rightarrow\) \(x = 49^{1/2}\). Gesucht: Zahl, deren Quadrat \(49\) ergibt. Lösungen: \(x = 7\) oder \(x = -7\) (gerader Exponent — zwei Lösungen).</div>
+          <div class="ip">\(x^3 = -27\): Mit \(\tfrac{1}{3}\) potenzieren \(\Rightarrow\) \(x = (-27)^{1/3}\). Gesucht: Zahl, deren dritte Potenz \(-27\) ergibt. Lösung: \(x = -3\) (ungerader Exponent — eindeutig).</div>
+          <div class="ip">\(x^4 = 81\): Mit \(\tfrac{1}{4}\) potenzieren \(\Rightarrow\) \(x = 81^{1/4}\). Gesucht: Zahl, deren vierte Potenz \(81\) ergibt. Lösungen: \(x = 3\) oder \(x = -3\) (gerader Exponent — zwei Lösungen).</div>
           <div class="komp-wrap"><span class="kb kb-k5">K5</span></div>
-          <div class="komp-desc">Symbolisch-formales Arbeiten: Potenzgleichungen lösen mit Fallunterscheidung.</div></div>
+          <div class="komp-desc">Symbolisch-formales Arbeiten: Stelle aus Funktionswert mit Gegenoperator bestimmen.</div></div>
   </div>
 <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
@@ -4895,9 +4886,9 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
       <div class="tk-toggle">⌄</div>
     </div>
     <div class="ta"><div class="ip"><strong>(a)</strong> Aus \(1^2 = c \cdot 1^3\) folgt \(c = 1\).</div>
-          <div class="ip"><strong>(b)</strong> \(T^2 = 1{,}52^3 \approx 3{,}51 \;\Rightarrow\; T \approx \sqrt{3{,}51} \approx 1{,}87\) Jahre. Mars braucht also etwa 1,9 Erdjahre für einen Sonnenumlauf.</div>
+          <div class="ip"><strong>(b)</strong> \(T^2 = 1{,}52^3 \approx 3{,}51 \;\Rightarrow\; T = 3{,}51^{\,1/2} \approx 1{,}87\) Jahre (Gegenoperator). Mars braucht also etwa 1,9 Erdjahre für einen Sonnenumlauf.</div>
           <div class="komp-wrap"><span class="kb kb-k3">K3</span></div>
-          <div class="komp-desc">Modellieren: Sachkontext mit kubischer Potenz und Wurzel kombinieren.</div></div>
+          <div class="komp-desc">Modellieren: Sachkontext mit kubischer Potenz und Gegenoperator kombinieren.</div></div>
   </div>
 <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
@@ -4925,8 +4916,8 @@ if(document.readyState!=='loading'){setTimeout(updatePotenzExplorer,30);}else{do
     <ol style="padding-left:22px;line-height:1.7">
       <li>Ordne jedem der vier Grundtypen einen Funktionsterm zu und nenne in jedem Fall die Symmetrie. <span style="color:#888;font-size:12px">(Rückverweis: Eigenschaftstabelle)</span></li>
       <li>Wann hat \(f(x) = a \cdot x^n\) eine Definitionslücke? Begründe. <span style="color:#888;font-size:12px">(Rückverweis: Eigenschaftstabelle)</span></li>
-      <li>Löse \(2 x^3 = 54\). <span style="color:#888;font-size:12px">(Rückverweis: „Potenzgleichungen \(x^n = c\) lösen")</span></li>
-      <li>Erkläre, warum \(x^2 = -4\) keine reelle Lösung hat, \(x^3 = -8\) aber genau eine. <span style="color:#888;font-size:12px">(Rückverweis: Tabelle „Fälle bei Potenzgleichungen")</span></li>
+      <li>Löse \(2 x^3 = 54\). <span style="color:#888;font-size:12px">(Rückverweis: „Stelle aus Funktionswert — Gegenoperator")</span></li>
+      <li>Erkläre, warum \(x^2 = -4\) keine reelle Lösung hat, \(x^3 = -8\) aber genau eine. <span style="color:#888;font-size:12px">(Rückverweis: Drei-Fälle-Tabelle in der Gegenoperator-Karte)</span></li>
       <li>Bei welchem Bremsweg-Modell verdreifacht sich der Bremsweg, wenn sich die Geschwindigkeit verdreifacht? Bei welchem ver-neunfacht er sich? Begründe mit dem Exponenten. <span style="color:#888;font-size:12px">(Rückverweis: „Bremsweg rückwärts")</span></li>
     </ol>
     <div class="ip" style="margin-top:10px;font-size:14px;color:var(--ink-muted)">
