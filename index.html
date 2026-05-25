@@ -20336,6 +20336,39 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     </div>
   </div>
 
+  <!-- Brücken-Card · Conceptual Change: Punkt vs. Vektor -->
+  <div class="card" style="background:#f4f3f0;border-left:4px solid #6b6864;margin-top:10px;">
+    <div class="card-head">
+      <div class="ci ci-i" style="background:#6b6864;color:#fff;">?</div>
+      <span class="card-title" style="color:#3d3a36">Wer hat recht — Anna oder Bert?</span>
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:200px;background:#fceee9;padding:10px 14px;border-radius:8px;">
+          <strong style="color:#a03d20">Anna sagt:</strong>
+          <div style="margin-top:6px;">„Der Punkt \(P=(2|1|3)\) und der Vektor
+          \(\vec{v}=\begin{pmatrix}2\\1\\3\end{pmatrix}\) sind dasselbe — sie haben ja
+          dieselben Koordinaten."</div>
+        </div>
+        <div style="flex:1;min-width:200px;background:#ecf1f4;padding:10px 14px;border-radius:8px;">
+          <strong style="color:#4d6470">Bert sagt:</strong>
+          <div style="margin-top:6px;">„Nein. \(P\) ist ein <em>Ort</em> — er liegt fest im Raum.
+          \(\vec{v}\) ist eine <em>Verschiebung</em> — sie kann an jedem beliebigen Punkt ansetzen."</div>
+        </div>
+      </div>
+      <div class="ip" style="margin-top:10px;"><strong>Frage:</strong> Wer hat recht? Begründe in zwei Sätzen — und nenne dabei eine Rechnung, die man mit \(\vec{v}\) machen kann, mit \(P\) aber nicht.</div>
+      <details style="margin-top:8px;background:#f7f3e2;padding:8px 12px;border-radius:6px;">
+        <summary style="cursor:pointer;color:#8a7a30;font-weight:600;">Lösungsidee zeigen</summary>
+        <div class="ip" style="margin-top:6px;">Bert hat recht. Punkte werden nicht addiert
+        (\(A+B\) ist sinnlos), Vektoren schon (\(\vec{u}+\vec{v}\) ist wieder ein Vektor).
+        Außerdem kann man \(\vec{v}\) frei verschieben — der Pfeil \(\vec{v}\) an \(A=(1|0|0)\)
+        landet bei \((3|1|3)\), ist aber weiterhin <em>derselbe</em> Vektor. Der Punkt \(P\) hat dagegen
+        nur einen einzigen Platz. Der Ortsvektor \(\vec{OP}\) ist die Brücke: Er teilt die Koordinaten
+        mit \(P\), gehört aber zur Welt der Vektoren.</div>
+      </details>
+    </div>
+  </div>
+
   <!-- Vector Addition Diagram -->
   <svg width="320" height="240" viewBox="0 0 320 240" style="display: block; margin: 15px auto; border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
     <text x="10" y="220" font-size="12" font-weight="bold">Vektoraddition: \(\vec{a} + \vec{b} = \vec{c}\)</text>
@@ -20922,6 +20955,40 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   </div>
 </div>
 
+<!-- Brücken-Card · Conceptual Change: parallel ≠ identisch -->
+<div class="card" style="background:#f4f3f0;border-left:4px solid #6b6864;margin-top:10px;">
+  <div class="card-head">
+    <div class="ci ci-i" style="background:#6b6864;color:#fff;">?</div>
+    <span class="card-title" style="color:#3d3a36">Wer hat recht — Anna oder Bert?</span>
+  </div>
+  <div class="card-body">
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:200px;background:#fceee9;padding:10px 14px;border-radius:8px;">
+        <strong style="color:#a03d20">Anna sagt:</strong>
+        <div style="margin-top:6px;">„Zwei Geraden, deren Richtungsvektoren parallel sind,
+        sind auch parallel zueinander."</div>
+      </div>
+      <div style="flex:1;min-width:200px;background:#ecf1f4;padding:10px 14px;border-radius:8px;">
+        <strong style="color:#4d6470">Bert sagt:</strong>
+        <div style="margin-top:6px;">„Sie können auch <em>identisch</em> sein — das wäre der
+        Sonderfall, dass sie sich völlig überdecken. Oder sie sind <em>echt parallel</em>:
+        gleiche Richtung, aber kein gemeinsamer Punkt."</div>
+      </div>
+    </div>
+    <div class="ip" style="margin-top:10px;"><strong>Frage:</strong> Wer hat recht? Wie unterscheidest du
+    rechnerisch zwischen „identisch" und „echt parallel"?</div>
+    <details style="margin-top:8px;background:#f7f3e2;padding:8px 12px;border-radius:6px;">
+      <summary style="cursor:pointer;color:#8a7a30;font-weight:600;">Lösungsidee zeigen</summary>
+      <div class="ip" style="margin-top:6px;">Bert hat recht. Aus kollinearen Richtungsvektoren
+      allein folgt nur, dass die Geraden <em>nicht windschief und nicht schneidend</em> sind.
+      Es bleiben die zwei Fälle <strong>identisch</strong> und <strong>echt parallel</strong>.
+      Test: Nimm einen Punkt der einen Geraden — etwa den Stützpunkt \(\vec{p}_1\) — und prüfe,
+      ob er in der Gleichung der anderen liegt (Parameter eindeutig lösbar?).
+      Ja → identisch. Nein → echt parallel.</div>
+    </details>
+  </div>
+</div>
+
 <!-- Visualisierungen der Lagebeziehungen (Schrägbild: x nach vorne, y rechts, z oben) -->
 <div class="card" style="margin-bottom:18px;">
   <div class="card-head">
@@ -21325,6 +21392,39 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="it" style="margin-top: 12px;"><strong>Normalenform:</strong> \[(\vec{x} - \vec{p}) \cdot \vec{n} = 0\]</div>
     <div class="it"><strong>Koordinatenform:</strong> \[ax + by + cz = d\]
     wobei \(\vec{n} = (a|b|c)\) der Normalenvektor ist.</div>
+  </div>
+</div>
+
+<!-- Brücken-Card · Conceptual Change: drei Punkte = Ebene? -->
+<div class="card" style="background:#f4f3f0;border-left:4px solid #6b6864;margin-top:10px;margin-bottom:14px;">
+  <div class="card-head">
+    <div class="ci ci-i" style="background:#6b6864;color:#fff;">?</div>
+    <span class="card-title" style="color:#3d3a36">Wer hat recht — Anna oder Bert?</span>
+  </div>
+  <div class="card-body">
+    <div style="display:flex;gap:14px;flex-wrap:wrap;">
+      <div style="flex:1;min-width:200px;background:#fceee9;padding:10px 14px;border-radius:8px;">
+        <strong style="color:#a03d20">Anna sagt:</strong>
+        <div style="margin-top:6px;">„Drei Punkte bestimmen immer eindeutig eine Ebene."</div>
+      </div>
+      <div style="flex:1;min-width:200px;background:#ecf1f4;padding:10px 14px;border-radius:8px;">
+        <strong style="color:#4d6470">Bert sagt:</strong>
+        <div style="margin-top:6px;">„Nur, wenn die drei Punkte nicht auf einer Geraden liegen.
+        Sonst spannen sie keine Ebene auf — die Aufgabe hat dann <em>keine</em> oder
+        <em>unendlich viele</em> Lösungen."</div>
+      </div>
+    </div>
+    <div class="ip" style="margin-top:10px;"><strong>Frage:</strong> Wer hat recht? Welche Rechnung in
+    den Spannvektoren \(\vec{u}=\vec{AB}\) und \(\vec{v}=\vec{AC}\) verrät dir, ob der „kritische Fall"
+    eingetreten ist?</div>
+    <details style="margin-top:8px;background:#f7f3e2;padding:8px 12px;border-radius:6px;">
+      <summary style="cursor:pointer;color:#8a7a30;font-weight:600;">Lösungsidee zeigen</summary>
+      <div class="ip" style="margin-top:6px;">Bert hat recht. Wenn \(A,B,C\) auf einer Geraden liegen,
+      sind \(\vec{AB}\) und \(\vec{AC}\) <em>kollinear</em> — also \(\vec{AB}=\lambda\vec{AC}\) für ein
+      \(\lambda\in\mathbb{R}\). Dann liefert das Kreuzprodukt \(\vec{n}=\vec{AB}\times\vec{AC}=\vec{0}\),
+      und du erhältst keinen brauchbaren Normalenvektor. Praktisch heißt das: Vor der Parameter→Koordinatenform
+      immer prüfen, ob das Kreuzprodukt der Spannvektoren ≠ Nullvektor ist.</div>
+    </details>
   </div>
 </div>
 
