@@ -20272,6 +20272,18 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <!-- 2. Vector Concept -->
   <div class="section-label">2. Vektorbegriff und Ortsvektoren (2 Std.)</div>
 
+  <!-- Kernidee-Box: Punkt · Ortsvektor · freier Vektor -->
+  <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+    <strong style="color:#8a7a30">Kernidee:</strong>
+    Drei Dinge können dieselben Koordinaten haben und sind trotzdem <em>nicht dasselbe</em>:
+    der <strong>Punkt</strong> \(P=(2|1|3)\) bezeichnet einen <em>Ort</em>, der <strong>Ortsvektor</strong>
+    \(\vec{OP}\) ist der einzige Pfeil vom Ursprung zu diesem Ort, der <strong>freie Vektor</strong>
+    \(\vec{v}=\bigl({\scriptstyle 2\atop\scriptstyle 1}{\scriptstyle\atop\scriptstyle 3}\bigr)\) beschreibt eine <em>Verschiebung</em> ohne festen Anfangspunkt.
+    Punkte werden <em>nicht</em> addiert, Vektoren <em>schon</em> — und der Ortsvektor ist die Brücke
+    zwischen beiden Welten. <span style="color:#8a7a30;font-weight:600">Genau diese Verwechslung ist
+    in MV-Klausuren der häufigste Anfängerfehler.</span>
+  </div>
+
   <div class="card">
     <div class="card-head">
       <div class="ci ci-i">i</div>
@@ -20281,6 +20293,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ip">Ein <strong>Vektor</strong> beschreibt eine Verschiebung im Raum. Er hat eine Richtung und eine Länge (Betrag), aber keinen festen Ausgangspunkt.</div>
       <div class="hint"><strong>Merke:</strong> Der Vektor von Punkt \(A = (a_1|a_2|a_3)\) zu Punkt \(B = (b_1|b_2|b_3)\) ist: \(\vec{AB} = \begin{pmatrix} b_1 - a_1 \\ b_2 - a_2 \\ b_3 - a_3 \end{pmatrix}\)</div>
       <div class="ip" style="margin-top: 10px;">Der <strong>Ortsvektor</strong> eines Punktes \(P = (p_1|p_2|p_3)\) ist der Vektor vom Ursprung zu diesem Punkt: \(\vec{OP} = \begin{pmatrix} p_1 \\ p_2 \\ p_3 \end{pmatrix}\)</div>
+      <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Vorsicht — typischer Fehler:</strong> Schüler schreiben oft \(P=\vec{OP}\) oder rechnen \(A+B\) (Punkt plus Punkt). Beides ist sinnlos. Erlaubt sind nur Vektor + Vektor, Punkt + Vektor (= neuer Punkt), Punkt − Punkt (= Vektor).</div>
     </div>
   </div>
 
@@ -20833,6 +20846,19 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 <!-- Section 2: Lagebeziehungen zwischen Geraden -->
 <div class="section-label">2. Lagebeziehungen zwischen Geraden</div>
 
+<!-- Kernidee-Box: qualitativ vor quantitativ -->
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+  <strong style="color:#8a7a30">Kernidee:</strong>
+  Zwei Geraden im Raum können <em>vier</em> Lagebeziehungen haben: <strong>identisch</strong>,
+  <strong>echt parallel</strong>, <strong>schneidend</strong> oder <strong>windschief</strong>.
+  Die <em>Lagebeziehung</em> ist <strong>qualitativ</strong> (welcher Typ?), der <em>Schnittpunkt</em>
+  ist <strong>quantitativ</strong> (welche Koordinaten?). Reihenfolge:
+  <strong>erst klassifizieren, dann rechnen</strong> — denn nur im Fall „schneidend" gibt es überhaupt
+  einen Schnittpunkt zu berechnen.
+  Der Test läuft immer über zwei Fragen: <em>Sind die Richtungsvektoren kollinear?</em>
+  und <em>Hat das Gleichsetzungs-LGS eine Lösung?</em>
+</div>
+
 <div class="card">
   <div class="card-head">
     <div class="ci ci-i">i</div>
@@ -20843,6 +20869,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ip"><strong>Schritt 2a:</strong> Falls parallel → Prüfe, ob ein Punkt der einen Gerade auf der anderen liegt → identisch oder echt parallel.</div>
     <div class="ip"><strong>Schritt 2b:</strong> Falls nicht parallel → Setze die Geraden gleich und löse das LGS → eindeutige Lösung: schneidend; keine Lösung: windschief.</div>
     <div class="hint"><strong>Merke:</strong> Windschief gibt es nur im Raum (\(\mathbb{R}^3\)), nicht in der Ebene!</div>
+    <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Vorsicht — typischer Fehler:</strong> „Windschief" heißt <em>nicht</em> „weit voneinander entfernt" — auch zwei nahe Geraden sind windschief, wenn ihre Richtungen verschieden sind und sie keinen Punkt teilen. Und: Schneiden sich die <em>Richtungsvektoren</em>, heißt das noch nichts — entscheidend ist, ob die <em>Geraden selbst</em> einen Punkt teilen.</div>
   </div>
 </div>
 
@@ -21200,6 +21227,22 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 
 <!-- Section 1: Ebenengleichungen -->
 <div class="section-label">1. Ebenengleichungen in Parameter- und Koordinatenform</div>
+
+<!-- Kernidee-Box: Drei Formen, drei Verwendungszwecke -->
+<div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+  <strong style="color:#8a7a30">Kernidee:</strong>
+  Eine Ebene hat <em>eine</em> Lage im Raum, aber drei verschiedene Gleichungs-<em>Formen</em> —
+  jede mit eigener Verwendung:
+  <strong>Parameterform</strong> <em>erzeugt</em> die Ebene aus einem Stützpunkt und zwei Spannvektoren
+  (gut, wenn drei Punkte gegeben sind).
+  <strong>Normalenform</strong> beschreibt sie über die <em>senkrechte</em> Richtung
+  (gut für Abstände und Lagebeziehungen).
+  <strong>Koordinatenform</strong> ist die rechentechnisch schlanke Variante
+  \(ax+by+cz=d\) (gut, um zu prüfen, ob ein Punkt drauf liegt, und um mit Geraden zu schneiden).
+  <strong>Wahl der Form folgt aus dem Aufgabentyp</strong> — nicht aus der Vorliebe.
+  Übergänge: Parameter → Normalen über das Kreuzprodukt der Spannvektoren;
+  Normalen → Koordinaten durch Ausmultiplizieren von \(\vec{n}\cdot(\vec{x}-\vec{p})=0\).
+</div>
 
 <div class="card">
   <div class="card-head">
