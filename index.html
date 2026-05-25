@@ -20230,6 +20230,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
           <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
           <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Kollinearität von Vektoren erkennen und nutzen</span>
         </li>
+        <li class="gi">
+          <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
+          <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Linearkombinationen bilden und einen Vektor als Linearkombination anderer darstellen (LGS)</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -20680,6 +20684,75 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     </div>
   </div>
 
+  <!-- 7. Linearkombinationen -->
+  <div class="section-label">7. Linearkombinationen (2 Std.)</div>
+
+  <!-- Kernidee-Box: LK verallgemeinert Kollinearität -->
+  <div class="ip" style="background:#fff8e6;border-radius:10px;padding:14px 18px;border-left:4px solid #c8b55e;margin-bottom:14px">
+    <strong style="color:#8a7a30">Kernidee:</strong>
+    Eine <strong>Linearkombination</strong> ist eine <em>Summe von skalierten Vektoren</em>.
+    Sie verallgemeinert die Kollinearität (ein Vielfaches eines Vektors) zur Summe mehrerer Vielfache
+    verschiedener Vektoren. Mit der Linearkombination beantwortest du Fragen wie:
+    <em>„Lässt sich der Vektor \(\vec{c}\) aus \(\vec{a}\) und \(\vec{b}\) zusammensetzen?"</em> — und das
+    Werkzeug dafür ist immer dasselbe: das <strong>lineare Gleichungssystem</strong> aus Klasse 9/10.
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-i">i</div>
+      <span class="card-title">Definition und Schreibweise</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Eine <strong>Linearkombination</strong> der Vektoren \(\vec{a}, \vec{b}, \vec{c}\) mit den Skalaren \(r, s, t \in \mathbb{R}\) ist der Vektor</div>
+      <div class="hint">\[\vec{w} \;=\; r\cdot \vec{a} \;+\; s\cdot \vec{b} \;+\; t\cdot \vec{c}.\]</div>
+      <div class="ip" style="margin-top: 10px;">Die Zahlen \(r, s, t\) heißen <em>Koeffizienten</em> der Linearkombination. Es können auch mehr oder weniger als drei Summanden sein. Beispiele:</div>
+      <div class="ip">• Ein Summand: \(\vec{w} = r\cdot \vec{a}\) — das ist genau die <em>Kollinearität</em> aus Abschnitt 6.</div>
+      <div class="ip">• Zwei Summanden: \(\vec{w} = r\cdot \vec{a} + s\cdot \vec{b}\) — alle so erzeugbaren Vektoren bilden anschaulich <em>eine ganze Ebene</em> (sofern \(\vec{a}\) und \(\vec{b}\) nicht selbst kollinear sind).</div>
+      <div class="ip">• Drei Summanden im Raum: \(\vec{w} = r\vec{a} + s\vec{b} + t\vec{c}\) — drei „passend gewählte" Vektoren erreichen jeden Punkt des Raumes.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head">
+      <div class="ci ci-i">i</div>
+      <span class="card-title">Geometrische Bedeutung</span>
+    </div>
+    <div class="card-body">
+      <div class="ip">Skalierung mit \(r\) <em>streckt</em> oder <em>staucht</em> einen Vektor (negatives \(r\) kehrt seine Richtung um). Die Addition zweier Vektoren <em>setzt sie hintereinander</em> (Pfeil an Pfeil). Eine Linearkombination ist also: <strong>erst skalieren, dann hintereinanderlegen</strong>.</div>
+      <div class="hint" style="margin-top:10px;background:#fceee9;border-left:3px solid #c75c3a;"><strong style="color:#a03d20">Vorsicht — Sonderfälle:</strong>
+        Wird ein Koeffizient \(=0\), fällt der zugehörige Vektor weg — die LK wird kürzer. Sind alle Koeffizienten \(=0\), ist das Ergebnis der <em>Nullvektor</em> \(\vec{0}\). Sind \(\vec{a}\) und \(\vec{b}\) selbst kollinear, erreichst du mit \(r\vec{a}+s\vec{b}\) nur eine <em>Gerade</em>, keine Ebene — denn \(\vec{b}\) liefert nichts Neues hinzu.</div>
+    </div>
+  </div>
+
+  <!-- Beispielaufgabe 1: direkt einsetzen -->
+  <div class="bsp">
+    <div class="bsp-label">Beispielaufgabe 1: Linearkombination berechnen</div>
+    <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind \(\vec{a} = \begin{pmatrix}2\\1\\0\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}-1\\3\\2\end{pmatrix}\). Berechne die Linearkombination \(\vec{w} = 3\vec{a} - 2\vec{b}\).</div>
+    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+    <div class="bsp-a">
+      <strong>Lösung:</strong>
+      <div class="ip" style="margin-top:8px;"><strong>① Skalieren:</strong> \(3\vec{a} = \begin{pmatrix}6\\3\\0\end{pmatrix}\), \(-2\vec{b} = \begin{pmatrix}2\\-6\\-4\end{pmatrix}\).</div>
+      <div class="ip"><strong>② Komponentenweise addieren:</strong>
+        \(\vec{w} = \begin{pmatrix}6+2\\3-6\\0-4\end{pmatrix} = \begin{pmatrix}8\\-3\\-4\end{pmatrix}\).
+      </div>
+    </div>
+  </div>
+
+  <!-- Beispielaufgabe 2: LK darstellen via LGS -->
+  <div class="bsp">
+    <div class="bsp-label">Beispielaufgabe 2: Vektor als Linearkombination darstellen</div>
+    <div class="bsp-q"><strong>Aufgabe:</strong> Gegeben sind \(\vec{a} = \begin{pmatrix}1\\2\\1\end{pmatrix}\), \(\vec{b} = \begin{pmatrix}3\\0\\2\end{pmatrix}\), \(\vec{c} = \begin{pmatrix}5\\4\\4\end{pmatrix}\). Bestimme Koeffizienten \(r, s\), so dass \(\vec{c} = r\vec{a} + s\vec{b}\) gilt — falls dies möglich ist.</div>
+    <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
+    <div class="bsp-a">
+      <strong>Lösung:</strong>
+      <div class="ip" style="margin-top:8px;"><strong>① Ansatz komponentenweise.</strong> Aus \(r\vec{a} + s\vec{b} = \vec{c}\) folgen <em>drei</em> Gleichungen für die <em>zwei</em> Unbekannten \(r, s\) — ein \(3\times 2\)-LGS:</div>
+      <div class="ip">(I) \(\;r + 3s = 5\)<br>(II) \(2r + 0s = 4\)<br>(III) \(\;r + 2s = 4\)</div>
+      <div class="ip"><strong>② Lösen.</strong> Aus (II): \(r = 2\). In (I): \(2 + 3s = 5 \Rightarrow s = 1\). Probe in (III): \(2 + 2\cdot 1 = 4\) ✓ — die dritte Gleichung ist verträglich, das LGS hat die eindeutige Lösung \(r=2,\ s=1\).</div>
+      <div class="ip"><strong>③ Antwort:</strong> \(\vec{c} = 2\vec{a} + 1\vec{b}\). Damit ist \(\vec{c}\) als Linearkombination von \(\vec{a}\) und \(\vec{b}\) darstellbar.</div>
+      <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Pflichtprobe bei 3×2-LGS:</em> Weil drei Gleichungen für nur zwei Unbekannte gegeben sind, prüfst du immer alle drei. Ist die dritte Gleichung <em>nicht</em> verträglich, hat das LGS keine Lösung — der Vektor \(\vec{c}\) liegt dann nicht in der von \(\vec{a}, \vec{b}\) aufgespannten Ebene durch den Ursprung.</em></div>
+    </div>
+  </div>
+
   <!-- Interactive Calculator -->
   <div class="card">
     <div class="card-head">
@@ -20957,6 +21030,120 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     </div>
 
 
+    <!-- Block III · Linearkombinationen (mushikuri-gelb · Hauptkonzept) -->
+    <div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+      <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">L</div>
+      <div style="flex:1">
+        <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · L · ★ bis ★★★</div>
+        <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Linearkombinationen — berechnen und darstellen</div>
+        <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Erst direktes Berechnen einer Linearkombination, dann die Umkehrfrage: einen gegebenen Vektor als LK anderer darstellen — gelöst über das LGS aus Klasse 9/10. <strong>Alle Aufgaben ohne CAS lösbar.</strong></div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.1</span><span class="td de">★</span></div>
+          <div class="tq">Berechne die Linearkombination \(\vec{w} = 2\vec{a} + 3\vec{b}\) mit \(\vec{a} = \begin{pmatrix}1\\0\\2\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}-1\\2\\1\end{pmatrix}\).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> Skalieren — \(2\vec{a}=\begin{pmatrix}2\\0\\4\end{pmatrix}\), \(3\vec{b}=\begin{pmatrix}-3\\6\\3\end{pmatrix}\). Komponentenweise addieren — \(\vec{w}=\begin{pmatrix}-1\\6\\7\end{pmatrix}\).</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.2</span><span class="td de">★</span></div>
+          <div class="tq">Berechne \(\vec{w} = \vec{a} - 2\vec{b}\) mit \(\vec{a} = \begin{pmatrix}4\\-1\\3\end{pmatrix}\) und \(\vec{b} = \begin{pmatrix}1\\2\\0\end{pmatrix}\). (Hinweis: Subtraktion ist eine Linearkombination mit Koeffizient \(-1\) bzw. \(-2\).)</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> \(\vec{w} = 1\cdot\vec{a} + (-2)\cdot\vec{b} = \begin{pmatrix}4\\-1\\3\end{pmatrix} + \begin{pmatrix}-2\\-4\\0\end{pmatrix} = \begin{pmatrix}2\\-5\\3\end{pmatrix}\).</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.3</span><span class="td de">★</span></div>
+          <div class="tq">Schreibe den Vektor \(\vec{c} = \begin{pmatrix}3\\-2\\5\end{pmatrix}\) als Linearkombination der drei Einheitsvektoren \(\vec{e}_1 = \begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{e}_2 = \begin{pmatrix}0\\1\\0\end{pmatrix}\), \(\vec{e}_3 = \begin{pmatrix}0\\0\\1\end{pmatrix}\).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> Die Koeffizienten lassen sich direkt ablesen — sie sind die Komponenten von \(\vec{c}\):</div>
+        <div class="ip">\(\vec{c} = 3\cdot\vec{e}_1 + (-2)\cdot\vec{e}_2 + 5\cdot\vec{e}_3\).</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Beobachtung:</em> Mit \(\vec{e}_1, \vec{e}_2, \vec{e}_3\) kannst du <em>jeden</em> Vektor des Raumes als LK darstellen — die Koeffizienten sind einfach seine drei Koordinaten.</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.4</span><span class="td de">★</span></div>
+          <div class="tq">Berechne \(\vec{w} = -\vec{a} + 2\vec{b} + 3\vec{c}\) mit \(\vec{a}=\begin{pmatrix}1\\1\\0\end{pmatrix}\), \(\vec{b}=\begin{pmatrix}0\\1\\1\end{pmatrix}\), \(\vec{c}=\begin{pmatrix}1\\0\\-1\end{pmatrix}\).</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>Lösung:</strong> \(-\vec{a}=\begin{pmatrix}-1\\-1\\0\end{pmatrix}\), \(2\vec{b}=\begin{pmatrix}0\\2\\2\end{pmatrix}\), \(3\vec{c}=\begin{pmatrix}3\\0\\-3\end{pmatrix}\). Summe: \(\vec{w}=\begin{pmatrix}2\\1\\-1\end{pmatrix}\).</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.5</span><span class="td dm">★★</span></div>
+          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}7\\4\\6\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\2\\1\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}3\\0\\2\end{pmatrix}\). Bestimme \(r\) und \(s\) und überprüfe das Ergebnis.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>① 3×2-LGS aus \(r\vec{a}+s\vec{b}=\vec{c}\):</strong></div>
+        <div class="ip">(I) \(\;r + 3s = 7\) &nbsp; (II) \(2r + 0s = 4\) &nbsp; (III) \(\;r + 2s = 6\).</div>
+        <div class="ip"><strong>② Lösen:</strong> Aus (II): \(r=2\). In (I): \(2+3s=7 \Rightarrow s=\tfrac{5}{3}\). In (III) prüfen: \(2 + 2\cdot\tfrac{5}{3} = 2 + \tfrac{10}{3} = \tfrac{16}{3} \neq 6\). <em>(III) ist nicht verträglich.</em></div>
+        <div class="ip"><strong>③ Antwort:</strong> Das LGS hat <em>keine Lösung</em>. \(\vec{c}\) lässt sich <em>nicht</em> als Linearkombination von \(\vec{a}\) und \(\vec{b}\) darstellen — \(\vec{c}\) liegt nicht in der von \(\vec{a},\vec{b}\) durch den Ursprung aufgespannten Ebene.</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Bei 3×2-LGS musst du <em>immer</em> alle drei Gleichungen prüfen — die ersten zwei liefern einen Kandidaten für \(r,s\), die dritte entscheidet, ob er passt.</em></div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.6</span><span class="td dm">★★</span></div>
+          <div class="tq">Stelle \(\vec{c}=\begin{pmatrix}4\\6\\5\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}+t\vec{d}\) dar — mit \(\vec{a}=\begin{pmatrix}1\\0\\0\end{pmatrix}\), \(\vec{b}=\begin{pmatrix}1\\2\\0\end{pmatrix}\), \(\vec{d}=\begin{pmatrix}1\\1\\1\end{pmatrix}\). Bestimme alle drei Koeffizienten.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{a}+s\vec{b}+t\vec{d}=\vec{c}\):</strong></div>
+        <div class="ip">(I) \(\;r + s + t = 4\) &nbsp; (II) \(0r + 2s + t = 6\) &nbsp; (III) \(0r + 0s + t = 5\).</div>
+        <div class="ip"><strong>② Lösen von unten nach oben (Stufenform).</strong> Aus (III): \(t=5\). In (II): \(2s + 5 = 6 \Rightarrow s = \tfrac{1}{2}\). In (I): \(r + \tfrac{1}{2} + 5 = 4 \Rightarrow r = -\tfrac{3}{2}\).</div>
+        <div class="ip"><strong>③ Antwort:</strong> \(\vec{c} = -\tfrac{3}{2}\vec{a} + \tfrac{1}{2}\vec{b} + 5\vec{d}\). Probe: \(-\tfrac{3}{2}\begin{pmatrix}1\\0\\0\end{pmatrix} + \tfrac{1}{2}\begin{pmatrix}1\\2\\0\end{pmatrix} + 5\begin{pmatrix}1\\1\\1\end{pmatrix} = \begin{pmatrix}4\\6\\5\end{pmatrix}\) ✓.</div>
+      </div>
+    </div>
+
+    <div class="tg">
+      <div class="tk">
+        <div class="tk-top" onclick="togTask(this)">
+          <div class="tkt"><span class="tn">L1.7</span><span class="td dh">★★★</span></div>
+          <div class="tq">Sachkontext. Ein Lieferdrohne kann nur drei Standard-Flüge ausführen: \(\vec{f}_1=\begin{pmatrix}3\\0\\1\end{pmatrix}\) (Ost+Steigen), \(\vec{f}_2=\begin{pmatrix}0\\4\\1\end{pmatrix}\) (Nord+Steigen), \(\vec{f}_3=\begin{pmatrix}0\\0\\-2\end{pmatrix}\) (Sinken). Wie oft (Koeffizienten \(r, s, t \in \mathbb{R}\)) muss sie jeden Flug ausführen, um den Verschiebungsvektor \(\vec{z}=\begin{pmatrix}6\\8\\1\end{pmatrix}\) zu erreichen? Interpretiere das Ergebnis im Sachkontext.</div>
+          <div class="tk-toggle">⌄</div>
+        </div>
+      </div>
+      <div class="ta">
+        <div class="ip"><strong>① 3×3-LGS aus \(r\vec{f}_1 + s\vec{f}_2 + t\vec{f}_3 = \vec{z}\):</strong></div>
+        <div class="ip">(I) \(3r + 0s + 0t = 6\) &nbsp; (II) \(0r + 4s + 0t = 8\) &nbsp; (III) \(\;r + s - 2t = 1\).</div>
+        <div class="ip"><strong>② Lösen.</strong> (I): \(r=2\). (II): \(s=2\). (III): \(2 + 2 - 2t = 1 \Rightarrow -2t = -3 \Rightarrow t = \tfrac{3}{2}\).</div>
+        <div class="ip"><strong>③ Antwort:</strong> Die Drohne führt den Ost-Flug 2-mal, den Nord-Flug 2-mal und den Sink-Flug 1,5-mal aus.</div>
+        <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Interpretation:</em> Ein nicht-ganzzahliger Koeffizient (\(t=1{,}5\)) bedeutet, dass die Drohne den Sink-Flug nicht ganzzahlig oft ausführen kann — die geforderte Endposition ist mit ganzen Flügen nicht exakt erreichbar. Praktisch müsste man entweder den letzten Sink-Flug nur „halb" fliegen (z. B. nur 1,5 m statt 2 m sinken) oder die geforderte Position leicht anpassen. Mathematisch ist die Linearkombination eindeutig — die Diskretisierung ist ein Modellierungsproblem oberhalb der Mathematik.</em></div>
+      </div>
+    </div>
+
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
@@ -20967,6 +21154,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <li>Erkläre den Unterschied zwischen Ortsvektor und freiem Vektor.</li>
         <li>Was sagt das Skalarprodukt über den Winkel zwischen zwei Vektoren aus? Wann sind zwei Vektoren orthogonal?</li>
         <li>Berechne das Kreuzprodukt \(\vec{a} \times \vec{b}\) und erkläre seine geometrische Bedeutung.</li>
+        <li>Stelle den Vektor \(\vec{c}=\begin{pmatrix}2\\3\\1\end{pmatrix}\) als Linearkombination \(r\vec{a}+s\vec{b}\) von \(\vec{a}=\begin{pmatrix}1\\1\\0\end{pmatrix}\) und \(\vec{b}=\begin{pmatrix}0\\1\\1\end{pmatrix}\) dar — falls möglich.</li>
       </ol>
       <p style="margin-top:10px;font-size:14px;color:var(--ink-muted);">
         Wenn du bei einer Frage unsicher bist, lies den Abschnitt noch einmal ab „Vektoren“.
