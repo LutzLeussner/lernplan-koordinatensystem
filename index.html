@@ -20275,35 +20275,51 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       <div class="ip">Im Raum nutzen wir ein kartesisches Koordinatensystem mit drei Achsen: x-, y- und z-Achse. Ein Punkt \(P\) wird durch drei Koordinaten beschrieben: \(P = (x|y|z)\).</div>
       <div class="hint"><strong>Merke:</strong> Die Reihenfolge ist immer \(x\), dann \(y\), dann \(z\) — in der oben gezeigten Schrägbild-Konvention: \(x\) nach vorne (Tiefe), \(y\) nach rechts (Breite), \(z\) nach oben (Höhe).</div>
 
-      <!-- 3D Coordinate System SVG -->
-      <svg width="300" height="250" viewBox="0 0 300 250" style="display: block; margin: 15px auto; border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
-        <!-- Axes -->
-        <line x1="150" y1="150" x2="230" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <line x1="150" y1="150" x2="90" y2="190" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
-        <line x1="150" y1="150" x2="150" y2="50" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
-
-        <!-- Axis labels -->
-        <text x="240" y="160" font-size="14" font-weight="bold">x</text>
-        <text x="70" y="200" font-size="14" font-weight="bold">y</text>
-        <text x="160" y="35" font-size="14" font-weight="bold">z</text>
-
-        <!-- Origin -->
-        <circle cx="150" cy="150" r="3" fill="#000"/>
-        <text x="155" y="165" font-size="12">O</text>
-
-        <!-- Sample point P(3|2|3) -->
-        <circle cx="190" cy="120" r="4" fill="#c75c3a"/>
-        <text x="195" y="115" font-size="12" fill="#c75c3a">P</text>
-
-        <!-- Grid lines to point -->
-        <line x1="190" y1="150" x2="190" y2="120" stroke="#c75c3a" stroke-dasharray="4" opacity="0.5"/>
-        <line x1="150" y1="150" x2="190" y2="150" stroke="#c75c3a" stroke-dasharray="4" opacity="0.5"/>
-
-        <defs>
-          <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
-            <polygon points="0 0, 10 3, 0 6" fill="#333"/>
-          </marker>
-        </defs>
+      <!-- 3D Coordinate System SVG (Kavalierperspektive: x vorne, y rechts, z oben — programmatisch generiert) -->
+      <svg width="360" height="300" viewBox="0 0 360 300" style="display: block; margin: 15px auto; border: 1px solid #ddd; padding: 10px; background: #f9f9f9;">
+        <defs><marker id="ah3d" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#333"/></marker></defs>
+        <!-- xy-Ebene als Parallelogramm angedeutet -->
+        <polygon points="160.0,215.0 130.3,244.7 214.3,244.7 244.0,215.0" fill="#ecf1f4" fill-opacity="0.5" stroke="none"/>
+        <!-- x-Achse (nach vorne, im Schrägbild verkürzt) -->
+        <line x1="160.0" y1="215.0" x2="120.4" y2="254.6" stroke="#333" stroke-width="2" marker-end="url(#ah3d)"/>
+        <line x1="146.1" y1="224.9" x2="154.1" y2="232.9" stroke="#555" stroke-width="1.2"/>
+        <text x="137.1" y="244.9" font-size="11" fill="#666" text-anchor="end">1</text>
+        <line x1="132.2" y1="238.8" x2="140.2" y2="246.8" stroke="#555" stroke-width="1.2"/>
+        <text x="123.2" y="258.8" font-size="11" fill="#666" text-anchor="end">2</text>
+        <line x1="118.3" y1="252.7" x2="126.3" y2="260.7" stroke="#555" stroke-width="1.2"/>
+        <text x="109.3" y="272.7" font-size="11" fill="#666" text-anchor="end">3</text>
+        <text x="112.4" y="276.6" font-size="16" font-weight="bold" fill="#333">x</text>
+        <!-- y-Achse (nach rechts) -->
+        <line x1="160.0" y1="215.0" x2="258.0" y2="215.0" stroke="#333" stroke-width="2" marker-end="url(#ah3d)"/>
+        <line x1="188.0" y1="211.0" x2="188.0" y2="219.0" stroke="#555" stroke-width="1.2"/>
+        <text x="188.0" y="231.0" font-size="11" fill="#666" text-anchor="middle">1</text>
+        <line x1="216.0" y1="211.0" x2="216.0" y2="219.0" stroke="#555" stroke-width="1.2"/>
+        <text x="216.0" y="231.0" font-size="11" fill="#666" text-anchor="middle">2</text>
+        <line x1="244.0" y1="211.0" x2="244.0" y2="219.0" stroke="#555" stroke-width="1.2"/>
+        <text x="244.0" y="231.0" font-size="11" fill="#666" text-anchor="middle">3</text>
+        <text x="270.0" y="220.0" font-size="16" font-weight="bold" fill="#333">y</text>
+        <!-- z-Achse (nach oben) -->
+        <line x1="160.0" y1="215.0" x2="160.0" y2="117.0" stroke="#333" stroke-width="2" marker-end="url(#ah3d)"/>
+        <line x1="156.0" y1="187.0" x2="164.0" y2="187.0" stroke="#555" stroke-width="1.2"/>
+        <text x="153.0" y="191.0" font-size="11" fill="#666" text-anchor="end">1</text>
+        <line x1="156.0" y1="159.0" x2="164.0" y2="159.0" stroke="#555" stroke-width="1.2"/>
+        <text x="153.0" y="163.0" font-size="11" fill="#666" text-anchor="end">2</text>
+        <line x1="156.0" y1="131.0" x2="164.0" y2="131.0" stroke="#555" stroke-width="1.2"/>
+        <text x="153.0" y="135.0" font-size="11" fill="#666" text-anchor="end">3</text>
+        <text x="160.0" y="108.0" font-size="16" font-weight="bold" fill="#333" text-anchor="middle">z</text>
+        <!-- Ursprung -->
+        <circle cx="160" cy="215" r="3.5" fill="#000"/>
+        <text x="168.0" y="229.0" font-size="13" font-weight="bold" fill="#333">O</text>
+        <!-- Bauplan zum Beispielpunkt P(3|2|3): x → y → z -->
+        <line x1="160.0" y1="215.0" x2="130.3" y2="244.7" stroke="#c75c3a" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"/>
+        <line x1="130.3" y1="244.7" x2="186.3" y2="244.7" stroke="#c75c3a" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"/>
+        <line x1="186.3" y1="244.7" x2="186.3" y2="160.7" stroke="#c75c3a" stroke-width="1.4" stroke-dasharray="4 3" opacity="0.75"/>
+        <!-- Schatten in xy-Ebene -->
+        <circle cx="186.3" cy="244.7" r="3" fill="#c75c3a" fill-opacity="0.4"/>
+        <!-- Punkt P -->
+        <circle cx="186.3" cy="160.7" r="5" fill="#c75c3a" stroke="#fff" stroke-width="1.2"/>
+        <rect x="194.3" y="136.7" width="74" height="18" fill="#fffcf6" fill-opacity="0.9" rx="3" stroke="#c75c3a" stroke-opacity="0.3"/>
+        <text x="198.3" y="149.7" font-size="12" font-weight="bold" fill="#c75c3a">P(3|2|3)</text>
       </svg>
     </div>
   </div>
