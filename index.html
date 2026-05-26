@@ -21842,16 +21842,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
 </div>
 
 <!-- Aufgaben Geraden -->
-<!-- Aufgaben-Block · Geraden -->
-<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
-  <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c8b55e;line-height:1;font-weight:400;min-width:40px;text-align:center">G</div>
+<!-- Aufgaben-Block · Geraden — neu strukturiert nach Aufgabenkonzepten -->
+<!-- Sub-Block Aufgaben-Block · G1 · ★ Reproduktion -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#8a9da7;line-height:1;font-weight:400;min-width:36px;text-align:center">G1</div>
   <div style="flex:1">
-    <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · G · ★ bis ★★★</div>
-    <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Geradengleichungen, Lagebeziehungen, Schnittpunkte</div>
-    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Vom Aufstellen einer Parameterform über die Klassifikation der Lagebeziehung bis zum Schnittpunkt — gestuft nach Anforderungsbereich.</div>
+    <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · G1 · ★ Reproduktion</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Geradengleichungen — Grundlagen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Parameterform aus zwei Punkten aufstellen, Punktprobe, Spurpunkte mit den Koordinatenebenen — routinierte Anwendung der Geradengleichung.</div>
   </div>
 </div>
-
 <div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
@@ -21863,12 +21863,45 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> Richtungsvektor \(\vec{d} = (2|2|2)\), Geradengleichung: \(\vec{x} = (1|0|2) + t(1|1|1)\). Für \(C\) erhält man \(t = 2\), also liegt \(C\) auf der Gerade.
   </div>
+</div><div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G1.2</span><span class="td de">★</span></div>
+      <div class="tq">Gegeben ist die Gerade \(g: \vec{x} = \begin{pmatrix}1\\2\\4\end{pmatrix} + t\cdot\begin{pmatrix}0\\1\\-2\end{pmatrix}\). Bestimme den Schnittpunkt von \(g\) mit der xy-Ebene (Punkte mit \(z=0\)).</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Lösung:</strong> Die xy-Ebene ist durch \(z=0\) charakterisiert. Auf der Geraden gilt \(z(t)=4-2t\). Aus \(4-2t=0\) folgt \(t=2\). Einsetzen: \(\vec{x}(2)=\begin{pmatrix}1\\4\\0\end{pmatrix}\). Spurpunkt: \((1|4|0)\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span></div>
+    <div class="komp-desc">K5: Geradengleichung als Werkzeug · K3: Bedingung in Parameter übersetzen</div>
+  </div>
 </div>
-
 <div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
-      <div class="tkt"><span class="tn">G1.2</span><span class="td dm">★★</span></div>
+      <div class="tkt"><span class="tn">G1.3</span><span class="td de">★</span></div>
+      <div class="tq">Liegt der Punkt \(P(7|0|3)\) auf der Geraden \(g: \vec{x} = \begin{pmatrix}1\\0\\1\end{pmatrix} + t\cdot\begin{pmatrix}3\\0\\1\end{pmatrix}\)?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Lösung:</strong> Punkt einsetzen und prüfen, ob ein einheitliches \(t\) alle drei Komponenten erfüllt. Aus \(1+3t=7\) folgt \(t=2\). Probe: \(0+2\cdot 0=0\) ✓; \(1+2\cdot 1=3\) ✓. Alle drei Gleichungen ergeben \(t=2\) — also <strong>liegt</strong> \(P\) auf \(g\).</div>
+  </div>
+</div>
+<!-- Sub-Block Aufgaben-Block · G2 · ★★/★★★ Vertiefung -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#c8b55e;line-height:1;font-weight:400;min-width:36px;text-align:center">G2</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · G2 · ★★/★★★ Vertiefung</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Lagebeziehungen, Schnittpunkte, Konstruktionen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Lagebeziehung zweier Geraden klassifizieren, Schnittpunkte berechnen, Geraden mit geometrischen Bedingungen konstruieren.</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G2.1</span><span class="td dm">★★</span></div>
       <div class="tq">Untersuche, ob die Geraden \(g_1: \vec{x} = (0|0|0) + t(1|1|1)\) und \(g_2: \vec{x} = (1|0|0) + s(2|1|0)\) sich schneiden, parallel sind oder windschief zueinander liegen.</div>
       <div class="tk-toggle">⌄</div>
     </div>
@@ -21876,57 +21909,135 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> Richtungsvektoren sind nicht parallel. Gleichsetzen ergibt ein unlösbares System. Die Geraden sind windschief.
   </div>
-</div>
-
-
-    <div class="tg">
+</div><div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">G1.3</span><span class="td dm">&#9733;&#9733;</span></div>
+          <div class="tkt"><span class="tn">G2.2</span><span class="td dm">&#9733;&#9733;</span></div>
           <div class="tq">Pr&uuml;fe, ob \(P(5|0|6)\) auf \(g: \vec{x} = \begin{pmatrix} 1 \\ 2 \\ 0 \end{pmatrix} + t\begin{pmatrix} 2 \\ -1 \\ 3 \end{pmatrix}\) liegt.</div>
           <div class="tk-toggle">&#8964;</div>
         </div>
       </div>
       <div class="ta"><strong>L&ouml;sung:</strong> \(1+2t=5 \Rightarrow t=2\). Probe: \(2-2=0\) &#10003;, \(0+6=6\) &#10003; &rarr; <strong>\(P\) liegt auf \(g\)</strong>.</div>
-    </div>
-
-    <div class="tg">
+    </div><div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">G1.4</span><span class="td dm">&#9733;&#9733;</span></div>
+          <div class="tkt"><span class="tn">G2.3</span><span class="td dm">&#9733;&#9733;</span></div>
           <div class="tq">Untersuche die Lagebeziehung von \(g: \vec{x} = \begin{pmatrix} 1 \\ 0 \\ 2 \end{pmatrix} + t\begin{pmatrix} 2 \\ 1 \\ -1 \end{pmatrix}\) und \(h: \vec{x} = \begin{pmatrix} 3 \\ 1 \\ 1 \end{pmatrix} + s\begin{pmatrix} 4 \\ 2 \\ -2 \end{pmatrix}\).</div>
           <div class="tk-toggle">&#8964;</div>
         </div>
       </div>
       <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{v}_h = 2\vec{v}_g\) &rarr; parallel. St&uuml;tzpunkt von \(h\) auf \(g\): \(1+2t=3 \Rightarrow t=1\), Probe ok &rarr; <strong>identisch</strong>.</div>
-    </div>
-
-    <div class="tg">
+    </div><div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">G1.5</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
+          <div class="tkt"><span class="tn">G2.4</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
           <div class="tq">Gib eine Gerade \(k\) an, die senkrecht zu \(g\) mit Richtungsvektor \(\begin{pmatrix} 1 \\ -1 \\ 2 \end{pmatrix}\) verl&auml;uft und durch \((2|1|0)\) geht.</div>
           <div class="tk-toggle">&#8964;</div>
         </div>
       </div>
       <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{v}_g \cdot \vec{v}_k = 0\): \(a - b + 2c = 0\). W&auml;hle \(\vec{v}_k = \begin{pmatrix} 2 \\ 0 \\ -1 \end{pmatrix}\) (pr&uuml;fe: \(2+0-2=0\) &#10003;).<br>\(k: \vec{x} = \begin{pmatrix} 2 \\ 1 \\ 0 \end{pmatrix} + s\begin{pmatrix} 2 \\ 0 \\ -1 \end{pmatrix}\)</div>
-    </div>
-
-    <div class="tg">
+    </div><div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">G1.6</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
+          <div class="tkt"><span class="tn">G2.5</span><span class="td dh">&#9733;&#9733;&#9733;</span></div>
           <div class="tq">Eine Drohne fliegt von \(S(3|1|8)\) nach \(Z(9|7|5)\). Berechne die Flugstrecke (1 LE = 10 m).</div>
           <div class="tk-toggle">&#8964;</div>
         </div>
       </div>
       <div class="ta"><strong>L&ouml;sung:</strong> \(\vec{SZ} = \begin{pmatrix} 6 \\ 6 \\ -3 \end{pmatrix}\), \(|\vec{SZ}| = \sqrt{36+36+9} = 9\) LE = 90 m.</div>
+    </div><!-- Sub-Block Aufgaben-Block · G3 · ★★/★★★ · Parameter (Konzept 3) -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#c75c3a;line-height:1;font-weight:400;min-width:36px;text-align:center">G3</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · G3 · ★★/★★★ · Parameter (Konzept 3)</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Parameteraufgaben — Geometrie steuert Algebra</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Eine Geometrie-Bedingung in eine Parameter-Gleichung übersetzen und den Wert bestimmen, für den die Bedingung erfüllt ist. Häufige MV-Klausur-Form. Konzept 3 aus <a href="Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie.html" style="color:#a03d20;text-decoration:underline;">Aufgabenkonzepte für die analytische Geometrie</a>.</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G3.1</span><span class="td dm">★★</span></div>
+      <div class="tq">Bestimme den Wert von \(a\in\mathbb{R}\), für den die Geraden \(g: \vec{x}=\begin{pmatrix}1\\0\\0\end{pmatrix}+s\begin{pmatrix}1\\1\\0\end{pmatrix}\) und \(h: \vec{x}=\begin{pmatrix}0\\a\\0\end{pmatrix}+t\begin{pmatrix}0\\1\\0\end{pmatrix}\) sich <em>schneiden</em>. Bestimme zusätzlich den Schnittpunkt.</div>
+      <div class="tk-toggle">⌄</div>
     </div>
-
-    <div class="tg">
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>① Schnittansatz:</strong> Setze \(g(s)=h(t)\): \(1+s=0\) (I), \(s=a+t\) (II), \(0=0\) (III) ✓.</div>
+    <div class="ip"><strong>② Aus (I):</strong> \(s=-1\). In (II): \(-1=a+t \Rightarrow t=-1-a\). Für jedes \(a\) existiert ein passendes \(t\) — die Geraden schneiden sich also für jedes \(a\). (Plausibel: beide Geraden liegen in der xy-Ebene und haben in y-Richtung Bewegungsspielraum.)</div>
+    <div class="ip"><strong>③ Schnittpunkt:</strong> \(s=-1\) in \(g\): \(\vec{x}=(0,-1,0)\), also \(S(0|-1|0)\) — <em>unabhängig von \(a\)</em>.</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Parameteraufgaben können „für alle \(a\) lösbar" sein — die scheinbare Variation versteckt eine geometrische Konstellation, in der \(a\) durch \(t\) kompensiert wird.</em></div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: LGS als Werkzeug · K1: Diskussion „für jedes a"</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G3.2</span><span class="td dm">★★</span></div>
+      <div class="tq">Auf der Geraden \(g: \vec{x}=\begin{pmatrix}3\\1\\6\end{pmatrix}+t\begin{pmatrix}-1\\2\\-2\end{pmatrix}\) liegt ein Punkt \(P\), der vom Stützpunkt \(A(3|1|6)\) den Abstand \(6\) hat. Bestimme alle möglichen Werte von \(t\) und gib die zwei Punkte an.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>① Stützpunkt = \(A\):</strong> \(P=A+t\vec{d}\), \(|\vec{AP}|=|t|\cdot|\vec{d}|\).</div>
+    <div class="ip"><strong>② Betrag:</strong> \(|\vec{d}|=\sqrt{1+4+4}=3\).</div>
+    <div class="ip"><strong>③ Bedingung:</strong> \(|t|\cdot 3=6 \Rightarrow |t|=2\), also \(t=\pm 2\).</div>
+    <div class="ip"><strong>④ Punkte:</strong> \(P_1=A+2\vec{d}=(1|5|2)\), \(P_2=A-2\vec{d}=(5|-3|10)\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Anschauung:</em> Zu jedem Abstand vom Stützpunkt gibt es zwei Punkte (einen in jede Richtung). Vorzeichen von \(t\) entscheidet die Richtung.</em></div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Betrag · K4: Doppellösung interpretieren</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G3.3</span><span class="td dh">★★★</span></div>
+      <div class="tq">Eine Drohne fliegt mit dem konstanten Geschwindigkeitsvektor \(\vec{v}=\begin{pmatrix}3\\4\\-1\end{pmatrix}\) m/s. Sie startet bei \(S(0|0|100)\). Nach welcher Zeit \(t\) (in Sekunden) erreicht sie die Bodenebene (\(z=0\))? Wie weit ist sie dann horizontal vom Startpunkt entfernt?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>① Bahn als Geradengleichung:</strong> \(\vec{x}(t) = (3t,\,4t,\,100-t)\).</div>
+    <div class="ip"><strong>② Bodenbedingung:</strong> \(100-t=0 \Rightarrow t=100\,\text{s}\).</div>
+    <div class="ip"><strong>③ Landungspunkt:</strong> \((300|400|0)\) — 300 m östlich, 400 m nördlich vom Startpunkt-Boden.</div>
+    <div class="ip"><strong>④ Horizontale Entfernung:</strong> \(\sqrt{300^2+400^2}=\sqrt{250\,000}=500\,\text{m}\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Anschauung:</em> Klassisches 3-4-5-Dreieck in m. Die Drohne fliegt 500 m horizontal und sinkt dabei 100 m.</em></div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Geradengleichung als Bewegungsmodell · K3: Sachkontext modellieren · K4: Ergebnis in m angeben</div>
+  </div>
+</div>
+<!-- Sub-Block Aufgaben-Block · G4 · ★/★★★/★★★ · K1+K6 · Beschreibung (Konzept 2) -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#5b6e2e;line-height:1;font-weight:400;min-width:36px;text-align:center">G4</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · G4 · ★/★★★/★★★ · K1+K6 · Beschreibung (Konzept 2)</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Beschreiben und Erläutern</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Einen Ansatz erläutern, eine Begründung formulieren, eine Aufgabe aus Lösungsschritten rekonstruieren. IQB-typisch. Trainiert K1 (Argumentieren) und K6 (Kommunizieren). Konzept 2 aus <a href="Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie.html" style="color:#3e4d1f;text-decoration:underline;">Aufgabenkonzepte für die analytische Geometrie</a>.</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G4.1</span><span class="td de">★</span></div>
+      <div class="tq"><strong>Ansatz benennen.</strong> In einer Aufgabe steht der Ansatz \(g(s)=h(t)\) für zwei Geraden \(g,h\). Welche <em>geometrische Frage</em> wird damit untersucht? Welches Ergebnis bedeutet welche Lagebeziehung?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Geometrische Frage:</strong> Haben \(g\) und \(h\) einen gemeinsamen Punkt — und wenn ja, welchen? Welche Parameter \(s\) auf \(g\) und \(t\) auf \(h\) führen zum selben Raumpunkt?</div>
+    <div class="ip"><strong>Bedeutung der drei LGS-Lösungsfälle:</strong></div>
+    <div class="ip">• <em>Eindeutige Lösung \((s,t)\):</em> Die Geraden <strong>schneiden sich</strong> in einem Punkt. Schnittpunkt = Einsetzen von \(s\) in \(g\) (oder \(t\) in \(h\)).</div>
+    <div class="ip">• <em>Keine Lösung:</em> Kein gemeinsamer Punkt. Kollineare Richtungen → <em>echt parallel</em>; sonst → <em>windschief</em>.</div>
+    <div class="ip">• <em>Unendlich viele Lösungen:</em> Die Geraden sind <strong>identisch</strong>.</div>
+    <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K6: Ansatz in Sprache · K1: Lagebeziehung aus LGS-Lösungstyp</div>
+  </div>
+</div>
+<div class="tg">
       <div class="tk">
         <div class="tk-top" onclick="togTask(this)">
-          <div class="tkt"><span class="tn">G1.7</span><span class="td dh">★★★</span></div>
+          <div class="tkt"><span class="tn">G4.2</span><span class="td dh">★★★</span></div>
           <div class="tq">Erläutere den Unterschied zwischen parallelen und windschiefen Geraden im Raum. Beschreibe, warum es windschiefe Geraden in der Ebene (\(\mathbb{R}^2\)) nicht geben kann.</div>
           <div class="tk-toggle">⌄</div>
         </div>
@@ -21938,8 +22049,23 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
         <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
         <div class="komp-desc">K6: Lagebeziehungen fachsprachlich unterscheiden · K1: Nichtexistenz windschiefer Geraden in 2D begründen</div>
       </div>
+    </div><div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">G4.3</span><span class="td dh">★★★</span></div>
+      <div class="tq"><strong>Aufgabe rekonstruieren.</strong> Gegeben sind die Lösungsschritte: (1) Ansatz \(\vec{x}_g(t)=\vec{x}_h(s)\). (2) LGS führt auf den Widerspruch \(0=2\). (3) Die Richtungsvektoren \(\vec{d}_g=(1,2,0)\) und \(\vec{d}_h=(2,4,0)\) sind kollinear. Formuliere eine passende Aufgabenstellung und nenne die nachgewiesene Lagebeziehung.</div>
+      <div class="tk-toggle">⌄</div>
     </div>
-
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Aufgabenstellung-Vorschlag:</strong></div>
+    <div class="ip" style="background:#f4f3f0;padding:10px;border-radius:6px;"><em>„Untersuche die Lagebeziehung der Geraden \(g: \vec{x}=(0,0,0)+t(1,2,0)\) und \(h: \vec{x}=(1,0,0)+s(2,4,0)\)."</em></div>
+    <div class="ip"><strong>Begründung:</strong> \(\vec{d}_h=2\vec{d}_g\) → Richtungsvektoren kollinear, also parallel oder identisch. Punkttest \((0,0,0)\) in \(h\): \(1=0\) — Widerspruch. Damit <strong>echt parallel</strong>, nicht identisch.</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Hinweis:</em> Der konkrete Wert „2" im Widerspruch \(0=2\) kommt aus der \(x\)-Komponente. Jede Aufgabe, bei der zwei kollineare Richtungen sich nicht auf einem gemeinsamen Punkt einigen können, liefert dieselbe Lösungsstruktur.</em></div>
+    <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K6: Aufgabe konstruieren · K1: Lagebeziehung argumentativ ableiten</div>
+  </div>
+</div>
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
@@ -22243,16 +22369,16 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   </div>
 </div>
 
-<!-- Aufgaben-Block · Ebenen -->
-<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:16px 20px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
-  <div style="font-family:'DM Serif Display',serif;font-size:40px;color:#c75c3a;line-height:1;font-weight:400;min-width:40px;text-align:center">E</div>
+<!-- Aufgaben-Block · Ebenen — neu strukturiert nach Aufgabenkonzepten -->
+<!-- Sub-Block Aufgaben-Block · E1 · ★ Reproduktion -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#ecf1f4;border-left:5px solid #8a9da7;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#8a9da7;line-height:1;font-weight:400;min-width:36px;text-align:center">E1</div>
   <div style="flex:1">
-    <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · E · ★ bis ★★★</div>
-    <div style="font-size:18px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Ebenen aufstellen, Lagebeziehungen, Abstände, Volumina</div>
-    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Drei Darstellungsformen ineinander umrechnen, Schnitte mit Geraden und Ebenen, Abstandsformeln, Tetraeder- und Pyramidenvolumen — Klausurtransfer.</div>
+    <div style="font-size:11px;font-weight:700;color:#4d6470;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · E1 · ★ Reproduktion</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Ebenengleichungen — Grundlagen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Koordinatenform aus drei Punkten aufstellen, Punktprobe in der Ebene, Abstand zu Koordinatenebene, Umrechnung zwischen Normalen- und Koordinatenform.</div>
   </div>
 </div>
-
 <div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
@@ -22264,9 +22390,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> Normalenvektor \(\vec{n} = (6|3|2)\), Ebenengleichung: \(6x + 3y + 2z = 6\).
   </div>
-</div>
-
-<div class="tg">
+</div><div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
       <div class="tkt"><span class="tn">E1.2</span><span class="td de">★</span></div>
@@ -22277,12 +22401,47 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> Abstand zur xy-Ebene: 1. Abstand zur Ebene: \(\frac{3}{\sqrt{3}} = \sqrt{3}\).
   </div>
+</div><div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">E1.3</span><span class="td de">★</span></div>
+      <div class="tq">Liegt der Punkt \(P(1|2|3)\) in der Ebene \(E: 2x+y-z=1\)?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Lösung:</strong> Punkt einsetzen: \(2\cdot 1+2-3 = 1\) ✓. Die Bedingung ist erfüllt — also <strong>liegt</strong> \(P\) in der Ebene.</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Merke:</em> Die Koordinatenform ist die schnellste Probe „liegt Punkt in Ebene?" — Punkt einsetzen, prüfen ob die Gleichung erfüllt ist.</em></div>
+  </div>
 </div>
-
 <div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
-      <div class="tkt"><span class="tn">E1.3</span><span class="td dm">★★</span></div>
+      <div class="tkt"><span class="tn">E1.4</span><span class="td de">★</span></div>
+      <div class="tq">Gegeben ist die Ebene in Normalenform \(\vec{n}\cdot(\vec{x}-\vec{p})=0\) mit \(\vec{n}=\begin{pmatrix}2\\-1\\3\end{pmatrix}\) und \(\vec{p}=\begin{pmatrix}1\\0\\2\end{pmatrix}\). Wandle sie in die Koordinatenform \(ax+by+cz=d\) um.</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Lösung:</strong> Aus \(\vec{n}=(2,-1,3)\) liest man die Koeffizienten direkt ab: \(a=2,\ b=-1,\ c=3\).</div>
+    <div class="ip">Den Wert \(d\) bekommt man durch Einsetzen des Stützpunkts \(\vec{p}\): \(d = 2\cdot 1+(-1)\cdot 0+3\cdot 2 = 2+0+6 = 8\).</div>
+    <div class="ip"><strong>Koordinatenform:</strong> \(2x-y+3z=8\).</div>
+    <div class="ip"><strong>Probe</strong> mit \(\vec{p}\): \(2-0+6=8\) ✓.</div>
+  </div>
+</div>
+<!-- Sub-Block Aufgaben-Block · E2 · ★★/★★★ Vertiefung -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#f7f3e2;border-left:5px solid #c8b55e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#c8b55e;line-height:1;font-weight:400;min-width:36px;text-align:center">E2</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#8a7a30;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · E2 · ★★/★★★ Vertiefung</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Schnittwinkel, Volumina, Ebene aus Bedingungen</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Schnittwinkel Gerade-Ebene und Ebene-Ebene berechnen, Tetraeder- und Pyramidenvolumen über das Spatprodukt, Ebene aus mehreren geometrischen Bedingungen rekonstruieren.</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">E2.1</span><span class="td dm">★★</span></div>
       <div class="tq">Berechne den Schnittwinkel zwischen der Gerade \(g: \vec{x} = (1|0|0) + t(1|1|1)\) und der Ebene \(E: x + 2y - z = 5\).</div>
       <div class="tk-toggle">⌄</div>
     </div>
@@ -22290,12 +22449,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> \(\sin \alpha = \frac{|1 + 2 - 1|}{\sqrt{3} \cdot \sqrt{6}} = \frac{2}{\sqrt{18}} = \frac{1}{3}\sqrt{2} \approx 0.471\), also \(\alpha \approx 28.1°\).
   </div>
-</div>
-
-<div class="tg">
+</div><div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
-      <div class="tkt"><span class="tn">E1.4</span><span class="td dm">★★</span></div>
+      <div class="tkt"><span class="tn">E2.2</span><span class="td dm">★★</span></div>
       <div class="tq">Bestimme das Volumen des Tetraheders mit den Eckpunkten \(A(0|0|0)\), \(B(2|0|0)\), \(C(0|2|0)\) und \(D(0|0|2)\).</div>
       <div class="tk-toggle">⌄</div>
     </div>
@@ -22303,12 +22460,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> \(V = \frac{1}{6}|(2|0|0) \cdot ((0|2|0) \times (0|0|2))| = \frac{1}{6} \cdot 8 = \frac{4}{3}\).
   </div>
-</div>
-
-<div class="tg">
+</div><div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
-      <div class="tkt"><span class="tn">E1.5</span><span class="td dh">★★★</span></div>
+      <div class="tkt"><span class="tn">E2.3</span><span class="td dh">★★★</span></div>
       <div class="tq">Die Ebene \(E\) enthält die Gerade \(g: \vec{x} = (1|1|0) + t(1|0|1)\) und ist orthogonal zur Ebene \(F: x - y + 2z = 3\). Bestimme eine Gleichung von \(E\).</div>
       <div class="tk-toggle">⌄</div>
     </div>
@@ -22316,12 +22471,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> Normalenvektor von \(E\) muss orthogonal zu \((1|0|1)\) und parallel zu \((1|-1|2)\) sein oder kombiniert. Normalvektor: \(\vec{n} = (1|0|1) \times (1|-1|2) = (1|-1|-1)\). Gleichung: \(x - y - z = 0\).
   </div>
-</div>
-
-<div class="tg">
+</div><div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
-      <div class="tkt"><span class="tn">E1.6</span><span class="td dh">★★★</span></div>
+      <div class="tkt"><span class="tn">E2.4</span><span class="td dh">★★★</span></div>
       <div class="tq">Gegeben sind die Punkte \(A(1|0|1)\), \(B(0|1|0)\), \(C(2|1|3)\) und \(D(1|2|1)\). Berechne das Volumen der Pyramide mit Basis \(ABC\) und Spitze \(D\).</div>
       <div class="tk-toggle">⌄</div>
     </div>
@@ -22329,12 +22482,80 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="ta">
     <strong>Lösung:</strong> \(\vec{AB} = (-1|1|-1)\), \(\vec{AC} = (1|1|2)\), \(\vec{AD} = (0|2|0)\). Volumen \(= \frac{1}{6}|(-1|1|-1) \cdot ((1|1|2) \times (0|2|0))| = \frac{1}{6} \cdot 4 = \frac{2}{3}\).
   </div>
+</div><!-- Sub-Block Aufgaben-Block · E3 · ★★/★★★ · Parameter (Konzept 3) -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:#fceee9;border-left:5px solid #c75c3a;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#c75c3a;line-height:1;font-weight:400;min-width:36px;text-align:center">E3</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#a03d20;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · E3 · ★★/★★★ · Parameter (Konzept 3)</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Parameteraufgaben — Lagebeziehung und Konstruktion mit Parameter</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Lagebeziehung Gerade-Ebene durch einen Parameter steuern, eine Ebene durch zusätzliche Bedingungen eindeutig festlegen. Konzept 3 aus <a href="Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie.html" style="color:#a03d20;text-decoration:underline;">Aufgabenkonzepte für die analytische Geometrie</a>.</div>
+  </div>
 </div>
-
 <div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
-      <div class="tkt"><span class="tn">E1.7</span><span class="td dm">★★</span></div>
+      <div class="tkt"><span class="tn">E3.1</span><span class="td dm">★★</span></div>
+      <div class="tq">Gegeben sind die Gerade \(g: \vec{x}=\begin{pmatrix}0\\0\\0\end{pmatrix}+t\begin{pmatrix}1\\k\\2\end{pmatrix}\) und die Ebene \(E: 2x-y+3z=5\). Bestimme alle Werte von \(k\in\mathbb{R}\), für die \(g\) <em>parallel</em> zu \(E\) verläuft (also keinen Schnittpunkt mit \(E\) hat).</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>① Bedingung übersetzen.</strong> Eine Gerade ist parallel zu einer Ebene, wenn der Richtungsvektor \(\vec{d}\) <em>senkrecht</em> auf dem Normalenvektor \(\vec{n}\) der Ebene steht: \(\vec{d}\cdot\vec{n}=0\).</div>
+    <div class="ip"><strong>② Skalarprodukt:</strong> \(\vec{d}\cdot\vec{n}=1\cdot 2+k\cdot(-1)+2\cdot 3=2-k+6=8-k\).</div>
+    <div class="ip"><strong>③ Bedingung \(=0\):</strong> \(8-k=0 \Rightarrow k=8\).</div>
+    <div class="ip"><strong>④ Probe „parallel oder enthalten?".</strong> Bei \(k=8\) prüfe, ob der Stützpunkt \((0,0,0)\) in \(E\) liegt: \(2\cdot 0-0+3\cdot 0=0 \neq 5\) — Stützpunkt liegt nicht in der Ebene. Also liegt \(g\) bei \(k=8\) <strong>echt parallel</strong> zu \(E\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> „Parallel" allein reicht nicht — die zusätzliche Probe entscheidet zwischen „echt parallel" und „in der Ebene enthalten".</em></div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: Skalarprodukt als Parallelitätstest · K1: Echt-parallel vs. enthalten unterscheiden</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">E3.2</span><span class="td dm">★★</span></div>
+      <div class="tq">Bestimme den Wert von \(d\in\mathbb{R}\), für den die Ebene \(E_d: x+2y-z=d\) den Punkt \(P(3|1|2)\) enthält. Welcher Punkt der Ebene hat dabei die kleinste \(z\)-Koordinate unter denjenigen Punkten mit \(x=0\) und \(y\in[0,4]\)?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>① \(d\) bestimmen.</strong> Setze \(P\) in die Ebenengleichung ein: \(d=3+2\cdot 1-2=3\). Also \(E_3: x+2y-z=3\).</div>
+    <div class="ip"><strong>② Punkte mit \(x=0\):</strong> Einsetzen ergibt \(2y-z=3 \Rightarrow z=2y-3\).</div>
+    <div class="ip"><strong>③ Kleinstes \(z\) auf \(y\in[0,4]\):</strong> \(z(y)=2y-3\) wächst streng mit \(y\). Minimum bei \(y=0\): \(z=-3\). Punkt: \((0|0|-3)\).</div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k3">K3</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Punktprobe als Ableitung von d · K3: Beschränkungs-Argument · K4: Extremalbedingung im Intervall</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">E3.3</span><span class="td dh">★★★</span></div>
+      <div class="tq">Bestimme eine Gleichung der Ebene \(E\), die <em>parallel</em> zur Ebene \(F: 2x-y+2z=6\) verläuft und vom Punkt \(P(1|1|1)\) den Abstand \(2\) hat. Wie viele solche Ebenen gibt es?</div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>① Parallel zu \(F\) bedeutet</strong> gleicher Normalenvektor \(\vec{n}=(2,-1,2)\), also Ansatz \(E_k: 2x-y+2z=k\) mit unbekanntem \(k\).</div>
+    <div class="ip"><strong>② Abstandsformel</strong> \(d(P,E_k)=\dfrac{|2\cdot 1-1+2\cdot 1-k|}{\sqrt{4+1+4}}=\dfrac{|3-k|}{3}\).</div>
+    <div class="ip"><strong>③ Bedingung \(d=2\):</strong> \(\dfrac{|3-k|}{3}=2 \Rightarrow |3-k|=6 \Rightarrow k=9\) oder \(k=-3\).</div>
+    <div class="ip"><strong>④ Zwei Ebenen:</strong> \(E_1: 2x-y+2z=9\) und \(E_2: 2x-y+2z=-3\) — je eine auf jeder Seite des Punktes \(P\) im Abstand 2.</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Anschauung:</em> Zu jedem Abstand und Normalenvektor gibt es <em>zwei</em> parallele Ebenen — eine in jede Richtung von \(P\) weg.</em></div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
+    <div class="komp-desc">K5: Hesseform · K1: Existenz zweier Lösungen begründen · K4: Geometrische Interpretation</div>
+  </div>
+</div>
+<!-- Sub-Block Aufgaben-Block · E4 · ★★/★★★ · K1+K6 · Beschreibung (Konzept 2) -->
+<div style="display:flex;align-items:center;gap:18px;margin:32px 0 14px;padding:14px 18px;background:var(--kiku-bg);border-left:5px solid #5b6e2e;border-radius:10px">
+  <div style="font-family:'DM Serif Display',serif;font-size:36px;color:#5b6e2e;line-height:1;font-weight:400;min-width:36px;text-align:center">E4</div>
+  <div style="flex:1">
+    <div style="font-size:11px;font-weight:700;color:#3e4d1f;letter-spacing:.14em;text-transform:uppercase">Aufgaben-Block · E4 · ★★/★★★ · K1+K6 · Beschreibung (Konzept 2)</div>
+    <div style="font-size:17px;font-weight:700;color:var(--ink);margin-top:3px;letter-spacing:-0.01em">Beschreiben und Erläutern</div>
+    <div style="font-size:13px;color:var(--ink-muted);margin-top:3px;line-height:1.5">Darstellungsformen einer Ebene erläutern, geometrische Bedeutung der Normalenform begründen, einen vorgegebenen Lösungsweg in eigenen Worten beschreiben. K1 (Argumentieren) und K6 (Kommunizieren). Konzept 2 aus <a href="Aufsatz_Aufgabenkonzepte_AnalytischeGeometrie.html" style="color:#3e4d1f;text-decoration:underline;">Aufgabenkonzepte für die analytische Geometrie</a>.</div>
+  </div>
+</div>
+<div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">E4.1</span><span class="td dm">★★</span></div>
       <div class="tq">Beschreibe die drei Darstellungsformen einer Ebene (Parameterform, Normalenform, Koordinatenform) und erläutere, in welchen Situationen welche Form besonders geeignet ist.</div>
       <div class="tk-toggle">⌄</div>
     </div>
@@ -22346,12 +22567,10 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k4">K4</span></div>
     <div class="komp-desc">K6: Darstellungsformen fachsprachlich erklären · K4: Zwischen verschiedenen Darstellungen wechseln</div>
   </div>
-</div>
-
-<div class="tg">
+</div><div class="tg">
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
-      <div class="tkt"><span class="tn">E1.8</span><span class="td dm">★★</span></div>
+      <div class="tkt"><span class="tn">E4.2</span><span class="td dm">★★</span></div>
       <div class="tq">Begründe: Der Normalenvektor \(\vec{n}\) einer Ebene steht senkrecht auf jedem Vektor, der in der Ebene liegt. Erkläre, warum dies aus der Normalenform \(\vec{n} \cdot (\vec{x} - \vec{p}) = 0\) folgt.</div>
       <div class="tk-toggle">⌄</div>
     </div>
@@ -22363,8 +22582,23 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="komp-wrap"><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
     <div class="komp-desc">K1: Orthogonalität aus der Normalenform herleiten · K5: Skalarprodukt als Werkzeug nutzen</div>
   </div>
+</div><div class="tg">
+  <div class="tk">
+    <div class="tk-top" onclick="togTask(this)">
+      <div class="tkt"><span class="tn">E4.3</span><span class="td dm">★★</span></div>
+      <div class="tq"><strong>Lösungsweg erläutern.</strong> Gegeben ist der folgende Lösungsweg zum Schnittpunkt einer Geraden mit einer Ebene: (1) Geradengleichung: \(\vec{x}(t)=(1+t,\,2-t,\,3+2t)\). (2) Ebenengleichung: \(2x+y-z=4\). (3) Einsetzen: \(2(1+t)+(2-t)-(3+2t)=4 \Rightarrow -t+1=4 \Rightarrow t=-3\). (4) Durchstoßpunkt: \(\vec{x}(-3)=(-2,5,-3)\). — Erläutere in drei Sätzen: <em>Was wird hier berechnet, welche geometrische Situation liegt vor, und was sagt das Ergebnis aus?</em></div>
+      <div class="tk-toggle">⌄</div>
+    </div>
+  </div>
+  <div class="ta">
+    <div class="ip"><strong>Lösung (drei Sätze):</strong></div>
+    <div class="ip">(1) <strong>Was berechnet wird:</strong> Der Schnittpunkt einer Geraden \(g\) mit einer Ebene \(E\) — also der Punkt, der auf beiden Objekten gleichzeitig liegt. Dazu wird die Parameterdarstellung der Geraden in die Koordinatenform der Ebene eingesetzt, das ergibt eine Gleichung in der einen Unbekannten \(t\).</div>
+    <div class="ip">(2) <strong>Geometrische Situation:</strong> Die Gerade hat genau dann einen einzigen Schnittpunkt mit der Ebene, wenn ihr Richtungsvektor <em>nicht</em> senkrecht auf dem Normalenvektor steht (sonst wäre sie parallel zur Ebene). Hier liefert das Einsetzen eine eindeutige Lösung \(t=-3\) — also genau eine Schnittsituation, kein „parallel" oder „enthalten".</div>
+    <div class="ip">(3) <strong>Bedeutung des Ergebnisses:</strong> Der Wert \(t=-3\) auf der Geraden zeigt, dass der Durchstoßpunkt <em>vor</em> dem Stützpunkt der Parametrisierung liegt (in Richtung des negativen Richtungsvektors). Der Punkt \((-2|5|-3)\) ist die eindeutige Stelle, an der die Gerade die Ebene trifft. Probe: in \(E\): \(2\cdot(-2)+5-(-3)=-4+5+3=4\) ✓.</div>
+    <div class="komp-wrap"><span class="kb kb-k6">K6</span><span class="kb kb-k1">K1</span><span class="kb kb-k5">K5</span></div>
+    <div class="komp-desc">K6: Lösungsweg in Sprache · K1: Eindeutigkeits-Bedingung argumentativ · K5: Probe als Validierung</div>
+  </div>
 </div>
-
 <div class="card" style="background:var(--kiku-bg);border-left:4px solid var(--mushikuri);margin-top:18px;">
   <div class="card-body">
     <div style="font-size:16px;font-weight:700;color:var(--mushikuri);">✓ Selbstlerncheck</div>
