@@ -22132,7 +22132,7 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
       </li>
       <li class="gi">
         <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
-        <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Abstände und Winkel in der analytischen Geometrie bestimmen</span>
+        <span class="gi-text" onclick="toggleGoal(this.previousElementSibling.firstElementChild)">Abstände zwischen Punkten und zu den Koordinatenebenen sowie Winkel in der analytischen Geometrie bestimmen</span>
       </li>
       <li class="gi">
         <div class="gcheck-wrap"><div class="gcheck" data-group="k12" onclick="toggleGoal(this)"></div></div>
@@ -22313,25 +22313,21 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
     <div class="hint">\[d(P, Q) = |\vec{PQ}| = \sqrt{(q_1-p_1)^2 + (q_2-p_2)^2 + (q_3-p_3)^2}\]</div>
     <div class="it" style="margin-top: 12px;"><strong>Punkt zu Koordinatenebene:</strong></div>
     <div class="hint">\[d(P, \text{xy-Ebene}) = |z_P|, \quad d(P, \text{xz-Ebene}) = |y_P|, \quad d(P, \text{yz-Ebene}) = |x_P|\]</div>
-    <div class="it" style="margin-top: 12px;"><strong>Punkt zu beliebiger Ebene (Normalenform):</strong></div>
-    <div class="hint">\[d(P, E) = \frac{|ax_P + by_P + cz_P - d|}{\sqrt{a^2 + b^2 + c^2}}\]</div>
+    <div class="ip" style="margin-top:12px;background:#ecf1f4;border-left:3px solid #8a9da7;padding:8px 12px;border-radius:6px;font-size:13px;"><strong style="color:#4d6470">Hinweis GK MV:</strong> Im Grundkurs werden Abstände nur zwischen <em>Punkt und Punkt</em> oder zwischen <em>Punkt und Koordinatenebene</em> berechnet. Der Abstand <em>Punkt zu beliebiger Ebene</em> (Hesseform mit Normalenvektor) gehört zum LK-Stoff und wird hier nicht behandelt.</div>
   </div>
 </div>
 
 <div class="bsp">
-  <div class="bsp-label">Beispielaufgabe: Abstand berechnen</div>
-  <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme den Abstand von \(P(2|3|4)\) zur Ebene \(2x - y + 2z = 8\).</div>
+  <div class="bsp-label">Beispielaufgabe: Abstand zu Koordinatenebenen</div>
+  <div class="bsp-q"><strong>Aufgabe:</strong> Bestimme die Abstände des Punktes \(P(3|-2|5)\) zu den drei Koordinatenebenen (xy-, xz-, yz-Ebene).</div>
   <button class="bsp-toggle" onclick="togBsp(this)">Lösung anzeigen ▾</button>
   <div class="bsp-a">
     <strong>Lösung:</strong>
-    <div class="ip" style="margin-top:8px;"><strong>① Hesseform identifizieren.</strong> Aus \(2x - y + 2z = 8\) lesen wir ab: \(a=2,\ b=-1,\ c=2,\ d=8\). Normalenvektor \(\vec{n}=(2,-1,2)\), Länge \(|\vec{n}|=\sqrt{4+1+4}=3\).</div>
-    <div class="ip"><strong>② Punkt einsetzen.</strong>
-      \[ax_P + by_P + cz_P - d = 2\cdot 2 + (-1)\cdot 3 + 2\cdot 4 - 8 = 4 - 3 + 8 - 8 = 1.\]
-    </div>
-    <div class="ip"><strong>③ Abstandsformel anwenden:</strong>
-      \[d(P,E) = \frac{|ax_P + by_P + cz_P - d|}{|\vec{n}|} = \frac{|1|}{3} = \frac{1}{3}.\]
-    </div>
-    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Interpretation:</em> Der Punkt liegt sehr nahe an der Ebene — nur ein Drittel einer Einheit entfernt. Das Vorzeichen vor dem Betrag entscheidet, auf welcher Seite (hier: positive Seite, weil \(ax_P+by_P+cz_P-d=+1>0\)).</em></div>
+    <div class="ip" style="margin-top:8px;"><strong>Merkregel:</strong> Der Abstand zu einer Koordinatenebene ist der Betrag derjenigen Koordinate, die in der Ebene fehlt (also senkrecht zu ihr steht).</div>
+    <div class="ip"><strong>① Abstand zur xy-Ebene</strong> (\(z=0\)): die senkrecht stehende Achse ist die z-Achse, also \(d=|z_P|=|5|=5\).</div>
+    <div class="ip"><strong>② Abstand zur xz-Ebene</strong> (\(y=0\)): \(d=|y_P|=|-2|=2\).</div>
+    <div class="ip"><strong>③ Abstand zur yz-Ebene</strong> (\(x=0\)): \(d=|x_P|=|3|=3\).</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Geometrische Anschauung:</em> Diese drei Abstände sind die Längen der drei „Bauplan-Strecken" von P zur jeweiligen Ebene — sie spannen einen Quader mit \(P\) als entferntester Ecke und dem Ursprung als gegenüberliegender Ecke auf.</em></div>
   </div>
 </div>
 
@@ -22394,12 +22390,12 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
       <div class="tkt"><span class="tn">E1.2</span><span class="td de">★</span></div>
-      <div class="tq">Berechne den Abstand von \(P(1|1|1)\) zur xy-Ebene und zur Ebene \(x + y + z = 0\).</div>
+      <div class="tq">Berechne die Abstände des Punktes \(P(1|1|1)\) zu allen drei Koordinatenebenen (xy-, xz-, yz-Ebene).</div>
       <div class="tk-toggle">⌄</div>
     </div>
     </div>
     <div class="ta">
-    <strong>Lösung:</strong> Abstand zur xy-Ebene: 1. Abstand zur Ebene: \(\frac{3}{\sqrt{3}} = \sqrt{3}\).
+    <strong>Lösung:</strong> Abstand zur xy-Ebene: \(|z_P|=1\). Abstand zur xz-Ebene: \(|y_P|=1\). Abstand zur yz-Ebene: \(|x_P|=1\). \(P\) liegt symmetrisch zu allen drei Koordinatenebenen — jeweils im Einheitsabstand.
   </div>
 </div><div class="tg">
   <div class="tk">
@@ -22529,18 +22525,19 @@ ight) = -\frac{1}{8}\cdot\frac{64\sqrt{3}}{9} + 2 \cdot \frac{4\sqrt{3}}{3} = -\
   <div class="tk">
     <div class="tk-top" onclick="togTask(this)">
       <div class="tkt"><span class="tn">E3.3</span><span class="td dh">★★★</span></div>
-      <div class="tq">Bestimme eine Gleichung der Ebene \(E\), die <em>parallel</em> zur Ebene \(F: 2x-y+2z=6\) verläuft und vom Punkt \(P(1|1|1)\) den Abstand \(2\) hat. Wie viele solche Ebenen gibt es?</div>
+      <div class="tq">Bestimme alle Werte \(k\in\mathbb{R}\), für die die Gerade \(g: \vec{x}=\begin{pmatrix}4\\0\\0\end{pmatrix}+t\begin{pmatrix}2\\1\\-1\end{pmatrix}\) ganz in der Ebene \(E_k: x+ky+2z=4\) liegt. Gib die zugehörige Ebenengleichung an.</div>
       <div class="tk-toggle">⌄</div>
     </div>
   </div>
   <div class="ta">
-    <div class="ip"><strong>① Parallel zu \(F\) bedeutet</strong> gleicher Normalenvektor \(\vec{n}=(2,-1,2)\), also Ansatz \(E_k: 2x-y+2z=k\) mit unbekanntem \(k\).</div>
-    <div class="ip"><strong>② Abstandsformel</strong> \(d(P,E_k)=\dfrac{|2\cdot 1-1+2\cdot 1-k|}{\sqrt{4+1+4}}=\dfrac{|3-k|}{3}\).</div>
-    <div class="ip"><strong>③ Bedingung \(d=2\):</strong> \(\dfrac{|3-k|}{3}=2 \Rightarrow |3-k|=6 \Rightarrow k=9\) oder \(k=-3\).</div>
-    <div class="ip"><strong>④ Zwei Ebenen:</strong> \(E_1: 2x-y+2z=9\) und \(E_2: 2x-y+2z=-3\) — je eine auf jeder Seite des Punktes \(P\) im Abstand 2.</div>
-    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Anschauung:</em> Zu jedem Abstand und Normalenvektor gibt es <em>zwei</em> parallele Ebenen — eine in jede Richtung von \(P\) weg.</em></div>
-    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span><span class="kb kb-k4">K4</span></div>
-    <div class="komp-desc">K5: Hesseform · K1: Existenz zweier Lösungen begründen · K4: Geometrische Interpretation</div>
+    <div class="ip"><strong>Bedingung:</strong> „Gerade liegt in Ebene" verlangt zwei Dinge: (a) der Stützpunkt liegt in der Ebene; (b) der Richtungsvektor ist parallel zur Ebene, also senkrecht zum Normalenvektor.</div>
+    <div class="ip"><strong>① Stützpunkt \((4|0|0)\) in \(E_k\):</strong> \(4+k\cdot 0+2\cdot 0=4\) ✓ — erfüllt für <em>jedes</em> \(k\).</div>
+    <div class="ip"><strong>② Richtungsvektor \(\vec{d}=(2,1,-1)\) senkrecht zu Normalenvektor \(\vec{n}=(1,k,2)\):</strong> \(\vec{d}\cdot\vec{n}=2\cdot 1+1\cdot k+(-1)\cdot 2=k\). Bedingung \(=0\) liefert \(k=0\).</div>
+    <div class="ip"><strong>③ Antwort:</strong> Nur für \(k=0\) liegt \(g\) ganz in \(E_k\). Ebenengleichung: \(E_0: x+2z=4\).</div>
+    <div class="ip"><strong>Probe</strong> mit \(k=0\): Stützpunkt \((4,0,0)\) → \(4+0=4\) ✓. Punkt für \(t=1\): \((6,1,-1)\) → \(6+(-2)=4\) ✓. Punkt für \(t=-2\): \((0,-2,2)\) → \(0+4=4\) ✓ — alle Punkte der Geraden erfüllen die Ebenengleichung.</div>
+    <div class="ip" style="font-style:italic;color:var(--ink-muted);"><em>Lerneffekt:</em> Eine Gerade liegt genau dann in einer Ebene, wenn <em>beide</em> Bedingungen erfüllt sind: der Stützpunkt liegt drauf <em>und</em> die Richtung ist parallel. Wird nur (a) erfüllt, schneidet die Gerade die Ebene in genau diesem Punkt. Wird nur (b) erfüllt, ist die Gerade echt parallel.</em></div>
+    <div class="komp-wrap"><span class="kb kb-k5">K5</span><span class="kb kb-k1">K1</span></div>
+    <div class="komp-desc">K5: Skalarprodukt als Parallelitätstest · K1: Doppelbedingung (Stützpunkt + Richtung) begründen</div>
   </div>
 </div>
 <!-- Sub-Block Aufgaben-Block · E4 · ★★/★★★ · K1+K6 · Beschreibung (Konzept 2) -->
